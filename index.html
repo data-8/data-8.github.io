@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content ="DS10: Intro to Data Science" />
+    <meta name="keywords" content ="DS10, Data Science, Berkeley" />
+    <meta name="author" content ="Ani Adhikari, Tapan Parikh" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    <link rel="icon" href="./assets/images/favicon.ico">
+    
+
+    <title> DS 10 Fall 2015</title>
+
+  </head>
+
+  <body id="index" class="home">
+    <div class="head">
+      <h1>
+        <a href="http://dsten.org/">
+          <span class="coursename">DS 10</span>
+        </a>
+      </h1>
+      <p>Intro to Data Science <br> Fall 2015</p>
+      <p>
+        <span class="instructors">
+          Instructors: <br> Ani Adhikari<br>Tapan Parikh
+        </span>
+      </p>
+      <hr/>
+      <ul class="navigation">
+        <a href="./"><li>Calendar</li></a>
+<a href="./resources.html"><li>Resources</li></a>
+
+      </ul>
+      <hr/>
+      <ul class="navigation">
+        <a href="./about.html"><li>Course Info</li></a>
+<a href="./staff.html"><li>Staff</li></a>
+
+        <a href="https://piazza.com/berkeley/fall2015/ds10"><li>Piazza</li></a>
+
+      </ul>
+      <hr/>
+    </div>
+
+    <div id="content">
+      <h2>Announcements</h2>
+
+<div class="announcements">
+
+<!-- Announcement Content -->
+<div id="announcements"></div>
+
+<!-- Announcement Scripts -->
+<script>
+  var announcements = [
+    "<div class=\"announcement\">\n<span class=\"date\">8/26/15</span>\n<span id=\"older-announcement\">\n<a href=\"javascript:setAnnouncements(++announcementIndex)\">(older)</a>\n</span> <span id=\"newer-announcement\">\n<a href=\"javascript:setAnnouncements(--announcementIndex)\">(newer)</a>\n</span>\n<ul>\n  <li>Welcome to Data Science 10!</li>\n</ul>\n</div>"
+], announcementIndex = 0;
+
+  function setAnnouncements(i) {
+    var el;
+    document.getElementById("announcements").innerHTML = announcements[i];
+    if (announcementIndex >= announcements.length - 1) {
+      el = document.getElementById("older-announcement");
+      el.innerHTML = el.innerText;
+    }
+    if (announcementIndex === 0) {
+      el = document.getElementById("newer-announcement");
+      el.innerHTML = el.innerText;
+    }
+  }
+  setAnnouncements(0);
+</script>
+
+</div>
+
+<h2>Calendar</h2>
+<table id="calendar">
+<tr>
+<th>Week</th>
+<th>Date</th>
+<th>Lecture</th>
+<th>Reading</th>
+<th>Handout</th>
+<th>Assignment</th>
+</tr>
+<tr class="odd">
+<td rowspan="2" class="weeknum">1</td>
+<td>Wed 8/26</td>
+<td>Why Data Science?</td>
+<td><a href="">Inferential Thinking</a></td>
+<td><a href="">Lab 1: Python and Jupyter</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 8/28</td>
+<td>Causality and Experiments</td>
+<td><a href="">Inferential Thinking</a></td>
+<td></td>
+<td><span class="hw">Homework 1</span> <span class="due">(due Thu 9/3)</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">2</td>
+<td>Mon 8/31</td>
+<td>Expressions</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 9/2</td>
+<td>Tables</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td><a href="">Lab 2: Sequences and Aggregation</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fri 9/4</td>
+<td>Visualizing Distributions</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td></td>
+<td><span class="hw">Homework 2</span> <span class="due">(due Thu 9/10)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">3</td>
+<td>Mon 9/7</td>
+<td><span class="holiday">No Lecture: Labor Day</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 9/9</td>
+<td>Comparing Distributions</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td><a href="">Lab 3: Tables and Histograms</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 9/11</td>
+<td>Functions</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td></td>
+<td><span class="hw">Homework 3</span> <span class="due">(due Thu 9/17)</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">4</td>
+<td>Mon 9/14</td>
+<td>Random Sampling</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 9/16</td>
+<td>Graphs</td>
+<td><a href="">The Power and Peril of Pictures</a></td>
+<td><a href="">Lab 4: Project 1 Intro</a></td>
+<td>Histogram Project <span class="due">(due Thu 10/1)</span></td>
+</tr>
+<tr class="even">
+<td>Fri 9/18</td>
+<td><span class="breadth">Broader Issue: Privacy</span></td>
+<td></td>
+<td></td>
+<td><span class="hw">Homework 4</span> <span class="due">(due Thu 9/24)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">5</td>
+<td>Mon 9/21</td>
+<td>Iteration</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 9/23</td>
+<td>Total Variation Distance</td>
+<td><a href="">Is There a Difference?</a></td>
+<td><a href="">Lab 5: Analyzing Social Networks</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 9/25</td>
+<td>Sampling Distributions</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">6</td>
+<td>Mon 9/28</td>
+<td>Hypothesis Testing</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 9/30</td>
+<td>Higher-Order Functions</td>
+<td><a href="">Is There a Difference?</a></td>
+<td><a href="">Lab 6: Hypothesis Testing</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fri 10/2</td>
+<td>Center of a Distribution</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td><span class="hw">Homework 5</span> <span class="due">(due Thu 10/8)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">7</td>
+<td>Mon 10/5</td>
+<td>Spread of a Distribution</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 10/7</td>
+<td>Confidence Intervals</td>
+<td><a href="">Is There a Difference?</a></td>
+<td><a href="">Lab 7: Confidence Intervals</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 10/9</td>
+<td>The Bootstrap</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td><span class="hw">Homework 6</span> <span class="due">(due Thu 10/15)</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">8</td>
+<td>Mon 10/12</td>
+<td>Beyond Means and Proportions</td>
+<td><a href="">Is There a Difference?</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 10/14</td>
+<td>Study Design</td>
+<td><a href="">Is There a Difference?</a></td>
+<td><a href="">Lab 8: Midterm Review</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fri 10/16</td>
+<td><span class="breadth">Broader Issue: Data Ownership</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">9</td>
+<td>Mon 10/19</td>
+<td><span class="holiday">No Lecture: <a href="exams/midterm.html">Midterm</a></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 10/21</td>
+<td>Regression</td>
+<td><a href="">Making Predictions</a></td>
+<td><a href="">Lab 9: Project 2 Intro</a></td>
+<td>Study Design Project <span class="due">(due Thu 11/5)</span></td>
+</tr>
+<tr class="odd">
+<td>Fri 10/23</td>
+<td>Transformations</td>
+<td><a href="">Making Predictions</a></td>
+<td></td>
+<td><span class="hw">Homework 7</span> <span class="due">(due Thu 10/29)</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">10</td>
+<td>Mon 10/26</td>
+<td>Bootstrap for Regression</td>
+<td><a href="">Making Predictions</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 10/28</td>
+<td>Prediction</td>
+<td><a href="">Making Predictions</a></td>
+<td><a href="">Lab 10: Interpreting Regression</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fri 10/30</td>
+<td>Causal Inference</td>
+<td><a href="">Making Predictions</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">11</td>
+<td>Mon 11/2</td>
+<td>Nearest Neighbor Regression</td>
+<td><a href="">Making Predictions</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 11/4</td>
+<td>Classification</td>
+<td><a href="">Making Predictions</a></td>
+<td><a href="">Lab 11: Prediction</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 11/6</td>
+<td>Feature Selection</td>
+<td><a href="">Making Predictions</a></td>
+<td></td>
+<td><span class="hw">Homework 8</span> <span class="due">(due Thu 11/12)</span></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">12</td>
+<td>Mon 11/9</td>
+<td>Models</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 11/11</td>
+<td><span class="holiday">No Lecture: Veterans Day</span></td>
+<td></td>
+<td><a href="">Lab 12: Project 3 Intro</a></td>
+<td>Prediction Project <span class="due">(due Thu 12/3)</span></td>
+</tr>
+<tr class="even">
+<td>Fri 11/13</td>
+<td>Parameters</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td><span class="hw">Homework 9</span> <span class="due">(due Thu 11/19)</span></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">13</td>
+<td>Mon 11/16</td>
+<td>Goodness of Fit</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 11/18</td>
+<td>Random Graphs</td>
+<td><a href="">Models and Choices</a></td>
+<td><a href="">Lab 13: Probabilistic Models</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 11/20</td>
+<td>Simulation</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td rowspan="3" class="weeknum">14</td>
+<td>Mon 11/23</td>
+<td>Conditional Probability</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wed 11/25</td>
+<td><span class="holiday">No Lecture: Thanksgiving</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Fri 11/27</td>
+<td><span class="holiday">No Lecture: Thanksgiving</span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td rowspan="3" class="weeknum">15</td>
+<td>Mon 11/30</td>
+<td>Bayes' Rule</td>
+<td><a href="">Models and Choices</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Wed 12/2</td>
+<td>Decision Making</td>
+<td><a href="">Models and Choices</a></td>
+<td><a href="">Lab 14: Models of Graphs</a></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Fri 12/4</td>
+<td>Conclusion</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+    </div>
+  </body>
+  
+</html>
