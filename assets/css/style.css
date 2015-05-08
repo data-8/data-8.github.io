@@ -158,6 +158,13 @@ table#calendar .due {
     color: #808080;
 }
 
+table#calendar .description {
+    color: #666;
+    max-width: 24em;
+    word-wrap: break-word;
+    display: block;
+}
+
 table#schedule {
     width: 95%;
     margin-left: auto;
@@ -208,6 +215,7 @@ table#schedule td.dis {
 table#schedule td.oh {
     background-color: #b2cfff;
 }
+
 
 div.footer {
     width: 100%;
