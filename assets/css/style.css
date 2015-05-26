@@ -51,6 +51,15 @@ hr {
 }
 
 .instructors {
+    padding-top: 12px;
+}
+
+.category {
+    color: #0072c1;
+}
+
+.description {
+    padding-right: 40px;
 }
 
 .navigation {
