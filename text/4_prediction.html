@@ -4,22 +4,100 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Six+Caps' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/scripts/script.js"></script>
     <link rel="icon" href="assets/images/favicon.ico">
     
-
     <title> Making Predictions </title>
-
   </head>
+  <body>
+      <div class="toolbar">
+            <div class="toolbar-logo col-md-6 col-xs-3">
+                <a href="index.html"><img src="assets/images/logo-dark.svg"></a>
+            </div>
+            <nav class="col-md-6 col-xs-9">
+                <ul>
+                    <li class="tool" onclick="biggerFont('.text-ctt')"><label>Bigger Font</label><i class="fa fa-font"><sup><i class="fa fa-plus"></i></sup></i></li>
+                    <li class="tool" onclick="smallerFont('.text-ctt')"><label>Smaller Font</label><i class="fa fa-font"><sup><i class="fa fa-minus"></i></sup></i></li>
+                    <li class="tool tool-toc" onclick="toggleTOC();"><label>Table of Contents</label><i class="fa fa-list"></i></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="toc col-md-4 empty">
+            <ul>
+  <li><a href="#regression">Regression</a></li>
+  <li><a href="#transformations">Transformations</a></li>
+  <li><a href="#bootstrap-for-regression">Bootstrap for Regression</a></li>
+  <li><a href="#prediction">Prediction</a></li>
+  <li><a href="#causal-inference">Causal Inference</a></li>
+  <li><a href="#nearest-neighbor-regression">Nearest Neighbor Regression</a></li>
+  <li><a href="#classification">Classification</a></li>
+  <li><a href="#feature-selection">Feature Selection</a></li>
+</ul>
 
-  <body id="index" class="home">
-    <div id="content">
-      <h1 class="title">Chapter 4: Making Predictions</h1>
+        </nav>
+        <main onclick="closeTOC();" class="main chapter" role="main">
+            <section class="intro wrap-container">
+                <div class="intro-ctt wrap">
+                    <div class="clearfix">
+                        <h1 class="intro-title col-md-12 floater">Making Predictions</h1>
+                    </div>
+                    <p class="intro-subtitle col-md-12">Chapter 4</p>
+                    <span class="text-bar"></span>
+                </div>
+            </section>
+            <section class="text wrap-container">
+                <div class="text-ctx">
+
+                </div>
+                <div class="text-ctt wrap">
+
+<h1 id="regression">Regression</h1>
 
 
 
+<h1 id="transformations">Transformations</h1>
 
-    </div>
+
+
+<h1 id="bootstrap-for-regression">Bootstrap for Regression</h1>
+
+
+
+<h1 id="prediction">Prediction</h1>
+
+
+
+<h1 id="causal-inference">Causal Inference</h1>
+
+
+
+<h1 id="nearest-neighbor-regression">Nearest Neighbor Regression</h1>
+
+
+
+<h1 id="classification">Classification</h1>
+
+
+
+<h1 id="feature-selection">Feature Selection</h1>
+
+                </div>
+            </section>
+            <footer class="wrap-container" role="contentinfo">
+                <div class="footer-ctx">
+                    <div class="ctx-arrow reverse"></div>
+                </div>
+                <div class="footer-ctt wrap">
+                    <div class="logo floater dark">
+                        <img src="assets/images/logo-white.svg">
+                    </div>
+                    <h1>Inferential Thinking</h1>
+                </div>
+            </footer>
+        </main>
   </body>
 </html>

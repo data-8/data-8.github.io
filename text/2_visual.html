@@ -4,21 +4,30 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400|Six+Caps' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="assets/scripts/script.js"></script>
     <link rel="icon" href="assets/images/favicon.ico">
     
-
     <title> The Power and Peril of Pictures </title>
-
   </head>
-
-  <body id="index" class="home">
-    <div id="content">
-      <h1 class="title">Chapter 2: The Power and Peril of Pictures</h1>
-
-<ul>
-  <li><a href="#tables">Tables</a></li>
+  <body>
+      <div class="toolbar">
+            <div class="toolbar-logo col-md-6 col-xs-3">
+                <a href="index.html"><img src="assets/images/logo-dark.svg"></a>
+            </div>
+            <nav class="col-md-6 col-xs-9">
+                <ul>
+                    <li class="tool" onclick="biggerFont('.text-ctt')"><label>Bigger Font</label><i class="fa fa-font"><sup><i class="fa fa-plus"></i></sup></i></li>
+                    <li class="tool" onclick="smallerFont('.text-ctt')"><label>Smaller Font</label><i class="fa fa-font"><sup><i class="fa fa-minus"></i></sup></i></li>
+                    <li class="tool tool-toc" onclick="toggleTOC();"><label>Table of Contents</label><i class="fa fa-list"></i></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="toc col-md-4 empty">
+            <ul>
   <li><a href="#visualizing-distributions">Visualizing Distributions</a></li>
   <li><a href="#comparing-distributions">Comparing Distributions</a></li>
   <li><a href="#functions">Functions</a></li>
@@ -27,12 +36,22 @@
   <li><a href="#further-reading">Further Reading</a></li>
 </ul>
 
+        </nav>
+        <main onclick="closeTOC();" class="main chapter" role="main">
+            <section class="intro wrap-container">
+                <div class="intro-ctt wrap">
+                    <div class="clearfix">
+                        <h1 class="intro-title col-md-12 floater">The Power and Peril of Pictures</h1>
+                    </div>
+                    <p class="intro-subtitle col-md-12">Chapter 2</p>
+                    <span class="text-bar"></span>
+                </div>
+            </section>
+            <section class="text wrap-container">
+                <div class="text-ctx">
 
-<h1 id="tables">Tables</h1>
-
-
-<p>TODO John</p>
-
+                </div>
+                <div class="text-ctt wrap">
 
 <h1 id="visualizing-distributions">Visualizing Distributions</h1>
 
@@ -65,6 +84,20 @@
 
 
 <h1 id="further-reading">Further Reading</h1>
-    </div>
+
+                </div>
+            </section>
+            <footer class="wrap-container" role="contentinfo">
+                <div class="footer-ctx">
+                    <div class="ctx-arrow reverse"></div>
+                </div>
+                <div class="footer-ctt wrap">
+                    <div class="logo floater dark">
+                        <img src="assets/images/logo-white.svg">
+                    </div>
+                    <h1>Inferential Thinking</h1>
+                </div>
+            </footer>
+        </main>
   </body>
 </html>
