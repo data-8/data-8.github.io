@@ -7,6 +7,14 @@
     line-height: 200%;
 }
 
+html, body {
+    min-height: 100%;
+}
+
+html, body, section, p, h1, h2, h3, h4, h5, h6, header, footer {
+    width: 100%;
+}
+
 pre {
     text-align: left;
 }
@@ -20,12 +28,14 @@ a {
     font-weight: inherit;
 }
 
-html, body {
-    min-height: 100%;
+li {
+    list-style: none;
 }
 
-html, body, section, p, h1,h2,h3,h4,h5,h6, header, footer {
-    width: 100%;
+th, td {
+    padding: 1em;
+    text-align: left;
+    font-size: 0.85em;
 }
 
 .ctx-arrow,.intro-title,.tool {
@@ -49,10 +59,6 @@ html, body, section, p, h1,h2,h3,h4,h5,h6, header, footer {
     -o-transition: 0.5s cubic-bezier(0.68,-0.55,0.27,1.55) 0s;
 }
 
-p {
-    font-weight: 300;
-}
-
 .text-ctt p + p {
     margin-top: 1.5em;
 }
@@ -61,9 +67,6 @@ p {
     text-align: center;
 }
 
-li {
-    list-style: none;
-}
 
 .box {
     border: 1em solid #eee;
@@ -104,18 +107,26 @@ li {
 }
 
 .bookmark {
-    visibility: hidden;
+    display: none;
     font-family: 'Six Caps';
     font-size: 22px;
     padding: 5px 0 0 2px;
     letter-spacing: 2px;
-    color: #FFf;
+    color: #FFF;
     background-color: #000;
     text-align: center;
     width: 30px;
     height: 50px;
     font-weight: lighter;
-    display: inline-block;
+    position: absolute;
+}
+
+h1:hover .bookmark,h2:hover .bookmark {
+    display: block;
+}
+
+h2 .bookmark {
+    margin-top: -1.5em;
 }
 
 .bookmark::before,.bookmark::after {
@@ -407,7 +418,7 @@ h3.text-title {
     font-size: 16px;
 }
 
-.text-ctt > *,.ipython-notebook p,.ipython-notebook .output_html {
+.text-ctt > *,.ipython-notebook > * {
     float: none;
     display: inline-block;
     width: 80%;
@@ -426,56 +437,27 @@ h3.text-title {
     width: 100%;
 }
 
+.ipython-notebook .output_subarea pre, .ipython-notebook .text_cell_render pre {
+    margin: 0;
+    padding: 0 10px;
+    border: 0;
+    background-color: #fff;
+}
+
 .ipython-notebook pre {
-    background-color: #eee;
-    margin: 0 10%;
-    padding: 1em;
-    font-size: 100%;
+    margin: 0;
 }
 
 .ipython-notebook code {
-    background-color: #eee;
+    background-color: #fff;
     color: #222;
     font-size: 100%;
+    font-family: 'Courier New';
 }
 
-.ipython-notebook .output_html {
+.ipython-notebook .output_html, .ipython-notebook .output_png, .ipython-notebook .output_subarea {
     background-color: #FFF;
-}
-
-.text_cell_render {
-    margin: 1.5em 0;
-}
-
-.output_html {
-    margin: 0.5em 0;
-}
-
-th, td {
-    padding: 1em;
     text-align: left;
-    font-size: 0.85em;
-}
-
-.ipython-notebook > div:first-child {
-    font-size: 0.75em;
-    background-color: #FFF;
-    padding: 30px 45px;
-    width: auto;
-    display: inline-block;
-    position: absolute;
-    top: -5em;
-    margin-left: -19em;
-}
-
-.ipython-notebook .output_png {
-    padding: 3em 0;
-}
-
-.ipython-notebook .output_subarea pre {
-    color: #999;
-    text-align: center;
-    padding: 2em 0;
 }
 
 footer {
@@ -754,18 +736,16 @@ p a::after {
     height: 15em;
 }
 
-@media (min-width:991px) {
-    .left h3, .left h2, .left p,.left li,.left {
-        text-align: left;
-    }
+.left h3, .left h2, .left p,.left li,.left {
+    text-align: left;
+}
 
-    .right h3, .right h2, .right p,.right li,.right {
-        text-align: right;
-    }
+.right h3, .right h2, .right p,.right li,.right {
+    text-align: right;
+}
 
-    div.right {
-        float: right;
-    }
+div.right {
+    float: right;
 }
 
 @media (max-width:990px) {
