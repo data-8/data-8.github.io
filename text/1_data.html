@@ -226,11 +226,141 @@ everyone.</p>
 <p>
 <div class="ipython-notebook">
 	<div>
-		<a class="button" href="http://dsten.berkeley.edu/hub/interact?destination=examples&file=http://data8.org/text/examples/Books.ipynb">
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Books.ipynb">
 			<span class="pop">Interact<span>
 		</a>
 	</div>
 	<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="o">!</span>pip install datascience
+</pre></div>
+
+</div>
+</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>/Library/Python/2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+<span class="ansiyellow">You are using pip version 7.0.3, however version 7.1.0 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.</span>
+Collecting datascience
+/Library/Python/2.7/site-packages/pip/_vendor/requests/packages/urllib3/util/ssl_.py:90: InsecurePlatformWarning: A true SSLContext object is not available. This prevents urllib3 from configuring SSL appropriately and may cause certain SSL connections to fail. For more information, see https://urllib3.readthedocs.org/en/latest/security.html#insecureplatformwarning.
+  InsecurePlatformWarning
+  Downloading datascience-0.3.0.tar.gz
+Requirement already satisfied (use --upgrade to upgrade): numpy in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from datascience)
+Requirement already satisfied (use --upgrade to upgrade): matplotlib in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from datascience)
+Collecting pandas (from datascience)
+  Downloading pandas-0.16.2-cp27-none-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl (7.3MB)
+[K    100% |████████████████████████████████| 7.3MB 42kB/s 
+[?25hCollecting folium (from datascience)
+  Using cached folium-0.1.5.tar.gz
+Collecting IPython (from datascience)
+  Downloading ipython-4.0.0-py2-none-any.whl (730kB)
+[K    100% |████████████████████████████████| 733kB 372kB/s 
+[?25hCollecting jinja2 (from datascience)
+  Downloading Jinja2-2.8-py2.py3-none-any.whl (263kB)
+[K    100% |████████████████████████████████| 266kB 1.6MB/s 
+[?25hCollecting pytest (from datascience)
+  Downloading pytest-2.7.2-py2.py3-none-any.whl (127kB)
+[K    100% |████████████████████████████████| 131kB 2.5MB/s 
+[?25hCollecting coverage==3.7.1 (from datascience)
+  Downloading coverage-3.7.1.tar.gz (284kB)
+[K    100% |████████████████████████████████| 286kB 617kB/s 
+[?25hCollecting coveralls==0.5 (from datascience)
+  Downloading coveralls-0.5.zip
+Requirement already satisfied (use --upgrade to upgrade): python-dateutil in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from matplotlib-&gt;datascience)
+Collecting tornado (from matplotlib-&gt;datascience)
+  Downloading tornado-4.2.1.tar.gz (434kB)
+[K    100% |████████████████████████████████| 438kB 546kB/s 
+[?25hRequirement already satisfied (use --upgrade to upgrade): pyparsing&gt;=1.5.6 in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from matplotlib-&gt;datascience)
+Collecting nose (from matplotlib-&gt;datascience)
+  Downloading nose-1.3.7-py2-none-any.whl (154kB)
+[K    100% |████████████████████████████████| 155kB 1.4MB/s 
+[?25hRequirement already satisfied (use --upgrade to upgrade): pytz&gt;=2011k in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from pandas-&gt;datascience)
+Collecting traitlets (from IPython-&gt;datascience)
+  Downloading traitlets-4.0.0-py2.py3-none-any.whl (56kB)
+[K    100% |████████████████████████████████| 57kB 4.4MB/s 
+[?25hCollecting pickleshare (from IPython-&gt;datascience)
+  Using cached pickleshare-0.5.tar.gz
+Collecting simplegeneric&gt;0.8 (from IPython-&gt;datascience)
+  Using cached simplegeneric-0.8.1.zip
+Collecting decorator (from IPython-&gt;datascience)
+  Downloading decorator-4.0.2-py2.py3-none-any.whl
+Collecting gnureadline (from IPython-&gt;datascience)
+  Downloading gnureadline-6.3.3-cp27-none-macosx_10_6_intel.whl (262kB)
+[K    100% |████████████████████████████████| 262kB 1.0MB/s 
+[?25hCollecting appnope (from IPython-&gt;datascience)
+  Using cached appnope-0.1.0-py2.py3-none-any.whl
+Collecting pexpect (from IPython-&gt;datascience)
+  Using cached pexpect-3.3.tar.gz
+Collecting MarkupSafe (from jinja2-&gt;datascience)
+  Downloading MarkupSafe-0.23.tar.gz
+Collecting py&gt;=1.4.29 (from pytest-&gt;datascience)
+  Using cached py-1.4.30-py2.py3-none-any.whl
+Requirement already satisfied (use --upgrade to upgrade): PyYAML&gt;=3.10 in /Library/Python/2.7/site-packages (from coveralls==0.5-&gt;datascience)
+Collecting docopt&gt;=0.6.1 (from coveralls==0.5-&gt;datascience)
+  Downloading docopt-0.6.2.tar.gz
+Collecting requests&gt;=1.0.0 (from coveralls==0.5-&gt;datascience)
+  Downloading requests-2.7.0-py2.py3-none-any.whl (470kB)
+[K    100% |████████████████████████████████| 471kB 537kB/s 
+[?25hCollecting backports.ssl-match-hostname (from tornado-&gt;matplotlib-&gt;datascience)
+  Downloading backports.ssl_match_hostname-3.4.0.2.tar.gz
+Collecting certifi (from tornado-&gt;matplotlib-&gt;datascience)
+  Downloading certifi-2015.04.28-py2.py3-none-any.whl (373kB)
+[K    100% |████████████████████████████████| 376kB 566kB/s 
+[?25hCollecting ipython-genutils (from traitlets-&gt;IPython-&gt;datascience)
+  Using cached ipython_genutils-0.1.0-py2.py3-none-any.whl
+Collecting path.py (from pickleshare-&gt;IPython-&gt;datascience)
+  Downloading path.py-7.6.1-py2.py3-none-any.whl
+Building wheels for collected packages: datascience, folium, coverage, coveralls, tornado, pickleshare, simplegeneric, pexpect, MarkupSafe, docopt, backports.ssl-match-hostname
+  Running setup.py bdist_wheel for datascience
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/7f/26/8c/a193f6428c57c94227c550f0b9a8e4ad0e0ac77f8cfab2dd19
+  Running setup.py bdist_wheel for folium
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/9f/ce/1e/d8202bfcb8e3bd78b67aae2650b6708050c7ec1db325a7f696
+  Running setup.py bdist_wheel for coverage
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/1c/2d/55/470890618558cacad65599407445c2a1636222bd896c9023f3
+  Running setup.py bdist_wheel for coveralls
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/f5/ab/25/267e79de52ac71d17c371d4cca6b51d8c7b3a686cc5e0413ec
+  Running setup.py bdist_wheel for tornado
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/e4/0e/f8/2c7f5423e2dcad6a71c6f04e859f35cb3cf962da96f22a74c3
+  Running setup.py bdist_wheel for pickleshare
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/99/3e/8b/7d87bf47f2c2d437fcb9a913cd5c4b393b7132c508633e3eef
+  Running setup.py bdist_wheel for simplegeneric
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/51/3c/13/2b621669f3ba74b01380aefcc0af0f643bb42360e7248496ed
+  Running setup.py bdist_wheel for pexpect
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/3c/9f/d0/2802d5c4fcdc520d536e9f20a18fbade6a61197996df0df613
+  Running setup.py bdist_wheel for MarkupSafe
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/94/a7/79/f79a998b64c1281cb99fa9bbd33cfc9b8b5775f438218d17a7
+  Running setup.py bdist_wheel for docopt
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/0d/5c/a7/cb986749520c1950217b5d8405def5c18541322dbc411a80d1
+  Running setup.py bdist_wheel for backports.ssl-match-hostname
+  Stored in directory: /Users/denero/Library/Caches/pip/wheels/81/3d/36/f3c726a42caed585046d710e0e450bda1075c61c1c43443831
+Successfully built datascience folium coverage coveralls tornado pickleshare simplegeneric pexpect MarkupSafe docopt backports.ssl-match-hostname
+Installing collected packages: pandas, folium, decorator, ipython-genutils, traitlets, path.py, pickleshare, simplegeneric, gnureadline, appnope, pexpect, IPython, MarkupSafe, jinja2, py, pytest, coverage, docopt, requests, coveralls, datascience, backports.ssl-match-hostname, certifi, tornado, nose
+<span class="ansired">Exception:
+Traceback (most recent call last):
+  File "/Library/Python/2.7/site-packages/pip/basecommand.py", line 223, in main
+    status = self.run(options, args)
+  File "/Library/Python/2.7/site-packages/pip/commands/install.py", line 297, in run
+    root=options.root_path,
+  File "/Library/Python/2.7/site-packages/pip/req/req_set.py", line 622, in install
+    **kwargs
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 808, in install
+    self.move_wheel_files(self.source_dir, root=root)
+  File "/Library/Python/2.7/site-packages/pip/req/req_install.py", line 1003, in move_wheel_files
+    isolated=self.isolated,
+  File "/Library/Python/2.7/site-packages/pip/wheel.py", line 339, in move_wheel_files
+    clobber(source, lib_dir, True)
+  File "/Library/Python/2.7/site-packages/pip/wheel.py", line 310, in clobber
+    ensure_dir(destdir)
+  File "/Library/Python/2.7/site-packages/pip/utils/__init__.py", line 70, in ensure_dir
+    os.makedirs(path)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/os.py", line 157, in makedirs
+    mkdir(name, mode)
+OSError: [Errno 13] Permission denied: '/Library/Python/2.7/site-packages/pandas'
+</span>
+</pre>
+</div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>In this example, we will explore statistics for two classic novels, <em>Moby Dick</em> and <em>Little Women</em>. The text of any book can be read by a computer at great speed. Books published before 1923 are currently in the <em>public domain</em>, meaning that everyone has the right to copy or use the text in any way. <a href="http://www.gutenberg.org/">Project Gutenberg</a> is a website that publishes public domain books online. Using Python, we can load the text of these books directly from the web.</p>
 <p>The features of Python used in this example will be explained in detail later in the course. This example is meant to illustrate some of the broad themes of this text. Don't worry if the details of the program don't yet make sense. Instead, focus on interpreting the images generated below. The "Expressions" section later in this chapter will describe most of the features of the Python programming language used below.</p>
@@ -2929,12 +3059,13 @@ Studies in the 1960’s showed that coffee drinkers had higher rates of lung can
 <p>
 <div class="ipython-notebook">
 	<div>
-		<a class="button" href="http://dsten.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Expressions.ipynb&destination=examples">
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Expressions.ipynb">
 			<span class="pop">Interact<span>
 		</a>
 	</div>
 	<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<p>Programming can dramatically improve our ability to collect and analyze information about the world, which in turn can lead to discoveries through the kind of careful reasoning demonstrated in the previous section. In data science, the purpose of writing a program is to instruct a computer to carry out the steps of an analysis. Computers cannot study the world on their own. People must describe precisely what steps the computer should take in order to collect and analyze data, and those steps are expressed through programs.</p>
 <p>To learn to program, we will begin by learning some of the grammar rules of a programming language. Programs are made up of <em>expressions</em>, which describe to the computer how to combine pieces of data. For example, a multiplication expression consists of a <code>*</code> symbol between two numerical expressions. Expressions, such as <code>3 * 4</code>, are <em>evaluated</em> by the computer. The value (the result of <em>evaluation</em>) of the last expression in each cell, <code>12</code> in this case, is displayed below the cell.</p>
 
 </div>
