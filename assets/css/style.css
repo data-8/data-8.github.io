@@ -161,14 +161,6 @@ table#calendar .breadth {
     color: #404080;
 }
 
-table#calendar .hw,table#calendar .lab {
-    color: #808080;
-}
-
-table#calendar .due {
-    color: #808080;
-}
-
 table#calendar .description {
     color: #666;
     max-width: 24em;
