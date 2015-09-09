@@ -35,31 +35,11 @@ function changeFontSize(id, df) {
     $(id).setAttribute('style', prop);
 }
 
-function $(id) {
-    return document.querySelector(id);
-}
-
-function $all(id) {
-    return document.querySelectorAll(id);
-}
-
-function $addClass(id, cls) {
-    $(id).classList.add(cls);
-}
-
-function $removeClass(id, cls) {
-    $(id).classList.remove(cls);
-}
-
-function $hasClass(id, cls) {
-    return $(id).classList.contains(cls);
-}
-
 function toggleTOC() {
     toggleMenu('.toc', '.tool-toc');
-    if ($hasClass('.toc', 'empty')) {
-        generateTOC('.text-ctt');
-        $removeClass('.toc', 'empty');
+    if ($('.toc').hasClass('empty')) {
+        generateTOC('.chapter-ctt');
+        $('.toc').removeClass('empty');
     }
 }
 
@@ -68,7 +48,7 @@ function closeTOC() {
 }
 
 function toggleMenu(idMenu, idBtn) {
-    if ($hasClass(idBtn, 's')) {
+    if ($(idBtn).hasClass('s')) {
         closeMenu(idMenu, idBtn);
     } else {
         openMenu(idMenu, idBtn);
@@ -76,28 +56,60 @@ function toggleMenu(idMenu, idBtn) {
 }
 
 function openMenu(idMenu, idBtn) {
-    $addClass(idBtn, 's');
-    $addClass(idMenu, 's');
-    $addClass('body', 's');
+    $(idBtn).addClass('s');
+    $(idMenu).addClass('s');
+    $('body').addClass('s');
 }
 
 function closeMenu(idMenu, idBtn) {
-    $removeClass(idBtn, 's');
-    $removeClass(idMenu, 's');
-    $removeClass('body', 's');
+    $(idBtn).removeClass('s');
+    $(idMenu).removeClass('s');
+    $('body').removeClass('s');
 }
 
 function generateTOC(id) {
-    headings = $all(id+' *');
     toc = '';
-    for (var i=0;i<headings.length;i++) {
-        var heading = headings[i];
-        var parts = heading.tagName.split('');
+    levels = {};
+    level = 0;
+    $(id+' *').each(function() {
+        var parts = $(this).prop('tagName').split('');
         if (parts[0] == 'H') {
-            var int = parts[1];
-            toc += '<li class="t'+int+'"><a onclick="closeTOC();" href="#'+heading.getAttribute('id')+'">'+heading.innerHTML+'</a></li>';
+            var int = +parts[1];
+            if (int <= 2) {
+                levels[int+1] = 0;
+                if (int in levels) {
+                    levels[int]++;
+                } else {
+                    levels[int] = 1;
+                }
+                num = [];
+                for (var i=1;i<=int;i++) {
+                    num.push(levels[i]);
+                }
+                toc += '<li class="t'+int+'"><a onclick="closeTOC();" href="#'+$(this).attr('id')+'">'+num.join('.')+'. '+$(this).html()+'</a></li>';
+            }
         }
-    }
-    $('.toc ul').innerHTML = toc;
+    });
+    $('.toc ul').html(toc);
+    // http://stackoverflow.com/a/13601384/4855984
+    $('a[href^="#"]').click(function(e){
+        e.preventDefault();
+        scrollToHash(600, this.hash);
+    });
 }
 
+function scrollToHash(delay, hash) {
+    scrollToPosition(delay, ($(hash).offset().top - 100));
+}
+
+function scrollToPosition(delay, position) {
+    $('html,body').delay(delay).animate({scrollTop: position}, 1000);
+}
+
+$(document).ready(function() {
+    setTimeout(function() {
+        if(window.location.hash != '') {
+            scrollToHash(500, window.location.hash);
+        }
+    }, 1);
+});

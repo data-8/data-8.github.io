@@ -10,14 +10,15 @@ h1, h2 {
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 2em;
     font-weight: normal;
     color: #59a3d7;
     position: relative;
 }
 
-h1 .coursename {
+h2 .coursename {
     color: #0072c1;
+    padding-top: 0px;
 }
 
 h1 a {
@@ -29,6 +30,7 @@ h1 a:hover {
 }
 
 h2 {
+    font-size: 1.7em;
     color: #0072c1;
     clear: both;
 }
@@ -159,14 +161,6 @@ table#calendar .breadth {
     color: #404080;
 }
 
-table#calendar .hw {
-    color: #808080;
-}
-
-table#calendar .due {
-    color: #808080;
-}
-
 table#calendar .description {
     color: #666;
     max-width: 24em;
@@ -283,15 +277,15 @@ table.lined td {
 .head {
     background-color: white;
     height: 100%;
-    width: 14em;
-    max-width: 140px;
-    padding: 20px;
+    width: 20em;
+    max-width: 200px;
+    padding: 0px 20px;
     position: fixed;
     overflow: auto;
 }
 
 #content {
-    margin-left: 180px;
+    margin-left: 240px;
 }
 
 .head h1 {
