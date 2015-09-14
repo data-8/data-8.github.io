@@ -416,7 +416,7 @@ main {
     font-size:0.95em;
     text-align:left;
 }
-.chapter-ctt pre * {
+.chapter-ctt pre :not(code) {
     font-size:1em;
     white-space:nowrap;
 }
