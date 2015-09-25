@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width">
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto%20Slab:300,400,700|Source+Code+Pro:400,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico">
+    <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!--<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/styles/default.min.css">-->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="assets/scripts/script.js"></script>
+    <title> Is There a Difference? </title>
+  </head>
+  <body>
+      <div class="toolbar">
+            <div class="toolbar-logo col-md-6 col-xs-3">
+                <a href="index.html"><img src="assets/images/logo.svg"></a>
+            </div>
+            <nav class="col-md-6 col-xs-9">
+                <ul>
+                    <li class="tool" onclick="biggerFont('.text-ctt')"><label>Bigger Font</label><i class="fa fa-font"><sup><i class="fa fa-plus"></i></sup></i></li>
+                    <li class="tool" onclick="smallerFont('.text-ctt')"><label>Smaller Font</label><i class="fa fa-font"><sup><i class="fa fa-minus"></i></sup></i></li>
+                    <li class="tool tool-toc" onclick="toggleTOC();"><label>Table of Contents</label><i class="fa fa-list"></i></li>
+                </ul>
+            </nav>
+        </div>
+        <nav class="toc col-md-4 empty">
+            <ul>
+  <li><a href="#iteration">Iteration</a></li>
+  <ul>
+  <li><a href="#Repetition">Repetition<a class="anchor-link" href="#Repetition">¶</a></a></li>
+  <li><a href="#Randomized-response">Randomized response<a class="anchor-link" href="#Randomized-response">¶</a></a></li>
+  <li><a href="#Summing-up">Summing up<a class="anchor-link" href="#Summing-up">¶</a></a></li>
+</ul>
+
+  <li><a href="#statements">Statements</a></li>
+  <li><a href="#Statements">Statements<a class="anchor-link" href="#Statements">¶</a></a></li>
+  <ul>
+  <li><a href="#0.-Introduction">0. Introduction<a class="anchor-link" href="#0.-Introduction">¶</a></a></li>
+  <ul>
+  <li><a href="#How-to-read-this-document">How to read this document<a class="anchor-link" href="#How-to-read-this-document">¶</a></a></li>
+</ul>
+
+  <li><a href="#1.-Code-is-a-sequence-of-statements">1. Code is a sequence of statements<a class="anchor-link" href="#1.-Code-is-a-sequence-of-statements">¶</a></a></li>
+  <li><a href="#2.-Expressions">2. Expressions<a class="anchor-link" href="#2.-Expressions">¶</a></a></li>
+  <ul>
+  <li><a href="#A-note-on-errors">A note on errors<a class="anchor-link" href="#A-note-on-errors">¶</a></a></li>
+</ul>
+
+  <ul>
+  <li><a href="#Strings,-ints,-and-floats">Strings, ints, and floats<a class="anchor-link" href="#Strings,-ints,-and-floats">¶</a></a></li>
+  <li><a href="#Names">Names<a class="anchor-link" href="#Names">¶</a></a></li>
+  <li><a href="#Lists">Lists<a class="anchor-link" href="#Lists">¶</a></a></li>
+  <li><a href="#Calls">Calls<a class="anchor-link" href="#Calls">¶</a></a></li>
+  <li><a href="#Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></a></li>
+  <li><a href="#Dots-and-attributes">Dots and attributes<a class="anchor-link" href="#Dots-and-attributes">¶</a></a></li>
+  <ul>
+  <li><a href="#A-weird-thing-about-dot-syntax">A weird thing about dot syntax<a class="anchor-link" href="#A-weird-thing-about-dot-syntax">¶</a></a></li>
+</ul>
+
+  <li><a href="#Is-that-all-the-expressions?">Is that all the expressions?<a class="anchor-link" href="#Is-that-all-the-expressions?">¶</a></a></li>
+  <li><a href="#Exercises-to-put-it-all-together">Exercises to put it all together<a class="anchor-link" href="#Exercises-to-put-it-all-together">¶</a></a></li>
+</ul>
+
+  <li><a href="#3.-Assignments">3. Assignments<a class="anchor-link" href="#3.-Assignments">¶</a></a></li>
+  <ul>
+  <li><a href="#Name-assignments">Name assignments<a class="anchor-link" href="#Name-assignments">¶</a></a></li>
+  <li><a href="#Indexing-assignments">Indexing assignments<a class="anchor-link" href="#Indexing-assignments">¶</a></a></li>
+</ul>
+
+  <li><a href="#4.-Import-statements">4. Import statements<a class="anchor-link" href="#4.-Import-statements">¶</a></a></li>
+  <li><a href="#5.-Function-definitions">5. Function definitions<a class="anchor-link" href="#5.-Function-definitions">¶</a></a></li>
+  <ul>
+  <li><a href="#Functions-as-values">Functions as values<a class="anchor-link" href="#Functions-as-values">¶</a></a></li>
+</ul>
+
+  <li><a href="#6.-Return-statements">6. Return statements<a class="anchor-link" href="#6.-Return-statements">¶</a></a></li>
+  <li><a href="#7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></a></li>
+</ul>
+
+  <li><a href="#distributions">Distributions</a></li>
+  <ul>
+  <li><a href="#Estimating-the-number-of-enemy-aircraft">Estimating the number of enemy aircraft<a class="anchor-link" href="#Estimating-the-number-of-enemy-aircraft">¶</a></a></li>
+</ul>
+
+  <li><a href="#further-reading">Further Reading</a></li>
+</ul>
+
+        </nav>
+        <main onclick="closeTOC();" class="main chapter" role="main" style="">
+            <div class="heading-ctx">
+            </div>
+            <div class="heading-ctt floater-container">
+                <div class="wrap floater">
+                    <h3>Chapter 3</h3>
+                    <h1>Is There a Difference?</h1>
+                </div>
+            </div>
+            <div class="chapter-ctx">
+
+            </div>
+            <div class="chapter-ctt floater-container">
+                <div class="wrap floater">
+                    <h1 id="iteration">Iteration</h1>
+
+
+<p>
+<div class="ipython-notebook">
+	<div>
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Iteration.ipynb">
+			<span class="pop">Interact<span>
+		</a>
+	</div>
+	<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We've seen how data is represented as a sequence of values.  What if we want to do something once for each value in the sequence?  For instance, maybe we want to compute the sum of a sequence of numbers.  How can we do that?  The answer is to use iteration: in particular, we use a Python construct called a <code>for</code>-loop.  Check it out:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">tbl</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">10</span><span class="p">]],</span> <span class="p">[</span><span class="s">'num'</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">tbl</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>num</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>3   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>10  </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">tbl</span><span class="p">[</span><span class="s">'num'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([ 2,  3, 10])</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>OK, so that gives us a sequence of numbers (the sequence 5, 6, 11).</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">tbl</span><span class="p">[</span><span class="s">'num'</span><span class="p">]:</span>
+    <span class="n">total</span> <span class="o">=</span> <span class="n">total</span> <span class="o">+</span> <span class="n">i</span>
+<span class="n">total</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>15</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice how this works.  We start out by setting <code>total</code> to hold the number 0.  Then, we go through the sequence, one by one.  For each number in the sequence, we temporarily set <code>i</code> to hold that number, and then we execute the statement <code>total = total + i</code>.  This statement replaces the previous value of <code>total</code> with <code>total + i</code>.  In other words, it adds <code>i</code> to the current running total.  Once we've gone through the entire sequence, <code>total</code> holds the sum of all of the numbers in the sequence.</p>
+<p>In short, a <code>for</code>-loop lets you do something once for each item in a sequence.  It <em>iterates</em> through the sequence, examining each value one at a time, and does something for each.</p>
+<p>In this case, we could have accomplished the same task without a <code>for</code>-loop: there is a <code>numpy</code> function we could have used (<code>np.sum</code>) to do this for us.  That's not unusual; it's not unusual that there might be multiple ways to accomplish the same task.  But sometimes there is no existing Python function that does exactly what we want, and that's when it is good to have tools we can use to do what we want.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Repetition">Repetition<a class="anchor-link" href="#Repetition">¶</a></h2>
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A special case of iteration is where we want to do some simple task multiple times: say, 10 times.  You could copy-paste the code 10 times, but that gets a little tedious, and if you wanted to do it a thousand times (or a million times), forget it.  Also, copy-pasting code is usually a bad idea: what if you realize you want to change some piece of it?  Then you'll need to laboriously change each copy of it.  Boooring!</p>
+<p>A better solution is to use a <code>for</code>-loop for this purpose.  The trick is to choose a sequence of length 10, and then iterate over the sequence: do the task once for each item in the sequence.  It doesn't really matter what we put in the sequence; any sequence will do.</p>
+<p>However, there is a standard idiom for what to put in the sequence.  The typical solution is to create a sequence of consecutive integers, starting at 0, and iterate over it.  If we wanted to do something 1000 times, we'd create a sequence holding the values 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.  Why 9? (and not 10?)  Because that's where we need to end, if we want the list to have 10 items.  (Why not use 1, 2, .., 10?  I'm tempted to say, because computer scientists are just a tad odd.  Actually, there are good reasons for this idiom, but don't worry about it right now.)</p>
+<p>How do we create a sequence 0, 1, .., 9?  It turns out we've already seen how to do that: use <code>np.arange()</code>.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So, now I'm ready to show you how to do something 10 times:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">'Go Bears!'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+Go Bears!
+</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Strings are sequences, too:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="s">'CAL'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s">'Give me a '</span><span class="o">+</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Give me a C
+Give me a A
+Give me a L
+</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this class, you're going to use this a lot for simulation.  For instance, you might code up a way to simulate one round of some gambling game; then you can use a <code>for</code>-loop to repeat the simulation thousands of times and see how often we win.  The great thing about computers is that they're incredibly good at doing a small task repeatedly many times, so this is a perfect match for what they're good at.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Randomized-response">Randomized response<a class="anchor-link" href="#Randomized-response">¶</a></h2>
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, we'll look at a technique that was designed several decades ago to help conduct surveys of sensitive subjects.  Researchers wanted to ask participants a few questions: Have you ever had an affair?  Do you secretly think you are gay?  Have you ever shoplifted?  Have you ever sung a Justin Bieber song in the shower?  They figured that some people might not respond honestly, because of the social stigma associated with answering "yes".  So, they came up with a clever way to estimate the fraction of the population who are in the "yes" camp, without violating anyone's privacy.</p>
+<p>Here's the idea.  We'll instruct the respondent to roll a fair 6-sided die, secretly, where no one else can see it.  If the die comes up 1, 2, 3, or 4, then respondent is supposed to answer honestly.  If it comes up 5 or 6, the respondent is supposed to answer the <em>opposite</em> of what their true answer would be.  But, they shouldn't reveal what came up on their die.</p>
+<p>Notice how clever this is.  Even if the person says "yes", that doesn't necessarily mean their true answer is "yes" -- they might very well have just rolled a 5 or 6.  So the responses to the survey don't reveal any one individual's true answer.  Yet, in aggregate, the responses give enough information that we can get a pretty good estimate of the fraction of people whose true answer is "yes".</p>
+<p>Let's try a simulation, so we can see how this works.  We'll write some code to perform this operation.  First, a function to simulate rolling one die:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">dicetbl</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">]],</span> <span class="p">[</span><span class="s">'roll'</span><span class="p">])</span>
+<span class="n">dicetbl</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>roll</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>2   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>3   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>4   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>5   </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>6   </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">rollonedie</span><span class="p">():</span>
+    <span class="n">tbl</span> <span class="o">=</span> <span class="n">dicetbl</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">k</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c"># Make a table with one row, chosen at random from dicetbl</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="n">tbl</span><span class="p">[</span><span class="s">'roll'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">roll</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Now we'll use this to write a function to simulate how someone is supposed to respond to the survey.  The argument to the function is their true answer; the function returns what they're supposed to tell the interview.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># 1 stands for 'yes', 0 stands for 'no'</span>
+<span class="k">def</span> <span class="nf">respond</span><span class="p">(</span><span class="n">trueanswer</span><span class="p">):</span>
+    <span class="n">roll</span> <span class="o">=</span> <span class="n">rollonedie</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">roll</span> <span class="o">&gt;=</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="o">-</span><span class="n">trueanswer</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">trueanswer</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can try it.  Assume our true answer is 'no'; let's see what happens this time:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">respond</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Of course, if you were to run it again, you might get a different result next time.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">respond</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">respond</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>1</pre>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">respond</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>OK, so this lets us simulate the behavior of one participant, using randomized response.  Let's simulate what happens if we do this with 10,000 respondents.  We're going to imagine asking 10,000 people whether they've ever sung a Justin Bieber song in teh shower.  We'll imagine there are <code>10000 * p</code> people whose true answer is "yes" and <code>10000 * (1-p)</code> whose true answer is "no", so we'll use one <code>for</code>-loop to simulate the behavior each of the first <code>10000 * p</code> people, and a second <code>for</code>-loop to simulate the behavior of the remaining <code>10000 * (1-p)</code>.  We'll collect all the responses in a table, appending each response to the table as we receive it.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">responses</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[]],</span> <span class="p">[</span><span class="s">'response'</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">p</span><span class="o">*</span><span class="mi">10000</span><span class="p">)):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">respond</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">r</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">p</span><span class="p">)</span><span class="o">*</span><span class="mi">10000</span><span class="p">)):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">respond</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">responses</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">r</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">responses</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>response</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1       </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (9990 rows omitted)</p>
+
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We get a giant table with 10,000 rows, one per simulated participant.  Let's build a histogram and look at how many "yes"s we got and how many "no"s.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">responses</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+fT3ffvstxcXFdOvWjaioKObPn8+qVauw2+3YbDays7MJCgoyrnQMDg5m5syZLF++HKvVSkhICEuX
+LiUuLo5Ro0YBEBMTw5gxY1i0aBFr167F6/WSlpbG2LFjsdlsl2/2IiJiKg1e0r9r1y5+9atf/bXY
+YjHOhU2fPp1169YB8O///u+8+OKLeDweEhISyM7OJjY21hjj559/5tFHH2Xr1q3U1NQwcuRIVq1a
+Rc+ePY0aj8dDRkYGO3bsACAlJYWsrCyuvvrq/7c3XdIvZqdL+qU9uRSX9Dfpc2ptjUJNzE6hJu1J
+q39OTUREpC1RqImIiGko1ERExDQUaiIiYhoKNRERMQ2FmoiImIZCTURETEOhJiIipqFQExER01Co
+iYiIaSjURETENBRqIiJiGgo1ERExDYWaiIiYhkJNRERMQ6EmIiKmoVATERHTUKiJiIhpKNRERMQ0
+FGoiImIaCjURETENhZqIiJiGQk1EREyjzYXac889x4ABA+jevTujRo1iz549rd2SiIhcIdpUqOXn
+57N48WIeeughdu3aRWJiInfffTdHjx5t7dZEROQK0KZCbd26dcyYMYN77rkHu91OZmYmERER5Obm
+tnZrIiJyBWgzofbzzz+zf/9+Ro8e7bM9OTmZvXv3tlJXIiJyJWkzoVZeXk5dXR3h4eE+28PCwnC7
+3a3UlYiIXEk6tHYDF8PjqWjtFkRahP5fF2mcNvNOLTQ0FD8/v3PelZWVlREREdFKXYmIyJWkzYRa
+x44diY+P57333vPZ/t5775GUlNRKXYmIyJWkTR1+XLBgAQ6HgxtuuIGkpCRyc3Nxu93Mnj27tVsT
+EZErQJsKtQkTJnDq1Cmys7M5ceIE/fr149VXXyUqKqq1WxMRkSuAxePxeFu7CRERkUuhzZxT+3tN
+vVXWZ599xu23306PHj3o168fmZmZLdRp62vKWu3atYvU1FRiY2Pp2bMnw4cPZ/PmzS3Ybetq7i3Y
+vvzyS6KiotrVEYPmrFVOTg6DBw8mIiKC2NhYVqxY0QKdtg1NXa933nmHMWPGcM0112Cz2Zg+fTpf
+fvllC3XbOnbv3s20adPo168fXbt2ZcuWLQ0+pzmv7W0u1Jp6q6wff/yRCRMm0L17d9577z2cTie/
+/e1vefbZZ1u485bX1LUqKioiLi6Ol19+mT179nDvvfeyaNEitm7d2sKdt7zm3oLt559/Zs6cOQwf
+PhyLxdJC3bau5qzVkiVLyM3N5fHHH8flcvHaa68xfPjwFuy69TR1vb766itmzJjBjTfeyK5du3jj
+jTeora2NxQD+AAALqklEQVTl7rvvbuHOW9ZPP/1EXFwcTqeTzp07N/j71NzX9jZ3+PHmm2+mf//+
+rFmzxtg2aNAgxo8fz7Jly86pf/7551mxYgUlJSV06tQJgOzsbHJzc/nLX/7SYn23hqau1fnMnj2b
+uro6Xn755cvVZpvQ3LVavHgxp0+fZtiwYWRkZLSL+5A2da1KSkoYNmwYH3/8MXa7vSVbbROaul5v
+vvkmc+bM4eTJk8YL+4cffsj48eP56quv6Nq1a4v13lqioqLIysoiNTX1/61p7mt7m3qn1pxbZblc
+LoYOHWpM+m/13333Hd98881l7bc1Xarbiv3444+m/yVq7lrt3LmTd955h8zMTLzeNvW332XTnLXa
+vn07vXv35p133mHgwIEMGDCA+fPnc/LkyZZouVU1Z72SkpIIDAzkpZdeoq6ujtOnT7NlyxYGDRpk
++t/Fpmjua3ubCrXm3CrL7XafU2+1Wo19ZnUpbiu2Y8cOPvzwQ2bNmnUZOmw7mrNW3333HYsWLWLT
+pk106dKlJdpsE5qzVkeOHOHbb7/ljTfe4He/+x0bNmygpKSEadOmmf6PgeasV/fu3Xnttdd44okn
+iIiIoFevXhw8eJDf//73LdHyFaO5r+1tKtSao72c57jUCgsLmTdvHpmZmVx//fWt3U6b43A4mDNn
+DjfccENrt9Lm1dfXU1tby4YNGxg6dChDhw5lw4YN/O///i9//vOfW7u9NufIkSPMmDGDGTNm8N57
+77Ft2zaCgoKYNWuW6f8IaIrmvra3qVBrzq2ywsPDz1v/t31mdTG3FduzZw9TpkxhyZIl7eKD7c1Z
+q127dvHUU08RFhZGWFgY//qv/0pVVRVhYWGmPv/YnLWKiIigQ4cOXHvttca2a6+9Fj8/P7799tvL
+2m9ra856vfDCC0RGRrJixQr69+/PsGHD2LhxI7t378blcrVE21eE5r62t6lQa86tshITE9mzZw+1
+tbU+9T179iQ6Ovqy9tuamntbsd27dzNlyhQeeeQR7r///svdZpvQnLXas2cPH330kfFYsmQJnTt3
+5qOPPuJXv/pVS7TdKpqzVkOHDuXs2bMcOXLE2HbkyBHq6upM/TsIzVsvr9fLVVf5vvT+7d/r6+sv
+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
+"/>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">responses</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'response'</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">num_rows</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>6345</pre>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">responses</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'response'</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">num_rows</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>3655</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>So we polled 10,000 people, and got back 3644 yes responses.</p>
+<p><strong>Exercise for you:</strong> Based on these results, approximately what fraction of the population has truly sung a Justin Bieber song in the shower?</p>
+<p>Take a moment with your partner and work out the answer.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Summing-up">Summing up<a class="anchor-link" href="#Summing-up">¶</a></h2>
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This method is called "randomized response".  It is one way to poll people about sensitive subjects, while still protecting their privacy.  You can see how it is a nice example of randomness at work.</p>
+<p>It turns out that randomized response has beautiful generalizations.  For instance, your Chrome web browser uses it to anonymously report feedback to Google, in a way that won't violate your privacy.  That's all we'll say about it for this semester, but if you take an upper-division course, maybe you'll get to see some generalizations of this beautiful technique.</p>
+
+</div>
+</div>
+</div></p>
+
+
+<h1 id="statements">Statements</h1>
+
+
+<p>
+<div class="ipython-notebook">
+	<div>
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Statements.ipynb">
+			<span class="pop">Interact<span>
+		</a>
+	</div>
+	<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Statements">Statements<a class="anchor-link" href="#Statements">¶</a></h1><h2 id="0.-Introduction">0. Introduction<a class="anchor-link" href="#0.-Introduction">¶</a></h2><p>In this note, we'll go over the structure of Python code in a bit more detail than we have before.  When you've absorbed this material, you should be able to read Python code and decompose it into simple, understandable parts.  This note should be particularly useful if you've seen a lot of Python code, but you have a hard time interpreting complicated-looking code like <code>table['foo'] = np.array([1,2,3]) + table['bar']</code>.</p>
+<p>Decomposing Python into small parts is kind of like diagramming an English sentence.  While our brains are perfectly capable of generating and understanding English without explicitly identifying things like subjects and predicates, Python interprets code very literally according to its rules (its <em>syntax</em>).  So if you want to understand Python code, it's more important to have a precise model of Python's rules in your head.  On the flip side, Python's rules are much simpler than those of English (see, for example, <a href="https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo">this amusingly complicated English sentence</a>).  They just seem complicated because we're less familiar with them.  That makes it possible to learn Python much faster than you learned English.</p>
+<p>Note: Everything in this note is also available, with even more pedantic precision, at the <a href="https://docs.python.org/3/reference/index.html">official Python language reference</a>.  This note is focused on the material in chapters 6, 7, and 8 of the reference.  We will omit some details and fudge some truths in the interest of pedagogy.  Once you feel like an expert in this stuff, feel free to brave the official documentation.</p>
+<h3 id="How-to-read-this-document">How to read this document<a class="anchor-link" href="#How-to-read-this-document">¶</a></h3><p>This note contains a bunch of code cells, in addition to text.  The code cells typically illustrate points from the text.  Please run the code cells as you go through the note, and pay attention to what their output is.  Recall that the thing that's printed when you run a cell is the value of the last line.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="1.-Code-is-a-sequence-of-statements">1. Code is a sequence of statements<a class="anchor-link" href="#1.-Code-is-a-sequence-of-statements">¶</a></h2><p>Below is a cell containing various Python code that might look familiar by now.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mi">3</span>                                               <span class="c"># Line 1.0</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>                                           <span class="c"># Line 1.1</span>
+<span class="mi">4</span><span class="o">+</span><span class="mi">3</span>                                             <span class="c"># Line 1.2</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="o">+</span><span class="mi">3</span>                                         <span class="c"># Line 1.3</span>
+<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">z</span>                                         <span class="c"># Line 1.4</span>
+<span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span>                                     <span class="c"># Line 1.5</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                                         <span class="c"># Line 1.6</span>
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                                     <span class="c"># Line 1.7</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                          <span class="c"># Line 1.8</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>                                            <span class="c"># Line 1.9</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>                                        <span class="c"># Line 1.10</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>                                     <span class="c"># Line 1.11</span>
+<span class="n">t</span><span class="p">[</span><span class="s">'Things'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">])</span>   <span class="c"># Line 1.12</span>
+<span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>                                <span class="c"># Line 1.13</span>
+<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>                            <span class="c"># Line 1.14</span>
+<span class="n">u</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s">'Things'</span><span class="p">,</span> <span class="s">'Nonsense'</span><span class="p">)</span>                 <span class="c"># Line 1.15</span>
+<span class="n">u</span>                                               <span class="c"># Line 1.16</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(The <code># Line X</code> comments are just there for labeling; don't consider them part of the lines.  Similarly, other instances of <code># some text here</code> that you see in this note are just for explanation.)  Each line in the cell is a <em>statement</em>.  A statement is a (somewhat) self-contained piece of code.  Python executes statements in the order in which they appear.  There are many kinds of statements, and to execute a statement, Python first has to figure out what kind of statement it is.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="2.-Expressions">2. Expressions<a class="anchor-link" href="#2.-Expressions">¶</a></h2><p>The most basic kind of statement is the <em>expression</em>.</p>
+<p>Line 0 above is just an expression: <code>3</code>.  Like many (but not all) expressions, it has a value, the integer 3.  Like some (but not all) expressions, computing its value causes nothing to "happen" to the world.  (We say it has no <em>side effects</em>.)  When Python executes line 0, it computes that value.  Since nothing is done with it, it just gets discarded.  The same is true of lines 2, 4, 5, 6, 8, 9, 13, and 16 -- those are expression statements that cause values to be computed, but the computation has no side effects, and the value of the full expression is eventually discarded.  Line 14 is an expression that does have side effects -- it causes the <code>'Things'</code> column in the table named <code>t</code> to be renamed to <code>'Nonsense'</code>.  The other lines are statements but not expressions, but we will see that, like many statements, they <em>contain</em> expressions.</p>
+<p>Expressions are themselves usually made up of several smaller expressions joined together by some rules; we call these <em>compound expressions</em>, and we sometimes call the component expressions <em>subexpressions</em>.  Line 2, for example, is a compound expression made up of the subexpressions <code>4</code> and <code>3</code> joined by <code>+</code>.  Python knows what a <code>+</code> between two expressions means, and it puts them together so that the value of <code>4+3</code> is the value of <code>4</code> plus the value of <code>3</code>, or 7.</p>
+<p>Line 4 is another compound expression.  We can think of it as the subexpressions <code>(2+3)</code> and <code>z</code>, again joined by <code>+</code>.  But <code>(2+3)</code> is itself a compound expression, made up of <code>2</code> and <code>3</code> joined by <code>+</code>.  Python first computes the value of <code>(2+3)</code>, which is 5, and then computes the value of <code>z</code>, which is 3 (<code>z</code> having been assigned previously), and then adds 5 and 3 to get 8.  <code>(2+3)*(4*((5*6)+7))</code> is also a valid expression.  It contains 10 subexpressions (not including itself):</p>
+<ul>
+<li><code>2</code></li>
+<li><code>3</code></li>
+<li><code>(2+3)</code></li>
+<li><code>4</code></li>
+<li><code>5</code></li>
+<li><code>6</code></li>
+<li><code>(5*6)</code></li>
+<li><code>7</code></li>
+<li><code>((5*6)+7)</code></li>
+<li><code>(4*((5*6)+7))</code></li>
+</ul>
+<p>Compound expressions can be arbitrarily complicated compositions of expressions.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Question.</strong>  How many subexpressions are contained in the expression <code>((1+2)+(3+4))+((5+6)+(7+8))</code>?</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's <em>critical</em> to recognize that subexpressions are valid expressions that could be written by themselves or made part of other compound expressions.  If you see a complicated expression like the one above (or even more exotic ones later), and you don't understand what it does, you can always break it down into smaller bits until you get to very basic expressions.  This note will tell you the rules about all the basic expressions, but you'll need to develop the skill of breaking down compound expressions into subexpressions.</p>
+<p><strong>Question.</strong> What's the value of each subexpression you found above?  You can just type them into the empty code cell below if you like.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="A-note-on-errors">A note on errors<a class="anchor-link" href="#A-note-on-errors">¶</a></h4><p>Line 5 (<code>"foo"+"bar"</code>) is a compound expression adding two strings, with <code>"foo"</code> and <code>"bar"</code> as subexpressions.  This is okay, since the <code>+</code> operator knows how to handle two strings.  It produces the string "foobar" as its value.</p>
+<p>When the following cell is executed, however, there is an error.  (Run the cell to confirm that.)</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="s">"foo"</span><span class="o">+</span><span class="mi">5</span> <span class="c"># Error!</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When you see an error, don't just give up.  Often (though unfortunately not always) the error message will tell you what's wrong.  The error message first tells us that the problem happened on line 1 of the cell (in this case, the only line) and the text of the error is "TypeError: Can't convert 'int' object to str implicitly".  Python evaluates <code>"foo"</code> and <code>5</code> just fine, but when the <code>+</code> operator tries to apply itself "foo" and 5, it becomes unhappy.  The error refers to the fact that the <code>+</code> operator tries to convert its arguments to something it can add.  For example, adding an integer and a float, like <code>3+4.5</code>, works because <code>+</code> converts the integer <code>3</code> to a float.  But <code>+</code> can't convert a number to text.</p>
+<p>The important thing to realize about that cell, for our purposes, is exactly where the error happens.  In the next cell, for example, some work is done before an error happens:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span> <span class="c"># Error!</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Python actually evaluates the subexpression <code>("foo"+"bar")</code> successfully, producing the string "foobar", before again failing to add "foobar" and 5.  The error occurs only when trying to add a string and a number, and not before.</p>
+<p>Now, let's go over the kinds of expressions that Python has.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Strings,-ints,-and-floats">Strings, ints, and floats<a class="anchor-link" href="#Strings,-ints,-and-floats">¶</a></h3><p>The most basic kinds of expressions, which we've seen repeatedly above, are string, int, and float expressions.  These just look like this:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="s">"foo"</span> <span class="c"># a string expression, whose value is the string "foo"</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="s">'foo'</span> <span class="c"># a string expression, essentially identical to the one above</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mi">5</span>     <span class="c"># an int expression, whose value is the integer number 5</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mf">5.1</span>   <span class="c"># a float expression, whose value is the decimal number 5.1</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a more exotic kind of string expression:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="sd">"""blah</span>
+
+<span class="sd">...</span>
+<span class="sd"># looks like a comment but isn't</span>
+<span class="sd">last line"""</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The result is just a string like <code>"foo"</code> above, with a few differences.  Triple double-quotation marks denote the beginning and end of this string, and it can take up multiple lines, unlike an ordinary string expression.</p>
+<p>Frankly, this is an arcane detail of Python, but we bring it up because triple-quoted strings are often used for writing long-form comments in code, instead of <code>#</code> comments.  This works even though the string is just an expression, not a special device for long comments.  That's because an expression doesn't <em>do</em> anything by itself, except that the last expression in a Jupyter notebook cell gets printed.  So you can sprinkle string expressions (or other expressions that have no side-effects) throughout your code (on their own lines) and no harm will come of it.</p>
+<p>The following (oddly and excessively) documented code shows this:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="sd">"""The code in this cell produces</span>
+<span class="sd">pi rounded to 5 decimal digits."""</span>
+<span class="s">"First, let's give a name to pi."</span>
+<span class="n">my_name_for_pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+<span class="c"># Now, we round it to 5 decimal</span>
+<span class="c"># digits.</span>
+<span class="n">pi_rounded</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">my_name_for_pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="s">"Now make that the last expression in this cell."</span>
+<span class="n">pi_rounded</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Names">Names<a class="anchor-link" href="#Names">¶</a></h3><p>Names, also called <em>variables</em>, are just expressions like <code>x</code> or <code>my_name_for_pi</code> that refer to some actual values.  When Python sees a name expression, it basically just substitutes the current value of that name for the name.  We'll later talk about what kinds of statements assign names to values.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lists">Lists<a class="anchor-link" href="#Lists">¶</a></h3><p>Line 6 above, <code>[1,2,3]</code>, is another kind of compound expression, the <em>list literal</em>.  Python knows that when square brackets (<code>[]</code>) appear by themselves with a comma-separated list of expressions inside them, we are asking for a list consisting of those expressions' values.</p>
+<p>Again, each expression in the list can be a compound expression.  So it's okay to write something like:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="p">[</span><span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Question.</strong> Describe the value of the above list expression in English.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Calls">Calls<a class="anchor-link" href="#Calls">¶</a></h3><p>Line 8, <code>sum(x)</code>, is also a compound expression, a <em>function call</em>.  Python evaluates the subexpression <code>sum</code>, producing a <em>function</em> that adds members of lists, and the subexpression <code>x</code>, which was previously set to a list of integers.  Then the parentheses <code>()</code> direct Python to <em>call</em> the function on the left of the parenthesis (the one named <code>sum</code>) on the value of <code>x</code>, producing the value 6.  Note that it's possible to write things like <code>5(3)</code> or <code>nonexistent_function(0)</code>.  Python will just complain that <code>5</code> is not a function (specifically, that it is not "callable") or that <code>nonexistent_function</code> hasn't been defined, respectively.</p>
+<p>The following line is similar to line 8, but the subexpression inside the parentheses, <code>x + [4]</code>, is itself a compound expression:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Recall that adding two lists with <code>+</code> makes a new list consisting of the two lists smashed together.  So <code>x + [4]</code> above has value equal to <code>[1,2,4,4]</code>.  <code>x</code> is equal to <code>[1,2,4]</code>, not <code>[1,2,3]</code> as it was defined on line 7, because on line 10 we set its last element to <code>4</code>.)</p>
+<p>We haven't seen how to define new functions yet, but here is one example to see how the expression before the <code>(</code> is just an expression (whose value must be a function):</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_name_for_sum</span> <span class="o">=</span> <span class="nb">sum</span>
+<span class="n">my_name_for_sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></h3><p>Line 9, <code>x[2]</code>, is yet another compound expression.  Python evaluates the subexpression <code>x</code>, producing a list, and the subexpression <code>2</code>.  The square brackets <code>[]</code>, appearing immediately after an expression and with another expression inside them, tell Python to <em>index</em> into the value of the first expression using the value of the second expression.  For this list as it's defined on line 9, this produces the value 3.</p>
+<p>Notice that the code string <code>[2]</code> can have two different meanings, depending on the code immediately around it.  If there is an expression to the left, for example <code>x[2]</code>, then Python will take it to mean an indexing expression.  If not, Python will think you mean a list with a single element, 2.</p>
+<p>Like parentheses, the things on either side of the square brackets can be compound expressions:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">13</span><span class="p">])[</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Question.</strong>  In the last cell, there are 7 subexpressions, not counting the whole expression <code>(x + [13])[2+1]</code>.  Can you identify all of them?</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Finally, note that different kinds of values support different kinds of indexing.  A Table, for example, supports indexing by strings, producing a column:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="p">[</span><span class="s">'Things'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Question.</strong> To put together list indexing and function calls, try to figure out what the following code is doing.  (Note that an expression like <code>sum</code> has a value, like any other name expression, and that value is a function.  We can put function values into lists, just like other values.)</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">some_functions_on_lists</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">len</span><span class="p">]</span>
+<span class="p">(</span><span class="n">some_functions_on_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">])(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Dots-and-attributes">Dots and attributes<a class="anchor-link" href="#Dots-and-attributes">¶</a></h3><p>Objects (just another name for a value, like 1, "four score", or a Table) often have things called properties, attributes, fields, or (in the case when the things are functions) methods.  Let's call them attributes.  Though in this class we won't see how to create new kinds of objects, we will use attributes all the time.</p>
+<p>We access attributes using a <code>.</code>.  For example:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">rows</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Generically, the thing on the left of the <code>.</code> must be an expression whose value is an object with the attribute we want.  As with calling and indexing, it can be an arbitrarily complicated compound expression.  The thing on the right of the dot is the name of the attribute.  Unlike the arguments of a function or the index in an indexing expression, it is <em>not</em> an expression.  It must be the name of an attribute that the object on the left has.</p>
+<p>As we said, sometimes an attribute is a function, in which case we sometimes call it a <em>method</em> instead.  The syntax is the same as other attribute accesses:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The only difference between a method and a normal function is that the object itself (<code>t</code> in this case) is automatically passed as the first argument to the method.  So the <code>sort</code> function technically has two arguments -- the first is the table that <code>sort</code> is being called on, and the second is the column name.  This is how <code>sort</code> knows which table to sort!  Normally this is a really technical detail that you don't need to worry about, but it can come up when you accidentally pass the wrong number of arguments to a method:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'This'</span><span class="p">,</span> <span class="s">'is'</span><span class="p">,</span> <span class="s">'too'</span><span class="p">,</span> <span class="s">'many'</span><span class="p">,</span> <span class="s">'arguments'</span><span class="p">)</span> <span class="c"># Error!</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The error complains that we gave 6 arguments to <code>sort</code>, but it looks like we only passed 5.  The extra first argument is the table <code>t</code>.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="A-weird-thing-about-dot-syntax">A weird thing about dot syntax<a class="anchor-link" href="#A-weird-thing-about-dot-syntax">¶</a></h4><p>You might notice at some point that dots are used in two ways in Python: accessing attributes, and in expressions for floating-point numbers.  For example, <code>x.y</code> is accessing the attribute named <code>y</code> in the value named <code>x</code>, while <code>1.2</code> is just an expression for the number 1.2.  This is one reason why you can't have numbers at the start of names.  It also means that the expression on the left of a <code>.</code> can't just be number.  For example, we can't access the attribute <code>real</code> of an integer this way (for this example, you don't need to know what <code>real</code> is doing, other than that it should just return the same value as the integer):</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mf">1.</span><span class="n">real</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>That's because Python can't tell whether we're trying to write an (invalid) decimal number <code>1.real</code> or access the <code>real</code> attribute of the value <code>1</code>.  Surrounding the <code>1</code> in parentheses makes it clear to Python:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Is-that-all-the-expressions?">Is that all the expressions?<a class="anchor-link" href="#Is-that-all-the-expressions?">¶</a></h3><p>No.  We might see more as the class goes on.  But these are most of the important ones, and you've seen most of the difficult ideas.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Exercises-to-put-it-all-together">Exercises to put it all together<a class="anchor-link" href="#Exercises-to-put-it-all-together">¶</a></h3><p><strong>Question.</strong>  Many people, when they first encounter tables and try to use them to manipulate data, assume that Python allows more syntactic flexibility than it really does.  Below are some examples of things we might <em>hope</em> would work, but don't.  For each one, describe what it actually does, what its author was probably trying to do, what went wrong, and how to fix it.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># No error here, just setup for the next cells.  Run this cell to see the table we're working with.</span>
+<span class="n">my_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">],</span> <span class="p">)</span>
+<span class="n">my_table</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x + y'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x'</span> <span class="o">+</span> <span class="s">'y'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s">'y'</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'x'</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">where</span><span class="p">([</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
+<span class="n">row_with_smallest_y</span> <span class="o">=</span> <span class="n">my_table</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3.-Assignments">3. Assignments<a class="anchor-link" href="#3.-Assignments">¶</a></h2>
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If we had only expressions, it would be difficult to put together many steps in our code.  For example, which piece of code is more legible?</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">Table</span><span class="p">([[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Connie'</span><span class="p">],</span> <span class="p">[</span><span class="mf">119.99</span><span class="p">,</span> <span class="mf">29.99</span><span class="p">,</span> <span class="mf">10.00</span><span class="p">,</span> <span class="mf">350.00</span><span class="p">,</span> <span class="mf">5.29</span><span class="p">]],</span> <span class="p">[</span><span class="s">'Customer'</span><span class="p">,</span> <span class="s">'Bill'</span><span class="p">])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Customer'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Bill sum'</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="k">True</span><span class="p">)[</span><span class="s">'Customer'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">transactions</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>                                                                                  <span class="c"># Line 3.0</span>
+<span class="n">transactions</span><span class="p">[</span><span class="s">'Customer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Connie'</span><span class="p">]</span>                                 <span class="c"># Line 3.1</span>
+<span class="n">transactions</span><span class="p">[</span><span class="s">'Bill'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">119.99</span><span class="p">,</span> <span class="mf">29.99</span><span class="p">,</span> <span class="mf">10.00</span><span class="p">,</span> <span class="mf">350.00</span><span class="p">,</span> <span class="mf">5.29</span><span class="p">]</span>                                             <span class="c"># Line 3.2</span>
+<span class="n">total_bill_per_customer</span> <span class="o">=</span> <span class="n">transactions</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Customer'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>                                        <span class="c"># Line 3.3</span>
+<span class="n">customers_sorted_by_total_bill</span> <span class="o">=</span> <span class="n">total_bill_per_customer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Bill sum'</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="k">True</span><span class="p">)[</span><span class="s">'Customer'</span><span class="p">]</span>  <span class="c"># Line 3.4</span>
+<span class="n">top_customer</span> <span class="o">=</span> <span class="n">customers_sorted_by_total_bill</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                                        <span class="c"># Line 3.5</span>
+<span class="n">top_customer</span>                                                                                            <span class="c"># Line 3.6</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Many programs do hundreds (or millions) of different things, and it would be cumbersome to do this only using expressions.  In this example, we are doing only one thing, using several steps.  The first cell is concise, but it's very hard to read.  In the second cell, we use <em>assignment statements</em> to break down the steps into things that are (hopefully) understandable.</p>
+<p>An assignment statement is executed like other statements, but it always causes an effect on the world (recall that we called these <em>side effects</em>).  That is subsequent statements will see the changes made by the assignment.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Name-assignments">Name assignments<a class="anchor-link" href="#Name-assignments">¶</a></h3><p>An assignment statement generally has two expressions separated by an equals sign.  The expression on the right can be anything, but the expression on the left must be an "assignable thing".  The simplest case is a name that has not been assigned to anything yet, like <code>total_bill_per_customer</code> on line 3 above.  Before line 3 is executed, it would be an error to refer to <code>total_bill_per_customer</code>, but after line 3, that name can be used to refer to the table created by <code>transactions.group('Customer', np.sum)</code>.</p>
+<p>Assignment statements can also reassign existing names to something else:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="n">number</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As a matter of code style, it is best to avoid this where possible, because it can make your code more confusing.  (If everything is assigned only once, it's trivial to see what its value is when you read code.  Otherwise you might need to hunt down all the assignments.)  But occasionally it is useful, and sometimes it is necessary.  We'll see examples of the latter when we cover iteration.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Indexing-assignments">Indexing assignments<a class="anchor-link" href="#Indexing-assignments">¶</a></h3><p>Lines 1 and 2 above are assignments to parts of an <em>indexable</em> thing.  In this case, they add new columns to the <code>transactions</code> Table associated with the strings "Customer" and "Bill", respectively.  Generically, an indexing assignment looks like:</p>
+
+<pre><code>&lt;expression with indexable value&gt;[&lt;expression&gt;] = &lt;expression&gt;
+
+</code></pre>
+<p>The same pattern happens when we assign elements of a list or array:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">]</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"bar"</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Different indexable things can have different behavior when you set something in them.  For example, Tables use string indexing instead of number indexing, and they are okay with adding new columns using indexing assignments (as we saw in lines 1 and 2) or with replacing existing columns with something else.  If we want to change the customer names (say because we made a mistake the first time), we could do that by changing the whole "Customer" column:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">transactions</span><span class="p">[</span><span class="s">'Customer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Dora'</span><span class="p">]</span> <span class="c"># </span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Lists, however, don't let us add new elements.  We can only assign new things to the slots a list had when it was created:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">"baz"</span>    <span class="c"># Okay.</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"garply"</span> <span class="c"># Error.</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Note that it is possible to make an existing list longer using extend(), or to make a new, longer copy of the list with <code>+</code>.  You just can't do it with index assignment.</p>
+<p>Why do lists have this restriction?  Lists are supposed to contain contiguous ranges of things; they can't have "holes" that aren't indexable.  If you could extend a list by assigning to it at whatever indices you wanted, you could assign elements, say, 0, 1, and 3, leaving 2 unassigned.  Then what should <code>len</code> return for that list -- 3 or 4?  And what should happen when you print it?  It's not clear.  To make sure you don't have to worry about this when you use lists, Python doesn't let you do it.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="4.-Import-statements">4. Import statements<a class="anchor-link" href="#4.-Import-statements">¶</a></h2><p>A simple, standalone kind of statement is the <em>import statement</em>, as in <code>import numpy as np</code>.  It has the side effect of making the <code>numpy</code> module available, giving it the name <code>np</code>.  Notice that the import statement has its own special rules, and it doesn't include other expressions as subexpressions anywhere.</p>
+<p>Modules are actually values, just like strings or functions.  Saying <code>import numpy</code> just loads the module named numpy from the computer's library of modules and assigns it the name <code>numpy</code>.  <code>import numpy as np</code> assigns it the name <code>np</code> instead.  We could imagine that <code>import numpy as np</code> does something like this:</p>
+
+<pre><code>np = load_module('numpy') # BEWARE: NOT REAL PYTHON CODE.
+
+</code></pre>
+<p>When you say something like <code>np.array([1,2,3])</code>, you're accessing the <code>array</code> attribute of the module named <code>np</code> and calling it on the list given by <code>[1,2,3]</code>.  (Note that, unlike function attributes of some other values, function attributes of modules are not usually called methods, and they don't get the module value as an extra argument.)</p>
+<p><strong>Question.</strong> How many subexpressions (not counting the whole expression) are there in the following expression?</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="o">*</span><span class="mi">4</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="5.-Function-definitions">5. Function definitions<a class="anchor-link" href="#5.-Function-definitions">¶</a></h2><p>Another important statement is the <em>function definition</em>:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">square</span><span class="p">(</span><span class="mf">5.5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>After this line, the function <code>square</code> will be available for calling.  Defining a function doesn't do anything else.  In particular, it's not called unless you call it somewhere.</p>
+<p>The function definition is our first example of a statement that takes up multiple lines.  In fact, a function typically includes multiple <em>substatements</em>; its general form is:</p>
+
+<pre><code>def &lt;function name&gt;(&lt;argument list&gt;):
+    &lt;substatement 0&gt;
+    &lt;substatement 1&gt;
+    ...
+
+</code></pre>
+<p>Notice the indentation of the statements inside the function.  Indentation tells Python where your function definition ends.  You can use as many spaces as you want (as long as you're consistent), but 4 is traditional.</p>
+<p>When a function is executed (using the function call syntax we saw above), its substatements are executed sequentially, just like an ordinary sequence of statements in a cell.  The statements can be any statements you want.  (You can even define functions inside functions.)  Before the statements are executed, each name in the argument list is set to the corresponding value in the arguments passed to the function.  For example, when we call <code>square(5.5)</code> above, Python starts executing the statements in the <code>square</code> function, but first sets <code>x</code> to 5.5.</p>
+<p>It's important to know, though, that the value of <code>x</code> is set <em>only</em> for the statements inside the function.  Outside the function call, argument names are not modified or visible.  For example:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">cube</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c"># 27</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">square_root</span><span class="p">(</span><span class="n">does_not_appear_elsewhere</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">does_not_appear_elsewhere</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">square_root</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">does_not_appear_elsewhere</span> <span class="c"># Causes an error.  does_not_appear_elsewhere was only defined inside the function while it was being called.</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Similarly, any names defined inside a function are only defined inside the function while it's running.  They don't even stick around across calls to the function; each time the function body finishes, the names defined inside it are wiped out, just like argument names.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">times_three</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="k">return</span> <span class="n">multiplier</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">six</span> <span class="o">=</span> <span class="n">times_three</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">three</span> <span class="o">=</span> <span class="n">multiplier</span> <span class="c"># Error!</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Functions are extremely useful for packaging small pieces of functionality into easily-understandable pieces.  Computer code is so powerful that organizing and maintaining it is often much more difficult than just getting the computer to do what we want.  If you can wrap a complicated procedure into a single function, then you can focus once on getting that function written correctly, and then move on to something else, never worrying about its correctness again.  In most moderate- or large-scale software, all code is organized this way -- that is, <em>all code</em> is just a bunch of (relatively short) functions.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Functions-as-values">Functions as values<a class="anchor-link" href="#Functions-as-values">¶</a></h3><p>A function definition like</p>
+
+<pre><code>def my_func(x):
+    return 2*x
+
+</code></pre>
+<p>is really just producing a <em>function value</em> and assigning the name <code>my_func</code> to that value.  In this case, the function value is the function that multiplies its single argument by 2.  You should imagine <code>def</code> as doing something similar to the following (non-functioning) code:</p>
+
+<pre><code>my_func = make_a_function(x): # BEWARE: NOT REAL PYTHON CODE.
+    return 2*x
+
+</code></pre>
+<p>...where we're imagining for a moment that the special syntax <code>make_a_function(...): ...</code> returns a function.  So names assigned to functions are really just ordinary names, and function values are just like other values.  Of course, function values, like other values, have special behaviors; they can be called using <code>()</code>, and they can't be added together like strings or numbers.</p>
+<p><em>Names</em> assigned to functions are also just ordinary names.  It is possible, for example, to redefine a name that was previously defined as a function using <code>def</code> (though this is so confusing that it is usually a bad idea):</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+
+<span class="n">eight</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">my_func</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Technically possible, but inadvisable!</span>
+<span class="n">my_func</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can also put function values into a list, as we saw earlier:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">my_func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span>
+<span class="k">def</span> <span class="nf">my_func_1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">1</span><span class="o">*</span><span class="n">x</span>
+<span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_func_0</span><span class="p">,</span> <span class="n">my_func_1</span><span class="p">]</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">zero</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Though Python prints function values in a slightly cryptic way, you can print them if you want:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">funcs</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="6.-Return-statements">6. Return statements<a class="anchor-link" href="#6.-Return-statements">¶</a></h2><p>Inside a function definition, we very often see yet another kind of statement: the <em>return statement</em>.  This has the form <code>return &lt;expression&gt;</code>.  Any of the expressions we saw above can appear after the <code>return</code>.  This is the value produced by calls to the function.  For example, the value of <code>square(5)</code> is 25, since <code>square</code> will return <code>5*5</code> when it is called with the argument <code>5</code>.</p>
+<p><code>return</code> stops execution of the function; subsequent statements are not reached.  For example:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">weird_but_technically_correct_square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">weird_but_technically_correct_square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If a return statement is never reached, calling the function produces no value.  The following code is wrong, for example:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">wrong_circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">some_name</span> <span class="o">=</span> <span class="n">wrong_circle_area</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">some_name</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unfortunately, this is a mistake that Python will not complain about; it will just silently let <code>some_name</code> have no value.  (Technically it is given a special value called None.  If a statement with value None is the last statement in a cell, Jupyter doesn't print anything.  But you can see the value of <code>some_name</code> if you write, for example, <code>str(some_name)</code>.)</p>
+<p>To be clear, we just fix this by <code>return</code>ing whatever we want the function to return:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">correct_circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="n">circle_radius_four_area</span> <span class="o">=</span> <span class="n">correct_circle_area</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">circle_radius_four_area</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></h2><p>Conditionals are another important multi-line statement:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"x is a long list!"</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">message</span> <span class="o">=</span> <span class="s">"x is a short list!"</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">message</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The general form of a conditional is:</p>
+
+<pre><code>if &lt;boolean-valued expression 0&gt;:
+    &lt;statement 0.0&gt;
+    ...
+elif &lt;boolean-valued expression 1&gt;:
+    &lt;statement 1.0&gt;
+    ...
+elif &lt;boolean-valued expression 2&gt;:
+    &lt;statement 2.0&gt;
+    ...
+...
+else:
+    &lt;statement n.0&gt;
+    ...
+
+</code></pre>
+<p>If there is an <code>else</code> clause, then exactly one of the statement groups will be executed; otherwise, it's possible that none of them will happen (if none of the expressions next to <code>if</code> or <code>elif</code> are True).</p>
+<p>Conditionals are pretty simple, but like functions, they are very important for writing code that does interesting things.</p>
+<p>Something to watch out for is that Python will implicitly convert non-boolean values to boolean values, sometimes using surprising rules.  Typically, the convention is that something that is "zero-like" or "empty" is False, while other things are True.  It's best not to rely on this behavior, though; use an explicit comparison that produces a boolean value.  See what happens in the following examples:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="s">"some string"</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="s">""</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="p">[]:</span> <span class="c"># (an empty list)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">True</span><span class="p">]):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">False</span><span class="p">]):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">]):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
+<span class="k">else</span><span class="p">:</span> 
+    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
+<span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+</div></p>
+
+
+<h1 id="distributions">Distributions</h1>
+
+
+<p>
+<div class="ipython-notebook">
+	<div>
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Distribution.ipynb">
+			<span class="pop">Interact<span>
+		</a>
+	</div>
+	<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The steps in the randomized response survey can be visualized using a <em>tree diagram</em>. The diagram partitions all the survey respondents according to their true and answer and the answer that they eventually give. It also displays the proportions of respondents whose true answers are 1 ("yes") and 0 ("no"), as well as the chances that determine the answers that they give. As in the code above, we have used <em>p</em> to denote the proportion whose true answer is 1.</p>
+<p><img alt="Tree Diagram" src="../assets/images/rand_response_tree.png"/></p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The respondents who answer 1 split into two groups. The first group consists of the respondents whose true answer and given answers are both 1. If the number of respondents is large, the proportion in this group is likely to be about 2/3 of <em>p</em>. The second group consists of the respondents whose true answer is 0 and given answer is 1. This proportion in this group is likely to be about 1/3 of <em>1-p</em>.</p>
+<p>We can observed $p^*$, the proportion of 1's among the given answers. Thus
+$$
+p^* ~\approx ~ \frac{2}{3} \times p ~+~ \frac{1}{3} \times (1-p)
+$$</p>
+<p>This allows us to solve for an approximate value of <em>p</em>:
+$$
+p ~ \approx ~ 3p^* - 1
+$$</p>
+<p>In this way we can use the observed proportion of 1's to "work backwards" and get an estimate of <em>p</em>, the proportion in which whe are interested.</p>
+<p><strong>Technical note.</strong> It is worth noting the conditions under which this estimate is valid. The calculation of the proportions in the two groups whose given answer is 1 relies on <em>each of the groups</em> being large enough so that the Law of Averages allows us to make estimates about how their dice are going to land. This means that it is not only the total number of respondents that has to be large – the number of respondents whose true answer is 1 has to be large, as does the number whose true answer is 0. For this to happen, <em>p</em> must be neither close to 0 nor close to 1. If the characteristic of interest is either extremely rare or extremely common in the population, the method of randomized response described in this example might not work well.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In the example above, the survey scheme involved sampling uniformly at random with replacement from a set of integers (1 through 6), and using the observed data to estimate an unknown quantity. Here is an example in which the same ideas are used in quite a different setting and in a way that allows us to further develop our methods of estimation.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Estimating-the-number-of-enemy-aircraft">Estimating the number of enemy aircraft<a class="anchor-link" href="#Estimating-the-number-of-enemy-aircraft">¶</a></h2><p>In World War II, data analysts working for the Allies were tasked with estimating the number of German warplanes. The data included the serial numbers of the German planes that had been observed by Allied forces. These serial numbers gave the data analysts a way to come up with an answer.</p>
+<p>To create an estimate of the total number of warplanes, the data analysts had to make some assumptions about the serial numbers. Here are two such assumptions, greatly simplified to make our calculations easier.</p>
+<ol>
+<li><p>There are N planes, numbered $1, 2, ... , N$.</p>
+</li>
+<li><p>The observed planes are drawn uniformly at random with replacement from the $N$ planes.</p>
+</li>
+</ol>
+<p>The goal is to estimate the number $N$.</p>
+<p>Suppose you observe some planes and note down their serial numbers. How might you use the data to guess the value of $N$? A natural and straightforward method would be to simply use the <strong>largest serial number observed</strong>.</p>
+<p>Let us see how well this method of estimation works. First, another simplification: Some historians now estimate that the German aircraft industry produced almost 100,000 warplanes of many different kinds, But here we will imagine just one kind. That makes Assumption 1 above easier to justify.</p>
+<p>Suppose there are in fact $N = 300$ planes of this kind, and that you observe 30 of them. We can construct a table called <code>serialno</code> that contains the serial numbers 1 through $N$. We can then sample 30 times with replacement (see Assumption 2) to get our sample of serial numbers. Our estimate is the maximum of these 30 numbers.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">N</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">serialno</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)],</span> <span class="p">[</span><span class="s">'serial number'</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">serialno</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>serial number</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>290          </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As with all code involving random sampling, run it a few times to see the variation. You will observe that even with just 30 observations from among 300, the largest serial number is typically in the 250-300 range.</p>
+<p>In principle, the largest serial number could be as small as 1, if you were unlucky enough to see Plane Number 1 all 30 times. And it could be as large as 300 if you observe Plane Number 300 at least once. But usually, it seems to be in the very high 200's. It appears that if you use the largest observed serial number as your estimate of the total, you will not be very far wrong.</p>
+<p>Let us generate some data to see if we can confirm this. We will use <em>iteration</em> to repeat the sampling procedure numerous times, each time noting the largest serial number observed. These would be our estimates of $N$ from all the numerous samples. We will then draw a histogram of all these estimates, and examine by how much they differ from $N = 300$.</p>
+<p>In the code below, we will run 750 repetitions of the following process: Sample 30 times at random with replacement from 1 through 300 and note the largest number observed.</p>
+<p>To do this, we will use a <code>for</code> loop. As you have seen before, we will start by setting up an empty table that will eventually hold all the estimates that are generated. As each estimate is the largest number in its sample, we will call this table <code>maxes</code>.</p>
+<p>For each integer (called <code>i</code> in the code) in the range 1 through 750, the <code>for</code> loop executes the code in the body of the loop. In this example, it generates a random sample of 30 serial numbers, computes the maximum value, and augments the rows of <code>maxes</code> with that value.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">repetitions</span> <span class="o">=</span> <span class="mi">751</span>
+
+<span class="n">maxes</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[]],</span> <span class="p">[</span><span class="s">'maxes'</span><span class="p">])</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">m</span> <span class="o">=</span> <span class="n">serialno</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">with_replacement</span><span class="o">=</span><span class="k">True</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+    <span class="n">maxes</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">m</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a histogram of the 750 estimates. As you can see, they are all crowded up near 300, even though in theory they could be much smaller. As an estimate for the total number of planes, the largest serial number might be too low by about 10 to 25, and is unlikely to be off by more than about 50.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">maxes</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbMAAAEqCAYAAACfhL4MAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3X9U1HW+P/DniIGYkhPMD5DGMqZwrhLXdIx0i+G6dpYW
+h9kDmZe9FKntOjNFthSymQvVLjViKymQVxY3dOkGBVe62Y97a/YuJj+8e3exw0Fk3YhjCzMEO2Ak
+oMD3j758bhMjMyCEn5nn45w5Jz6f13s+7xcf8+nnx3xG4nA4RkFERCRic2Z7AkRERFeLYUZERKLH
+MCMiItFjmBERkegxzIiISPQYZkREJHoMMyIiEj2Pwqy4uBhRUVFQKpWIjY1FbW3thPVNTU2Ij49H
+aGgoNBoNLBbLuJp/+7d/w9q1axEWFobbb78djz76KOx2+9S6ICIin+Y2zCorK5GVlYWMjAzU1NRA
+q9UiOTkZ58+fd1nf19cHg8EApVIJq9WK3Nxc7N+/HwcOHBBqTpw4AaPRiB//+Meoq6vD7373O5w9
+exbbtm2bvs6IiMhnuA2zgoICpKSkIDU1FWq1GhaLBQqFAiUlJS7rKyoqMDAwgKKiIkRGRkKv1yM9
+PR2FhYVCzZ/+9CcsXrwY27dvh0qlwqpVq7B161b88Y9/nL7OiIjIZ0wYZkNDQ2hsbIROp3NaHhcX
+h/r6epdjGhoaEBMTg4CAAKf6jo4OtLe3AwBiY2PR3d2N9957D6Ojo+ju7kZlZSU2bNhwtf0QEZEP
+mjDMuru7MTw8DLlc7rQ8JCTkite37Hb7uHqZTCasA4AVK1bg4MGD2Lp1K+RyOSIiIgDA6eiNiIjI
+U9N+N6NEInFbc+rUKZhMJmRmZuK///u/8dZbb8Fms+GJJ56Y7ukQEZEPmDvRyuDgYPj5+Y07Cuvq
+6oJCoXA5Ri6Xu6wfWwd8fQR277334rHHHgMAaDQazJ8/Hz/4wQ/wi1/8AqGhoVPrhoiIfNKER2b+
+/v6Ijo6G1Wp1Wm61WrFmzRqXY7RaLWprazE4OOhUHxYWBpVKBQAYHR3FnDnOmx77eWRkZPJdEBGR
+T3N7mtFkMqGsrAylpaVoaWlBZmYm7HY70tLSAAA5OTnQ6/VCfVJSEgIDA2E0GtHc3Izq6mrk5+fD
+aDQKNffffz+OHz+OkpIStLW1oa6uDpmZmYiOjsbixYtnoE1xam1tne0pzBr27nt8tW/At3ufLhOe
+ZgQAg8GAnp4e5OXlwWazQaPRoLy8HOHh4QAAm82GtrY2oT4oKAhVVVXIyMiATqeDVCqF2WyGyWQS
+apKTk9HX14dDhw5h165duOGGG/C9730POTk5098hERF5PQm/afra1draCrVaPdvTmBXs3fd699W+
+Ad/ufbrw2YxERCR6DDMiIhI9hhkREYkew4yIiESPYUZERKLHMCMiItFjmBERkegxzIiISPQYZkRE
+JHoMMyIiEj2GGRERiR7DjIiIRI9hRkREoscwIyIi0WOYERGR6DHMiIhI9BhmREQkegwzIiISPYYZ
+ERGJnkdhVlxcjKioKCiVSsTGxqK2tnbC+qamJsTHxyM0NBQajQYWi8Vp/fbt2yGVSse9Fi9ePPVO
+iIjIZ7kNs8rKSmRlZSEjIwM1NTXQarVITk7G+fPnXdb39fXBYDBAqVTCarUiNzcX+/fvx4EDB4Sa
+l156CWfPnhVeLS0tuPnmm2EwGKavMyIi8hluw6ygoAApKSlITU2FWq2GxWKBQqFASUmJy/qKigoM
+DAygqKgIkZGR0Ov1SE9PR2FhoVATFBQEmUwmvP7617+ira0NDz300PR1RkREPmPCMBsaGkJjYyN0
+Op3T8ri4ONTX17sc09DQgJiYGAQEBDjVd3R0oL293eWY1157DcuWLcPq1asnO38iIqKJw6y7uxvD
+w8OQy+VOy0NCQmC3212Osdvt4+plMpmw7tt6e3tx7NgxHpUREdGUzZ3uN5RIJJOqLy8vx8jICDZt
+2jTdUyEiou/QZ59J0N7u2U3y3/ve8LRue8IwCw4Ohp+f37gjqq6uLigUCpdj5HK5y/qxdd/22muv
+YePGjVi0aJHbyba2trqt8Ta+2PMY9u57fLVvwDt6//TTJXjgAZlHtQ5H77Rue8Iw8/f3R3R0NKxW
+K/R6vbDcarUiMTHR5RitVovs7GwMDg4K182sVivCwsKgUqmcav/4xz+iqakJL730kkeTVavVHtV5
+i9bWVp/reQx7973efbVvwHt67+z0m7Vtuz0eNJlMKCsrQ2lpKVpaWpCZmQm73Y60tDQAQE5OjlPQ
+JSUlITAwEEajEc3NzaiurkZ+fj6MRuO49/7tb3+LiIgIrF27dhpbIiIiX+P2mpnBYEBPTw/y8vJg
+s9mg0WhQXl6O8PBwAIDNZkNbW5tQHxQUhKqqKmRkZECn00EqlcJsNsNkMjm974ULF1BVVYXMzMzp
+7YiIiHyORzeAbNmyBVu2bHG57pufHxuj0Whw/PjxCd9z4cKFV/zgNRER0WTw2YxERCR6DDMiIhI9
+hhkREYkew4yIiESPYUZERKLHMCMiItFjmBERkegxzIiISPQYZkREJHoMMyIiEj2GGRERiR7DjIiI
+RI9hRkREoscwIyIi0WOYERGR6DHMiIhI9BhmREQkegwzIiISPYYZERGJnkdhVlxcjKioKCiVSsTG
+xqK2tnbC+qamJsTHxyM0NBQajQYWi2VczdDQEH75y1/ijjvugEKhwPLly3Hw4MGpdUFERD5trruC
+yspKZGVlYe/evYiJicGhQ4eQnJyMuro6hIeHj6vv6+uDwWDAunXrYLVa0dLSArPZjPnz58NsNgt1
+jzzyCDo7O/HKK69g6dKl6OrqwldffTW93RERkU9wG2YFBQVISUlBamoqAMBiseDDDz9ESUkJdu/e
+Pa6+oqICAwMDKCoqQkBAACIjI9Ha2orCwkIhzD766CP84Q9/QGNjI6RSKQDgpptums6+iIjIh0x4
+mnFoaAiNjY3Q6XROy+Pi4lBfX+9yTENDA2JiYhAQEOBU39HRgfb2dgDAO++8g5UrV2L//v34h3/4
+B9x5553IzMxEf3//1fZDREQ+aMIjs+7ubgwPD0MulzstDwkJgd1udznGbrePO/0ok8mEdSqVCm1t
+bairq0NAQACOHDkCh8OBp59+Gp2dnXjttdeuph8iIvJBbk8zTpZEInFbMzIygjlz5qC4uBgLFy4E
+AOzZswc/+tGP8MUXXyAkJGS6p0VERF5swjALDg6Gn5/fuKOwrq4uKBQKl2PkcrnL+rF1AKBQKKBU
+KoUgAwC1Wg0AOH/+/BXDrLW1daLpeiVf7HkMe/c9vto34B29X7y4BMCCWdn2hGHm7++P6OhoWK1W
+6PV6YbnVakViYqLLMVqtFtnZ2RgcHBSum1mtVoSFhUGlUgEAYmJiUF1djf7+flx//fUAgHPnzgGY
++EaQscDzFa2trT7X8xj27nu9+2rfgPf03tnpN2vbdvs5M5PJhLKyMpSWlqKlpQWZmZmw2+1IS0sD
+AOTk5DgFXVJSEgIDA2E0GtHc3Izq6mrk5+fDaDQ61dx4440wmUw4c+YM6urqsHPnTiQmJiI4OHgG
+2iQiIm/m9pqZwWBAT08P8vLyYLPZoNFoUF5eLtzkYbPZ0NbWJtQHBQWhqqoKGRkZ0Ol0kEqlMJvN
+MJlMQs3111+Pf//3f8fTTz+NuLg4LFq0CPfffz+ys7OnvUEiIvJ+EofDMTrbkyDXvOXUw1Swd9/r
+3Vf7Bryn95oaPyQkeHbNzOHondZt89mMREQkegwzIiISPYYZERGJHsOMiIhEj2FGRESixzAjIiLR
+Y5gREZHoMcyIiEj0GGZERCR6DDMiIhI9hhkREYkew4yIiESPYUZERKLHMCMiItFjmBERkegxzIiI
+SPQYZkREJHoMMyIiEj2GGRERiZ7HYVZcXIyoqCgolUrExsaitrZ2wvqmpibEx8cjNDQUGo0GFovF
+aX1NTQ2kUum411/+8pepdUJERD5rridFlZWVyMrKwt69exETE4NDhw4hOTkZdXV1CA8PH1ff19cH
+g8GAdevWwWq1oqWlBWazGfPnz4fZbHaqra+vh1QqFX4ODg6+ypaIiMjXeHRkVlBQgJSUFKSmpkKt
+VsNisUChUKCkpMRlfUVFBQYGBlBUVITIyEjo9Xqkp6ejsLBwXG1ISAhkMpnwmjOHZz6JiGhy3CbH
+0NAQGhsbodPpnJbHxcWhvr7e5ZiGhgbExMQgICDAqb6jowPt7e1OtbGxsULg1dTUTKUHIiLycW7D
+rLu7G8PDw5DL5U7LQ0JCYLfbXY6x2+3j6mUymbAOAEJDQ/HrX/8aR44cwZEjR6BWq6HX691eiyMi
+Ivo2j66ZTZZEInFbExERgYiICOHn1atXo729Ha+88gpiYmJcjmltbZ22OYqFL/Y8hr37Hl/tG/CO
+3i9eXAJgwaxs222YBQcHw8/Pb9xRWFdXFxQKhcsxcrncZf3YuitZuXIlqqqqrrherVa7m65XaW1t
+9bmex7B33+vdV/sGvKf3zk6/Wdu229OM/v7+iI6OhtVqdVputVqxZs0al2O0Wi1qa2sxODjoVB8W
+FgaVSnXFbX3yySdQKpWezp2IiAiAh3czmkwmlJWVobS0FC0tLcjMzITdbkdaWhoAICcnB3q9XqhP
+SkpCYGAgjEYjmpubUV1djfz8fBiNRqGmsLAQ77zzDs6dO4fm5mbk5OTg+PHj2LZt2zS3SERE3s6j
+a2YGgwE9PT3Iy8uDzWaDRqNBeXm58Bkzm82GtrY2oT4oKAhVVVXIyMiATqeDVCqF2WyGyWQSai5f
+vozdu3fjb3/7G+bNm4dly5ahoqIC69evn94OiYjI60kcDsfobE+CXPOW8+hTwd59r3df7Rvwnt5r
+avyQkODZDSAOR++0bpufUCYiItFjmBERkegxzIiISPQYZkREJHoMMyIiEj2GGRERiR7DjIiIRI9h
+RkREoscwIyIi0WOYERGR6DHMiIhI9BhmREQkegwzIiISPYYZERGJHsOMiIhEj2FGRESixzAjIiLR
+Y5gREZHoMcyIiEj0PAqz4uJiREVFQalUIjY2FrW1tRPWNzU1IT4+HqGhodBoNLBYLFesra2tRXBw
+MO6+++7JzZyIiOj/cxtmlZWVyMrKQkZGBmpqaqDVapGcnIzz58+7rO/r64PBYIBSqYTVakVubi72
+79+PAwcOjKt1OBz46U9/itjY2KtuhIiIfJfbMCsoKEBKSgpSU1OhVqthsVigUChQUlLisr6iogID
+AwMoKipCZGQk9Ho90tPTUVhYOK7WbDYjJSUFq1evvvpOiIjIZ00YZkNDQ2hsbIROp3NaHhcXh/r6
+epdjGhoaEBMTg4CAAKf6jo4OtLe3C8uKi4vR3d2Np556CqOjo1fTAxER+bgJw6y7uxvDw8OQy+VO
+y0NCQmC3212Osdvt4+plMpmwDvj6mprFYsHBgwchkUimPHkiIiIAmDvdb+gunAYHB/HII4/g+eef
+h0qlmtR7t7a2Xs3URMkXex7D3n2Pr/YNeEfvFy8uAbBgVrY9YZgFBwfDz89v3FFYV1cXFAqFyzFy
+udxl/di6zs5OnD17FiaTCSaTCQAwMjKC0dFRhISE4M0337ziDSFqtdqjprxFa2urz/U8hr37Xu++
+2jfgPb13dvrN2rYnPM3o7++P6OhoWK1Wp+VWqxVr1qxxOUar1aK2thaDg4NO9WFhYVCpVFi8eDFq
+a2tx4sQJ4fXII49g6dKlOHHiBG8GISKiSXN7N6PJZEJZWRlKS0vR0tKCzMxM2O12pKWlAQBycnKg
+1+uF+qSkJAQGBsJoNKK5uRnV1dXIz8+H0WgEAMydOxeRkZFOr+DgYAQEBCAyMhLXX3/9DLVKRETe
+yu01M4PBgJ6eHuTl5cFms0Gj0aC8vBzh4eEAAJvNhra2NqE+KCgIVVVVyMjIgE6ng1QqhdlsFk4p
+usKbQIiI6GpIHA4H74u/RnnLefSpYO++17uv9g14T+81NX5ISPDsBhCHo3dat81nMxIRkegxzIiI
+SPQYZkREJHoMMyIiEj2GGRERiR7DjIiIRI9hRkREoscwIyIi0WOYERGR6DHMiIhI9BhmREQkegwz
+IiISPYYZERGJHsOMiIhEj2FGRESixzAjIiLRY5gREZHoMcyIiEj0GGZERCR6HodZcXExoqKioFQq
+ERsbi9ra2gnrm5qaEB8fj9DQUGg0GlgsFqf1J06cwIYNG7B06VKEhoZCq9Vi//79U+uCiIh82lxP
+iiorK5GVlYW9e/ciJiYGhw4dQnJyMurq6hAeHj6uvq+vDwaDAevWrYPVakVLSwvMZjPmz58Ps9kM
+AFiwYAG2b98OjUaDwMBA1NXVYceOHZg3bx62bds2vV0SEZFX8+jIrKCgACkpKUhNTYVarYbFYoFC
+oUBJSYnL+oqKCgwMDKCoqAiRkZHQ6/VIT09HYWGhUBMdHQ2DwYDbb78dKpUKDzzwAHQ6HRoaGqan
+MyIi8hluw2xoaAiNjY3Q6XROy+Pi4lBfX+9yTENDA2JiYhAQEOBU39HRgfb2dpdjGhsbcerUKcTG
+xk5i+kRERB6cZuzu7sbw8DDkcrnT8pCQENjtdpdj7Hb7uNOPMplMWKdSqYTlGo0G3d3duHTpEp56
+6imkpKRMugkiIvJtHl0zmyyJROJx7XvvvYf+/n6cOnUKzz77LGQyGbZu3eqytrW1dbqmKBq+2PMY
+9u57fLVvwDt6v3hxCYAFs7Jtt2EWHBwMPz+/cUdhXV1dUCgULsfI5XKX9WPrvmnsKG3ZsmWw2+14
+5ZVXrhhmarXa3XS9Smtrq8/1PIa9+17vvto34D29d3b6zdq23V4z8/f3R3R0NKxWq9Nyq9WKNWvW
+uByj1WpRW1uLwcFBp/qwsDCnU4zfNjw8jJGREU/nTkREBMDDuxlNJhPKyspQWlqKlpYWZGZmwm63
+Iy0tDQCQk5MDvV4v1CclJSEwMBBGoxHNzc2orq5Gfn4+jEajUHPw4EG8//77OHfuHM6dO4fS0lIU
+FBTgwQcfnOYWiYjI23l0zcxgMKCnpwd5eXmw2WzQaDQoLy8XbvKw2Wxoa2sT6oOCglBVVYWMjAzo
+dDpIpVKYzWaYTCahZmRkBNnZ2Whvb4efnx+WLl2K7OxsISCJiIg8JXE4HKOzPQlyzVvOo08Fe/e9
+3n21b8B7eq+p8UNCgmc3gDgcvdO6bT6bkYiIRI9hRkREoscwIyIi0WOYERGR6DHMiIhI9BhmREQk
+egwzIiISPYYZERGJHsOMiIhEj2FGRESixzAjIiLRY5gREZHoMcyIiEj0GGZERCR6DDMiIhI9hhkR
+EYkew4yIiESPYUZERKLncZgVFxcjKioKSqUSsbGxqK2tnbC+qakJ8fHxCA0NhUajgcVicVpfXV0N
+g8GAiIgI3HTTTVi/fj3efffdqXVBREQ+zaMwq6ysRFZWFjIyMlBTUwOtVovk5GScP3/eZX1fXx8M
+BgOUSiWsVityc3Oxf/9+HDhwQKg5efIkYmNjUVFRgZqaGnz/+9/Hj3/8Y7chSURE9G1zPSkqKChA
+SkoKUlNTAQAWiwUffvghSkpKsHv37nH1FRUVGBgYQFFREQICAhAZGYnW1lYUFhbCbDYDAF588UWn
+MZmZmfjggw/wzjvvICYm5mr7IiIiH+L2yGxoaAiNjY3Q6XROy+Pi4lBfX+9yTENDA2JiYhAQEOBU
+39HRgfb29itu68KFC5BKpZ7OnYiICIAHYdbd3Y3h4WHI5XKn5SEhIbDb7S7H2O32cfUymUxY58qh
+Q4fQ2dmJTZs2eTRxIiKiMR6dZpwsiUQyqfpjx47hF7/4BQ4fPozw8PCZmBIREXkxt2EWHBwMPz+/
+cUdUXV1dUCgULsfI5XKX9WPrvunYsWPYvn07Xn31Vdx3330TzqW1tdXddL2OL/Y8hr37Hl/tG/CO
+3i9eXAJgwaxs222Y+fv7Izo6GlarFXq9XlhutVqRmJjocoxWq0V2djYGBweF62ZWqxVhYWFQqVRC
+XVVVFYxGI1599VVs3LjR7WTVarXbGm/S2trqcz2PYe++17uv9g14T++dnX6ztm2Pbs03mUwoKytD
+aWkpWlpakJmZCbvdjrS0NABATk6OU9AlJSUhMDAQRqMRzc3NqK6uRn5+PoxGo1Dz1ltvYdu2bcjO
+zsZdd90Fm80Gm82Gv//979PcIhEReTuPrpkZDAb09PQgLy8PNpsNGo0G5eXlwvUtm82GtrY2oT4o
+KAhVVVXIyMiATqeDVCqF2WyGyWQSag4fPoyRkRHs3LkTO3fuFJavW7cOb7/99jS1R0REvkDicDhG
+Z3sS5Jq3nHqYCvbue737at/Atdn7Z59J0N4+uSceDg4CSUmeXTNzOHqnMq0rmpG7GYmISNza2+cg
+IWFyN3McPdo/Q7Nxjw8aJiIi0WOYERGR6DHMiIhI9BhmREQkegwzIiISPYYZERGJHsOMiIhEj2FG
+RESixzAjIiLRY5gREZHoMcyIiEj0GGZERCR6DDMiIhI9hhkREYkew4yIiESPYUZERKLHMCMiItFj
+mBERkeh5HGbFxcWIioqCUqlEbGwsamtrJ6xvampCfHw8QkNDodFoYLFYnNbbbDZs3boVWq0WwcHB
+MBqNU+uAiIh8nkdhVllZiaysLGRkZKCmpgZarRbJyck4f/68y/q+vj4YDAYolUpYrVbk5uZi//79
+OHDggFAzODiI4OBg7NixA6tWrYJEIpmejoiIyOd4FGYFBQVISUlBamoq1Go1LBYLFAoFSkpKXNZX
+VFRgYGAARUVFiIyMhF6vR3p6OgoLC4UalUqFl156CZs3b8aiRYumpxsiIvJJbsNsaGgIjY2N0Ol0
+Tsvj4uJQX1/vckxDQwNiYmIQEBDgVN/R0YH29varnDIREZEzt2HW3d2N4eFhyOVyp+UhISGw2+0u
+x9jt9nH1MplMWEdERDSdZuRuRl7/IiKi79JcdwXBwcHw8/Mbd0TV1dUFhULhcoxcLndZP7Zuqlpb
+W6c8Vqx8secx7N33+GrfwLXX+8WLSwAsmNSYkZHhmZmMB9yGmb+/P6Kjo2G1WqHX64XlVqsViYmJ
+LsdotVpkZ2djcHBQuG5mtVoRFhYGlUo15cmq1eopjxWj1tZWn+t5DHv3vd59tW/g2uy9s9Nv0mPm
+zJn8mOni0WlGk8mEsrIylJaWoqWlBZmZmbDb7UhLSwMA5OTkOAVdUlISAgMDYTQa0dzcjOrqauTn
+54/7LNnp06dx+vRp9PX1oaenB6dPn8aZM2emsT0iIvIFbo/MAMBgMKCnpwd5eXmw2WzQaDQoLy9H
+eHg4gK8/AN3W1ibUBwUFoaqqChkZGdDpdJBKpTCbzTCZTE7ve++99wL4+hrb6Ogo3nvvPahUKjQ2
+Nk5Te0RE5As8CjMA2LJlC7Zs2eJy3Tc/PzZGo9Hg+PHjE77n3//+d083T0REdEV8NiMREYkew4yI
+iESPYUZERKLn8TUzIiISr88+k6C93fPjl8HBGZzMDGCYERH5gPb2OUhI8PxD0EeP9s/gbKYfTzMS
+EZHoMcyIiEj0GGZERCR6DDMiIhI9hhkREYkew4yIiESPYUZERKLHMCMiItFjmBERkegxzIiISPQY
+ZkREJHoMMyIiEj0+aJiISGQm+wR8QHxPwZ8shhkRkchM9gn4gPiegj9ZHkV7cXExoqKioFQqERsb
+i9ra2gnrm5qaEB8fj9DQUGg0GlgslnE1J06cwL333gulUono6GgcPnx4ah0QEZHPcxtmlZWVyMrK
+QkZGBmpqaqDVapGcnIzz58+7rO/r64PBYIBSqYTVakVubi7279+PAwcOCDVtbW144IEHcNddd6Gm
+pgZPPvkknn76aVRXV09fZ0RE5DPchllBQQFSUlKQmpoKtVoNi8UChUKBkpISl/UVFRUYGBhAUVER
+IiMjodfrkZ6ejsLCQqHm8OHDCAsLw0svvQS1Wo3U1FRs3rzZKfCIiIg8NWGYDQ0NobGxETqdzml5
+XFwc6uvrXY5paGhATEwMAgICnOo7OjrQ3t4u1Lh6zz/96U8YHh6eUiNEROS7JrwBpLu7G8PDw5DL
+5U7LQ0JCYLfbXY6x2+0IDw93WiaTyYR1KpUKXV1d495TJpPh8uXL6O7uHreOiMibDQ6GoqbGbxL1
+MzgZkZr2uxklEsl0v6XPUqvVsz2FWcPefY+v9g0Ay5cvADC5s1IOR++ktzPZMd/FNqbLhKcZg4OD
+4efnN+4orKurCwqFwuUYuVzusn5s3UQ1c+fORXBw8OQ6ICIinzdhmPn7+yM6OhpWq9VpudVqxZo1
+a1yO0Wq1qK2txeA3joOtVivCwsKgUqmEGlfvuXLlSvj5eX6oTUREBHhwN6PJZEJZWRlKS0vR0tKC
+zMxM2O12pKWlAQBycnKg1+uF+qSkJAQGBsJoNKK5uRnV1dXIz8+H0WgUatLS0tDR0YGsrCy0tLSg
+tLQUr7/+Osxm8wy0SERE3s7tNTODwYCenh7k5eXBZrNBo9GgvLxcuMnDZrOhra1NqA8KCkJVVRUy
+MjKg0+kglUphNpthMpmEmiVLlqC8vBw///nPUVJSgtDQUFgsFiQkJEx/h0RE5PUkDodjdLYnQURE
+dDWu6afmT/YxWmKTm5sLqVTq9IqMjBxXs2zZMoSGhuKHP/whzpw5M0uzvToff/wxHnzwQWg0Gkil
+UpSVlY2rcdfr4OAgnnrqKdx6661YvHgxNm/ejL/97W/fVQtT4q7v7du3j/szsGHDBqcaMfYNAC+/
+/DJ0Oh1UKhUiIiLw4IMPorm5eVydt+13T/r21v1+6NAhrF27FiqVCiqVChs2bMAHH3zgVDNT+/ua
+DbPJPkZLrG677TacPXtWeJ08eVJYt2/fPhQWFsJiseCjjz6CTCaDwWDAl19+OYsznpqvvvoKy5cv
+R25uLgIDA8d9hMOTXrOysvAf//EfKCkpwfHjx3HhwgVs2rQJIyMj33U7HnPXt0QigU6nc/ozUF5e
+7lQjxr6Br4N827Zt+OCDD1BdXY25c+ciMTERDodDqPHG/e5J39663xcvXoznnnsOf/jDH/D73/8e
+99xzD1KPnNIaAAAKa0lEQVRSUvDJJ58AmNn9fc2eZvynf/onrFixAvv27ROW3XnnndDr9di9e/cs
+zmz65Obm4u2333YKsDGjo6OIjIzET37yEzz55JMAgIGBAajVajz//PN4+OGHv+PZTp/w8HDs2bMH
+mzdvBuBZr729vVCr1SgsLERSUhIA4PPPP8eKFSvw5ptvIi4ubtb68dS3+wa+/hd6T08P3njjDZdj
+vKHvMf39/VCpVCgrK8N9993nM/v9230DvrXfb7nlFmRnZyM1NXVG9/c1eWQ2lcdoiVVbWxuWLVuG
+O+64A1u2bBFupvnss89gt9uddt68efNw9913e93vwJNe//znP+PSpUtONYsXL8btt98u6t+HRCJB
+XV0d1Go1Vq1ahfT0dHzxxRfCem/q+8KFCxgZGcGiRYsA+M5+/3bfgG/s9+HhYbz11lsYHBzE3Xff
+PeP7+5r8PrOpPEZLjFavXo2ioiKo1Wp0dXVhz549uO+++1BXVwebzQbg/x4FNiYkJASdnZ2zMd0Z
+40mvdrsdfn5+uPHGG51qZDKZ8KF8MVq/fj02btyIJUuW4LPPPsMLL7yAjRs34ve//z38/f29qu+d
+O3ciKioKWq0WgO/s92/3DXj3fm9qasKGDRswODiIwMBAHD58GGq1Wgijmdrf12SY+Yr169c7/bx6
+9WrccccdKCsrw6pVq644zpceGebtvf7oRz8S/nvZsmWIjo7GihUr8P7773vVR1V+/vOfo6GhAe++
++65H+9Rb9vuV+vbm/X7bbbfh448/Rm9vL44dO4YtW7bg7bffnnDMdOzva/I041Qeo+UN5s+fj8jI
+SHz66adCn9/+14irhzSLnSe9yuVyDA8Po6enx6nGbrd71e9DqVQiLCwMn376KQDv6DsrKwtVVVWo
+rq7GkiVLhOXevt+v1Lcr3rTfr7vuOtx888244447sHv3bqxatQqHDh2a8f19TYbZVB6j5Q0GBgZw
+9uxZKBQK3HzzzVAoFPjoo4+c1tfV1Xnd72DJkiVue42OjsZ1113nVPP555/j7NmzXvX7+OKLL9DR
+0SH8jy/2vjMzM4W/0CMiIpzWefN+n6hvV7xtv3/T8PAwRkZGPPo77Wr69tu5c2f2jHRwlRYuXIjc
+3FwoFArMmzcPe/bsQV1dHQ4cOICgoKDZnt602LVrFwICAjAyMoK//OUveOqpp/Dpp59i3759CAoK
+wvDwMH79618jIiICw8PDeOaZZ2C327Fv3z74+/vP9vQnpb+/H2fOnIHNZsORI0eg0WiwcOFCXLp0
+CTfccIPbXufNm4fOzk4UFxdj+fLl6O3txY4dO3DDDTcgJyfnmj0tNVHffn5+eO6557Bw4UJcvnwZ
+n3zyCR5//HGMjo5iz549ou4bADIyMvDGG2/g8OHDWLx4Mfr7+9Hf3w+JRAJ/f39IJBKv3O/u+u7v
+7/fa/Z6dnS38nfb555+jqKgIFRUVeO6553DLLbfM6P6+Zm/NB4Df/OY3yM/PFx6j9atf/QoxMTGz
+Pa1ps2XLFpw8eRLd3d0ICQnB6tWr8cwzz+C2224Tal588UX89re/hcPhwKpVq5CXlzfug9ViUFNT
+g40bNwL4+vz46OjXf+z++Z//GQUFBQDc9zo0NIRdu3bhzTffxMDAAO69917s3bsXYWFh331DHpqo
+77179yIlJQWnT59Gb28vFAoF7rnnHjzzzDNOPYmxbwCQSqVOPY/ZuXMnMjMzhZ+9bb+763tgYMBr
+97vRaERNTQ3sdjuCgoKwfPlyPP744053ps/U/r6mw4yIiMgT1+Q1MyIioslgmBERkegxzIiISPQY
+ZkREJHoMMyIiEj2GGRERiR7DjIiIRI9hRkREoscwIyIi0WOYERGR6DHMiDyUm5sLqVSKs2fPIjEx
+EWFhYVixYgWOHj0KADh69CjuvPNOhIeHIyEhQfjWcAB46623kJCQgIiICISHh+Oee+7B66+/7vT+
+paWlkEqleOedd4Rlw8PDiI+Pxz/+4z/iyy+/BABcvnwZL7/8MlavXg2FQoFly5Zh165dGBwcFMZd
+vnwZL7zwAqKjo6FUKnHrrbfiBz/4Aerq6mbwN0Q0e/jlnEST9PDDD+Phhx/Gjh07cOjQITz22GNo
+bm7G//zP/+D555/HpUuXsHPnTmzduhX/9V//BQBoa2tDQkICduzYAT8/P3z88cd4/PHHMTAwgLS0
+NABAamoqrFYrHn/8caxcuRKhoaGwWCw4deoU3n//fSxYsAAA8Oijj+L999/HE088Aa1Wi5aWFvzy
+l79Ee3s7SktLAQD79u3Dq6++imeffRYrVqxAX18f/vznP8PhcMzOL41ohvFBw0Qeys3NhcViwauv
+vopNmzYBABwOB2699VYsWrQIjY2NQuAcPHgQO3fuxCeffILw8HCn9xkZGcHIyAiefPJJ/O///i9O
+nDghrOvt7cW6detwyy234Omnn0ZiYiJ27dqFJ554AgBw8uRJ3H///Th48CAeeOABYVxFRQUeffRR
+1NTUYPny5di0aRMCAgKEcCPydjzNSDRJ3//+94X/XrRoEeRyOVatWiUEGQCo1WoAX3+xIACcO3cO
+W7ZsgUajgUwmg0wmw5EjR3Du3Dmn977hhhtQXFyMkydPIikpCWvXrhWCDAA+/PBD+Pv7IyEhAZcv
+XxZeY1+xcfLkSQDAypUr8cEHH+CFF15AbW0thoaGZuaXQXSN4GlGoklatGiR08/XXXedy2XA19+k
+++WXXyIxMRELFixAdnY2brnlFlx33XX4zW9+I1xv+6ZVq1YhIiICLS0t+MlPfuK0rqurC0NDQy6/
+20kikQhfN/+zn/0M8+bNwxtvvIG9e/diwYIF2LhxI55//nnceOONV9U/0bWIYUY0w06dOoXz58/j
+vffec/rq90uXLrmsf/HFF/HXv/4Vy5cvR1ZWFtatWyd8u/qNN96IefPm4d1333U5VqlUAgDmzp2L
+9PR0pKeno6urC++++y527dqFixcvoqSkZJo7JJp9PM1INMO++uorAF8HzBiHw4Hjx4+P+xr4kydP
+4uWXX8azzz6L119/Hb29vfjZz34mrF+/fj0GBgbQ29uL6Ojoca+xMPsmmUyG1NRU3HPPPThz5swM
+dUk0u3hkRnSVRkcnvofqrrvuwsKFC5GRkYGsrCz09/djz549CAkJwYULF4Q6h8OBRx99FLGxsXjs
+sccAAPn5+Xj44YcRFxeHzZs3Y926dUhKSsJDDz0Ek8mElStXYs6cOWhvb8d//ud/4rnnnsPSpUux
+efNmrFixAlFRUVi0aBFOnz6Njz76SLhzksjbMMyIPCSRSMYdSY0tv1I9AAQHB+Po0aPYtWsXHnro
+IYSGhuKnP/0penp6YLFYhPr09HQMDg6iqKhIWKbX6/Ev//IvyMzMRExMDG6++Wb867/+Kw4ePIij
+R49i79698Pf3h0qlwvr16xESEgIAWLt2LY4dO4bi4mJcvHgRN910E9LT05GRkTGdvxKiawZvzSci
+ItHjNTMiIhI9hhkREYkew4yIiESPYUZERKLHMCMiItFjmBERkegxzIiISPQYZkREJHoMMyIiEr3/
+Bw92LlvU2yofAAAAAElFTkSuQmCC
+"/>
+</div>
+</div></p>
+
+
+<h1 id="further-reading">Further Reading</h1>
+                </div>
+            </div>
+        </main>
+  </body>
+</html>
