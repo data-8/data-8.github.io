@@ -38,55 +38,18 @@
   <li><a href="#Summing-up">Summing up<a class="anchor-link" href="#Summing-up">¶</a></a></li>
 </ul>
 
-  <li><a href="#statements">Statements</a></li>
-  <ul>
-  <li><a href="#0.-Introduction">0. Introduction<a class="anchor-link" href="#0.-Introduction">¶</a></a></li>
-  <ul>
-  <li><a href="#How-to-read-this-document">How to read this document<a class="anchor-link" href="#How-to-read-this-document">¶</a></a></li>
-</ul>
-
-  <li><a href="#1.-Code-is-a-sequence-of-statements">1. Code is a sequence of statements<a class="anchor-link" href="#1.-Code-is-a-sequence-of-statements">¶</a></a></li>
-  <li><a href="#2.-Expressions">2. Expressions<a class="anchor-link" href="#2.-Expressions">¶</a></a></li>
-  <ul>
-  <li><a href="#A-note-on-errors">A note on errors<a class="anchor-link" href="#A-note-on-errors">¶</a></a></li>
-</ul>
-
-  <ul>
-  <li><a href="#Strings,-ints,-and-floats">Strings, ints, and floats<a class="anchor-link" href="#Strings,-ints,-and-floats">¶</a></a></li>
-  <li><a href="#Names">Names<a class="anchor-link" href="#Names">¶</a></a></li>
-  <li><a href="#Lists">Lists<a class="anchor-link" href="#Lists">¶</a></a></li>
-  <li><a href="#Calls">Calls<a class="anchor-link" href="#Calls">¶</a></a></li>
-  <li><a href="#Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></a></li>
-  <li><a href="#Dots-and-attributes">Dots and attributes<a class="anchor-link" href="#Dots-and-attributes">¶</a></a></li>
-  <ul>
-  <li><a href="#A-weird-thing-about-dot-syntax">A weird thing about dot syntax<a class="anchor-link" href="#A-weird-thing-about-dot-syntax">¶</a></a></li>
-</ul>
-
-  <li><a href="#Is-that-all-the-expressions?">Is that all the expressions?<a class="anchor-link" href="#Is-that-all-the-expressions?">¶</a></a></li>
-  <li><a href="#Exercises-to-put-it-all-together">Exercises to put it all together<a class="anchor-link" href="#Exercises-to-put-it-all-together">¶</a></a></li>
-</ul>
-
-  <li><a href="#3.-Assignments">3. Assignments<a class="anchor-link" href="#3.-Assignments">¶</a></a></li>
-  <ul>
-  <li><a href="#Name-assignments">Name assignments<a class="anchor-link" href="#Name-assignments">¶</a></a></li>
-  <li><a href="#Indexing-assignments">Indexing assignments<a class="anchor-link" href="#Indexing-assignments">¶</a></a></li>
-</ul>
-
-  <li><a href="#4.-Import-statements">4. Import statements<a class="anchor-link" href="#4.-Import-statements">¶</a></a></li>
-  <li><a href="#5.-Function-definitions">5. Function definitions<a class="anchor-link" href="#5.-Function-definitions">¶</a></a></li>
-  <ul>
-  <li><a href="#Functions-as-values">Functions as values<a class="anchor-link" href="#Functions-as-values">¶</a></a></li>
-</ul>
-
-  <li><a href="#6.-Return-statements">6. Return statements<a class="anchor-link" href="#6.-Return-statements">¶</a></a></li>
-  <li><a href="#7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></a></li>
-</ul>
-
   <li><a href="#distributions">Distributions</a></li>
   <ul>
   <li><a href="#Estimating-the-number-of-enemy-aircraft">Estimating the number of enemy aircraft<a class="anchor-link" href="#Estimating-the-number-of-enemy-aircraft">¶</a></a></li>
   <li><a href="#The-empirical-distribution-of-a-statistic">The empirical distribution of a statistic<a class="anchor-link" href="#The-empirical-distribution-of-a-statistic">¶</a></a></li>
   <li><a href="#The-probability-distribution-of-the-largest-serial-number">The probability distribution of the largest serial number<a class="anchor-link" href="#The-probability-distribution-of-the-largest-serial-number">¶</a></a></li>
+</ul>
+
+  <li><a href="#how-close-are-two-distributions">How close are two distributions?</a></li>
+  <ul>
+  <li><a href="#Total-Variation-Distance">Total Variation Distance<a class="anchor-link" href="#Total-Variation-Distance">¶</a></a></li>
+  <li><a href="#Are-the-panels-representative-of-the-population?">Are the panels representative of the population?<a class="anchor-link" href="#Are-the-panels-representative-of-the-population?">¶</a></a></li>
+  <li><a href="#A-Classical-Interlude:-the-$\chi^2$-Statistic">A Classical Interlude: the $\chi^2$ Statistic<a class="anchor-link" href="#A-Classical-Interlude:-the-$\chi^2$-Statistic">¶</a></a></li>
 </ul>
 
   <li><a href="#further-reading">Further Reading</a></li>
@@ -745,966 +708,6 @@ ERExDYWaiIiYhkJNRERMQ6EmIiKmoVATERHTUKiJiIhp/B/cSeAMTGW83gAAAABJRU5ErkJggg==
 </div></p>
 
 
-<h1 id="statements">Statements</h1>
-
-
-<p>
-<div class="ipython-notebook">
-	<div>
-		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Statements.ipynb">
-			<span class="pop">Interact<span>
-		</a>
-	</div>
-	<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="0.-Introduction">0. Introduction<a class="anchor-link" href="#0.-Introduction">¶</a></h2><p>In this note, we'll go over the structure of Python code in a bit more detail than we have before.  When you've absorbed this material, you should be able to read Python code and decompose it into simple, understandable parts.  This note should be particularly useful if you've seen a lot of Python code, but you have a hard time interpreting complicated-looking code like <code>table['foo'] = np.array([1,2,3]) + table['bar']</code>.</p>
-<p>Decomposing Python into small parts is kind of like diagramming an English sentence.  While our brains are perfectly capable of generating and understanding English without explicitly identifying things like subjects and predicates, Python interprets code very literally according to its rules (its <em>syntax</em>).  So if you want to understand Python code, it's more important to have a precise model of Python's rules in your head.  On the flip side, Python's rules are much simpler than those of English (see, for example, <a href="https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo">this amusingly complicated English sentence</a>).  They just seem complicated because we're less familiar with them.  That makes it possible to learn Python much faster than you learned English.</p>
-<p>Note: Everything in this note is also available, with even more pedantic precision, at the <a href="https://docs.python.org/3/reference/index.html">official Python language reference</a>.  This note is focused on the material in chapters 6, 7, and 8 of the reference.  We will omit some details and fudge some truths in the interest of pedagogy.  Once you feel like an expert in this stuff, feel free to brave the official documentation.</p>
-<h3 id="How-to-read-this-document">How to read this document<a class="anchor-link" href="#How-to-read-this-document">¶</a></h3><p>This note contains a bunch of code cells, in addition to text.  The code cells typically illustrate points from the text.  Please run the code cells as you go through the note, and pay attention to what their output is.  Recall that the thing that's printed when you run a cell is the value of the last line.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Code-is-a-sequence-of-statements">1. Code is a sequence of statements<a class="anchor-link" href="#1.-Code-is-a-sequence-of-statements">¶</a></h2><p>Below is a cell containing various Python code that might look familiar by now.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="mi">3</span>                                               <span class="c"># Line 1.0</span>
-<span class="n">z</span> <span class="o">=</span> <span class="mi">3</span>                                           <span class="c"># Line 1.1</span>
-<span class="mi">4</span><span class="o">+</span><span class="mi">3</span>                                             <span class="c"># Line 1.2</span>
-<span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="o">+</span><span class="mi">3</span>                                         <span class="c"># Line 1.3</span>
-<span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">3</span><span class="p">)</span><span class="o">+</span><span class="n">z</span>                                         <span class="c"># Line 1.4</span>
-<span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span>                                     <span class="c"># Line 1.5</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                                         <span class="c"># Line 1.6</span>
-<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                                     <span class="c"># Line 1.7</span>
-<span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>                                          <span class="c"># Line 1.8</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>                                            <span class="c"># Line 1.9</span>
-<span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">4</span>                                        <span class="c"># Line 1.10</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>                                     <span class="c"># Line 1.11</span>
-<span class="n">t</span><span class="p">[</span><span class="s">'Things'</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s">"foo"</span><span class="p">,</span> <span class="s">"bar"</span><span class="p">,</span> <span class="s">"baz"</span><span class="p">])</span>   <span class="c"># Line 1.12</span>
-<span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>                                <span class="c"># Line 1.13</span>
-<span class="n">u</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>                            <span class="c"># Line 1.14</span>
-<span class="n">u</span><span class="o">.</span><span class="n">relabel</span><span class="p">(</span><span class="s">'Things'</span><span class="p">,</span> <span class="s">'Nonsense'</span><span class="p">)</span>                 <span class="c"># Line 1.15</span>
-<span class="n">u</span>                                               <span class="c"># Line 1.16</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(The <code># Line X</code> comments are just there for labeling; don't consider them part of the lines.  Similarly, other instances of <code># some text here</code> that you see in this note are just for explanation.)  Each line in the cell is a <em>statement</em>.  A statement is a (somewhat) self-contained piece of code.  Python executes statements in the order in which they appear.  There are many kinds of statements, and to execute a statement, Python first has to figure out what kind of statement it is.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Expressions">2. Expressions<a class="anchor-link" href="#2.-Expressions">¶</a></h2><p>The most basic kind of statement is the <em>expression</em>.</p>
-<p>Line 0 above is just an expression: <code>3</code>.  Like many (but not all) expressions, it has a value, the integer 3.  Like some (but not all) expressions, computing its value causes nothing to "happen" to the world.  (We say it has no <em>side effects</em>.)  When Python executes line 0, it computes that value.  Since nothing is done with it, it just gets discarded.  The same is true of lines 2, 4, 5, 6, 8, 9, 13, and 16 -- those are expression statements that cause values to be computed, but the computation has no side effects, and the value of the full expression is eventually discarded.  Line 14 is an expression that does have side effects -- it causes the <code>'Things'</code> column in the table named <code>t</code> to be renamed to <code>'Nonsense'</code>.  The other lines are statements but not expressions, but we will see that, like many statements, they <em>contain</em> expressions.</p>
-<p>Expressions are themselves usually made up of several smaller expressions joined together by some rules; we call these <em>compound expressions</em>, and we sometimes call the component expressions <em>subexpressions</em>.  Line 2, for example, is a compound expression made up of the subexpressions <code>4</code> and <code>3</code> joined by <code>+</code>.  Python knows what a <code>+</code> between two expressions means, and it puts them together so that the value of <code>4+3</code> is the value of <code>4</code> plus the value of <code>3</code>, or 7.</p>
-<p>Line 4 is another compound expression.  We can think of it as the subexpressions <code>(2+3)</code> and <code>z</code>, again joined by <code>+</code>.  But <code>(2+3)</code> is itself a compound expression, made up of <code>2</code> and <code>3</code> joined by <code>+</code>.  Python first computes the value of <code>(2+3)</code>, which is 5, and then computes the value of <code>z</code>, which is 3 (<code>z</code> having been assigned previously), and then adds 5 and 3 to get 8.  <code>(2+3)*(4*((5*6)+7))</code> is also a valid expression.  It contains 10 subexpressions (not including itself):</p>
-<ul>
-<li><code>2</code></li>
-<li><code>3</code></li>
-<li><code>(2+3)</code></li>
-<li><code>4</code></li>
-<li><code>5</code></li>
-<li><code>6</code></li>
-<li><code>(5*6)</code></li>
-<li><code>7</code></li>
-<li><code>((5*6)+7)</code></li>
-<li><code>(4*((5*6)+7))</code></li>
-</ul>
-<p>Compound expressions can be arbitrarily complicated compositions of expressions.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question.</strong>  How many subexpressions are contained in the expression <code>((1+2)+(3+4))+((5+6)+(7+8))</code>?</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>It's <em>critical</em> to recognize that subexpressions are valid expressions that could be written by themselves or made part of other compound expressions.  If you see a complicated expression like the one above (or even more exotic ones later), and you don't understand what it does, you can always break it down into smaller bits until you get to very basic expressions.  This note will tell you the rules about all the basic expressions, but you'll need to develop the skill of breaking down compound expressions into subexpressions.</p>
-<p><strong>Question.</strong> What's the value of each subexpression you found above?  You can just type them into the empty code cell below if you like.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre> 
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="A-note-on-errors">A note on errors<a class="anchor-link" href="#A-note-on-errors">¶</a></h4><p>Line 5 (<code>"foo"+"bar"</code>) is a compound expression adding two strings, with <code>"foo"</code> and <code>"bar"</code> as subexpressions.  This is okay, since the <code>+</code> operator knows how to handle two strings.  It produces the string "foobar" as its value.</p>
-<p>When the following cell is executed, however, there is an error.  (Run the cell to confirm that.)</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="s">"foo"</span><span class="o">+</span><span class="mi">5</span> <span class="c"># Error!</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>When you see an error, don't just give up.  Often (though unfortunately not always) the error message will tell you what's wrong.  The error message first tells us that the problem happened on line 1 of the cell (in this case, the only line) and the text of the error is "TypeError: Can't convert 'int' object to str implicitly".  Python evaluates <code>"foo"</code> and <code>5</code> just fine, but when the <code>+</code> operator tries to apply itself "foo" and 5, it becomes unhappy.  The error refers to the fact that the <code>+</code> operator tries to convert its arguments to something it can add.  For example, adding an integer and a float, like <code>3+4.5</code>, works because <code>+</code> converts the integer <code>3</code> to a float.  But <code>+</code> can't convert a number to text.</p>
-<p>The important thing to realize about that cell, for our purposes, is exactly where the error happens.  In the next cell, for example, some work is done before an error happens:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span><span class="p">)</span><span class="o">+</span><span class="mi">5</span> <span class="c"># Error!</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Python actually evaluates the subexpression <code>("foo"+"bar")</code> successfully, producing the string "foobar", before again failing to add "foobar" and 5.  The error occurs only when trying to add a string and a number, and not before.</p>
-<p>Now, let's go over the kinds of expressions that Python has.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Strings,-ints,-and-floats">Strings, ints, and floats<a class="anchor-link" href="#Strings,-ints,-and-floats">¶</a></h3><p>The most basic kinds of expressions, which we've seen repeatedly above, are string, int, and float expressions.  These just look like this:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="s">"foo"</span> <span class="c"># a string expression, whose value is the string "foo"</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="s">'foo'</span> <span class="c"># a string expression, essentially identical to the one above</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="mi">5</span>     <span class="c"># an int expression, whose value is the integer number 5</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="mf">5.1</span>   <span class="c"># a float expression, whose value is the decimal number 5.1</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Here is a more exotic kind of string expression:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="sd">"""blah</span>
-
-<span class="sd">...</span>
-<span class="sd"># looks like a comment but isn't</span>
-<span class="sd">last line"""</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The result is just a string like <code>"foo"</code> above, with a few differences.  Triple double-quotation marks denote the beginning and end of this string, and it can take up multiple lines, unlike an ordinary string expression.</p>
-<p>Frankly, this is an arcane detail of Python, but we bring it up because triple-quoted strings are often used for writing long-form comments in code, instead of <code>#</code> comments.  This works even though the string is just an expression, not a special device for long comments.  That's because an expression doesn't <em>do</em> anything by itself, except that the last expression in a Jupyter notebook cell gets printed.  So you can sprinkle string expressions (or other expressions that have no side-effects) throughout your code (on their own lines) and no harm will come of it.</p>
-<p>The following (oddly and excessively) documented code shows this:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="sd">"""The code in this cell produces</span>
-<span class="sd">pi rounded to 5 decimal digits."""</span>
-<span class="s">"First, let's give a name to pi."</span>
-<span class="n">my_name_for_pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-<span class="c"># Now, we round it to 5 decimal</span>
-<span class="c"># digits.</span>
-<span class="n">pi_rounded</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">my_name_for_pi</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="s">"Now make that the last expression in this cell."</span>
-<span class="n">pi_rounded</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Names">Names<a class="anchor-link" href="#Names">¶</a></h3><p>Names, also called <em>variables</em>, are just expressions like <code>x</code> or <code>my_name_for_pi</code> that refer to some actual values.  When Python sees a name expression, it basically just substitutes the current value of that name for the name.  We'll later talk about what kinds of statements assign names to values.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Lists">Lists<a class="anchor-link" href="#Lists">¶</a></h3><p>Line 6 above, <code>[1,2,3]</code>, is another kind of compound expression, the <em>list literal</em>.  Python knows that when square brackets (<code>[]</code>) appear by themselves with a comma-separated list of expressions inside them, we are asking for a list consisting of those expressions' values.</p>
-<p>Again, each expression in the list can be a compound expression.  So it's okay to write something like:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="p">[</span><span class="s">"foo"</span><span class="o">+</span><span class="s">"bar"</span><span class="p">,</span> <span class="nb">sum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]),</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question.</strong> Describe the value of the above list expression in English.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Calls">Calls<a class="anchor-link" href="#Calls">¶</a></h3><p>Line 8, <code>sum(x)</code>, is also a compound expression, a <em>function call</em>.  Python evaluates the subexpression <code>sum</code>, producing a <em>function</em> that adds members of lists, and the subexpression <code>x</code>, which was previously set to a list of integers.  Then the parentheses <code>()</code> direct Python to <em>call</em> the function on the left of the parenthesis (the one named <code>sum</code>) on the value of <code>x</code>, producing the value 6.  Note that it's possible to write things like <code>5(3)</code> or <code>nonexistent_function(0)</code>.  Python will just complain that <code>5</code> is not a function (specifically, that it is not "callable") or that <code>nonexistent_function</code> hasn't been defined, respectively.</p>
-<p>The following line is similar to line 8, but the subexpression inside the parentheses, <code>x + [4]</code>, is itself a compound expression:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">4</span><span class="p">])</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>(Recall that adding two lists with <code>+</code> makes a new list consisting of the two lists smashed together.  So <code>x + [4]</code> above has value equal to <code>[1,2,4,4]</code>.  <code>x</code> is equal to <code>[1,2,4]</code>, not <code>[1,2,3]</code> as it was defined on line 7, because on line 10 we set its last element to <code>4</code>.)</p>
-<p>We haven't seen how to define new functions yet, but here is one example to see how the expression before the <code>(</code> is just an expression (whose value must be a function):</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_name_for_sum</span> <span class="o">=</span> <span class="nb">sum</span>
-<span class="n">my_name_for_sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Indexing">Indexing<a class="anchor-link" href="#Indexing">¶</a></h3><p>Line 9, <code>x[2]</code>, is yet another compound expression.  Python evaluates the subexpression <code>x</code>, producing a list, and the subexpression <code>2</code>.  The square brackets <code>[]</code>, appearing immediately after an expression and with another expression inside them, tell Python to <em>index</em> into the value of the first expression using the value of the second expression.  For this list as it's defined on line 9, this produces the value 3.</p>
-<p>Notice that the code string <code>[2]</code> can have two different meanings, depending on the code immediately around it.  If there is an expression to the left, for example <code>x[2]</code>, then Python will take it to mean an indexing expression.  If not, Python will think you mean a list with a single element, 2.</p>
-<p>Like parentheses, the things on either side of the square brackets can be compound expressions:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">x</span><span class="p">[</span><span class="mi">2</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="p">[</span><span class="mi">13</span><span class="p">])[</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question.</strong>  In the last cell, there are 7 subexpressions, not counting the whole expression <code>(x + [13])[2+1]</code>.  Can you identify all of them?</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Finally, note that different kinds of values support different kinds of indexing.  A Table, for example, supports indexing by strings, producing a column:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="p">[</span><span class="s">'Things'</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Question.</strong> To put together list indexing and function calls, try to figure out what the following code is doing.  (Note that an expression like <code>sum</code> has a value, like any other name expression, and that value is a function.  We can put function values into lists, just like other values.)</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">some_functions_on_lists</span> <span class="o">=</span> <span class="p">[</span><span class="nb">sum</span><span class="p">,</span> <span class="nb">len</span><span class="p">]</span>
-<span class="p">(</span><span class="n">some_functions_on_lists</span><span class="p">[</span><span class="mi">0</span><span class="p">])(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Dots-and-attributes">Dots and attributes<a class="anchor-link" href="#Dots-and-attributes">¶</a></h3><p>Objects (just another name for a value, like 1, "four score", or a Table) often have things called properties, attributes, fields, or (in the case when the things are functions) methods.  Let's call them attributes.  Though in this class we won't see how to create new kinds of objects, we will use attributes all the time.</p>
-<p>We access attributes using a <code>.</code>.  For example:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">rows</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Generically, the thing on the left of the <code>.</code> must be an expression whose value is an object with the attribute we want.  As with calling and indexing, it can be an arbitrarily complicated compound expression.  The thing on the right of the dot is the name of the attribute.  Unlike the arguments of a function or the index in an indexing expression, it is <em>not</em> an expression.  It must be the name of an attribute that the object on the left has.</p>
-<p>As we said, sometimes an attribute is a function, in which case we sometimes call it a <em>method</em> instead.  The syntax is the same as other attribute accesses:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Things'</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The only difference between a method and a normal function is that the object itself (<code>t</code> in this case) is automatically passed as the first argument to the method.  So the <code>sort</code> function technically has two arguments -- the first is the table that <code>sort</code> is being called on, and the second is the column name.  This is how <code>sort</code> knows which table to sort!  Normally this is a really technical detail that you don't need to worry about, but it can come up when you accidentally pass the wrong number of arguments to a method:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">t</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'This'</span><span class="p">,</span> <span class="s">'is'</span><span class="p">,</span> <span class="s">'too'</span><span class="p">,</span> <span class="s">'many'</span><span class="p">,</span> <span class="s">'arguments'</span><span class="p">)</span> <span class="c"># Error!</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The error complains that we gave 6 arguments to <code>sort</code>, but it looks like we only passed 5.  The extra first argument is the table <code>t</code>.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="A-weird-thing-about-dot-syntax">A weird thing about dot syntax<a class="anchor-link" href="#A-weird-thing-about-dot-syntax">¶</a></h4><p>You might notice at some point that dots are used in two ways in Python: accessing attributes, and in expressions for floating-point numbers.  For example, <code>x.y</code> is accessing the attribute named <code>y</code> in the value named <code>x</code>, while <code>1.2</code> is just an expression for the number 1.2.  This is one reason why you can't have numbers at the start of names.  It also means that the expression on the left of a <code>.</code> can't just be number.  For example, we can't access the attribute <code>real</code> of an integer this way (for this example, you don't need to know what <code>real</code> is doing, other than that it should just return the same value as the integer):</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="mf">1.</span><span class="n">real</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>That's because Python can't tell whether we're trying to write an (invalid) decimal number <code>1.real</code> or access the <code>real</code> attribute of the value <code>1</code>.  Surrounding the <code>1</code> in parentheses makes it clear to Python:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">real</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Is-that-all-the-expressions?">Is that all the expressions?<a class="anchor-link" href="#Is-that-all-the-expressions?">¶</a></h3><p>No.  We might see more as the class goes on.  But these are most of the important ones, and you've seen most of the difficult ideas.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Exercises-to-put-it-all-together">Exercises to put it all together<a class="anchor-link" href="#Exercises-to-put-it-all-together">¶</a></h3><p><strong>Question.</strong>  Many people, when they first encounter tables and try to use them to manipulate data, assume that Python allows more syntactic flexibility than it really does.  Below are some examples of things we might <em>hope</em> would work, but don't.  For each one, describe what it actually does, what its author was probably trying to do, what went wrong, and how to fix it.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="c"># No error here, just setup for the next cells.  Run this cell to see the table we're working with.</span>
-<span class="n">my_table</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]],</span> <span class="p">[</span><span class="s">'x'</span><span class="p">,</span> <span class="s">'y'</span><span class="p">],</span> <span class="p">)</span>
-<span class="n">my_table</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x + y'</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x'</span> <span class="o">+</span> <span class="s">'y'</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="p">[</span><span class="s">'x'</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="s">'y'</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="s">'x'</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">where</span><span class="p">([</span><span class="s">'x'</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_table</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'y'</span><span class="p">)</span>
-<span class="n">row_with_smallest_y</span> <span class="o">=</span> <span class="n">my_table</span><span class="o">.</span><span class="n">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Assignments">3. Assignments<a class="anchor-link" href="#3.-Assignments">¶</a></h2>
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If we had only expressions, it would be difficult to put together many steps in our code.  For example, which piece of code is more legible?</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">Table</span><span class="p">([[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Connie'</span><span class="p">],</span> <span class="p">[</span><span class="mf">119.99</span><span class="p">,</span> <span class="mf">29.99</span><span class="p">,</span> <span class="mf">10.00</span><span class="p">,</span> <span class="mf">350.00</span><span class="p">,</span> <span class="mf">5.29</span><span class="p">]],</span> <span class="p">[</span><span class="s">'Customer'</span><span class="p">,</span> <span class="s">'Bill'</span><span class="p">])</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Customer'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Bill sum'</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="k">True</span><span class="p">)[</span><span class="s">'Customer'</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">transactions</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span>                                                                                  <span class="c"># Line 3.0</span>
-<span class="n">transactions</span><span class="p">[</span><span class="s">'Customer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Connie'</span><span class="p">]</span>                                 <span class="c"># Line 3.1</span>
-<span class="n">transactions</span><span class="p">[</span><span class="s">'Bill'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">119.99</span><span class="p">,</span> <span class="mf">29.99</span><span class="p">,</span> <span class="mf">10.00</span><span class="p">,</span> <span class="mf">350.00</span><span class="p">,</span> <span class="mf">5.29</span><span class="p">]</span>                                             <span class="c"># Line 3.2</span>
-<span class="n">total_bill_per_customer</span> <span class="o">=</span> <span class="n">transactions</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="s">'Customer'</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>                                        <span class="c"># Line 3.3</span>
-<span class="n">customers_sorted_by_total_bill</span> <span class="o">=</span> <span class="n">total_bill_per_customer</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s">'Bill sum'</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="k">True</span><span class="p">)[</span><span class="s">'Customer'</span><span class="p">]</span>  <span class="c"># Line 3.4</span>
-<span class="n">top_customer</span> <span class="o">=</span> <span class="n">customers_sorted_by_total_bill</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                                        <span class="c"># Line 3.5</span>
-<span class="n">top_customer</span>                                                                                            <span class="c"># Line 3.6</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Many programs do hundreds (or millions) of different things, and it would be cumbersome to do this only using expressions.  In this example, we are doing only one thing, using several steps.  The first cell is concise, but it's very hard to read.  In the second cell, we use <em>assignment statements</em> to break down the steps into things that are (hopefully) understandable.</p>
-<p>An assignment statement is executed like other statements, but it always causes an effect on the world (recall that we called these <em>side effects</em>).  That is subsequent statements will see the changes made by the assignment.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Name-assignments">Name assignments<a class="anchor-link" href="#Name-assignments">¶</a></h3><p>An assignment statement generally has two expressions separated by an equals sign.  The expression on the right can be anything, but the expression on the left must be an "assignable thing".  The simplest case is a name that has not been assigned to anything yet, like <code>total_bill_per_customer</code> on line 3 above.  Before line 3 is executed, it would be an error to refer to <code>total_bill_per_customer</code>, but after line 3, that name can be used to refer to the table created by <code>transactions.group('Customer', np.sum)</code>.</p>
-<p>Assignment statements can also reassign existing names to something else:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="n">number</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="n">number</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>As a matter of code style, it is best to avoid this where possible, because it can make your code more confusing.  (If everything is assigned only once, it's trivial to see what its value is when you read code.  Otherwise you might need to hunt down all the assignments.)  But occasionally it is useful, and sometimes it is necessary.  We'll see examples of the latter when we cover iteration.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Indexing-assignments">Indexing assignments<a class="anchor-link" href="#Indexing-assignments">¶</a></h3><p>Lines 1 and 2 above are assignments to parts of an <em>indexable</em> thing.  In this case, they add new columns to the <code>transactions</code> Table associated with the strings "Customer" and "Bill", respectively.  Generically, an indexing assignment looks like:</p>
-
-<pre><code>&lt;expression with indexable value&gt;[&lt;expression&gt;] = &lt;expression&gt;
-
-</code></pre>
-<p>The same pattern happens when we assign elements of a list or array:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s">"foo"</span><span class="p">]</span>
-<span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="s">"bar"</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Different indexable things can have different behavior when you set something in them.  For example, Tables use string indexing instead of number indexing, and they are okay with adding new columns using indexing assignments (as we saw in lines 1 and 2) or with replacing existing columns with something else.  If we want to change the customer names (say because we made a mistake the first time), we could do that by changing the whole "Customer" column:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">transactions</span><span class="p">[</span><span class="s">'Customer'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Bob'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Alice'</span><span class="p">,</span> <span class="s">'Dora'</span><span class="p">]</span> <span class="c"># </span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Lists, however, don't let us add new elements.  We can only assign new things to the slots a list had when it was created:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="s">"baz"</span>    <span class="c"># Okay.</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">my_list</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="s">"garply"</span> <span class="c"># Error.</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Note that it is possible to make an existing list longer using extend(), or to make a new, longer copy of the list with <code>+</code>.  You just can't do it with index assignment.</p>
-<p>Why do lists have this restriction?  Lists are supposed to contain contiguous ranges of things; they can't have "holes" that aren't indexable.  If you could extend a list by assigning to it at whatever indices you wanted, you could assign elements, say, 0, 1, and 3, leaving 2 unassigned.  Then what should <code>len</code> return for that list -- 3 or 4?  And what should happen when you print it?  It's not clear.  To make sure you don't have to worry about this when you use lists, Python doesn't let you do it.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Import-statements">4. Import statements<a class="anchor-link" href="#4.-Import-statements">¶</a></h2><p>A simple, standalone kind of statement is the <em>import statement</em>, as in <code>import numpy as np</code>.  It has the side effect of making the <code>numpy</code> module available, giving it the name <code>np</code>.  Notice that the import statement has its own special rules, and it doesn't include other expressions as subexpressions anywhere.</p>
-<p>Modules are actually values, just like strings or functions.  Saying <code>import numpy</code> just loads the module named numpy from the computer's library of modules and assigns it the name <code>numpy</code>.  <code>import numpy as np</code> assigns it the name <code>np</code> instead.  We could imagine that <code>import numpy as np</code> does something like this:</p>
-
-<pre><code>np = load_module('numpy') # BEWARE: NOT REAL PYTHON CODE.
-
-</code></pre>
-<p>When you say something like <code>np.array([1,2,3])</code>, you're accessing the <code>array</code> attribute of the module named <code>np</code> and calling it on the list given by <code>[1,2,3]</code>.  (Note that, unlike function attributes of some other values, function attributes of modules are not usually called methods, and they don't get the module value as an extra argument.)</p>
-<p><strong>Question.</strong> How many subexpressions (not counting the whole expression) are there in the following expression?</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span><span class="o">*</span><span class="mi">4</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="5.-Function-definitions">5. Function definitions<a class="anchor-link" href="#5.-Function-definitions">¶</a></h2><p>Another important statement is the <em>function definition</em>:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">square</span><span class="p">(</span><span class="mf">5.5</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>After this line, the function <code>square</code> will be available for calling.  Defining a function doesn't do anything else.  In particular, it's not called unless you call it somewhere.</p>
-<p>The function definition is our first example of a statement that takes up multiple lines.  In fact, a function typically includes multiple <em>substatements</em>; its general form is:</p>
-
-<pre><code>def &lt;function name&gt;(&lt;argument list&gt;):
-    &lt;substatement 0&gt;
-    &lt;substatement 1&gt;
-    ...
-
-</code></pre>
-<p>Notice the indentation of the statements inside the function.  Indentation tells Python where your function definition ends.  You can use as many spaces as you want (as long as you're consistent), but 4 is traditional.</p>
-<p>When a function is executed (using the function call syntax we saw above), its substatements are executed sequentially, just like an ordinary sequence of statements in a cell.  The statements can be any statements you want.  (You can even define functions inside functions.)  Before the statements are executed, each name in the argument list is set to the corresponding value in the arguments passed to the function.  For example, when we call <code>square(5.5)</code> above, Python starts executing the statements in the <code>square</code> function, but first sets <code>x</code> to 5.5.</p>
-<p>It's important to know, though, that the value of <code>x</code> is set <em>only</em> for the statements inside the function.  Outside the function call, argument names are not modified or visible.  For example:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
-<span class="n">cube</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c"># 27</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">square_root</span><span class="p">(</span><span class="n">does_not_appear_elsewhere</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">does_not_appear_elsewhere</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">square_root</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">does_not_appear_elsewhere</span> <span class="c"># Causes an error.  does_not_appear_elsewhere was only defined inside the function while it was being called.</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Similarly, any names defined inside a function are only defined inside the function while it's running.  They don't even stick around across calls to the function; each time the function body finishes, the names defined inside it are wiped out, just like argument names.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">times_three</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="n">multiplier</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">return</span> <span class="n">multiplier</span><span class="o">*</span><span class="n">x</span>
-
-<span class="n">six</span> <span class="o">=</span> <span class="n">times_three</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">three</span> <span class="o">=</span> <span class="n">multiplier</span> <span class="c"># Error!</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions are extremely useful for packaging small pieces of functionality into easily-understandable pieces.  Computer code is so powerful that organizing and maintaining it is often much more difficult than just getting the computer to do what we want.  If you can wrap a complicated procedure into a single function, then you can focus once on getting that function written correctly, and then move on to something else, never worrying about its correctness again.  In most moderate- or large-scale software, all code is organized this way -- that is, <em>all code</em> is just a bunch of (relatively short) functions.</p>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Functions-as-values">Functions as values<a class="anchor-link" href="#Functions-as-values">¶</a></h3><p>A function definition like</p>
-
-<pre><code>def my_func(x):
-    return 2*x
-
-</code></pre>
-<p>is really just producing a <em>function value</em> and assigning the name <code>my_func</code> to that value.  In this case, the function value is the function that multiplies its single argument by 2.  You should imagine <code>def</code> as doing something similar to the following (non-functioning) code:</p>
-
-<pre><code>my_func = make_a_function(x): # BEWARE: NOT REAL PYTHON CODE.
-    return 2*x
-
-</code></pre>
-<p>...where we're imagining for a moment that the special syntax <code>make_a_function(...): ...</code> returns a function.  So names assigned to functions are really just ordinary names, and function values are just like other values.  Of course, function values, like other values, have special behaviors; they can be called using <code>()</code>, and they can't be added together like strings or numbers.</p>
-<p><em>Names</em> assigned to functions are also just ordinary names.  It is possible, for example, to redefine a name that was previously defined as a function using <code>def</code> (though this is so confusing that it is usually a bad idea):</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">my_func</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
-
-<span class="n">eight</span> <span class="o">=</span> <span class="n">my_func</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">my_func</span> <span class="o">=</span> <span class="mi">3</span> <span class="c"># Technically possible, but inadvisable!</span>
-<span class="n">my_func</span> <span class="o">+</span> <span class="mi">2</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also put function values into a list, as we saw earlier:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">my_func_0</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span>
-<span class="k">def</span> <span class="nf">my_func_1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="mi">1</span><span class="o">*</span><span class="n">x</span>
-<span class="n">funcs</span> <span class="o">=</span> <span class="p">[</span><span class="n">my_func_0</span><span class="p">,</span> <span class="n">my_func_1</span><span class="p">]</span>
-<span class="n">zero</span> <span class="o">=</span> <span class="n">funcs</span><span class="p">[</span><span class="mi">0</span><span class="p">](</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">zero</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Though Python prints function values in a slightly cryptic way, you can print them if you want:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">funcs</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="6.-Return-statements">6. Return statements<a class="anchor-link" href="#6.-Return-statements">¶</a></h2><p>Inside a function definition, we very often see yet another kind of statement: the <em>return statement</em>.  This has the form <code>return &lt;expression&gt;</code>.  Any of the expressions we saw above can appear after the <code>return</code>.  This is the value produced by calls to the function.  For example, the value of <code>square(5)</code> is 25, since <code>square</code> will return <code>5*5</code> when it is called with the argument <code>5</code>.</p>
-<p><code>return</code> stops execution of the function; subsequent statements are not reached.  For example:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">weird_but_technically_correct_square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
-
-<span class="n">weird_but_technically_correct_square</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>If a return statement is never reached, calling the function produces no value.  The following code is wrong, for example:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">wrong_circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
-    <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">some_name</span> <span class="o">=</span> <span class="n">wrong_circle_area</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">some_name</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Unfortunately, this is a mistake that Python will not complain about; it will just silently let <code>some_name</code> have no value.  (Technically it is given a special value called None.  If a statement with value None is the last statement in a cell, Jupyter doesn't print anything.  But you can see the value of <code>some_name</code> if you write, for example, <code>str(some_name)</code>.)</p>
-<p>To be clear, we just fix this by <code>return</code>ing whatever we want the function to return:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">correct_circle_area</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">r</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-<span class="n">circle_radius_four_area</span> <span class="o">=</span> <span class="n">correct_circle_area</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">circle_radius_four_area</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></h2><p>Conditionals are another important multi-line statement:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
-<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="s">"x is a long list!"</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">message</span> <span class="o">=</span> <span class="s">"x is a short list!"</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="n">message</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>The general form of a conditional is:</p>
-
-<pre><code>if &lt;boolean-valued expression 0&gt;:
-    &lt;statement 0.0&gt;
-    ...
-elif &lt;boolean-valued expression 1&gt;:
-    &lt;statement 1.0&gt;
-    ...
-elif &lt;boolean-valued expression 2&gt;:
-    &lt;statement 2.0&gt;
-    ...
-...
-else:
-    &lt;statement n.0&gt;
-    ...
-
-</code></pre>
-<p>If there is an <code>else</code> clause, then exactly one of the statement groups will be executed; otherwise, it's possible that none of them will happen (if none of the expressions next to <code>if</code> or <code>elif</code> are True).</p>
-<p>Conditionals are pretty simple, but like functions, they are very important for writing code that does interesting things.</p>
-<p>Something to watch out for is that Python will implicitly convert non-boolean values to boolean values, sometimes using surprising rules.  Typically, the convention is that something that is "zero-like" or "empty" is False, while other things are True.  It's best not to rely on this behavior, though; use an explicit comparison that produces a boolean value.  See what happens in the following examples:</p>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="mi">1</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="s">"some string"</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="s">""</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="p">[]:</span> <span class="c"># (an empty list)</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([]):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">True</span><span class="p">]):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">False</span><span class="p">]):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="k">True</span><span class="p">,</span> <span class="k">False</span><span class="p">]):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="k">True</span>
-<span class="k">else</span><span class="p">:</span> 
-    <span class="n">x</span> <span class="o">=</span> <span class="k">False</span>
-<span class="n">x</span>
-</pre></div>
-
-</div>
-</div>
-</div></p>
-
-
 <h1 id="distributions">Distributions</h1>
 
 
@@ -1718,7 +721,7 @@ else:
 	<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>The steps in the randomized response survey can be visualized using a <em>tree diagram</em>. The diagram partitions all the survey respondents according to their true and answer and the answer that they eventually give. It also displays the proportions of respondents whose true answers are 1 ("yes") and 0 ("no"), as well as the chances that determine the answers that they give. As in the code above, we have used <em>p</em> to denote the proportion whose true answer is 1.</p>
-<p><img alt="Tree Diagram" src="../assets/images/rand_response_tree.png"/></p>
+<p><img alt="Tree Diagram" src="assets/images/rand_response_tree.png"/></p>
 
 </div>
 </div>
@@ -3248,6 +2251,1386 @@ YUZERKLHMCMiItFjmBERkegxzIiISPQYZkREJHoMMyIiEr3/D04+wDxwcAq3AAAAAElFTkSuQmCC
 <p>You can see that the old method almost always underestimates; formally, we say that it is <em>biased</em>. But it has low variability, and is highly likely to be close to the true total number of planes.</p>
 <p>The new method overestimates about as often as it underestimates, and thus is called <em>unbiased</em> on average in the long run. However, it is more variable than the old estimate, and thus is prone to larger absolute errors.</p>
 <p>This is an instance of a <em>bias-variance tradeoff</em> that is not uncommon among competing estimates. Which estimate you decide to use will depend on the kinds of errors that matter the most to you. In the case of enemy warplanes, underestimating the total number might have grim consequences, in which case you might choose to use the more variable method that overestimates about half the time. On the other hand, if overestimation leads to needlessly high costs of guarding against planes that don't exist, you might be satisfied with the method that underestimates by a modest amount.</p>
+
+</div>
+</div>
+</div></p>
+
+
+<h1 id="how-close-are-two-distributions">How close are two distributions?</h1>
+
+
+<p>
+<div class="ipython-notebook">
+	<div>
+		<a class="button" href="http://ds8.berkeley.edu/hub/interact?file=http://data8.org/text/examples/Distance.ipynb">
+			<span class="pop">Interact<span>
+		</a>
+	</div>
+	<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>By now we have seen many examples of situations in which one distribution appears to be quite close to another. The goal of this section is to quantify the difference between two distributions. This will allow our analyses to be based on more than the assessements that we are able to make by eye.</p>
+<p>For this, we need a measure of the distance between two distributions. We will develop such a measure in the context of a <a href="https://www.aclunc.org/sites/default/files/racial_and_ethnic_disparities_in_alameda_county_jury_pools.pdf" title="ACLU_NC report">study</a> conducted in 2010 by the Americal Civil Liberties Union (ACLU) of Northern California.</p>
+<p>The focus of the study was the racial composition of jury panels in Alameda County. A jury panel is a group of people chosen to be prospective jurors; the final trial jury is selected from among them. Jury panels can consist of a few dozen people or several thousand, depending on the trial. By law, a jury panel is supposed to be representative of the community in which the trial is taking place. Section 197 of California's Code of Civil Procedure says, "All persons selected for jury service shall be selected at random, from a source or sources inclusive of a representative cross section of the population of the area served by the court."</p>
+<p>The final jury is selected from the panel by deliberate inclusion or exclusion:  the law allows potential jurors to be excused for medical reasons; lawyers on both sides may strike a certain number of potential jurors from the list in what are called "peremptory challenges"; the trial judge might make a selection based on questionnaires filled out by the panel; and so on. But the initial panel is supposed to resemble a random sample of the population of eligible jurors.</p>
+<p>The ACLU of Northern California compiled data on the racial composition of the jury panels in 11 felony trials in Alameda County in the years 2009 and 2010. In those panels, the total number of poeple who reported for jury service was 1453. The ACLU gathered demographic data on all of these prosepctive jurors, and compared those data with the composition of all eligible jurors in the county.</p>
+<p>The data are tabulated below in a table called <code>jury</code>. For each race, the first value is the percentage of all eligible juror candidates of that race. The second value is the percentage of people of that race among those who appeared for the process of selection into the jury.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">jury_rows</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s">"Asian"</span><span class="p">,</span>  <span class="mf">0.15</span><span class="p">,</span> <span class="mf">0.26</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">"Black"</span><span class="p">,</span>  <span class="mf">0.18</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">"Latino"</span><span class="p">,</span> <span class="mf">0.12</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">"White"</span><span class="p">,</span>  <span class="mf">0.54</span><span class="p">,</span> <span class="mf">0.54</span><span class="p">],</span>
+    <span class="p">[</span><span class="s">"Other"</span><span class="p">,</span>  <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.04</span><span class="p">],</span>
+<span class="p">]</span>
+<span class="n">jury</span> <span class="o">=</span> <span class="n">Table</span><span class="o">.</span><span class="n">from_rows</span><span class="p">(</span><span class="n">jury_rows</span><span class="p">,</span> <span class="p">[</span><span class="s">"Race"</span><span class="p">,</span> <span class="s">"Eligible"</span><span class="p">,</span> <span class="s">"Panel"</span><span class="p">])</span>
+<span class="n">jury</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Race</th> <th>Eligible</th> <th>Panel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Asian </td> <td>0.15    </td> <td>0.26 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Black </td> <td>0.18    </td> <td>0.08 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Latino</td> <td>0.12    </td> <td>0.08 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>White </td> <td>0.54    </td> <td>0.54 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Other </td> <td>0.01    </td> <td>0.04 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Some races are overrepresented and some are underrepresented on the jury panels in the study. A bar graph is helpful for visualizing the differences.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">jury</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="s">'Race'</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmYAAAEPCAYAAADoPwiFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3Xl4Tfe+x/HPFpn0GILIJBFDzJGYjiHEWEepllIUPTel
+pYZSvYZGW6pcQ7hqVg/VmlqqD9Wqo44pYiw1XEeRVAxpOebgIoadff/w2FeaIHsne++V5P16njxP
+9m+t3299v6Hpx1prr21KTU21CAAAAC5XyNUFAAAA4CGCGQAAgEEQzAAAAAyCYAYAAGAQBDMAAACD
+IJgBAAAYBMEMAADAIAhmAAAABkEwy0eSkpJcXYLLFNTeC2rfEr0DyJ8IZgAAAAZBMAMAADCIwq4u
+wFHcbu9y2Nrp7sGyuAc7bH0AAFAw5dtg5nVxlMPWTiszQWaCGQAAyGVcygQAADAIghkAAIBBEMwA
+AAAMgmAGAABgEAQzAAAAgyCYAQAAGATBDAAAwCAIZgAAAAZBMAMAAIYUHh6uAQMGWF+fOXNGPj4+
++uqrr3JlvYSEBPn4+GjNmjXPnDtx4kT5+PjYdVxbEMwAAIBTLV++XD4+Pk/82rJliyTJZDLJZDJl
+mJvVWHblZO6j+Y7mlI9kSkhI0EsvvaTk5GSnpE0AAPK7lHMXlXLusktrCA4sreDAMnbPj42NVfny
+5TON16xZM8v9y5Urp3//+98qXNi++PLLL7+oUCH7z0lZLBa752aXTZ2dO3dOkydP1qZNm3Tp0iWV
+Ll1azz//vEaOHKnAwEBJUvv27VW9enVNmTLFIQUDAAAp5dxljZr8pUtrmDAyJkfBrFWrVqpbt65N
+czw8POw+nru7u91znSXbsfH06dNq0aKFTpw4oXnz5ungwYOaP3++jh8/rpYtW+rs2bOOrDNL9+7d
+c/oxAQCAazzpHrOEhAQ1b95c/v7+ql27tr788sss7wn78z1mjzx48EATJkxQ1apVFRgYqM6dOys5
+OTlbNW3ZskXt2rVT2bJlVbZsWXXp0kVHjhyxu8dsnzEbPny4ChcurO+++05eXl6SpKCgIH333Xeq
+W7euhg8frlKlSmnXrl3atWuXFi5cKJPJpMOHD1vX+J//+R998sknOnbsmKpUqaLp06crIiLCun3v
+3r0aO3asDh06pBIlSuiFF17Qxx9/rKJFi0p6eDauatWq8vb21ooVK1SuXDlt3rzZ7uYBAIDrXL9+
+XVeuXMk0XqpUqafOe/xer8OHD6tLly7y9/dXbGyszGaz4uLiVLJkyWzfnzZ9+nRZLBYNHjxY165d
+0/z589WhQwft3LlTJUqUeGIdq1atUr9+/dSyZUuNGTNGaWlpWrx4sdq1a6ctW7YoLCzsWT+CTLIV
+zK5du6bNmzfro48+soayR7y9vdWnTx/913/9lw4fPqyTJ0+qcuXKGj16tKSHP9zTp09LksaNG6ex
+Y8fKz89P77//vvr27au9e/dKko4eParOnTsrNjZWc+bM0dWrVxUbG6tBgwZp8eLF1uN98803iomJ
+0YYNG5xyrRcAADhG586dsxy/cOFCti9ZTpw4UW5ubtqwYYMCAgIkSZ06dVL9+vWzXcfly5e1b98+
+FStWTJLUtGlTvfzyy5o9e7Y+/PDDLOfcunVLw4cPV8+ePTVr1izr+Ouvv6769esrLi5OCxYsyHYN
+j2QrmJ08eVIWi0WVK1fOcnvlypVlsVh06dIlubu7y9vbW76+vpn2++CDD9SkSRNJ0ogRI9S2bVud
+P39eAQEBmjlzpjp16qSBAwdKksqXL6+pU6eqWbNmunLlijU9lytXTuPGjbO5UQAAYCxxcXFZZovs
+3gtmNpsVHx+vdu3aWUOZ9DBDtG7dWhs3bszWOt27d7eGMkmKjo5WtWrV9NNPPz0xmG3dulXXr19X
+ly5dMp31a9iwoRISErJ17D9zyrsyH6lRo4b1ez8/P0nSpUuXFBAQoMOHD+vUqVMZniVisVhkMpl0
+6tQpazCLjIx0ZskAAMBB6tSpY/PN/4+7dOmS0tLSsnxnZ4UKFbJ9Za1ixYpZzn9auDp58qQkqWPH
+jllud3Nzy9ax/yxbwaxChQoymUw6fvy42rdvn2n7iRMnVKhQoWf+EB5PwI+u8aanp0t6GML+/ve/
+W8+YPc7f3986p0iRItkpWcnp72Ua8/Zyl1uhnD+D5N7N53T5j6Qcr+MISUnGrMsZCmrvBbVvid4L
+Envu1QFy6mnPLXuUX+bNm5fhbF1OZSuYlSxZUq1atdLnn3+uAQMGyNvb27rt9u3bWrhwoVq3bq0S
+JUrIw8NDZrPZ5kIiIiJ07NgxhYaG2jw3K91G7sg0NmFkjBrXq57jtZ+T5OOX42VyXVJSUoH95VVQ
+ey+ofUv0XlB7Bx7n6+srLy+vLN9BmZycnO0Hwv7222+Zxk6ePKmQkJAnzqlQoYKkh/fSN2vWLJsV
+P1u2H5cxZcoUPXjwQB07dtT27dv1+++/KyEhQZ06dZLJZLI+t6xcuXL65ZdfdPbsWV25ciXbpxGH
+DBmiAwcO6L333tPhw4eVnJysDRs2aOjQodZ9LBYLN/wDAABJDy8XNmvWTP/4xz907tw563hycrI2
+bdqU7XVWrFih69evW1/Hx8fr+PHjatOmzRPntGzZUsWLF9e0adN0//79TNuzerdpdmT7HrPQ0FBt
+3bpVcXFxevvtt60PmG3Tpo2+/PJL62m8d955R/3791fDhg2VlpZmfVxGVqn18bEaNWpo/fr1Gj9+
+vDp06CCz2axy5cqpQ4cOGfZ3xschAAAAx9u0aVOWZ6vq1aunihUrZutkzPvvv6+tW7eqbdu26tOn
+j8xmsxYuXKhq1arp6NGjGfZ90nq+vr5q27atevXqpdTUVH322WcKCAjQoEGDnnjcokWL6tNPP9Vb
+b72l6Ohode7cWb6+vkpJSdHmzZtVrVo1zZ0795n1/5lNN/8HBQVpxowZT92nYsWKmd4FERwcrKtX
+r2YYK1euXKaxyMhIffvtt09ce926dbaUCwAADOjRSZZJkyZluS0uLk4VK1bM1smYyMhIrVq1Sh99
+9JEmTJigoKAgjRw5Ur/99lum0Pekk0RDhw5VYmKiZs2apevXr6tx48aKi4vL8AyzrE4OderUSf7+
+/po2bZpmz56tu3fvKiAgQA0aNFDv3r2z9bPIVE9qamq+vDbY/NURmcZy6x4zoyrI950U1N4Lat8S
+vRfU3vH/8sNnZTpSjx49lJiYqP3797u6FJs49XEZAAAgdwQHljFsKHK2O3fuZHhj4smTJ/XPf/5T
+PXv2dGFV9iGYAQCAPC0yMlI9e/ZUuXLllJKSos8//1xeXl4aMmSIq0uzGcEMAADkaa1bt9a3336r
+ixcvysPDQw0aNNBHH32U5YNnjY5gBgAA8rQ5c+a4uoRck+3nmAEAAMCxCGYAAAAGQTADAAAwCIIZ
+AACAQRDMAAAADIJgBgAAYBAEMwAAAIMgmAEAABgEwQwAAOAxPj4+mjRpkkuOnW+f/D9hZEymseDA
+0s4vBAAAZLB8+XINGjTI+trNzU1+fn5q3ry5PvzwQwUEBLiwuodMJpNLjptvg1njetVdXQIAAA5j
+up+iQvdTXFpDunuwLO7Bds+PjY1V+fLllZaWpj179mjFihXauXOndu/eLW9v71ysNO/It8EMAID8
+rND9FHldHOXSGtLKTJA5B8GsVatWqlu3riTp9ddfl4+Pj+bMmaP169erc+fOuVVmnsI9ZgAAwBCa
+Nm0qSTpz5oxmzZqltm3bqmLFivL391fjxo21ZMmSTHPCw8PVpUsX7d69Wy1btpS/v78iIyO1YsWK
+TPtev35do0aNUs2aNVWmTBlFRkZqypQpSk9Pd3hv2cUZMwAAYAinTp2SJJUsWVJTpkxR27Zt9cor
+r8hkMunHH3/UkCFDZDab9cYbb1jnmEwmnTlzRjExMXr99dfVs2dPLV26VAMGDFBkZKSqVq0qSbpz
+5446dOig33//Xb1791ZISIj279+vSZMmKSUlRTNnznRJz39GMAMAAC5x/fp1XblyRWlpadq7d6/i
+4uJUpEgRtW3bVt27d5eXl5d137feekuvvPKKZs2alSGYWSwW/fbbb1q/fr0aNWokSerYsaNq1Kih
+5cuXa9y4cZKkuXPn6rffftP27dtVqVIlSdLf//53lStXTuPHj9fgwYOt467EpUwAAOASnTt3VqVK
+lVSzZk316dNH/v7++vrrr+Xv728NZffv39e1a9d05coVNWnSRKdOndLNmzczrBMWFmYNZZJUqlQp
+VapUSWfOnLGOrVmzRo0aNVLJkiV15coV61ezZs0kSTt27HBCx8/GGTMAAOAScXFxqly5sry8vFS2
+bFkFBQVZt/3444+aMmWK/vWvf8lsNlvHTSaTbty4oaJFi1rHypYtm2nt4sWLKzU11fr65MmTOnr0
+qCpWrJhpX5PJpMuXL+dWWzlCMAMAAC5Rp04d67syH7d792716tVLjRs31qeffqqAgAC5u7tr48aN
+mjt3bqab9d3c3LJc32KxZPi+WbNmGjp0aJb7litXLged5J58G8zcbu9ydQlOF1j0htxuX3J1GS5R
+UHsvqH1L9O7o3nP6fCogJ9auXasiRYpozZo18vDwsI5v377d7jXLly+vmzdvWi9dGlW+DWaufraL
+K5jS7sozzdPVZbhEQe29oPYt0buje8/p86mAnHh0BuzxS5ipqalatmyZ3U/k79SpkyZOnKh//vOf
+ev755zNsu3nzpjw9PTOEQFfJt8EMAADkTS+88ILmzp2rTp06qWvXrrp27ZqWLFkiPz8/Xbx4Mdvr
+PH4pc/DgwdqwYYN69Oih1157TREREbpz546OHTum77//Xrt27VJwsOv/MUIwAwAgD0p3D1ZamQku
+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
+xYkV5x57/sznzp2r+vXry8/PT1WrVtXYsWOdUCngOHkqmK1evVqxsbEaNmyYEhIS9Ne//lWvvvqq
+fv/99yz3v3Hjhjp16iR/f39t3bpVEydO1KxZszR79mwnV55ztvZuNpvl7e2tfv36qU2bNjKZTE6u
+OPfY2vu+fftUs2ZNLVmyRLt371afPn307rvv6ttvv3Vy5Tlja9+enp7q2bOn1qxZo/3792vixIla
+unSpPvnkEydXnnO29v7IvXv31Lt3b0VFReXJv/P29r169WolJiZav5o2beqkinOPPb2PGjVKixYt
+0ieffKKff/5Zq1atUlRUlBOrBnJfnnqOWatWrRQeHq7p06dbx+rWrauXX35Zo0ePzrT/559/rrFj
+xyopKUmenp6SpKlTp2rRokX69ddfnVZ3brC198cNHz5cx44d07p16xxdpkPkpPdH3njjDZnNZi1Z
+ssRRZea63Oh71KhR2r9/vzZu3OioMh3C3t5jY2N18+ZNNW7cWCNGjHhmoDEaW/s+c+aMIiMjtXXr
+VkVGRjqz1Fxna+9JSUlq3Lixdu3axUfRIV/JM2fM7t27p8OHD6tFixYZxlu2bKm9e/dmOefnn39W
+o0aNrKHs0f7nz5/X2bNnHVpvbrKn9/wit3q/ceOGfHx8crs8h8mNvpOTk7Vly5ZMaxidvb3/9NNP
+2rhxo+Li4mSx5Jl/b1rl5M+8V69eCgsLU9u2bbV27VpHlukQ9vS+fv16hYaGauPGjYqIiFCtWrXU
+v39/Xb582RklAw6TZ4LZlStXZDabVaZMmQzjpUuX1sWLF7Occ/HixUz7+/r6WrflFfb0nl/kRu8b
+NmzQ9u3bFRMT44AKHSMnfbdp00b+/v6qW7eu6tatq9jYWEeWmuvs6f38+fN69913tWDBAhUpUsQZ
+ZeY6e/ouWrSoxo8fr8WLF2vVqlWKjo5W79699c033zij5FxjT++nT59WSkqKvvvuO3322WeaP3++
+kpKS1L179zwZzIFHCru6AEfKi/eYIHft2bNHffv2VVxcnGrXru3qcpziiy++0K1bt3TkyBGNHj1a
+o0ePzpP3mdmiX79+6t27t+rUqePqUpyqZMmSGjhwoPV1ZGSkrl27phkzZqhr164urMzx0tPTdffu
+Xc2fP18VKlSQJM2fP1/16tXTwYMHC9zfBeQfeeaMWalSpeTm5pbpX0+XLl2Sn59flnPKlCmT5f6P
+tuUV9vSeX+Sk9927d6tr164aNWqU3njjDUeWmety0ndQUJAqV66szp07a8yYMfrss89kNpsdWW6u
+sqf3hIQETZ48WaVLl1bp0qU1ePBg3bp1S6VLl84z9xXm1n/ntWvXVnJycm6X51D29O7n56fChQtb
+Q5kkVahQQW5ubkpJSXFovYAj5Zlg5uHhYb3J9XFbt25VgwYNspzz17/+Vbt379bdu3cz7B8YGKiQ
+kBCH1pub7Ok9v7C39507d6pr1656//339fbbbzu6zFyXW3/mZrNZ6enpSk9Pz+0SHcae3nfv3q0d
+O3ZYv0aNGiVvb2/t2LFDL730kjPKzrHc+jM/cuSI/P39c7s8h7Kn90aNGunBgwc6ffq0dez06dMy
+m8156vc78Gd56lLmwIED1a9fP9WpU0cNGjTQokWLdPHiRevZkLFjx+rAgQPWm1+7dOmiyZMna8CA
+ARo2bJiSkpI0Y8YMjRw50pVt2MXW3qWHz7W6d++erly5Yr20ZbFYVKtWLVe1YRdbe09ISFC3bt30
+1ltvqUuXLrpw4YIkyc3NTaVLl3ZZH7ayte8VK1bI29tb1apVk4eHhw4ePKhx48bplVdekbu7uytb
+sZmtvVetWjXD/F9++UWFChXKNG50tvb91VdfycPDQ+Hh4SpUqJA2bNhgfTd6XmNr782bN1dERIQG
+DhyoiRMnymKxKDY2VvXr1y8wty0gf8pTwaxTp066evWqpk6dqgsXLqh69er65ptvrA+SvHDhQoZ/
+PRUrVkxr1qzRsGHD1KJFC/n4+GjQoEEZ7snIK2ztXZK6du1qPaVvMpkUHR0tk8mkq1evOrv8HLG1
+96+//lppaWmaOXOmZs6caR0PCQnR4cOHnV2+3Wzt293dXdOmTVNycrIsFouCg4P11ltvacCAAS7q
+wH72/H3/s7x4j6mtfZtMJk2dOlUpKSlyc3NTpUqVNGfOHL366qsu6sB+9vS+cuVKjRw5Uu3bt5eX
+l5datGihCRMmuKgDIHfkqeeYAQAA5Gd55h4zAACA/I5gBgAAYBAEMwAAAIMgmAEAABgEwQwAAMAg
+CGYAAAAGQTADAAAwCIIZAACAQRDMAAAADOL/ADIDVeTmxdECAAAAAElFTkSuQmCC
+"/>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre> 
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Total-Variation-Distance">Total Variation Distance<a class="anchor-link" href="#Total-Variation-Distance">¶</a></h2><p>To measure the difference between the two distributions, we will compute a quantity called the <em>total variation distance</em> between them. To compute the total variation distance, take the difference between the two proportions in each category, add up the absolute values of all the differences, and then divide the sum by 2.</p>
+<p>Here are the differences and the absolute differences:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">jury</span><span class="p">[</span><span class="s">"diff"</span><span class="p">]</span> <span class="o">=</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Panel"</span><span class="p">]</span> <span class="o">-</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">]</span>
+<span class="n">jury</span><span class="p">[</span><span class="s">"diff_abs"</span><span class="p">]</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">jury</span><span class="p">[</span><span class="s">"diff"</span><span class="p">])</span>
+<span class="n">jury</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Race</th> <th>Eligible</th> <th>Panel</th> <th>diff</th> <th>diff_abs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Asian </td> <td>0.15    </td> <td>0.26 </td> <td>0.11 </td> <td>0.11    </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Black </td> <td>0.18    </td> <td>0.08 </td> <td>-0.1 </td> <td>0.1     </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Latino</td> <td>0.12    </td> <td>0.08 </td> <td>-0.04</td> <td>0.04    </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>White </td> <td>0.54    </td> <td>0.54 </td> <td>0    </td> <td>0       </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Other </td> <td>0.01    </td> <td>0.04 </td> <td>0.03 </td> <td>0.03    </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>And here is the sum of the absolute differences, divided by 2:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">sum</span><span class="p">(</span><span class="n">jury</span><span class="p">[</span><span class="s">'diff_abs'</span><span class="p">])</span><span class="o">*</span><span class="mf">0.5</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.14000000000000001</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The total variation distance between the distribution of eligible jurors and the distribution of the panels is 0.14. Before we examine the numercial value, let us examine the reasons behind the steps in the calculation.</p>
+<p>It is quite natural to compute the difference between the proportions in each category. Now take a look at the column <code>diff</code> and notice that the sum of its entries is 0: the positive entries add up to 0.14, exactly canceling the total of the negative entries which is -0.14. The proportions in each of the two columns <code>Panel</code> and <code>Eligible</code> add up to 1, and so the give-and-take between their entries must add up to 0.</p>
+<p>To avoid the cancellation, we drop the negative signs and then add all the entries. But this gives us two times the total of the positive entries (equivalently, two times the total of the negative entries, with the sign removed). So we divide the sum by 2.</p>
+<p>We would have obtained the same result by just adding the positive differences. But our method of including all the absolute differences eliminates the need to keep track of which differences are positive and which are not.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Are-the-panels-representative-of-the-population?">Are the panels representative of the population?<a class="anchor-link" href="#Are-the-panels-representative-of-the-population?">¶</a></h2><p>We will now turn to the numerical value of the total variation distance between the eligible jurors and the panel. How can we interpret the distance of 0.14? To answer this, let us recall that the panels are supposed to be selected at random. It will therefore be informative to compare the value of 0.14 with the total variation distance between the eligible jurors and a randomly selected panel.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To do this, we will employ our skills at simulation. There were 1453 prosepective jurors in the panels in the study. So let us take a random sample of size 1453 from the population of eligible jurors.</p>
+<p>[<strong>Technical note.</strong> Random samples of prospective jurors would be selected without replacement. However, when the size of a sample is small relative to the size of the population, sampling without replacement resembles sampling with replacement; the proportions in the population don't change much between draws. The population of eligible jurors in Alameda County is over a million, and compared to that, a sample size of about 1500 is quite small. We will therefore sample with replacement.]</p>
+<p>The <code>np.random.multinomial</code> function draws a random sample uniformly with replacement from a population whose distribution is categorical.  Specifically, <code>np.random.multinomial</code> takes as its input a sample size and an array consisting of the probabilities of choosing different categories. It returns the count of the number of times each category was chosen.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">sample_size</span> <span class="o">=</span> <span class="mi">1453</span>
+
+<span class="n">random_sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multinomial</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">])</span>
+<span class="n">random_sample</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>array([230, 265, 178, 764,  16])</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We can compare this distribution with the distribution of eligible jurors, by converting the counts to proportions. To do this, we will divide the counts by the sample size. It is clear from the results that the two distributions are quite similar.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">jury</span><span class="p">[</span><span class="s">'Random Sample'</span><span class="p">]</span> <span class="o">=</span> <span class="n">random_sample</span><span class="o">/</span><span class="n">sample_size</span>
+<span class="n">jury</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s">'Race'</span><span class="p">,</span><span class="s">'Eligible'</span><span class="p">,</span><span class="s">'Random Sample'</span><span class="p">,</span><span class="s">'Panel'</span><span class="p">])</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>Race</th> <th>Eligible</th> <th>Random Sample</th> <th>Panel</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Asian </td> <td>0.15    </td> <td>0.158293     </td> <td>0.26 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Black </td> <td>0.18    </td> <td>0.182381     </td> <td>0.08 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Latino</td> <td>0.12    </td> <td>0.122505     </td> <td>0.08 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>White </td> <td>0.54    </td> <td>0.525809     </td> <td>0.54 </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>Other </td> <td>0.01    </td> <td>0.0110117    </td> <td>0.04 </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>As always, it helps to visualize:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">jury</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s">'Race'</span><span class="p">,</span> <span class="s">'Eligible'</span><span class="p">,</span> <span class="s">'Random Sample'</span><span class="p">])</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="s">'Race'</span><span class="p">,</span> <span class="n">overlay</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmYAAAEPCAYAAADoPwiFAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XdUVGe7NvBrGGkalEGQ3oMNEWxRQMDeO7YETYhEDXbz
+KQpJLNEDgr5GBVSOJbFgonhijCaWV0UC0ajEctQYmYAoRmMHfNUBHOb7w+UcJ4Ayw5QNXL+1WEue
+3e57VLx89jN7RIWFhQoQERERkcEZGboAIiIiInqBwYyIiIhIIBjMiIiIiASCwYyIiIhIIBjMiIiI
+iASCwYyIiIhIIBjMiIiIiASCwYyIiIhIIBjM6hCpVGroEgymvvZeX/sG2DsR1U0MZkREREQCwWBG
+REREJBANDF2AroifnqgwVm7sDIWxswGqISIiInqzOhvMzO7GVBiTNYuFnMGMiIiIBIq3MomIiIgE
+gsGMiIiISCAYzIiIiIgEgsGMiIiISCAYzIiIiIgEgsGMiIiISCAYzIiIiIgEgsGMiIiISCAYzIiI
+iHTMx8cHU6ZMUX5//fp1SCQS7NixQyvny8zMhEQiwZ49e954bFxcHCQSiUbXJd1jMCMiItJQamoq
+JBJJlV/Hjh0DAIhEIohEIpVjKxurrpoc+/J4Eia9fCRTZmYmhgwZgry8PKZ0IiJSUXDrLgpu3Tdo
+Dc4O1nB2aKbx8dHR0XB3d68w3qZNm0r3d3V1xd9//40GDTT7Z/i3336DkZHmcysKhULjY0m31PoT
+cevWLcTHx+PIkSO4d+8erK2t0bt3b8ybNw8ODg4AgIEDB6J169ZYvny5TgomIqK6peDWfcTEf23Q
+GmLnhdcomPXs2RMdOnRQ6xgTExONr2dsbKzxsSRs1Y7b+fn56N69O65evYp169bh3LlzSElJwR9/
+/IEePXrgxo0buqyzUqWlpXq/JhERUU1VtcYsMzMT3bp1g52dHdq1a4evv/660jVh/1xj9tLz588R
+GxuLli1bwsHBAaGhocjLy6tWTceOHcOAAQPg5OQEJycnjBw5EhcvXtS8SdJItWfM5s6diwYNGuD7
+77+HmZkZAMDR0RHff/89OnTogLlz56Jp06Y4ceIETpw4gY0bN0IkEuHChQvKc/zv//4vvvjiC1y5
+cgUtWrTAqlWr4Ovrq9x+6tQpLF68GOfPn4elpSX69++PRYsWwcLCAsCL2biWLVvC3Nwc3377LVxd
+XXH06FFtvRZEREQaKSoqwoMHDyqMN23a9LXHvbrW68KFCxg5ciTs7OwQHR0NuVyOhIQEWFlZVXt9
+2qpVq6BQKDBjxgw8evQIKSkpGDx4MH755RdYWlpWWUdaWhomT56MHj16YOHChZDJZNiyZQsGDBiA
+Y8eOwcvL600vAWlJtYLZo0ePcPToUXz++efKUPaSubk5IiIi8F//9V+4cOECcnNz0bx5cyxYsADA
+iz+U+fn5AIAlS5Zg8eLFsLW1xfz58zFp0iScOnUKAHD58mWEhoYiOjoaycnJePjwIaKjozFt2jRs
+2bJFeb1du3YhPDwcBw8e5D1yIiIShNDQ0ErH79y5U+1blnFxcRCLxTh48CDs7e0BAMOHD0enTp2q
+Xcf9+/dx5swZNG7cGAAQFBSEoUOHIikpCZ999lmlxzx58gRz585FWFgYEhMTlePjx49Hp06dkJCQ
+gA0bNlS7BqqZagWz3NxcKBQKNG/evNLtzZs3h0KhwL1792BsbAxzc3PY2NhU2O/TTz9F165dAQBR
+UVHo168fbt++DXt7e6xZswbDhw/H1KlTAQDu7u5YsWIFQkJC8ODBA+X/OlxdXbFkyRKNmiUiItKF
+hISESv+NrO5aMLlcjoyMDAwYMEAZyoAX/xb26tULhw8frtZ5xo4dqwxlABAcHIxWrVrh0KFDVQaz
+9PR0FBUVYeTIkRVm/bp06YLMzMxqXZu0Qy/vynzJ29tb+WtbW1sAwL1792Bvb48LFy7g2rVrKs9g
+USgUEIlEuHbtmjKY+fn56bNkIiKiN2rfvr3ai/9fde/ePchkskrf2enh4VHtO0Senp6VHv+6cJWb
+mwsAGDZsWKXbxWJxta5N2lGtYObh4QGRSIQ//vgDAwcOrLD96tWrMDIyeuMfnlf/5/Dy3nh5eTmA
+FyHs/fffV86YvcrOzk55TMOGDatTMvLKP6kwJnpkjqK/pNU6vraSSut2f69TX3uvr30D7L02cXR0
+rPbPb9K+1z237OW/w+vWrVOZrSPDqFYws7KyQs+ePbFp0yZMmTIF5ubmym1Pnz7Fxo0b0atXL1ha
+WsLExARyuVztQnx9fXHlyhW4ubmpfWxlxszLqjAWOy8cAR3r7gJGqVRabxdo1tfe62vfAHuvr73X
+VTY2NjAzM6v0HZR5eXnVfiDsn3/+WWEsNzcXLi4uVR7j4eEB4MWa8JCQkGpWTLpS7cdlLF++HM+f
+P8ewYcPw888/4+bNm8jMzMTw4cMhEomUzy1zdXXFb7/9hhs3buDBgwfVnn6dOXMmzp49i08++QQX
+LlxAXl4eDh48iNmzZyv3USgUXPBPRER1jlgsRkhICA4cOIBbt24px/Py8nDkyJFqn+fbb79FUVGR
+8vuMjAz88ccf6NOnT5XH9OjRA02aNMHKlStRVlZWYXtl7zYl3an2GjM3Nzekp6cjISEBH3/8sfIB
+s3369MHXX3+tnP6cPn06IiMj0aVLF8hkMuXjMipL+6+OeXt746effsLSpUsxePBgyOVyuLq6YvDg
+wSr782MkiIhIaI4cOVLpbFXHjh3h6elZrUmF+fPnIz09Hf369UNERATkcjk2btyIVq1a4fLlyyr7
+VnU+Gxsb9OvXD+PGjUNhYSHWr18Pe3t7TJs2rcrrWlhY4Msvv8TEiRMRHByM0NBQ2NjYoKCgAEeP
+HkWrVq2wdu3aN9ZP2qHW4n9HR0esXr36tft4enpWePeIs7MzHj58qDLm6upaYczPzw+7d++u8tz7
+9+9Xp1wiIiKdejlZsGzZskq3JSQkwNPTs1qTCn5+fkhLS8Pnn3+O2NhYODo6Yt68efjzzz8rhL6q
+Jjtmz56NnJwcJCYmoqioCAEBAUhISFB5hlllkxzDhw+HnZ0dVq5ciaSkJJSUlMDe3h6dO3fGhAkT
+qvVakHaICgsL6+S9wW6joiqMvVhj1toA1ehHfV53Ul97r699A+y9LvVeFz4rU5fee+895OTkIDs7
+29ClkB7o9XEZRERE/+Ts0EywoUjfnj17pvIGu9zcXPz73/9GWFiYAasifWIwIyIiEgg/Pz+EhYXB
+1dUVBQUF2LRpE8zMzDBz5kxDl0Z6wmBGREQkEL169cLu3btx9+5dmJiYoHPnzvj8888rffAs1U0M
+ZkRERAKRnJxs6BLIwKr9HDMiIiIi0i0GMyIiIiKBYDAjIiIiEggGMyIiIiKBYDAjIiIiEggGMyIi
+IiKBYDAjIiIiEggGMyIiIiKBYDAjIiKqg+Li4iCRSAxdRp2RmpoKiUSCgoICnV6nzj75P3ZeeIUx
+Zwdr/RdCRER1WmpqKqZNm6b8XiwWo1mzZggKCsJnn30GZ2dng9UmEokMdu3KPHz4ECtXrsThw4dx
+8+ZNmJubw8nJCf7+/pg1axbs7OwMXaLB1dlgFtCxtaFLICKiahCVFcCoTLezEG9SbuwMhXHNAlR0
+dDTc3d0hk8lw5swZ7NixAydOnMCpU6fQsGFDLVWqHoVCYZDrVqawsBAhISEoKirCuHHj0LJlSxQV
+FeHKlSvYvXs3Bg8ezGCGOhzMiIiodjAqK4DZ3RiD1iBrFgt5DYNZz5490aFDBwDA+PHj0bRpU6xa
+tQo//vgjRo0apY0ya7WtW7fi5s2b2L9/PwIDA1W2lZaWoqSkxECVCQvXmBEREelAly5dAAB//fWX
+cqysrAyxsbHo3r073NzcYG9vj549e+LHH3+scLxEIsEnn3yC/fv3w9/fH7a2tvD398fRo0cr7Hvy
+5El0794ddnZ2aNeuHb7++utKa5LL5VixYgXatWsHW1tbtGnTBgsXLoRMJlPZz8fHByNHjkRmZia6
+desGe3t7BAQEICMjAwCwd+9eBAQEwM7ODiEhITh//vwbX49r165BJBLB39+/wjYTExNYWFgov790
+6RKmTJkCPz8/2NnZwdPTExEREbh586bKcS/XfWVlZSEqKgqenp5wcXHBjBkzUFpaisLCQkyePBlu
+bm5wc3PDZ599pjKLeP36dUgkEqxatQopKSlo27Yt7O3t0bdvX5w7d+6NPQHA2bNnMWrUKLi4uMDe
+3h79+/dHZmZmtY6tDGfMiIiIdODGjRsAgGbNminHiouLsWXLFoSGhmL8+PF49uwZdu/ejXHjxiEt
+LQ29evVSOcfp06dx8OBBREREoFGjRkhJScH777+PS5cuKRf2X758GSNGjICNjQ2io6Px/PlzxMfH
+w8rKqsIas1mzZmH79u0YMmQIpk+fjrNnz2LNmjW4cuUKdu3apdxPJBIhPz8fEydORHh4OMaOHYvE
+xESEhYVh2bJlWLZsGSZOnAiRSIR//etfCA8Px9mzZ2FkVPV8j6urKxQKBVJTUzF+/PjXvnbHjx9H
+bm4u3nvvPdjZ2eHatWvYvHkzfvvtN5w8eRLm5uYq+0dHR8PW1hYxMTE4c+YMtm3bhsaNG+P06dNw
+dXXFwoULcejQISQnJ6Nly5YYN26cyvFpaWkoKirCRx99BLlcjo0bN2Lo0KHIyMiAu7t7lXVmZWUh
+NDQUvr6+mDdvHho0aICdO3dixIgR2LNnD7p27fraPivDYEZERKQFRUVFePDgAWQyGbKzsxEfHw9b
+W1sMHjxYuY9EIsGlS5dgbGysHJs0aRJCQkKQlJRUIZhJpVKcOnUKbm5uAICgoCB07doVu3fvxsSJ
+EwEAsbGxAIADBw7A0dERADBs2DB07txZ5VyXLl3C9u3bERYWhqSkJADAhAkT4OTkhPj4eBw6dAh9
++/YF8GJtWm5uLg4cOKCc+WvRogVGjBiBOXPm4PTp03BxcQEANGnSBLNmzUJmZiZCQkKqfH3Gjx+P
+5ORkzJgxA6tXr0ZgYCD8/f3Rp08fWFlZqewbERGh8oYKAOjfvz/69u2Lffv2YfTo0SrbbGxssHv3
+buWx165dQ3JyMj744AOsWrUKAPDBBx+gbdu2SE1NrRDM8vLycPr0aeUbNYYNG4YuXbogLi4O//3f
+/11pPwqFArNnz0ZAQAD27NmjHJ8wYQKCg4OxZMkSHDp0qMrXoyq8lUlERKQFoaGhePvtt9GmTRuE
+h4fDwcEBBw4cULlFZ2RkpAxlpaWlePToEYqLi+Hv71/p7cCgoCBlKAMAb29vWFhY4Pr16wBe3Jo8
+duwY+vfvrwxlAODp6YmePXuqnOvw4cMAgKlTp6qMT5kyBWKxWLn9JS8vL2UoA4D27dsra3oZyl4d
+f1lTVZo2bYr09HSEh4ejqKgIW7duRWRkJJo3b46YmBiUlZUp9311Ruw///kPHj58CE9PTzRp0gQX
+LlyocO5/Bq2XNb06M2dkZARfX1/k5+dXOL5fv34q75719PREjx49Krwmr7p48SL+/PNPhIaG4sGD
+B8qv4uJihISEIDs7u8It4urgjBkREZEWJCQkoHnz5iguLkZqaioOHTqE06dPV7gVtnXrVqxduxY5
+OTkq650quw3o5ORUYczS0hKFhYUAgPv370Mmk8HDw6PCfp6enirBoqCgACKRCG+//bbKfo0bN4ad
+nV2F53P989pNmjQBAJUA+PJ4AMqaXsfJyQlffvklvvzyS1y/fh0ZGRlITEzEunXr8NZbbyEmJkZ5
+rkWLFmHv3r0VzltcXFzpeSurqbJaK6vT09Oz0rHDhw+juLhYeb5X5ebmAgCmT59eaa8ikQgPHz6E
+g4NDpdurwmBGRESkBe3bt1e+K3PgwIEYOHAg5s6di969eytv1e3atQszZ85E//79MXv2bNjY2EAs
+FiM1NRVpaWkVzikWiyu9lrYfg1HZ+aq6trZqcnV1xfvvv48hQ4bA19cXu3btUgaz8PBwnD59GtOm
+TUPbtm2Vs44TJkxAeXl5jWrV1mv3so7FixfD19e30n2aNm2q9nnrbDATPz1h6BL0zsGiGOKn9wxd
+hkHU197ra98Ae69J79p4Zhe9npGRERYuXIj+/fsjKSkJCxYsAAB8//33cHd3x44dO1T23759u0YP
+g7W2toa5ubly9uZVubm5Kud0dnaGQqGAVCpF69b/96zP4uJi/P333+jfv7/a19cGS0tLuLu74+rV
+qwBezJZlZGQgOjoaUVFRyv1kMhkePXqkkxr+/PPPCmO5ubmwtLSsdLYMgHImtFGjRq9dW6euOhvM
+DP1MHEMQyUpgKjM1dBkGUV97r699A+y9Jr1r45ld9GZdunTBO++8g82bN2POnDlo2LAhxGIxFAoF
+FAqFMjTl5+dj//79Gl1DLBajR48eOHjwIG7evKm8pffnn39WeKxG3759sWTJEqxbtw6JiYnK8fXr
+16O8vFy58F9XsrOz0bJlS7z11lsq4zdu3MDVq1fh5eUF4P9u6f5zZmzt2rVame2qLAAfOnQIN27c
+UK6de/n6jRgxosrztGvXDh4eHkhOTsaYMWMq9HX//n1YW6v/iUN1NpgREREZ2rRp0/D+++9jy5Yt
+iIyMxIABA7B//36MHTsW/fv3x61bt7B582Z4eXnh4sWL1TrnP8NJdHQ0jh49iv79+yMiIkL5uIeW
+LVvi8uXLyv28vb0xfvx4bNu2DcXFxQgKCsKFCxeQmpqK3r17o3fv3lrt/Z927tyJnTt3YtCgQfD1
+9YW5uTny8/ORmpqKsrIyREdHA3ixDqxr165Ys2YNysrK4OTkhJMnT+LEiROwsrKqcTir7HgPDw8M
+GDBA+biMDRs2oGHDhpg/f36V5xGJREhMTMTIkSPRpUsXhIWFwcHBAbdv38Yvv/wCANi3b5/a9TGY
+ERGRQZUbO0PWLNbgNdREVbchBw0aBA8PD6xbtw6TJ0/Gu+++i/v372PTpk3IyMiAh4cH4uLikJub
+i0uXLml0LW9vb/zP//wPPv30U8TFxcHR0RHz58/H7du38fvvv6vsu2rVKri6umL79u04cOAAmjVr
+hhkzZihD0Zv6qYkPP/wQjRo1QkZGBg4fPoyioiJYWVmhY8eOmDZtmsqDZzdu3Ij58+fjq6++wvPn
+zxEQEIB9+/Zh6NChFWqrrFaRSKTW+OjRo2Fubo7k5GTcuXMHvr6+iIuLq/Cmin8eGxAQgH//+99Y
+vnw5Nm3ahMePH8PW1hbt27fH+++/r9bro7xGYWGhcD5IS4sa5XczdAl6VyIrgalZ/by1U197r699
+A+y9Jr3LmsVC3jBAixUR1U7Xr1+Hn58fFi1ahJkzZxq6HAB8jhkRERGRYDCYEREREQkEgxkRERGR
+QHDxPxEREdVLrq6uOns2mqY4Y0ZEREQkEAxmRERERALBYEZEREQkEAxmRERERAKh02Dm4+Oj8nlc
+lWnbti2SkpJ0WQYRERFRrVCtYPbVV1/B0dERz58/V46VlpbC3t4eAQGqT4/Oy8uDRCJBRkZGlR99
+8Krjx48jIiJC+b1EIsEPP/ygTg9EREREdUK1gllwcDCePn2K7Oxs5Vh2djaaNGmCvLw8PHjwQDme
+mZkJMzMzdOnSpVoFWFlZwdzcXGVMG58eT0RERFTbVCuYeXp6wt7eHpmZmcqxzMxMBAcHw8/PD1lZ
+WSrjnTp1gqnpi89xk8lkmDVrFlxcXODt7V3h1qaPj4/yVqaPjw8AIDw8HBKJBL6+vsr9Dhw4gJCQ
+ENjZ2cHX1xdLly5FWVmZhm0TERERCU+115h17dpVJZhlZWUhKCioynHgxczX2rVr0aZNG/z888+Y
+OXMmFixYgDNnzij3f/VW5/HjxwEAa9asQU5ODtLT0wEAR48exeTJkzF58mT8+uuvSEpKwt69e/HF
+F19o1jURERGRAKkVzM6cOYOysjLIZDKcOXMGQUFBCAwMVAaznJwc3LlzB8HBwcrjevbsiY8++ghu
+bm6YNGkSPDw8kJGRUek1mjZtCgBo0qQJbGxsYGVlBQBYsWIFZsyYgffeew9ubm4ICgrCwoUL8dVX
+X2ncOBEREZHQVPsjmYKDgyGTyXDq1CmUl5fD2toabm5usLGxwbVr13D37l1kZmaiYcOG6NixI4AX
+s2He3t4q57Gzs8P9+/fVKvLChQs4d+4cVq1apRwrLy+HTCbD3bt30axZswrH5JV/otY16gQTAOWG
+LsJA6mvv9bVvgL3XoPcnfxkh5+ap1+5jb2OJhqbCeaKSl5eXoUsg0otqBzM3Nzc4OzsjKysLCoUC
+gYGBAIBGjRop15llZWXB398fYrH4/y7QQPUSIpEI5eXq/URRKBSYP38+hg0bVmHby1m2fxozL6vS
+8bqsRFYCUzNTQ5dhEPW19/raN8Dedd177Lxw+LZpodNrEFFFan2IeVBQEDIzM6FQKPDuu+8qx7t2
+7YqMjAz88ssvmDZtWo0KMjY2rhDcfH19cfXqVbi5udXo3ERERERCpnYwS0tLg0gkwtq1a5XjgYGB
+CA8Px3/+8x/lwv+qKBSK1z4Ow8XFBcePH4e/vz9MTU1haWmJqKgojBkzBs7Ozhg2bBgaNGiAK1eu
+4OzZs1i8eLE6LRAREREJlloLCIKCglBWVgYbGxuV2asuXbpAJpOhcePG8PPze+053vTQ2aVLlyIz
+MxNt2rRBSEgIAKBHjx7YtWsXMjMz0atXL/Tq1QurV6+Gs7OzOuUTERERCZqosLCwTj7NtduoKEOX
+oHdcc1P/eq+vfQPsXR9rzAI6ttbpNYioIuG85YaIiIionmMwIyIiIhIIBjMiIiIigWAwIyIiIhII
+BjMiIiIigWAwIyIiIhIIBjMiIiIigWAwIyIiIhIIBjMiIiIigWAwIyIiIhIIBjMiIiIigWAwIyIi
+IhIIBjMiIiIigWAwIyIiIhIIUWFhocLQRejCiezfDV2C3hU/fozGFhaGLsMg6mvv9bVvgL3rundn
+B2s4OzTT6TWIqKI6G8zqI6lUCi8vL0OXYRD1tff62jfA3utr70R1HW9lEhEREQkEgxkRERGRQDCY
+EREREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQlEA0MXoCvipycMXYLeOVgUQ/z0ntrH
+lRs7Q2HsrIOKiIiISB11NpiZ3Y0xdAl6J5KVwFRmqvZxsmaxkDOYERERGRxvZRIREREJBIMZERER
+kUAwmBEREREJBIMZERERkUAwmBEREREJBIMZERERkUAwmBEREREJBIMZERERkUAwmBEREREJBIMZ
+ERERkUAwmBEREREJhN6D2cCBAxEVFaXvyxIREREJ3muDWWRkJMaMGaPRiVNTU+Hk5FTp+MKFCzU6
+JxEREVFd1uB1G0UiEUQikVYvaGlpqdXzEREREdUVr50xUygUUCgUlW5LSkpCYGAgHB0d0bp1a8yY
+MQNFRUUAgMzMTEybNg1PnjyBRCKBRCJBfHw8gBe3MufOnas8j4+PD1asWIFZs2bBxcUF3t7eSExM
+VLlWQUEBwsLC4OzsDGdnZ4wfPx63bt2qUeNEREREQqPxGjOxWIxly5bh119/xYYNG/Dbb78p1451
+6dIFcXFxaNiwIXJycpCTk4Pp06cDqHwWbu3atWjTpg1+/vlnzJw5EwsWLMCZM2cAAOXl5Xjvvffw
+4MED7Nu3D/v27cPff/+NsLAwTUsnIiIiEqTX3sp8ncjISOWvnZ2dsXjxYoSFhSElJQXGxsawsLCA
+SCSCjY3NG8/Vs2dPfPTRRwCASZMmISUlBRkZGejUqRMyMjLw+++/4/z583B2dgYAbNiwAe3bt0dG
+RgZCQkI0bYGIiIhIUDQOZhkZGfjyyy8hlUpRXFwMuVyOsrIy3LlzB7a2ttU+j0gkgre3t8qYnZ0d
+7t+/DwC4evUq7O3tlaEMANzc3GBvb4+rV69WGczyyj/RoKtazgRAefV3NzczhthIhNLHjXD/L6nO
+ytIXqbT296CJ+to3wN7rEy8vL0OXQKQXGgWzGzduYMyYMQgPD8dnn30GKysrnD9/HhERESgtLVW/
+iAaqZYhEIpSXvzlhvO6NCWPmZaldR21XIiuBqZlptfePnReOgI6t0QiApPpZWpCkUmm9/MFdX/sG
+2Ht97Z2orntjMKss/Jw7dw5lZWWIi4tTbv/pp59U9jExMYFcLq9xgS1atMDt27dx48YNuLi4AADy
+8/Nx+/ZttGjRosbnJyIiIhKKNwaz4uJiXLx4UeXdmZ6enigvL0dycjIGDRqE7OxsrF+/XuU4FxcX
+yGQyHD9+HD4+PmjYsCHMzc1f+07Pl17dp3v37vD29sakSZOwbNkyKBQKREVFwc/PD8HBwZr0TERE
+RCRIr31XpkgkwsmTJxEcHIyQkBDl14oVK7Bs2TKsXbsW/v7+2L59O5YuXaoyu9a5c2dMmDABERER
+ePvtt7FmzRrlOd/0bLR/7rNjxw40bdoUgwcPxpAhQ2BnZ4fU1NSa9E1EREQkOKLCwsLXT1/VUt1G
+1b+PfdJ0jVldUF/X3NTXvgH2Xl97J6rr+CHmRERERALBYEZEREQkEAxmRERERALBYEZEREQkEAxm
+RERERALBYEZEREQkEAxmRERERALBYEZEREQkEAxmRERERALBYEZEREQkEAxmRERERALBYEZEREQk
+EAxmRERERALRwNAF6ErsvHBDl6B3xY8fo7GFRbX3d3aw1mE1REREpK46G8wCOrY2dAl6J5VK4eXl
+ZegyiIiISEO8lUlEREQkEAxmRERERALBYEZEREQkEAxmRERERALBYEZEREQkEAxmRERERALBYEZE
+REQkEAxmRERERAJRZx8wK356wtAl6J2DRTHET+8ZugytKTd2hsLY2dBlEBER6U2dDWZmd2MMXYLe
+iWQlMJWZGroMrZE1i4WcwYyIiOoR3sokIiIiEggGMyIiIiKBYDAjIiIiEggGMyIiIiKBYDAjIiIi
+EggGMyIiIiKBYDAjIiIiEggGMyIiIiKBYDAjIiIiEggGMyIiIiKBYDAjIiIiEgidBDOJRIIffvhB
+a+fz8fHyMkw9AAARUElEQVRBYmKi1s5HREREJERqB7PIyEhIJBLll6enJ8aMGQOpVKqL+gAAIpEI
+IpFIZ+cnIiIiEgK1g5lIJEL37t2Rk5ODnJwcfPfdd5DJZBg3bpwu6iMiIiKqN9QOZgqFAiYmJrCx
+sYGNjQ18fX0RGRmJnJwclJSUVHrMokWL0KlTJ9jb26Nt27ZYuHBhhX0PHz6Mnj17wt7eHh4eHhg7
+dixKS0srPd/OnTvh4uKCgwcPqls+ERERkWA10OQghUKh/PXjx4/x3XffwdvbG6amppXu36hRIyQn
+J8Pe3h5//PEHZs+eDRMTE3z66acAgCNHjuC9997D7NmzsW7dOsjlcqSnp0Mul1c417p16xAfH4+d
+O3fC399fk/KJiIiIBEmjYHb06FE4OTkBAJ48eQJHR0ekpaVVuf/cuXOVv3Z2dsYnn3yCpKQkZTBb
+vnw5hg0bpvweAFq1aqVyDoVCgaVLl2Lr1q3Yt28ffHx8NCmdiIiISLA0CmaBgYFYvXo1AODRo0fY
+uHEjRowYgSNHjsDR0bHC/nv37sW6detw7do1PHnyBHK5HOXl5crtFy9eRFhYWJXXUygUSElJwePH
+j3H8+HG4u7u/sca88k806KyWMwFQ/sa9BM/czBhiIxFKHzfC/b+q/6YSXb4BRcjqa98Ae69PvLy8
+DF0CkV5oFMzMzMzg5uYGAHBzc0NiYiJcXFywZcsWxMTEqOx75swZREREYP78+ejVqxeaNGmCH3/8
+EZ9//nm1rycSidC5c2ccOXIEaWlpiIqKeuMxY+ZlqdVTXVAiK4GpWeW3k2uT2HnhCOjYGo0ASGyr
+d4xUKq2XP7jra98Ae6+vvRPVdRo9x6yqR1c8e/aswtivv/4Ke3t7zJkzB35+fnB3d8eNGzdU9mnb
+ti0yMjJee00/Pz/s2bMHycnJWL58uSZlExEREQmaRjNmJSUluHv3LhQKBQoLC7FhwwY8e/YM/fr1
+q7Cvl5cXbt++jbS0NHTq1AlHjx7Fd999p7LP//t//w9jx46Fu7s7Ro4cCYVCgfT0dHz44YcwNzdX
+vtmgXbt22LNnD4YPHw6RSIQ5c+ZoUj4RERGRIGn0HLPjx4+jRYsWaNmyJXr37o3z58/j66+/RmBg
+YIX9+/XrhxkzZiA6Ohpdu3ZFRkYGYmJiVGbdevfuje3bt+PIkSMICQnBoEGDkJWVBbFYrLzmS+3b
+t8eePXuQmJiIf/3rX5r0TERERCRIosLCQsWbd6t9uo168zq0uqaurTFTR31dc1Nf+wbYe33tnaiu
+44eYExEREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQkEgxkR
+ERGRQDCYEREREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQlEA0MXoCux88INXYLeFT9+
+jMYWFoYuo8acHawNXQIREZFB1NlgFtCxtaFL0DupVAovLy9Dl0FEREQa4q1MIiIiIoFgMCMiIiIS
+CAYzIiIiIoFgMCMiIiISCAYzIiIiIoFgMCMiIiISCAYzIiIiIoFgMCMiIiISiDr7gFnx0xOGLkHv
+HCyKIX56z9BlKJUbO0Nh7GzoMoiIiGqNOhvMzO7GGLoEvRPJSmAqMzV0GUqyZrGQM5gRERFVG29l
+EhEREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQkEgxkRERGRQDCYEREREQkEgxkRERGR
+QDCYEREREQkEgxkRERGRQOg9mEVGRmLMmDH6viwRERGR4GkczM6fPw+JRIJ+/fqpdVxCQgI2bNig
+6WWJiIiI6iyNg9m2bdvQvn17nDlzBjk5OdU+zsLCAo0bN9b0skRERER1lkbB7NmzZ9i9ezeio6MR
+HByMbdu2qWyPj4+Hj48PbG1t0aJFC3z88cfKbf+8lXnkyBH0798fbm5ucHd3R2hoqErQu379OiQS
+CX744QcMGzYMDg4O6NKlC44fP65J6URERESCpVEw27t3Lxo3boxevXohPDwc3377LeRyuXJbcnIy
+Vq5cibNnz2Lnzp3o2LGj8liRSASRSKT8/unTp5gyZQrS09Px448/onHjxhg7dizKyspUrrl06VJE
+Rkbil19+Qbt27TBhwgQ8efJEk/KJiIiIBEmjYLZt2zaMGzcOADBw4ECIRCLs378fAFBQUABbW1t0
+794djo6O8PPzw0cffaQ8VqFQQKFQKL8fMmQIBg8eDHd3d7Ru3RpJSUm4fv06zp49q3LNqVOnom/f
+vnB3d8eCBQvw6NEjXLp0SZPyiYiIiARJ7WCWl5eHU6dOISwsDADQoEEDvPvuu9i+fTsAYPjw4ZDJ
+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
+RwQFhsK2bwAAAABJRU5ErkJggg==
+"/>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The total variation distance between these distributions is quite small.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="mf">0.5</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">jury</span><span class="p">[</span><span class="s">'Eligible'</span><span class="p">]</span><span class="o">-</span><span class="n">jury</span><span class="p">[</span><span class="s">'Random Sample'</span><span class="p">]))</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>0.014191328286304219</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Comparing this to the distance of 0.14 for the panel quantifies our observation that the random sample is closer to the distribution of eligible jurors than the panel is.</p>
+<p>However, the distance between the random sample and the eligible jurors depends on the sample; sampling again might give a different result.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>How would random samples behave?</strong></p>
+<p>The total variation distance between the distribution of the random sample and the distribution of the eligible jurors is the statistic that we are using to measure the distance between the two distributions. By repeating the process of sampling, we can measure how much the statistic varies across different random samples. The code below computes the empirical distribution of the statistic based on a large number of replications of the sampling process.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Compute empirical distribution of TVDs</span>
+
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">1453</span>
+<span class="n">repetitions</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">eligible</span> <span class="o">=</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">]</span>
+
+<span class="n">tvd_from_sample</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[]],</span> <span class="p">[</span><span class="s">"TVD from a random sample"</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multinomial</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">eligible</span><span class="p">)</span><span class="o">/</span><span class="n">sample_size</span>
+    <span class="n">tvd</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">sample</span> <span class="o">-</span> <span class="n">eligible</span><span class="p">))</span>
+    <span class="n">tvd_from_sample</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">tvd</span><span class="p">])</span>
+
+<span class="n">tvd_from_sample</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>TVD from a random sample</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0.0281693               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0147144               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0161666               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0254783               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0231039               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.00966965              </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0168685               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.00855471              </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0126497               </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>0.0126015               </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (990 rows omitted)</p>
+
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Each row of the column above contains the total variation distance between a random sample and the population of eligible jurors.</p>
+<p>The histogram of this column shows that drawing 1453 jurors at random from the pool of eligible candidates results in a distribution that rarely deviates from the eligible jurors' race distribution by more than 0.05.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">tvd_from_sample</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.005</span><span class="p">),</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"/>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>How do the panels compare with random samples?</strong></p>
+<p>The panels in the study, however, were not quite so similar to the eligible population. The total variation distance between the panels and the population was 0.14, which is far out in the tail of the histogram above. It does not look like a typical distance between a random sample and the eligible population.</p>
+<p>Our analysis supports the ACLU's conclusion that the panels were not representative of the population. The ACLU report discusses several reasons for the discrepancies. For example, some minority groups were underrepresented on the records of voter registration and of the Department of Motor Vehicles, the two main sources from which jurors are selected; at the time of the study, the county did not have an effective process for following up on prospective jurors who had been called but had failed to appear; and so on. Whatever the reasons, it seems clear that the composition of the jury panels was different from what we would have expected in a random sample.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="A-Classical-Interlude:-the-$\chi^2$-Statistic">A Classical Interlude: the $\chi^2$ Statistic<a class="anchor-link" href="#A-Classical-Interlude:-the-$\chi^2$-Statistic">¶</a></h2><p>"Do the data look like a random sample?" is a question that has been asked in many contexts for many years. In classical data analysis, the statistic most commonly used in answering this question is called the $\chi^2$ ("chi squared") statistic, and is calculated as follows:</p>
+<p><strong>Step 1.</strong> For each category, define the "expected count" as follows:
+$$
+\mbox{expected count} ~=~ \mbox{sample size} \times \mbox{proportion in population}
+$$
+This is the count that you would expect in that category, in a randomly chosen sample.</p>
+<p><strong>Step 2.</strong> For each category, compute
+$$
+\frac{(\mbox{observed count - expected count})^2}{\mbox{expected count}}
+$$</p>
+<p><strong>Step 3.</strong> Add up all the numbers computed in Step 2.</p>
+<p>A little algebra shows that this is equivalent to:</p>
+<p><strong>Alternative Method, Step 1.</strong> For each category, compute
+$$
+\frac{(\mbox{sample proportion - population proportion})^2}{\mbox{population proportion}}
+$$</p>
+<p><strong>Alternative Method, Step 2.</strong> Add up all the numbers you computed in the step above, and multiply the sum by the sample size.</p>
+<p>It makes sense that the statistic should be based on the difference between proportions in each category, just as the total variation distance is. The remaining steps of the method are not very easy to explain without getting deeper into mathematics.</p>
+<p>The reason for choosing this statistic over any other was that statisticians were able to come up a formula for its approximate probability distribution when the sample size is large. The distribution has an impressive name: it is called the <em>$\chi^2$ distribution with degrees of freedom equal to 4</em> (one fewer than the number of categories). Data analysts would compute the $\chi^2$ statistic for their sample, and then compare it with tabulated numerical values of the $\chi^2$ distributions.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Simulating the $\chi^2$ statistic.</strong></p>
+<p>The $\chi^2$ statistic is just a statistic like any other. We can use the computer to simulate its behavior even if we have not studied all the underlying mathematics.</p>
+<p>For the panels in the ACLU study, the $\chi^2$ statistic is about 348:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="nb">sum</span><span class="p">(((</span><span class="n">jury</span><span class="p">[</span><span class="s">"Panel"</span><span class="p">]</span> <span class="o">-</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">])</span><span class="o">*</span><span class="n">sample_size</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_text output_subarea output_execute_result">
+<pre>348.07422222222226</pre>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To generate the empirical distribution of the statistic, all we need is a small modification of the code we used for simulating total variation distance:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Compute empirical distribution of chi-squared statistic</span>
+
+<span class="n">sample_size</span> <span class="o">=</span> <span class="mi">1453</span>
+<span class="n">repetitions</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">eligible</span> <span class="o">=</span> <span class="n">jury</span><span class="p">[</span><span class="s">"Eligible"</span><span class="p">]</span>
+
+<span class="n">classical_from_sample</span> <span class="o">=</span> <span class="n">Table</span><span class="p">([[]],</span> <span class="p">[</span><span class="s">"'Chi-squared' statistic, from a random sample"</span><span class="p">])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">repetitions</span><span class="p">):</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">multinomial</span><span class="p">(</span><span class="n">sample_size</span><span class="p">,</span> <span class="n">eligible</span><span class="p">)</span><span class="o">/</span><span class="n">sample_size</span>
+    <span class="n">chisq</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(((</span><span class="n">sample</span> <span class="o">-</span> <span class="n">eligible</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">eligible</span><span class="p">)</span><span class="o">*</span><span class="n">sample_size</span>
+    <span class="n">classical_from_sample</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">chisq</span><span class="p">])</span>
+
+<span class="n">classical_from_sample</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>'Chi-squared' statistic, from a random sample</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>0.208432                                     </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1.54233                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>4.45329                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1.29048                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>3.60562                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1.36377                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>3.80329                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>6.36428                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>6.56081                                      </td>
+        </tr>
+    </tbody>
+        <tbody><tr>
+            <td>1.80092                                      </td>
+        </tr>
+    </tbody>
+</table>
+<p>... (990 rows omitted)</p>
+
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Here is a histogram of the empirical distribution of the $\chi^2$ statistic. The simulated values of $\chi^2$ based on random samples are considerably smaller than the value of 348 that we got from the jury panels.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">classical_from_sample</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">normed</span><span class="o">=</span><span class="k">True</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"/>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In fact, the long run average value of $\chi^2$ statistics is equal to the degrees of freedom. And indeed, the average of the simulated values of $\chi^2$ is close to 4, the degrees of freedom in this case.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">classical_from_sample</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+<div class="output_html rendered_html output_subarea output_execute_result">
+<table border="1" class="dataframe">
+    <thead>
+        <tr>
+            <th>'Chi-squared' statistic, from a random sample</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>4.09216                                      </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this situation, random samples are expected to produce a $\chi^2$ statistic of about 4. The panels, on the other hand, produced a $\chi^2$ statistic of 348. This is yet more confirmation of the conclusion  that the panels do not resemble a random sample from the population of eligible jurors.</p>
 
 </div>
 </div>
