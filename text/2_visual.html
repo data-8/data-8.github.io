@@ -78,6 +78,10 @@
 
   <ul>
   <li><a href="#Strings,-ints,-and-floats">Strings, ints, and floats<a class="anchor-link" href="#Strings,-ints,-and-floats">¶</a></a></li>
+  <ul>
+  <li><a href="#Triple-quoted-strings">Triple-quoted strings<a class="anchor-link" href="#Triple-quoted-strings">¶</a></a></li>
+</ul>
+
   <li><a href="#Names">Names<a class="anchor-link" href="#Names">¶</a></a></li>
   <li><a href="#Lists">Lists<a class="anchor-link" href="#Lists">¶</a></a></li>
   <li><a href="#Calls">Calls<a class="anchor-link" href="#Calls">¶</a></a></li>
@@ -100,6 +104,8 @@
   <li><a href="#4.-Import-statements">4. Import statements<a class="anchor-link" href="#4.-Import-statements">¶</a></a></li>
   <li><a href="#5.-Function-definitions">5. Function definitions<a class="anchor-link" href="#5.-Function-definitions">¶</a></a></li>
   <ul>
+  <li><a href="#Why-functions?">Why functions?<a class="anchor-link" href="#Why-functions?">¶</a></a></li>
+  <li><a href="#Details-about-function-execution">Details about function execution<a class="anchor-link" href="#Details-about-function-execution">¶</a></a></li>
   <li><a href="#Functions-as-values">Functions as values<a class="anchor-link" href="#Functions-as-values">¶</a></a></li>
 </ul>
 
@@ -9969,7 +9975,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="2.-Expressions">2. Expressions<a class="anchor-link" href="#2.-Expressions">¶</a></h2><p>The most basic kind of statement is the <em>expression</em>.</p>
-<p>Line 0 above is just an expression: <code>3</code>.  Like many (but not all) expressions, it has a value, the integer 3.  Like some (but not all) expressions, computing its value causes nothing to "happen" to the world.  (We say it has no <em>side effects</em>.)  When Python executes line 0, it computes that value.  Since nothing is done with it, it just gets discarded.  The same is true of lines 2, 4, 5, 6, 8, 9, 13, and 16 -- those are expression statements that cause values to be computed, but the computation has no side effects, and the value of the full expression is eventually discarded.  Line 14 is an expression that does have side effects -- it causes the <code>'Things'</code> column in the table named <code>t</code> to be renamed to <code>'Nonsense'</code>.  The other lines are statements but not expressions, but we will see that, like many statements, they <em>contain</em> expressions.</p>
+<p>Line 0 above is just an expression: <code>3</code>.  Like many (but not all) expressions, it has a value, the integer 3.  Like some (but not all) expressions, computing its value causes nothing to "happen" to the world.  (We say it has no <em>side effects</em>.)  When Python executes line 0, it computes that value.  Since nothing is done with it, it just gets discarded.  The same is true of lines 2, 4, 5, 6, 8, 9, 13, and 16 -- those are expression statements that cause values to be computed, but the computation has no side effects, and the value of the full expression is eventually discarded.  Line 15 is an expression that does have side effects -- it causes the <code>'Things'</code> column in the table named <code>t</code> to be renamed to <code>'Nonsense'</code>.  The other lines are statements but not expressions, but we will see that, like many statements, they <em>contain</em> expressions.</p>
 <p>Expressions are themselves usually made up of several smaller expressions joined together by some rules; we call these <em>compound expressions</em>, and we sometimes call the component expressions <em>subexpressions</em>.  Line 2, for example, is a compound expression made up of the subexpressions <code>4</code> and <code>3</code> joined by <code>+</code>.  Python knows what a <code>+</code> between two expressions means, and it puts them together so that the value of <code>4+3</code> is the value of <code>4</code> plus the value of <code>3</code>, or 7.</p>
 <p>Line 4 is another compound expression.  We can think of it as the subexpressions <code>(2+3)</code> and <code>z</code>, again joined by <code>+</code>.  But <code>(2+3)</code> is itself a compound expression, made up of <code>2</code> and <code>3</code> joined by <code>+</code>.  Python first computes the value of <code>(2+3)</code>, which is 5, and then computes the value of <code>z</code>, which is 3 (<code>z</code> having been assigned previously), and then adds 5 and 3 to get 8.  <code>(2+3)*(4*((5*6)+7))</code> is also a valid expression.  It contains 10 subexpressions (not including itself):</p>
 <ul>
@@ -9996,7 +10002,8 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>It's <em>critical</em> to recognize that subexpressions are valid expressions that could be written by themselves or made part of other compound expressions.  If you see a complicated expression like the one above (or even more exotic ones later), and you don't understand what it does, you can always break it down into smaller bits until you get to very basic expressions.  This note will tell you the rules about all the basic expressions, but you'll need to develop the skill of breaking down compound expressions into subexpressions.</p>
+<p>It's <em>critical</em> to recognize that subexpressions are valid expressions that could be written by themselves or made part of other compound expressions.  If you see a complicated expression like the one above (or even more exotic ones later), and you don't understand what it does, you can always break it down into smaller bits until you get to very basic expressions.  There is a fairly small list of basic expression types (things that can't be broken down into subexpressions) to learn.</p>
+<p>This note will tell you the rules about most of the basic expressions in Python, but in order to understand and write real code (which very regularly involves large compound expressions) you'll need to develop the skill of breaking down compound expressions into subexpressions.  You can try to do that mentally while you're reading code, but if that's too hard, you can <em>just type them into a Python code cell</em> and see what they do.</p>
 <p><strong>Question.</strong> What's the value of each subexpression you found above?  You can just type them into the empty code cell below if you like.</p>
 
 </div>
@@ -10024,7 +10031,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When you see an error, don't just give up.  Often (though unfortunately not always) the error message will tell you what's wrong.  The error message first tells us that the problem happened on line 1 of the cell (in this case, the only line) and the text of the error is "TypeError: Can't convert 'int' object to str implicitly".  Python evaluates <code>"foo"</code> and <code>5</code> just fine, but when the <code>+</code> operator tries to apply itself "foo" and 5, it becomes unhappy.  The error refers to the fact that the <code>+</code> operator tries to convert its arguments to something it can add.  For example, adding an integer and a float, like <code>3+4.5</code>, works because <code>+</code> converts the integer <code>3</code> to a float.  But <code>+</code> can't convert a number to text.</p>
+<p>When you see an error, don't just give up.  Often (though unfortunately not always) the error message will tell you what's wrong.  The error message first tells us that the problem happened on line 1 of the cell (in this case, the only line) and the text of the error is "TypeError: Can't convert 'int' object to str implicitly".  Python evaluates <code>"foo"</code> and <code>5</code> just fine, but when the <code>+</code> operator tries to apply itself "foo" and 5, it becomes unhappy.  The error refers to the fact that the <code>+</code> operator tries to convert its arguments to something it can add.  For example, adding an integer and a float, like <code>3+4.5</code>, works because <code>+</code> converts the integer <code>3</code> to a float.  But <code>+</code> can't convert a number to text (or vice-versa), so it gives up.</p>
 <p>The important thing to realize about that cell, for our purposes, is exactly where the error happens.  In the next cell, for example, some work is done before an error happens:</p>
 
 </div>
@@ -10065,6 +10072,13 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
     <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="s">'5'</span>   <span class="c"># a string expression, which happens to contain a single character called 5</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span class="mi">5</span>     <span class="c"># an int expression, whose value is the integer number 5</span>
 </pre></div>
 
@@ -10079,7 +10093,28 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Here is a more exotic kind of string expression:</p>
+<p>It's important to recognize that string, int, and float expressions produce values of different types.  A string is not an int, nor is it a float.  You can see the type of anything by calling <code>type(thing)</code> (or print it out with <code>print(type(thing))</code>, as in <code>type(2)</code>, <code>type('foo')</code>, or</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="n">i_am_a_string</span> <span class="o">=</span> <span class="s">"blah"</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">i_am_a_string</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Confusingly but conveniently, many functions built into Python will try to convert values of one type to another.  <code>3+4.5</code> was one example we just saw -- in order to add <code>3</code> and <code>4.5</code>, Python first converts the integer <code>3</code> to the float <code>3.</code>.  <code>print(3)</code> is another -- in order to print anything so you can see its value, the <code>print</code> function first converts it to a string.  So sometimes you can forget about the types of values.  Other times, as in the error we saw before, you have to think about types.</p>
+<p>You can do conversions between these three types yourself with the <code>str()</code>, <code>int()</code>, and <code>float()</code> functions.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Triple-quoted-strings">Triple-quoted strings<a class="anchor-link" href="#Triple-quoted-strings">¶</a></h4><p>Here is a more exotic kind of string expression:</p>
 
 </div>
 </div>
@@ -10487,7 +10522,8 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Note that it is possible to make an existing list longer using extend(), or to make a new, longer copy of the list with <code>+</code>.  You just can't do it with index assignment.</p>
-<p>Why do lists have this restriction?  Lists are supposed to contain contiguous ranges of things; they can't have "holes" that aren't indexable.  If you could extend a list by assigning to it at whatever indices you wanted, you could assign elements, say, 0, 1, and 3, leaving 2 unassigned.  Then what should <code>len</code> return for that list -- 3 or 4?  And what should happen when you print it?  It's not clear.  To make sure you don't have to worry about this when you use lists, Python doesn't let you do it.</p>
+<p>Why do lists have this restriction?</p>
+<p>Lists are supposed to contain contiguous ranges of things; they can't have "holes" that aren't indexable.  If you could extend a list by assigning to it at whatever indices you wanted, you could assign elements, say, 0, 1, and 3, leaving 2 unassigned.  Then what should <code>len</code> return for that list -- 3 or 4?  And what should happen when you print it?  Should it say <code>[0,1,&lt;blank&gt;,3]</code>?  It's not clear.  To make sure you don't have to worry about this when you use lists, Python doesn't let you do it.</p>
 
 </div>
 </div>
@@ -10535,7 +10571,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>After this line, the function <code>square</code> will be available for calling.  Defining a function doesn't do anything else.  In particular, it's not called unless you call it somewhere.</p>
-<p>The function definition is our first example of a statement that takes up multiple lines.  In fact, a function typically includes multiple <em>substatements</em>; its general form is:</p>
+<p>The function definition is our first example of a statement that takes up multiple lines.  In fact, a function definition is a <em>compound statement</em> that typically includes multiple <em>substatements</em>; its general form is:</p>
 
 <pre><code>def &lt;function name&gt;(&lt;argument list&gt;):
     &lt;substatement 0&gt;
@@ -10544,8 +10580,35 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 
 </code></pre>
 <p>Notice the indentation of the statements inside the function.  Indentation tells Python where your function definition ends.  You can use as many spaces as you want (as long as you're consistent), but 4 is traditional.</p>
-<p>When a function is executed (using the function call syntax we saw above), its substatements are executed sequentially, just like an ordinary sequence of statements in a cell.  The statements can be any statements you want.  (You can even define functions inside functions.)  Before the statements are executed, each name in the argument list is set to the corresponding value in the arguments passed to the function.  For example, when we call <code>square(5.5)</code> above, Python starts executing the statements in the <code>square</code> function, but first sets <code>x</code> to 5.5.</p>
-<p>It's important to know, though, that the value of <code>x</code> is set <em>only</em> for the statements inside the function.  Outside the function call, argument names are not modified or visible.  For example:</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When a function is executed (using the function call syntax we saw above), its substatements are executed sequentially, just like an ordinary sequence of statements in a cell.  A substatement can be any statement you want, just like a subexpression can be any expression you want.  You can even put function definitions as substatements inside function definitions.  A special kind of substatement often seen in functions (and nowhere else) is the <code>return</code> statement, which is covered in detail next.  When a return statement is reached, execution finishes (even if there are statements below) and the expression after <code>return</code> becomes the value of the function call.</p>
+<p>Before the statements are executed, each name in the <em>argument list</em> is set to the corresponding value in the arguments passed to the function.  For example, when we call <code>square(5.5)</code> above, Python starts executing the statements in the <code>square</code> function, but first sets <code>x</code> to 5.5.  Arguments are how we pass information into functions; functions with no arguments can only behave one way.</p>
+<h3 id="Why-functions?">Why functions?<a class="anchor-link" href="#Why-functions?">¶</a></h3><p>Functions are extremely useful for packaging small pieces of functionality into easily-understandable pieces.  Computer code is so powerful that organizing and maintaining it is often much more difficult than just getting the computer to do what we want.  If you can wrap a complicated procedure into a single function, then you can focus once on getting that function written correctly, and then move on to something else, never worrying about its correctness again.  In most moderate- or large-scale software, all code is organized this way -- that is, <em>all code</em> is just a bunch of (relatively short) functions that call each other.</p>
+<p>In your labs, and in coding you do outside and after this class, you'll often notice yourself repeating the same thing several times, with slight modifications.  For example, you might analyze a dataset and then perform the same analysis with a different dataset for comparison.  Or you might find yourself repeatedly doing the same mathematical operation, like "square each element and add 5".  When that happens, you should rewrite your code so that the thing you're repeating happens inside a function with a memorable name.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Details-about-function-execution">Details about function execution<a class="anchor-link" href="#Details-about-function-execution">¶</a></h3><p>Let's go back to our definition of <code>square</code> for a moment.</p>
+
+</div>
+</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+
+</div>
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It's important to know that the name <code>x</code> is assigned to a value <em>only</em> for the purposes of the statements inside the function.  Outside the function call, argument names are not modified or visible.  For example:</p>
 
 </div>
 </div>
@@ -10555,7 +10618,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 <span class="k">def</span> <span class="nf">cube</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
 <span class="n">cube</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c"># 27</span>
-<span class="n">x</span>
+<span class="n">x</span> <span class="c"># Still 5!</span>
 </pre></div>
 
 </div>
@@ -10585,12 +10648,6 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 <span class="n">six</span> <span class="o">=</span> <span class="n">times_three</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">three</span> <span class="o">=</span> <span class="n">multiplier</span> <span class="c"># Error!</span>
 </pre></div>
-
-</div>
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>Functions are extremely useful for packaging small pieces of functionality into easily-understandable pieces.  Computer code is so powerful that organizing and maintaining it is often much more difficult than just getting the computer to do what we want.  If you can wrap a complicated procedure into a single function, then you can focus once on getting that function written correctly, and then move on to something else, never worrying about its correctness again.  In most moderate- or large-scale software, all code is organized this way -- that is, <em>all code</em> is just a bunch of (relatively short) functions.</p>
 
 </div>
 </div>
@@ -10694,7 +10751,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Unfortunately, this is a mistake that Python will not complain about; it will just silently let <code>some_name</code> have no value.  (Technically it is given a special value called None.  If a statement with value None is the last statement in a cell, Jupyter doesn't print anything.  But you can see the value of <code>some_name</code> if you write, for example, <code>str(some_name)</code>.)</p>
+<p>Unfortunately, this is a mistake that Python will not complain about; it will just silently let <code>some_name</code> have no value.  (Technically it is given a special value called None.  If a statement with value None is the last statement in a cell, Jupyter doesn't print anything, and that's what happens in the above cell.  But you can see the value of <code>some_name</code> if you write, for example, <code>str(some_name)</code>.)</p>
 <p>To be clear, we just fix this by <code>return</code>ing whatever we want the function to return:</p>
 
 </div>
@@ -10712,7 +10769,7 @@ Q0iS1IwhJElqxhCSJDVjCEmSmvl/UhuO44FL0uwAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></h2><p>Conditionals are another important multi-line statement:</p>
+<h2 id="7.-Conditionals">7. Conditionals<a class="anchor-link" href="#7.-Conditionals">¶</a></h2><p>Conditionals are another important kind of multi-line statement:</p>
 
 </div>
 </div>
