@@ -453,7 +453,7 @@ pre .nn {
     color:pink;
 }
 .output_png img, p img {
-    width:100%;
+    max-width:100%;
 }
 pre .o, pre .k {
     color:purple;
