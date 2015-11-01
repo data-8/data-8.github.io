@@ -89,7 +89,7 @@ numbers of water districts. Here is what we are expecting for the tests:</p>
   districts should probably have zero income in your table), you can remove them
   with</p>
 
-<pre><code>wd_income = wd_income.where((wd_income[&#x27;pwsid&#x27;]!= &#x27;1910092&#x27;) | \
+<pre><code>wd_income = wd_income.where((wd_income[&#x27;pwsid&#x27;]!= &#x27;1910092&#x27;) &amp; \
     (wd_income[&#x27;pwsid&#x27;]!= &#x27;3110001&#x27;))</code></pre></li>
   <li>You may have noticed that the calculation for <code>income_50</code> assigns zero income
   to some water districts (around 200). Make sure that these water districts
