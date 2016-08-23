@@ -46,6 +46,17 @@ blockquote {
   font-size:inherit;
 }
 
+div.staffer {
+  text-align: center;
+  margin: 1em 0;
+}
+
+img.staffer-image {
+  height: 150px;
+  width: 150px;
+  margin: 0 0 10px;
+}
+
 th.date {
   : 5%;
 }
