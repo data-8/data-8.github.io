@@ -7,7 +7,7 @@ test = {
         {
           'code': r"""
           >>> round(min_height_difference, 5)
-          0.03
+          0.05
           """,
           'hidden': False,
           'locked': False
