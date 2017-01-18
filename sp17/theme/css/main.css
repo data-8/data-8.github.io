@@ -28,6 +28,10 @@ a.anchor-link {
   padding: 12px;
 }
 
+.calendar td.header {
+  font-weight: 500;
+}
+
 .calendar tr.monday {
   background-color: #e6e8f2;
 }
