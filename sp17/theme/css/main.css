@@ -18,6 +18,18 @@ a.anchor-link {
   display: none;
 }
 
+/* Announcement Pager */
+
+.announcement-btn-older:hover, .announcement-btn-newer:hover {
+  cursor: pointer;
+}
+.announcement {
+  display: none;
+}
+.announcement .pager {
+  text-align: left;
+}
+
 /* Calendar */
 
 .calendar table, .calendar th, .calendar tr, .calendar td {

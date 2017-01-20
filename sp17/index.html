@@ -32,7 +32,7 @@
             <li><a href="./resources.html">Resources</a></li>
             <li><a href="./schedule.html">Schedule</a></li>
             <li><a href="./staff.html">Staff</a></li>
-            
+
           <li><a href="http://data8.org/connector/">Connectors</a></li>
 
           <li class="dropdown">
@@ -55,11 +55,27 @@
 
 
 <h2>Announcements</h2>
-<ol id="post-list">
-          <div class="announcement">
-            Fri 20 January 2017
-            <article class="hentry">
-                  <div class="entry-content"> <ul>
+
+<div id="announcements">
+    <div class="announcement" id='announcement-0'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 20 January 2017</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
 <li>Homework 1 due Thursday 1/26</li>
 <li>Detailed participation policy announced next week</li>
 <li>Week 2 special lectures for experienced programmers in 10 Evans (topics may change):<ul>
@@ -67,28 +83,55 @@
 <li>Wednesday 1/25: Vantage point trees</li>
 </ul>
 </li>
-</ul> </div><!-- /.entry-content -->
-            </article>
-          </div>
-          <div class="announcement">
-            Fri 13 January 2017
-            <article class="hentry">
-                  <div class="entry-content"> <ul>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-1'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 13 January 2017</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
 <li>There is lab this week. Bring a laptop. You can borrow one for the semester from the library if you don't have your own. See Piazza for details.</li>
 <li>Sign up for <a href = "http://data8.org/connector/">one of our connector courses</a>!</li>
 <li>Create your computing account by going to <a href="http://datahub.berkeley.edu">datahub.berkeley.edu</a> and logging in with your @berkeley.edu account. Try starting your server. It takes about a minute. If you have problems, let us know by coming to lab and asking questions or posting on Piazza.</li>
-</ul> </div><!-- /.entry-content -->
-            </article>
-          </div>
-          <div class="announcement">
-            Mon 09 January 2017
-            <article class="hentry">
-                  <div class="entry-content"> <ul>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-2'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 09 January 2017</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
 <li>You must be enrolled in a lab section in order to be enrolled in the course. If you're on the waitlist, the reason you are waitlisted is because your lab is full.</li>
-</ul> </div><!-- /.entry-content -->
-            </article>
-          </div>
-</ol><!-- /#posts-list -->
+</ul>
+    </div>
+</div><!-- /#posts-list -->
 
 <h2>Calendar</h2>
     
@@ -610,6 +653,47 @@ Conclusion
 
   <!-- Latest compiled and minified Bootstrap JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function() {
+
+    // Announcements
+    var announcementIndex = 0;
+
+    function setAnnouncements(offset) {
+      var newIndex = announcementIndex  + offset;
+      var announcementNumber = $('.announcement').length;
+
+      if (newIndex < 0 || newIndex >= announcementNumber) {
+        return;
+      }
+
+      $('#announcement-' + announcementIndex).hide(0, function() {
+        $('#announcement-' + newIndex).show(0);
+      });
+
+      announcementIndex = newIndex;
+
+      if (announcementIndex >= announcementNumber - 1) {
+        $('#announcement-' + announcementIndex + ' .announcement-btn-older')
+          .addClass('disabled');
+      }
+      if (announcementIndex === 0) {
+        $('#announcement-' + announcementIndex + ' .announcement-btn-newer')
+          .addClass('disabled');
+      }
+    }
+    setAnnouncements(0);
+
+    $('.announcement-btn-newer > a').click(function() {
+      setAnnouncements(-1);
+    });
+    $('.announcement-btn-older > a').click(function() {
+      setAnnouncements(1);
+    });
+  });
+
+</script>
 
 </body>
 </html>
