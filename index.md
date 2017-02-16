@@ -15,12 +15,13 @@ issues surrounding data analysis such as privacy and design.
 Offerings
 ----
 
-Each past offering includes links to assignments, slides, and readings.
+Each offering site includes links to assignments, slides, and readings.
+You are welcome to use any of the materials you find.
 
--  (Spring 2017)[sp17]
--  (Fall 2016)[fa16]
--  (Fall 2015)[fa15]
--  (Spring 2016)[https://data-8.appspot.com/sp16/course]
+-  [Spring 2017](./sp17)
+-  [Fall 2016](./fa16)
+-  [Spring 2016](https://data-8.appspot.com/sp16/course)
+-  [Fall 2015](./fa15)
 
 Materials
 ---
