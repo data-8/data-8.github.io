@@ -93,4 +93,4 @@ students' environment.
 If you want more information about any of these tools, please fill out our [Data
 8 Instructor
 Interest](https://docs.google.com/forms/d/e/1FAIpQLSfFvhl3DOuZZB2fV2FY3qcmBGoG17BwxIhWP91G7rcVqaEguA/viewform)
-form.
+form or email `denero@berkeley.edu`.
