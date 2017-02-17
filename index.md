@@ -30,7 +30,7 @@ All materials for the course, including the textbook and assignments, are
 available for free online under a Creative Commons license.
 
 **Textbook**: [Computational and Inferential Thinking: The Foundations of Data
-**Science](http://inferentialthinking.com) is a free online textbook that
+Science](http://inferentialthinking.com) is a free online textbook that
 includes interactive Jupyter notebooks and public data sets for all examples.
 The textbook source is maintained as an [open source
 project](https://github.com/data-8/textbook).
