@@ -18,6 +18,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Summer 2017](./su17)
 -  [Spring 2017](./sp17)
 -  [Fall 2016](./fa16)
 -  [Spring 2016](https://data-8.appspot.com/sp16/course)
