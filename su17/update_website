@@ -4,7 +4,7 @@ This script is used to quickly make updates to the course webpage, such as
 adding a link to lecture slides / video.
 
 Usage:
-  update_website [-d | --dry] <command> <lec_num> <url>
+  ./update_website [-d | --dry] <command> <lec_num> <url>
 
   Where <command> is one of:
     video
@@ -83,7 +83,6 @@ ARG_TO_COMMAND = {
 
 if __name__ == '__main__':
     arguments = docopt(__doc__)
-    print(arguments)
 
     soup = parse_index()
 
