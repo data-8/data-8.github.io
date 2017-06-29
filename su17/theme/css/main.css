@@ -40,16 +40,12 @@ a.anchor-link {
   padding: 12px;
 }
 
-.calendar td.header {
-  font-weight: 500;
-}
-
-.calendar tr.monday {
+.calendar tbody tr:nth-child(2n - 1) {
   background-color: #e6e8f2;
 }
 
-.calendar tr.wednesday {
-  background-color: #f2f4f8;
+.calendar td.header {
+  font-weight: 500;
 }
 
 /* Staff */

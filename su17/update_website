@@ -25,9 +25,10 @@ INDEX = 'index.html'
 CALENDAR_CLASS = 'calendar'
 
 # Column that contains the lecture information
-LECTURE_COL = 1
+LECTURE_COL = 2
 
 # Text of the links to add
+DEMO_TEXT = '(demo)'
 VIDEO_TEXT = '(video)'
 SLIDES_TEXT = '(slides)'
 
