@@ -169,117 +169,126 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>Table()</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create an empty table, usually to extend with data</td>
+<td>Creates an empty table, usually to extend with data</td>
 </tr>
 <tr>
 <td><code>Table().read_table(filename)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create a table from a data file</td>
+<td>Creates a table from a data file</td>
 </tr>
 <tr>
-<td><code>with_columns</code></td>
+<td><code>tbl.with_column(name, values) <br /> tbl.with_columns(name1, value1, name2, value2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create a copy of a table with more columns</td>
+<td>Creates a copy of a table with more columns</td>
 </tr>
 <tr>
-<td><code>column</code></td>
+<td><code>tbl.column(column_name_or_index)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create an array containing the elements of a column</td>
+<td>A table with an additional or replaced column or columns. <code>name</code> is a string for the name of a column, <code>values</code> is an
+array.</td>
 </tr>
 <tr>
-<td><code>num_rows</code></td>
+<td><code>tbl.num_rows</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Compute the number of rows in a table</td>
+<td>The number of rows in a table</td>
 </tr>
 <tr>
-<td><code>num_columns</code></td>
+<td><code>tbl.num_columns</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Compute the number of columns in a table</td>
+<td>The number of columns in a table</td>
 </tr>
 <tr>
-<td><code>labels</code></td>
+<td><code>tbl.labels</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Lists the column labels in a table</td>
+<td>A list of the column labels in a table</td>
 </tr>
 <tr>
-<td><code>select</code></td>
+<td><code>tbl.select(col1, col2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create a copy of a table with only some of the columns</td>
+<td>Creates a copy of a table with only selected columns. Each column is the column name or index. </td>
 </tr>
 <tr>
-<td><code>drop</code></td>
+<td><code>tbl.drop(col1, col2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Create a copy of a table without some of the columns</td>
+<td>Creates a copy of a table without selected columns. Each column is the column name or index.</td>
 </tr>
 <tr>
-<td><code>relabel</code></td>
+<td><code>tbl.relabel(old_label, new_label)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
 <td>Modifies the existing table <em>in place</em>, changing the column heading in the first argument to the second</td>
 </tr>
 <tr>
-<td><code>relabeled</code></td>
+<td><code>tbl.relabeled(old_label, new_label)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
 <td>Returns a new table with the column heading in the first argument changed to the second</td>
 </tr>
 <tr>
-<td><code>sort</code></td>
+<td><code>tbl.sort(column_name_or_index)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/1/sorting-rows.html">5.1</a></td>
-<td>Create a copy of a table sorted by the values in a column. Defaults to ascending order unless "descending = True" is included</td>
+<td>Creates a copy of a table sorted by the values in a column. Defaults to ascending order unless optional argument "descending = True" is included</td>
 </tr>
 <tr>
-<td><code>where</code></td>
+<td><code>tbl.where(column, predicate)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/2/selecting-rows.html">5.2</a></td>
-<td>Create a copy of a table with only the rows that match some <em>predicate</em></td>
+<td>A table of the rows for which the column satisfies some predicate. See <code>Table.where predicates </code> below.</td>
 </tr>
 <tr>
-<td><code>take</code></td>
+<td><code>tbl.take(row_indices)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/2/selecting-rows.html">5.2</a></td>
-<td>Create a copy of the table with only the rows whose indices are in the given array</td>
+<td>A table with only the rows at the given indices. <code>row_indices</code> is an array of indices.</td>
 </tr>
 <tr>
-<td><code>barh</code></td>
+<td><code>tbl.barh(categories)<br />
+tbl.barh(categories, values)
+</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/1/visualizing-categorical-distributions.html">6.1</a></td>
-<td>Draws a bar chart of the frequencies of a categorical distribution</td>
+<td>Displays a bar chart with bars for each category in a column, with height proportional to the corresponding
+frequency. values argument unnecessary if table has only a column of categories and a column of values.</td>
 </tr>
 <tr>
-<td><code>histogram</code></td>
+<td><code>tbl.hist(column, units, bins)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/2/visualizing-numerical-distributions.html">6.2</a></td>
-<td>Draws a histogram of a numerical distribution</td>
+<td>Generates a histogram of the numerical values in a column. <code>units</code> and <code>bins</code> are optional arguments, used to label
+the axes and group the values into intervals (bins), respectively. Bins have the form [a, b).
+</td>
 </tr>
 <tr>
-<td><code>apply</code></td>
+<td><code>tbl.apply(function, column)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/1/applying-a-function-to-a-column.html">7.1</a></td>
-<td>Returns an array of values resulting from applying a function to some column in a table</td>
+<td>Returns an array of values resulting from applying a function to each item in a column</td>
 </tr>
 <tr>
-<td><code>group</code></td>
-<td align="center"><a href="https://www.inferentialthinking.com/chapters/07/2/classifying-by-one-variable.html">7.2</a></td>
-<td>Create a copy of the table with all rows with the same values in a certain column aggregated into one row in the new table</td>
+<td><code>tbl.group(column_or_columns, func)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/07/2/classifying-by-one-variable.html">7.2</a>, <a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">7.3</a></td>
+<td>Group rows by unique values or combinations of values in a column(s). Multiple columns must be entered in array or list form. Other values aggregated by count (default) or optional argument <code>func</code>.</td>
 </tr>
 <tr>
-<td><code>groups</code></td>
+<td><code>tbl.pivot(col1, col2, vals, collect)<br />
+tbl.pivot(col1, col2)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">7.3</a></td>
-<td>Create a copy of the table with all rows with the same value in a certain array of columns aggregated into one row in the new table</td>
+<td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row.
+Count or aggregate values from a third column, collect with some function. Default <code>vals</code>and <code>collect</code> return
+counts in cells.</td>
 </tr>
 <tr>
-<td><code>pivot</code></td>
-<td align="center"><a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">7.3</a></td>
-<td>Create a copy of the table with a column for each element in the first argument and a row for each element in the second argument and aggregates values</td>
-</tr>
-<tr>
-<td><code>join</code></td>
+<td><code>tblA.join(colA, tblB, colB) <br />
+tblA.join(colA, tblB)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/4/joining-tables-by-columns.html">7.4</a></td>
-<td>Create a copy of the table that is the result of joining the columns of two tables, with a row for each shared value in the two tables</td>
+<td>Generate a table with the columns of tblA and tblB, containing rows for all values of a column that appear in both
+tables. Default <code>colB</code> is <code>colA</code>. <code>colA</code> and <code>colB</code>must be strings specifying column names.</td>
 </tr>
 <tr>
-<td><code>sample</code></td>
+<td><code>tbl.sample(n)<br />
+tbl.sample(n, with_replacement)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/09/empirical-distributions.html">9</a></td>
-<td>Draws some number of rows at random from a table. By default, with replacement.</td>
+<td>A new table where <code>n</code> rows are randomly sampled from the original table. Default is with replacement. For sampling
+without replacement, use argument <code>with_replacement=False</code>. For a non-uniform sample, provide a third argument
+<code>weights=distribution</code> where <code>distribution</code> is an array or list containing the probability of each row.</td>
 </tr>
 <tr>
-<td><code>proportion_from_distribution</code></td>
+<td><code>proportions_from_distribution(tbl, proportion_column, n)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/10/1/jury-selection.html">10.1</a></td>
-<td>Returns a new table with an additional column corresponding to proportions from a random sample of some size of the proportions in a column.</td>
+<td>Returns a copy of <code>tbl</code> with an additional column <code> Random Sample </code> containing the proportions of a <code>n</code>-sized random sample, drawn using the proportions in <code>proportion_column</code>.</td>
 </tr>
 </tbody>
 </table>
