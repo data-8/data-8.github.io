@@ -159,9 +159,9 @@ table > tbody > tr:nth-child(odd) {
 <h3>Table Functions and Methods</h3>
 <table>
   <colgroup>
-   <col width="350"/>
+   <col width="325"/>
    <col width="80"/>
-   <col width="1090"/>
+   <col width="1115"/>
   </colgroup>
   <tbody>
   </tbody>
@@ -304,20 +304,20 @@ without replacement, use argument <code>with_replacement=False</code>. For a non
 <code>weights=distribution</code> where <code>distribution</code> is an array or list containing the probability of each row.</td>
 </tr>
 <tr>
-<td><code>proportions_from_distribution(tbl, proportion_column, n)</code></td>
+<td><code>proportions_from_distribution(tbl, prop_col, n)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/10/1/jury-selection.html">10.1</a></td>
-<td>Returns a copy of <code>tbl</code> with an additional column <code> Random Sample </code> containing the proportions of a <code>n</code>-sized random sample, drawn using the proportions in <code>proportion_column</code>.</td>
+<td>Returns a copy of <code>tbl</code> with an additional column <code> Random Sample </code> containing the proportions of a <code>n</code>-sized random sample, drawn using the proportions in <code>prop_col</code>.</td>
 </tr>
-
 </tbody>
 </table>
 <p><br /></p>
+
 <h3>Array Functions and Methods</h3>
 <table>
   <colgroup>
-   <col width="350"/>
+   <col width="325"/>
    <col width="80"/>
-   <col width="1090"/>
+   <col width="1115"/>
   </colgroup>
   <tbody>
   </tbody>
@@ -382,8 +382,7 @@ without replacement, use argument <code>with_replacement=False</code>. For a non
 <tr>
 <td><code>np.arange(start, stop, step)</code><br>
 <code>np.arange(start, stop)</code><br>
-<code>np.arange(stop)</code>
-</td>
+<code>np.arange(stop)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/5/ranges.html">4.5</a></td>
 <td>An array of numbers starting with <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>.
 When <code>start</code> and/or <code>step</code> are left out, default values are used in their place. Default step is 1; default start is 0.</td>
