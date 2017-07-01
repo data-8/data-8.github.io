@@ -159,9 +159,9 @@ table > tbody > tr:nth-child(odd) {
 <h3>Table Functions and Methods</h3>
 <table>
   <colgroup>
-   <col width="450"/>
+   <col width="350"/>
    <col width="80"/>
-   <col width="990"/>
+   <col width="1090"/>
   </colgroup>
   <tbody>
   </tbody>
@@ -176,17 +176,17 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>Table()</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Creates an empty table, usually to extend with data</td>
+<td>Creates an empty table, usually to extend with data.</td>
 </tr>
 <tr>
 <td><code>Table().read_table(filename)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Creates a table from a data file</td>
+<td>Creates a table from a data file.</td>
 </tr>
 <tr>
-<td><code>tbl.with_column(name, values) <br /> tbl.with_columns(name1, value1, name2, value2, ...)</code></td>
+<td><code>tbl.with_column(name, values) <br /> tbl.with_columns(n1, v1, n2, v2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Creates a copy of a table with more columns</td>
+<td>Creates a copy of a table with more columns.</td>
 </tr>
 <tr>
 <td><code>tbl.column(column_name_or_index)</code></td>
@@ -197,17 +197,17 @@ array.</td>
 <tr>
 <td><code>tbl.num_rows</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>The number of rows in a table</td>
+<td>The number of rows in a table.</td>
 </tr>
 <tr>
 <td><code>tbl.num_columns</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>The number of columns in a table</td>
+<td>The number of columns in a table.</td>
 </tr>
 <tr>
 <td><code>tbl.labels</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>A list of the column labels in a table</td>
+<td>A list of the column labels in a table.</td>
 </tr>
 <tr>
 <td><code>tbl.select(col1, col2, ...)</code></td>
@@ -222,17 +222,17 @@ array.</td>
 <tr>
 <td><code>tbl.relabel(old_label, new_label)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Modifies the existing table <em>in place</em>, changing the column heading in the first argument to the second</td>
+<td>Modifies the existing table <em>in place</em>, changing the column heading in the first argument to the second.</td>
 </tr>
 <tr>
 <td><code>tbl.relabeled(old_label, new_label)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
-<td>Returns a new table with the column heading in the first argument changed to the second</td>
+<td>Returns a new table with the column heading in the first argument changed to the second.</td>
 </tr>
 <tr>
 <td><code>tbl.sort(column_name_or_index)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/1/sorting-rows.html">5.1</a></td>
-<td>Creates a copy of a table sorted by the values in a column. Defaults to ascending order unless optional argument "descending = True" is included</td>
+<td>Creates a copy of a table sorted by the values in a column. Defaults to ascending order unless optional argument "descending = True" is included.</td>
 </tr>
 <tr>
 <td><code>tbl.where(column, predicate)</code></td>
@@ -243,6 +243,11 @@ array.</td>
 <td><code>tbl.take(row_indices)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/2/selecting-rows.html">5.2</a></td>
 <td>A table with only the rows at the given indices. <code>row_indices</code> is an array of indices.</td>
+</tr>
+<tr>
+<td><code>tbl.scatter(x_column, y_column)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/06/visualization.html">6</a></td>
+<td>Draws a scatter plot consisting of one point for each row of the table. Note that <code>x_column</code> and <code>y_column</code> must be strings specifying column names.</td>
 </tr>
 <tr>
 <td><code>tbl.barh(categories)<br />
@@ -262,7 +267,7 @@ the axes and group the values into intervals (bins), respectively. Bins have the
 <tr>
 <td><code>tbl.apply(function, column)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/1/applying-a-function-to-a-column.html">7.1</a></td>
-<td>Returns an array of values resulting from applying a function to each item in a column</td>
+<td>Returns an array of values resulting from applying a function to each item in a column.</td>
 </tr>
 <tr>
 <td><code>tbl.group(column_or_columns, func)</code></td>
@@ -297,11 +302,19 @@ without replacement, use argument <code>with_replacement=False</code>. For a non
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/10/1/jury-selection.html">10.1</a></td>
 <td>Returns a copy of <code>tbl</code> with an additional column <code> Random Sample </code> containing the proportions of a <code>n</code>-sized random sample, drawn using the proportions in <code>proportion_column</code>.</td>
 </tr>
+
 </tbody>
 </table>
 <p><br /></p>
 <h3>Array Functions and Methods</h3>
 <table>
+  <colgroup>
+   <col width="350"/>
+   <col width="80"/>
+   <col width="1090"/>
+  </colgroup>
+  <tbody>
+  </tbody>
 <thead>
 <tr>
 <th>Name</th>
@@ -311,74 +324,90 @@ without replacement, use argument <code>with_replacement=False</code>. For a non
 </thead>
 <tbody>
 <tr>
-<td><code>max</code></td>
+<td><code>max(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
-<td>Returns the maximum value of an array</td>
+<td>Returns the maximum value of an array.</td>
 </tr>
 <tr>
-<td><code>min</code></td>
+<td><code>min(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
-<td>Returns the minimum value of an array</td>
+<td>Returns the minimum value of an array.</td>
 </tr>
 <tr>
-<td><code>sum</code></td>
+<td><code>sum(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
-<td>Returns the sum of the values in an array</td>
+<td>Returns the sum of the values in an array.</td>
 </tr>
 <tr>
-<td><code>len</code></td>
+<td><code>abs(num)</code>, <code>np.abs(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
-<td>Returns the length (number of elements) of an array</td>
+<td>Take the absolute value of number or each number in an array.</td>
 </tr>
 <tr>
-<td><code>make_array</code></td>
+<td><code>round(num)</code>, <code>np.round(array)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
+<td>Round number or array of numbers to the nearest integer.</td>
+</tr>
+<tr>
+<td><code>len(array)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/03/3/call-expressions.html">3.3</a></td>
+<td>Returns the length (number of elements) of an array.</td>
+</tr>
+<tr>
+<td><code>make_array(val1, val2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/4/arrays.html">4.4</a></td>
-<td>Makes a numpy array with the values passed in</td>
+<td>Makes a numpy array with the values passed in. Values must be the same data type.</td>
 </tr>
 <tr>
-<td><code>np.average</code></td>
+<td><code>np.average(array), np.mean(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/4/arrays.html">4.4</a></td>
-<td>Returns the mean value of an array</td>
+<td>Returns the average of the values in an array.</td>
 </tr>
 <tr>
-<td><code>np.diff</code></td>
+<td><code>np.diff(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/4/arrays.html">4.4</a></td>
-<td>Returns a new array of size len(arr)-1 with elements equal to the difference between adjacent elements</td>
+<td>Returns a new array of size <code>len(array)-1</code> with elements equal to the difference between adjacent elements; val_2 - val_1, val_3 - val_2, etc.</td>
 </tr>
 <tr>
-<td><code>np.sqrt</code></td>
+<td><code>np.sqrt(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/4/arrays.html">4.4</a></td>
 <td>Returns an array with the square root of each element</td>
 </tr>
 <tr>
-<td><code>np.arange</code></td>
+<td><code>np.arange(start, stop, step)<br>
+np.arange(start, stop)<br>
+np.arange(stop)<br></code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/5/ranges.html">4.5</a></td>
-<td>Returns an array of an end-exclusive range of variable step size</td>
+<td>An array of numbers starting with <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>.
+When <code>start</code> and/or <code>step</code> are left out, default values are used in their place. Default step is 1; default start is 0.</td>
 </tr>
 <tr>
-<td><code>arr.item</code></td>
+<td><code>array.item(index)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/6/more-on-arrays.html">4.6</a></td>
 <td>Returns the i-th item in an array (remember Python indices start at 0!)</td>
 </tr>
 <tr>
-<td><code>np.random.choice</code></td>
+<td><code>np.random.choice(array, n)<br>
+np.random.choice(array)
+</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/randomness.html">8</a></td>
-<td>Picks one (by default) or some number 'n' of items from an array at random. By default, with replacement.</td>
+<td>An array of items selected at random with replacement from an array. Default number of items is 1 if <code>n</code> is not specified.
+</td>
 </tr>
 <tr>
-<td><code>np.count_nonzero</code></td>
+<td><code>np.count_nonzero(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/randomness.html">8</a></td>
-<td>Returns the number of non-zero (or True) elements in an array.</td>
+<td>Counts the number of non-zero (or <code>True</code>) elements in an array.</td>
 </tr>
 <tr>
-<td><code>np.append</code></td>
+<td><code>np.append(array, item)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/2/iteration.html">8.2</a></td>
-<td>Returns a copy of the input array with some item (must be the same type as the other entries in the array) appended to the end.</td>
+<td>Returns a copy of the input array with <code>item</code> (must be the same type as the other entries in the array) appended to the end.</td>
 </tr>
 <tr>
-<td><code>percentile</code></td>
+<td><code>percentile(percentile, array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/11/1/percentiles.html">11.1</a></td>
-<td>Returns the corresponding percentile of an array.</td>
+<td>Returns the item at the corresponding percentile of an array.</td>
 </tr>
 </tbody>
 </table>
