@@ -184,7 +184,9 @@ table > tbody > tr:nth-child(odd) {
 <td>Creates a table from a data file.</td>
 </tr>
 <tr>
-<td><code>tbl.with_column(name, values) <br /> tbl.with_columns(n1, v1, n2, v2, ...)</code></td>
+<td>
+<code>tbl.with_column(name, values)</code> <br>
+<code>tbl.with_columns(n1, v1, n2, v2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/tables.html">5</a></td>
 <td>Creates a copy of a table with more columns.</td>
 </tr>
@@ -250,9 +252,10 @@ array.</td>
 <td>Draws a scatter plot consisting of one point for each row of the table. Note that <code>x_column</code> and <code>y_column</code> must be strings specifying column names.</td>
 </tr>
 <tr>
-<td><code>tbl.barh(categories)<br />
-tbl.barh(categories, values)
-</code></td>
+<td>
+<code>tbl.barh(categories)</code> <br>
+<code>tbl.barh(categories, values)</code>
+</td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/1/visualizing-categorical-distributions.html">6.1</a></td>
 <td>Displays a bar chart with bars for each category in a column, with height proportional to the corresponding
 frequency. values argument unnecessary if table has only a column of categories and a column of values.</td>
@@ -275,23 +278,26 @@ the axes and group the values into intervals (bins), respectively. Bins have the
 <td>Group rows by unique values or combinations of values in a column(s). Multiple columns must be entered in array or list form. Other values aggregated by count (default) or optional argument <code>func</code>.</td>
 </tr>
 <tr>
-<td><code>tbl.pivot(col1, col2, vals, collect)<br />
-tbl.pivot(col1, col2)</code></td>
+<td><code>tbl.pivot(col1, col2, vals, collect)</code><br>
+<code>tbl.pivot(col1, col2)</code>
+</td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">7.3</a></td>
 <td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row.
 Count or aggregate values from a third column, collect with some function. Default <code>vals</code>and <code>collect</code> return
 counts in cells.</td>
 </tr>
 <tr>
-<td><code>tblA.join(colA, tblB, colB) <br />
-tblA.join(colA, tblB)</code></td>
+<td><code>tblA.join(colA, tblB, colB)</code><br>
+<code>tblA.join(colA, tblB)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/4/joining-tables-by-columns.html">7.4</a></td>
 <td>Generate a table with the columns of tblA and tblB, containing rows for all values of a column that appear in both
 tables. Default <code>colB</code> is <code>colA</code>. <code>colA</code> and <code>colB</code>must be strings specifying column names.</td>
 </tr>
 <tr>
-<td><code>tbl.sample(n)<br />
-tbl.sample(n, with_replacement)</code></td>
+<td>
+<code>tbl.sample(n)</code><br>
+<code>tbl.sample(n, with_replacement)</code>
+</td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/09/empirical-distributions.html">9</a></td>
 <td>A new table where <code>n</code> rows are randomly sampled from the original table. Default is with replacement. For sampling
 without replacement, use argument <code>with_replacement=False</code>. For a non-uniform sample, provide a third argument
@@ -374,9 +380,10 @@ without replacement, use argument <code>with_replacement=False</code>. For a non
 <td>Returns an array with the square root of each element</td>
 </tr>
 <tr>
-<td><code>np.arange(start, stop, step)<br>
-np.arange(start, stop)<br>
-np.arange(stop)<br></code></td>
+<td><code>np.arange(start, stop, step)</code><br>
+<code>np.arange(start, stop)</code><br>
+<code>np.arange(stop)</code>
+</td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/04/5/ranges.html">4.5</a></td>
 <td>An array of numbers starting with <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>.
 When <code>start</code> and/or <code>step</code> are left out, default values are used in their place. Default step is 1; default start is 0.</td>
@@ -388,7 +395,8 @@ When <code>start</code> and/or <code>step</code> are left out, default values ar
 </tr>
 <tr>
 <td><code>np.random.choice(array, n)</code><br>
-<code>np.random.choice(array)</code></td>
+<code>np.random.choice(array)</code>
+</td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/randomness.html">8</a></td>
 <td>An array of items selected at random with replacement from an array. Default number of items is 1 if <code>n</code> is not specified.
 </td>
