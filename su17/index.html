@@ -1,3 +1,12 @@
+<!--
+Data 8 Su17 homepage
+
+Table of contents (use Cmd+F to jump to sections):
+
+- [navbar]
+- [announcements]
+- [calendar]
+-->
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -9,6 +18,7 @@
   <link href="./theme/css/main.css" rel="stylesheet"/>
  </head>
  <body class="home" id="index">
+  <!-- [navbar] -->
   <nav class="navbar navbar-default navbar-fixed-top">
    <div class="container">
     <div class="navbar-header">
@@ -100,16 +110,65 @@
       </li>
      </ul>
     </div>
-    <!--/.nav-collapse -->
    </div>
   </nav>
+  <!-- End navbar -->
   <div class="container">
    <section id="content">
     <h2>
      Announcements
     </h2>
+    <!-- [announcements] -->
     <div id="announcements">
-     <div class="announcement" id="announcement-0">
+      <!--
+      To add a new announement, add another div with id="announcement-{n+1}"
+      where n is the highest current announcement number and fill it with your
+      desired content.
+      -->
+     <div class="announcement" id="announcement-4">
+      <ul class="pager">
+       <li class="announcement-btn-older">
+        <a>
+         <span aria-hidden="true" class="glyphicon glyphicon-menu-left">
+         </span>
+         older
+        </a>
+       </li>
+       <li>
+        <span class="announcement-date">
+         Wed July 5 2017
+        </span>
+       </li>
+       <li class="announcement-btn-newer">
+        <a>
+         newer
+         <span aria-hidden="true" class="glyphicon glyphicon-menu-right">
+         </span>
+        </a>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        This week, the usual 4 hours of lecture will be required in order to get attendance credit despite the holiday.
+       </li>
+       <li>
+        Project 1 is due Friday, July 7 at 11:59pm. Although the checkpoint is graded on completion, the final project turn-in is graded on correctness.
+       </li>
+       <li>
+        Lab resumes as usual today (Wednesday) and tomorrow (Thursday).
+       </li>
+       <li>
+        Please check your midterm and finals schedules now. If you have a conflict, email Sam before this Friday, July 7 at 5pm. Otherwise your conflict request may not be fulfilled.
+       </li>
+       <li>
+        Sign up for small group tutoring! Each session is 45 minutes and will have up to 5 students. Tutoring is a really good way to prepare for exams and understand the content better. It’s especially helpful for those new to programming, but open to everyone!
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLScj01rjNMQVSGkrfxe-51mnv-qQ92E8XL2mjMuNMgaVx5cUtg/viewform?usp=sf_link">
+         Sign up here.
+        </a>
+       </li>
+      </ul>
+     </div>
+     <div class="announcement" id="announcement-3">
       <ul class="pager">
        <li class="announcement-btn-older">
         <a>
@@ -161,7 +220,7 @@
        </li>
       </ul>
      </div>
-     <div class="announcement" id="announcement-1">
+     <div class="announcement" id="announcement-2">
       <ul class="pager">
        <li class="announcement-btn-older">
         <a>
@@ -202,7 +261,7 @@
        </li>
       </ul>
      </div>
-     <div class="announcement" id="announcement-2">
+     <div class="announcement" id="announcement-1">
       <ul class="pager">
        <li class="announcement-btn-older">
         <a>
@@ -261,7 +320,7 @@
        </li>
       </ul>
      </div>
-     <div class="announcement" id="announcement-3">
+     <div class="announcement" id="announcement-0">
       <ul class="pager">
        <li class="announcement-btn-older">
         <a>
@@ -293,7 +352,7 @@
       </ul>
      </div>
     </div>
-    <!-- /#posts-list -->
+    <!-- End announcements -->
     <h2>
      Calendar
     </h2>
@@ -317,1048 +376,1009 @@
       </div>
      </div>
     </div>
-    <div class="cell border-box-sizing code_cell rendered">
-     <div class="output_wrapper">
-      <div class="output">
-       <div class="output_area">
-        <div class="output_html rendered_html output_subarea output_execute_result">
-         <div class="calendar">
-          <table>
-           <colgroup>
-            <col width="120"/>
-            <col width="250"/>
-            <col width="300"/>
-            <col width="250"/>
-            <col width="600"/>
-           </colgroup>
-           <tbody>
-           </tbody>
-           <thead>
-            <tr>
-             <td class="header">
-              Date
-             </td>
-             <td class="header">
-              Topic
-             </td>
-             <td class="header">
-              Lecture
-             </td>
-             <td class="header">
-              Reading
-             </td>
-             <td class="header">
-              Assignment
-             </td>
-            </tr>
-           </thead>
-           <tbody>
-            <tr>
-             <td>
-              Mon 06/19
-             </td>
-             <td>
-              Introduction
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1BjTfIFwI3TFiVqSITEf9J8WY0O3byqVXOH-aGqoKVx8/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=NtreRTMiN2Q">
-               (video)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/01/1/intro.html">
-               1.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/01/2/why-data-science.html">
-               1.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html">
-               1.3
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab01" target="_blank">
-                Lab 01: Expressions
-               </a>
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tues 06/20
-             </td>
-             <td>
-              Cause and Effect
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1gtnJM4f93IfQBoZkg3zf2Xxm7BoDk-dazcFnJDN_8M0/edit">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=YY9cS82Cg00">
-               (video)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html">
-               Chapter 2
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw01">
-                Homework 01
-               </a>
-               (Due 06/23)
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 06/21
-             </td>
-             <td>
-              Expressions
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1_iNxbEGfKi794tDfxLJW5RqJQRpH8a6d9FEtjAnNYHA/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=XrRq6OrGVrg">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec03_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">
-               Chapter 3
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab02">
-                Lab 02: Types &amp; Sequences
-               </a>
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 06/22
-             </td>
-             <td>
-              Data Types
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1Di1cYgU3yr_7YD-VaVoc0sqfGZkwUZcUIaCO0a8eWqA/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=qwkdMnsybEY">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec04_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/04/data-types.html">
-               Chapter 4
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw02">
-                Homework 02
-               </a>
-               (Due 06/27)
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 06/23
-             </td>
-             <td>
-              Tables, Rows
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1CywqvxKbQd1pQXB8AVJ-nZlIngX0j-QvDOMPZWQ75no/edit?usp=sharing">
-               (slides 1)
-              </a>
-              <a href="https://www.youtube.com/watch?v=kKrBM9fLEH8">
-               (video 1)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec05_live.ipynb">
-               (demo 1)
-              </a>
-              <br/>
-              <a href="https://docs.google.com/presentation/d/1RjWDRdE767XP-5FTErdcNiZkpAbfA4lBWNoobH4V0LU/edit?usp=sharing">
-               (slides 2)
-              </a>
-              <a href="https://www.youtube.com/watch?v=DhUYPyp03Is">
-               (video 2)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec06_live.ipynb">
-               (demo 2)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/05/tables.html">
-               5
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/05/1/sorting-rows.html">
-               5.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/05/2/selecting-rows.html">
-               5.2
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 06/26
-             </td>
-             <td>
-              Census
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/11iAP_Ra-Cx0_D92hK5-1Q5M7lhZts000xIYjq2n0iBo/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=BT8e2dGgoiE">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec07_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/05/3/example-trends-in-the-population-of-the-united-states.html">
-               5.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/05/4/example-gender-ratio-in-the-us-population.html">
-               5.4
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab03" target="_blank">
-                Lab 03: Arrays &amp; Tables
-               </a>
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 06/27
-             </td>
-             <td>
-              Charts
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1oUmLsxG7YGW0Kc59XME-QKW_RaA9l9SL8sXc4ZkS3XA/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=-zSe4ijXFYQ">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec08_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/06/visualization.html">
-               6
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/06/1/visualizing-categorical-distributions.html">
-               6.1
-              </a>
-             </td>
-             <td>
-              <div>
-               <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw03">
-                Homework 03
-               </a>
-               (Due 06/30)
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 06/28
-             </td>
-             <td>
-              Histograms
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1QfShaniRV-fUCYaWFFZJhlafaRYM1ibkahFipUAVFB8/">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=QItpzqgUF_o">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec09_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/06/2/visualizing-numerical-distributions.html">
-               6.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/06/3/overlaid-graphs.html">
-               6.3
-              </a>
-             </td>
-             <td>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab04">
-               Lab 04: Histograms &amp; Functions
-              </a>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 06/29
-             </td>
-             <td>
-              Functions
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1wOi-wm0Bs3Oe_x5F_SMYAOC6vjjAsS0VlcSskYiTLbE/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=pozVwch8EzI">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec10_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/07/functions-and-tables.html">
-               7
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/07/1/applying-a-function-to-a-column.html">
-               7.1
-              </a>
-             </td>
-             <td>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/project/project1">
-               Project 1: World Progress
-              </a>
-              (Checkpoint 07/04, Due 07/07)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 06/30
-             </td>
-             <td>
-              Groups, Joins
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1hwAHZMxymk4X24KSkN4xF1gsk2CZmY1r6GrYtVfO4I0/edit?usp=sharing">
-               (slides 1)
-              </a>
-              <a href="https://www.youtube.com/watch?v=Vxg69Ry-q10">
-               (video 1)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec11_live.ipynb">
-               (demo 1)
-              </a>
-              <br/>
-              <a href="https://docs.google.com/presentation/d/1hKu8CbOjsDw5qoXtanjWQVRy0nW_GTA0gYU-zCf-v44/edit?usp=sharing">
-               (slides 2)
-              </a>
-              <a href="https://www.youtube.com/watch?v=Bp3K1snH-o0">
-               (video 2)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec12_live.ipynb">
-               (demo 2)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/07/2/classifying-by-one-variable.html">
-               7.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">
-               7.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/07/4/joining-tables-by-columns.html">
-               7.4
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/07/5/bike-sharing-in-the-bay-area.html">
-               7.5
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 07/03
-             </td>
-             <td>
-              Iteration
-             </td>
-             <td>
-              <a href="https://docs.google.com/presentation/d/1TkHHb1nXe5wTMhXAO_1kpq6hQ3dV725Ehiv7L9OdCK0/edit?usp=sharing">
-               (slides)
-              </a>
-              <a href="https://www.youtube.com/watch?v=ntG4ogFe0-c">
-               (video)
-              </a>
-              <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec13_live.ipynb">
-               (demo)
-              </a>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/08/randomness.html">
-               8
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/08/1/conditional-statements.html">
-               8.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/08/2/iteration.html">
-               8.2
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 07/04
-             </td>
-             <td>
-              HOLIDAY
-             </td>
-             <td>
-             </td>
-             <td>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 07/05
-             </td>
-             <td>
-              Chance
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/08/3/monty-hall-problem.html">
-               8.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/08/4/finding-probabilities.html">
-               8.4
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 07/06
-             </td>
-             <td>
-              Sampling
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/08/5/sampling.html">
-               8.5
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/09/empirical-distributions.html">
-               9
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/09/1/sampling_from_a_population.html">
-               9.1
-              </a>
-             </td>
-             <td>
-              Lab 05: Randomization
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 07/07
-             </td>
-             <td>
-              Statistics, Simulation
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/09/2/at-the-roulette-table.html">
-               9.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/09/3/empirical-distribution-of-a-statistic.html">
-               9.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/10/testing-hypotheses.html">
-               10
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/10/1/jury-selection.html">
-               10.1
-              </a>
-             </td>
-             <td>
-              Homework 04 (Due 07/11)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 07/10
-             </td>
-             <td>
-              Privacy
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 07/11
-             </td>
-             <td>
-              Hypothesis Testing
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/10/2/terminology-of-testing.html">
-               10.2
-              </a>
-             </td>
-             <td>
-              Lab 06: Statistics and Samples
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 07/12
-             </td>
-             <td>
-              Error Probabilities
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/10/3/error-probabilities.html">
-               10.3
-              </a>
-             </td>
-             <td>
-              Homework 05 (Due 07/14)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 07/13
-             </td>
-             <td>
-              Examples
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/10/4/example-deflategate.html">
-               10.4
-              </a>
-             </td>
-             <td>
-              <div>
-               Lab: Midterm Review
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 07/14
-             </td>
-             <td>
-              Midterm
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 07/17
-             </td>
-             <td>
-              Confidence Intervals
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/11/estimation.html">
-               11
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/11/1/percentiles.html">
-               11.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/11/2/bootstrap.html">
-               11.2
-              </a>
-             </td>
-             <td <="" td="">
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 07/18
-             </td>
-             <td>
-              Interpreting Confidence
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/11/3/confidence-intervals.html">
-               11.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/11/4/using-confidence-intervals.html">
-               11.4
-              </a>
-             </td>
-             <td>
-              <div>
-               Lab 07: The Bootstrap
-              </div>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 07/19
-             </td>
-             <td>
-              Comparing Samples
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/16/comparing-two-samples.html">
-               16
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/16/1/two-categorical-distributions.html">
-               16.1
-              </a>
-             </td>
-             <td>
-              Project 2: Crime and Punishment (Checkpoint 07/20, Due 07/25)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 07/20
-             </td>
-             <td>
-              A/B Testing
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/16/2/ab-testing.html">
-               16.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/16/3/causality.html">
-               16.3
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 07/21
-             </td>
-             <td>
-              Center and Spread, The Normal Distribution
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/12/why-the-mean-matters.html">
-               12
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/12/1/properties-of-the-mean.html">
-               12.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/12/2/variability.html">
-               12.2
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 07/24
-             </td>
-             <td>
-              Sample Means
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/12/3/sd-and-the-normal-curve.html">
-               12.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/12/4/central-limit-theorem.html">
-               12.4
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/12/5/variability-of-the-sample-mean.html">
-               12.5
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 07/25
-             </td>
-             <td>
-              Designing Experiments
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/12/6/choosing-a-sample-size.html">
-               12.6
-              </a>
-             </td>
-             <td>
-              TBD
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 07/26
-             </td>
-             <td>
-              Correlation
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/13/prediction.html">
-               13
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/13/1/correlation.html">
-               13.1
-              </a>
-             </td>
-             <td>
-              Homework 06 (Due 07/28)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 07/27
-             </td>
-             <td>
-              Linear Regression
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/13/2/regression-line.html">
-               13.2
-              </a>
-             </td>
-             <td>
-              Lab 08: Regression
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 07/28
-             </td>
-             <td>
-              Least Squares, Residuals
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/13/3/method-of-least-squares.html">
-               13.3
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/13/4/least-squares-regression.html">
-               13.4
-              </a>
-             </td>
-             <td>
-              Homework 07 (Due 08/01)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 07/31
-             </td>
-             <td>
-              Regression Inference
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/13/5/visual-diagnostics.html">
-               13.5
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/13/6/numerical-diagnostics.html">
-               13.6
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/14/inference-for-regression.html">
-               Chapter 14
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 08/01
-             </td>
-             <td>
-              Classification
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/15/classification.html">
-               15
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/15/1/nearest-neighbors.html">
-               15.1
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/15/2/training-and-testing.html">
-               15.2
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/15/3/rows-of-tables.html">
-               15.3
-              </a>
-             </td>
-             <td>
-              Lab 09: Regression Inference
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 08/02
-             </td>
-             <td>
-              Classifiers
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/15/4/implementing-the-classifier.html">
-               15.4
-              </a>
-              ,
-              <a href="https://www.inferentialthinking.com/chapters/15/5/accuracy-of-the-classifier.html">
-               15.5
-              </a>
-             </td>
-             <td>
-              Project 3: Classifying Music (Checkpoint 08/04, Due 08/08)
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 08/03
-             </td>
-             <td>
-              Multiple Regression
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/15/6/multiple-regression.html">
-               15.6
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Fri 08/04
-             </td>
-             <td>
-              Decisions
-             </td>
-             <td>
-             </td>
-             <td>
-              <a href="https://www.inferentialthinking.com/chapters/17/updating-predictions.html">
-               Chapter 17
-              </a>
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Mon 08/07
-             </td>
-             <td>
-              Case Studies
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-              Lab 10: Decisions
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Tue 08/08
-             </td>
-             <td>
-              Case Studies
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Wed 08/09
-             </td>
-             <td>
-              Conclusion
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-             </td>
-            </tr>
-            <tr>
-             <td>
-              Thu 08/10
-             </td>
-             <td>
-              Final
-             </td>
-             <td>
-             </td>
-             <td>
-              N/A
-             </td>
-             <td>
-             </td>
-            </tr>
-           </tbody>
-          </table>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
+    <!-- [calendar] -->
+     <div class="calendar">
+      <table>
+       <colgroup>
+        <col width="120"/>
+        <col width="250"/>
+        <col width="300"/>
+        <col width="250"/>
+        <col width="600"/>
+       </colgroup>
+       <tbody>
+       </tbody>
+       <thead>
+        <tr>
+         <td class="header">
+          Date
+         </td>
+         <td class="header">
+          Topic
+         </td>
+         <td class="header">
+          Lecture
+         </td>
+         <td class="header">
+          Reading
+         </td>
+         <td class="header">
+          Assignment
+         </td>
+        </tr>
+       </thead>
+       <tbody>
+        <tr>
+         <td>
+          Mon 06/19
+         </td>
+         <td>
+          Introduction
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1BjTfIFwI3TFiVqSITEf9J8WY0O3byqVXOH-aGqoKVx8/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=NtreRTMiN2Q">
+           (video)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/01/1/intro.html">
+           1.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/01/2/why-data-science.html">
+           1.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html">
+           1.3
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab01" target="_blank">
+            Lab 01: Expressions
+           </a>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tues 06/20
+         </td>
+         <td>
+          Cause and Effect
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1gtnJM4f93IfQBoZkg3zf2Xxm7BoDk-dazcFnJDN_8M0/edit">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=YY9cS82Cg00">
+           (video)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html">
+           Chapter 2
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw01">
+            Homework 01
+           </a>
+           (Due 06/23)
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 06/21
+         </td>
+         <td>
+          Expressions
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1_iNxbEGfKi794tDfxLJW5RqJQRpH8a6d9FEtjAnNYHA/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=XrRq6OrGVrg">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec03_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">
+           Chapter 3
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab02">
+            Lab 02: Types &amp; Sequences
+           </a>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 06/22
+         </td>
+         <td>
+          Data Types
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1Di1cYgU3yr_7YD-VaVoc0sqfGZkwUZcUIaCO0a8eWqA/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=qwkdMnsybEY">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec04_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/04/data-types.html">
+           Chapter 4
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw02">
+            Homework 02
+           </a>
+           (Due 06/27)
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 06/23
+         </td>
+         <td>
+          Tables, Rows
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1CywqvxKbQd1pQXB8AVJ-nZlIngX0j-QvDOMPZWQ75no/edit?usp=sharing">
+           (slides 1)
+          </a>
+          <a href="https://www.youtube.com/watch?v=kKrBM9fLEH8">
+           (video 1)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec05_live.ipynb">
+           (demo 1)
+          </a>
+          <br/>
+          <a href="https://docs.google.com/presentation/d/1RjWDRdE767XP-5FTErdcNiZkpAbfA4lBWNoobH4V0LU/edit?usp=sharing">
+           (slides 2)
+          </a>
+          <a href="https://www.youtube.com/watch?v=DhUYPyp03Is">
+           (video 2)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec06_live.ipynb">
+           (demo 2)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/05/tables.html">
+           5
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/05/1/sorting-rows.html">
+           5.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/05/2/selecting-rows.html">
+           5.2
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 06/26
+         </td>
+         <td>
+          Census
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/11iAP_Ra-Cx0_D92hK5-1Q5M7lhZts000xIYjq2n0iBo/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=BT8e2dGgoiE">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec07_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/05/3/example-trends-in-the-population-of-the-united-states.html">
+           5.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/05/4/example-gender-ratio-in-the-us-population.html">
+           5.4
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab03" target="_blank">
+            Lab 03: Arrays &amp; Tables
+           </a>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 06/27
+         </td>
+         <td>
+          Charts
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1oUmLsxG7YGW0Kc59XME-QKW_RaA9l9SL8sXc4ZkS3XA/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=-zSe4ijXFYQ">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec08_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/06/visualization.html">
+           6
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/06/1/visualizing-categorical-distributions.html">
+           6.1
+          </a>
+         </td>
+         <td>
+          <div>
+           <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/hw/hw03">
+            Homework 03
+           </a>
+           (Due 06/30)
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 06/28
+         </td>
+         <td>
+          Histograms
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1QfShaniRV-fUCYaWFFZJhlafaRYM1ibkahFipUAVFB8/">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=QItpzqgUF_o">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec09_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/06/2/visualizing-numerical-distributions.html">
+           6.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/06/3/overlaid-graphs.html">
+           6.3
+          </a>
+         </td>
+         <td>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/lab/lab04">
+           Lab 04: Histograms &amp; Functions
+          </a>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 06/29
+         </td>
+         <td>
+          Functions
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1wOi-wm0Bs3Oe_x5F_SMYAOC6vjjAsS0VlcSskYiTLbE/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=pozVwch8EzI">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec10_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/07/functions-and-tables.html">
+           7
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/07/1/applying-a-function-to-a-column.html">
+           7.1
+          </a>
+         </td>
+         <td>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=materials/su17/project/project1">
+           Project 1: World Progress
+          </a>
+          (Checkpoint 07/04, Due 07/07)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 06/30
+         </td>
+         <td>
+          Groups, Joins
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1hwAHZMxymk4X24KSkN4xF1gsk2CZmY1r6GrYtVfO4I0/edit?usp=sharing">
+           (slides 1)
+          </a>
+          <a href="https://www.youtube.com/watch?v=Vxg69Ry-q10">
+           (video 1)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec11_live.ipynb">
+           (demo 1)
+          </a>
+          <br/>
+          <a href="https://docs.google.com/presentation/d/1hKu8CbOjsDw5qoXtanjWQVRy0nW_GTA0gYU-zCf-v44/edit?usp=sharing">
+           (slides 2)
+          </a>
+          <a href="https://www.youtube.com/watch?v=Bp3K1snH-o0">
+           (video 2)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec12_live.ipynb">
+           (demo 2)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/07/2/classifying-by-one-variable.html">
+           7.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/07/3/cross-classifying-by-more-than-one-variable.html">
+           7.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/07/4/joining-tables-by-columns.html">
+           7.4
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/07/5/bike-sharing-in-the-bay-area.html">
+           7.5
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 07/03
+         </td>
+         <td>
+          Iteration
+         </td>
+         <td>
+          <a href="https://docs.google.com/presentation/d/1TkHHb1nXe5wTMhXAO_1kpq6hQ3dV725Ehiv7L9OdCK0/edit?usp=sharing">
+           (slides)
+          </a>
+          <a href="https://www.youtube.com/watch?v=ntG4ogFe0-c">
+           (video)
+          </a>
+          <a href="http://data8.haas.berkeley.edu/user-redirect/interact?repo=data8assets&amp;path=lec/su17/lec13_live.ipynb">
+           (demo)
+          </a>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/08/randomness.html">
+           8
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/08/1/conditional-statements.html">
+           8.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/08/2/iteration.html">
+           8.2
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 07/04
+         </td>
+         <td>
+          HOLIDAY
+         </td>
+         <td>
+         </td>
+         <td>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 07/05
+         </td>
+         <td>
+          Chance
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/08/3/monty-hall-problem.html">
+           8.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/08/4/finding-probabilities.html">
+           8.4
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 07/06
+         </td>
+         <td>
+          Sampling
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/08/5/sampling.html">
+           8.5
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/09/empirical-distributions.html">
+           9
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/09/1/sampling_from_a_population.html">
+           9.1
+          </a>
+         </td>
+         <td>
+          Lab 05: Randomization
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 07/07
+         </td>
+         <td>
+          Statistics, Simulation
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/09/2/at-the-roulette-table.html">
+           9.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/09/3/empirical-distribution-of-a-statistic.html">
+           9.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/10/testing-hypotheses.html">
+           10
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/10/1/jury-selection.html">
+           10.1
+          </a>
+         </td>
+         <td>
+          Homework 04 (Due 07/11)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 07/10
+         </td>
+         <td>
+          Privacy
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 07/11
+         </td>
+         <td>
+          Hypothesis Testing
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/10/2/terminology-of-testing.html">
+           10.2
+          </a>
+         </td>
+         <td>
+          Lab 06: Statistics and Samples
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 07/12
+         </td>
+         <td>
+          Error Probabilities
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/10/3/error-probabilities.html">
+           10.3
+          </a>
+         </td>
+         <td>
+          Homework 05 (Due 07/14)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 07/13
+         </td>
+         <td>
+          Examples
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/10/4/example-deflategate.html">
+           10.4
+          </a>
+         </td>
+         <td>
+          <div>
+           Lab: Midterm Review
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 07/14
+         </td>
+         <td>
+          Midterm
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 07/17
+         </td>
+         <td>
+          Confidence Intervals
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/11/estimation.html">
+           11
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/11/1/percentiles.html">
+           11.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/11/2/bootstrap.html">
+           11.2
+          </a>
+         </td>
+         <td <="" td="">
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 07/18
+         </td>
+         <td>
+          Interpreting Confidence
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/11/3/confidence-intervals.html">
+           11.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/11/4/using-confidence-intervals.html">
+           11.4
+          </a>
+         </td>
+         <td>
+          <div>
+           Lab 07: The Bootstrap
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 07/19
+         </td>
+         <td>
+          Comparing Samples
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/16/comparing-two-samples.html">
+           16
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/16/1/two-categorical-distributions.html">
+           16.1
+          </a>
+         </td>
+         <td>
+          Project 2: Crime and Punishment (Checkpoint 07/20, Due 07/25)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 07/20
+         </td>
+         <td>
+          A/B Testing
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/16/2/ab-testing.html">
+           16.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/16/3/causality.html">
+           16.3
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 07/21
+         </td>
+         <td>
+          Center and Spread, The Normal Distribution
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/12/why-the-mean-matters.html">
+           12
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/12/1/properties-of-the-mean.html">
+           12.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/12/2/variability.html">
+           12.2
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 07/24
+         </td>
+         <td>
+          Sample Means
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/12/3/sd-and-the-normal-curve.html">
+           12.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/12/4/central-limit-theorem.html">
+           12.4
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/12/5/variability-of-the-sample-mean.html">
+           12.5
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 07/25
+         </td>
+         <td>
+          Designing Experiments
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/12/6/choosing-a-sample-size.html">
+           12.6
+          </a>
+         </td>
+         <td>
+          TBD
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 07/26
+         </td>
+         <td>
+          Correlation
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/13/prediction.html">
+           13
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/13/1/correlation.html">
+           13.1
+          </a>
+         </td>
+         <td>
+          Homework 06 (Due 07/28)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 07/27
+         </td>
+         <td>
+          Linear Regression
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/13/2/regression-line.html">
+           13.2
+          </a>
+         </td>
+         <td>
+          Lab 08: Regression
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 07/28
+         </td>
+         <td>
+          Least Squares, Residuals
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/13/3/method-of-least-squares.html">
+           13.3
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/13/4/least-squares-regression.html">
+           13.4
+          </a>
+         </td>
+         <td>
+          Homework 07 (Due 08/01)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 07/31
+         </td>
+         <td>
+          Regression Inference
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/13/5/visual-diagnostics.html">
+           13.5
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/13/6/numerical-diagnostics.html">
+           13.6
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/14/inference-for-regression.html">
+           Chapter 14
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 08/01
+         </td>
+         <td>
+          Classification
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/15/classification.html">
+           15
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/15/1/nearest-neighbors.html">
+           15.1
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/15/2/training-and-testing.html">
+           15.2
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/15/3/rows-of-tables.html">
+           15.3
+          </a>
+         </td>
+         <td>
+          Lab 09: Regression Inference
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 08/02
+         </td>
+         <td>
+          Classifiers
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/15/4/implementing-the-classifier.html">
+           15.4
+          </a>
+          ,
+          <a href="https://www.inferentialthinking.com/chapters/15/5/accuracy-of-the-classifier.html">
+           15.5
+          </a>
+         </td>
+         <td>
+          Project 3: Classifying Music (Checkpoint 08/04, Due 08/08)
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 08/03
+         </td>
+         <td>
+          Multiple Regression
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/15/6/multiple-regression.html">
+           15.6
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Fri 08/04
+         </td>
+         <td>
+          Decisions
+         </td>
+         <td>
+         </td>
+         <td>
+          <a href="https://www.inferentialthinking.com/chapters/17/updating-predictions.html">
+           Chapter 17
+          </a>
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Mon 08/07
+         </td>
+         <td>
+          Case Studies
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+          Lab 10: Decisions
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Tue 08/08
+         </td>
+         <td>
+          Case Studies
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Wed 08/09
+         </td>
+         <td>
+          Conclusion
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          Thu 08/10
+         </td>
+         <td>
+          Final
+         </td>
+         <td>
+         </td>
+         <td>
+          N/A
+         </td>
+         <td>
+         </td>
+        </tr>
+       </tbody>
+      </table>
     </div>
     <br/>
-    <script type="text/javascript">
-     if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-        var mathjaxscript = document.createElement('script');
-        mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-        mathjaxscript.type = 'text/javascript';
-        mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-        mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-          "MathJax.Hub.Config({" +
-          "    config: ['MMLorHTML.js']," +
-          "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
-          "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-          "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-          "    displayAlign: 'center'," +
-          "    displayIndent: '0em'," +
-          "    showMathMenu: true," +
-          "    tex2jax: { " +
-          "        inlineMath: [ ['$','$'] ], " +
-          "        displayMath: [ ['$$','$$'] ]," +
-          "        processEscapes: true," +
-          "        preview: 'TeX'," +
-          "    }, " +
-          "    'HTML-CSS': { " +
-          "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
-          "    } " +
-          "}); ";
-        (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-      }
-    </script>
    </section>
    <!-- /#content -->
   </div>
-  <footer class="body" id="contentinfo">
-  </footer>
-  <!-- /#contentinfo -->
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
   </script>
@@ -1369,13 +1389,13 @@
    $(document).ready(function() {
 
     // Announcements
-    var announcementIndex = 0;
+    var numAnnouncements = $('.announcement').length;
+    var announcementIndex = numAnnouncements - 1;
 
     function setAnnouncements(offset) {
       var newIndex = announcementIndex + offset;
-      var announcementNumber = $('.announcement').length;
 
-      if (newIndex < 0 || newIndex >= announcementNumber) {
+      if (newIndex < 0 || newIndex >= numAnnouncements) {
         return;
       }
 
@@ -1385,22 +1405,22 @@
 
       announcementIndex = newIndex;
 
-      if (announcementIndex >= announcementNumber - 1) {
-        $('#announcement-' + announcementIndex + ' .announcement-btn-older')
+      if (announcementIndex >= numAnnouncements - 1) {
+        $('#announcement-' + announcementIndex + ' .announcement-btn-newer')
           .addClass('disabled');
       }
       if (announcementIndex === 0) {
-        $('#announcement-' + announcementIndex + ' .announcement-btn-newer')
+        $('#announcement-' + announcementIndex + ' .announcement-btn-older')
           .addClass('disabled');
       }
     }
     setAnnouncements(0);
 
     $('.announcement-btn-newer > a').click(function() {
-      setAnnouncements(-1);
+      setAnnouncements(1);
     });
     $('.announcement-btn-older > a').click(function() {
-      setAnnouncements(1);
+      setAnnouncements(-1);
     });
   });
   </script>
