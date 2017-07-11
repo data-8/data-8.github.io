@@ -63,7 +63,8 @@ def lec_num_to_index(lec_num):
 
     And then I add one since July 4 was a holiday.
     """
-    return lec_num - lec_num // 6 + 1
+    lec_num += 1
+    return lec_num - lec_num // 6
 
 
 def _add_link(soup: BeautifulSoup,
