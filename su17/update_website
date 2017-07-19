@@ -61,7 +61,8 @@ def lec_num_to_index(lec_num):
     Since every Friday has 2 lectures, we need to decrement the lec_num by 1
     each week.
 
-    And then I add one since July 4 was a holiday.
+    And then I add three since July 4 was a holiday and the midterm technically
+    stands in place of 2 lectures.
     """
     lec_num += 3
     return lec_num - lec_num // 6
