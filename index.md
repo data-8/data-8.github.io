@@ -18,6 +18,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Fall 2017](./fa17)
 -  [Summer 2017](./su17)
 -  [Spring 2017](./sp17)
 -  [Fall 2016](./fa16)
@@ -37,7 +38,7 @@ The textbook source is maintained as an [open source
 project](https://github.com/data-8/textbook).
 
 **Assignments**:
-[All assignments from the current course
+[All assignments from the Spring 2017 course
 offering](https://github.com/data-8/data8assets/tree/gh-pages/materials/sp17),
 as well as [assignments from the Fall 2016
 offering](https://github.com/data-8/data8assets/tree/gh-pages/materials/fa16)
