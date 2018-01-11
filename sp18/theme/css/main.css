@@ -57,3 +57,15 @@ a.anchor-link {
 .staff th, .staff tr, .staff td {
   padding: 0 40px 40px 0;
 }
+
+.staff td {
+  vertical-align: top;
+}
+
+.staff td {
+  text-align: center;
+}
+
+.staff td .bio {
+  text-align: left;
+}
