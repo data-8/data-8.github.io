@@ -55,22 +55,39 @@ a.anchor-link {
 /* Staff */
 
 .staff th, .staff tr, .staff td {
-  padding: 30px 60px 60px 0;
+  padding: 30px 40px 40px 0;
 }
 
 .staff td {
   vertical-align: top;
-}
-
-.staff td {
   text-align: center;
 }
 
-.staff td .bio {
-  text-align: left;
+.staff tr{
+  border:0;
+  border-top: 1px solid #eeeeee;
 }
 
-.staff tr {
-  border: 0;
-  border-top: 1px solid #eeeeee;
+.biohover {
+  color:#377bb5;
+  text-decoration: underline
+}
+
+.staff .name .biohover .bio {
+  visibility: hidden;
+  width: 200px;
+  background-color: #e7e7e7;
+  color: #000;
+  text-align: left;
+  border-radius: 5px;
+  padding: 5px 5px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+
+.staff .name .biohover:hover .bio {
+  visibility: visible;
 }
