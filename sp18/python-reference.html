@@ -231,11 +231,6 @@ table > tbody > tr:nth-child(odd) {
 <td>Group rows by unique values or combinations of values in a column(s). Multiple columns must be entered in array or list form. Other values aggregated by count (default) or optional argument <code>func</code>.</td>
 </tr>
 <tr>
-<td><code>tbl.groups</code></td>
-<td align="center"><a href="https://www.inferentialthinking.com/chapters/08/3/cross-classifying-by-more-than-one-variable.html">8.3</a></td>
-<td>Create a copy of the table with all rows with the same value in a certain array of columns aggregated into one row in the new table</td>
-</tr>
-<tr>
 <td><code>tbl.pivot(col1, col2, vals, collect) tbl.pivot(col1, col2)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/3/cross-classifying-by-more-than-one-variable.html">8.3</a></td>
 <td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in c<code>col2</code> has its own row. Count or aggregate values from a third column, collect with some function. Default <code>vals</code> and <code>collect</code> return counts in cells.</td>
