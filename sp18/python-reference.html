@@ -250,6 +250,11 @@ table > tbody > tr:nth-child(odd) {
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/11/1/jury-selection.html">11.1</a></td>
 <td>Returns a new table with an additional column whose values correspond to a random sample (of specified size) based on proportions in a specified column.</td>
 </tr>
+<tr>
+<td><code>sample_proportions(sample_size, model_proportions</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/11/1/assessing-models.html">11.1</a></td>
+<td><code>Sample_size</code> should be an integer, <code>model_proportions</code> an array of probabilities that sum up to 1. The function samples <code>sample_size</code> objects from the distribution specified by <code>model_proportions</code>. It returns an array with the same size as <code>model_proportions</code>. Each item in the array corresponds to the proportion of times it was sampled out of  the <code>sample_size</code> times.</td>
+</tr>
 </tbody>
 </table>
 <p><br /></p>
