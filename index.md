@@ -12,6 +12,8 @@ hands-on analysis of real-world datasets, including economic data, document
 collections, geographical data, and social networks. It delves into social
 issues surrounding data analysis such as privacy and design.
 
+The course is offered in partnership with the [Berkeley Division of Data Sciences](http://data.berkeley.edu)
+
 Offerings
 ----
 
