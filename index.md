@@ -20,6 +20,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Fall 2018](./fa18)
 -  [Summer 2018](./su18)
 -  [Spring 2018](./sp18)
 -  [Fall 2017](./fa17)
