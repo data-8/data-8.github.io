@@ -294,13 +294,6 @@ table > tbody > tr:nth-child(odd) {
 <td>1. <strong>int</strong>: sample size<br>2. (Optional) <code>with_replacement=True</code></td>
 <td><strong>Table</strong>: a new Table with <code>n</code> rows</td>
 </tr>
-<tr>
-<td><code>sample_proportions(sample_size, model_proportions)</code></td>
-<td align="center"><a href="https://www.inferentialthinking.com/chapters/11/1/assessing-models.html">11.1</a></td>
-<td><code>Sample_size</code> should be an integer, <code>model_proportions</code> an array of probabilities that sum up to 1. The function samples <code>sample_size</code> objects from the distribution specified by <code>model_proportions</code>. It returns an array with the same size as <code>model_proportions</code>. Each item in the array corresponds to the proportion of times it was sampled out of  the <code>sample_size</code> times.</td>
-<td>1. <strong>int</strong>: sample size<br>2. <strong>array</strong>: an array of proportions that should sum to 1</td>
-<td><strong>array</strong>: each item corresponds to the proportion of times that corresponding item was sampled from <strong>model_proportions</strong> in <strong>sample_size</strong> draws, should sum to 1</td>
-</tr>
 </tbody>
 </table>
 <p><br /></p>
@@ -446,6 +439,36 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>are.strictly_between(x,y)</code></td>
 <td>Greater than <code>x</code> and less than <code>y</code></td>
+</tr>
+</tbody>
+</table>
+<p><br /></p>
+<h3>Miscellaneous Functions</h3>
+<p>These are functions in the <code>datascience</code> library that are used in the course that don't fall into any of the categories above.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th align="center">Chapter</th>
+<th>Description</th>
+<th>Input</th>
+<th>Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_proportions(sample_size, model_proportions)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/11/1/assessing-models.html">11.1</a></td>
+<td><code>Sample_size</code> should be an integer, <code>model_proportions</code> an array of probabilities that sum up to 1. The function samples <code>sample_size</code> objects from the distribution specified by <code>model_proportions</code>. It returns an array with the same size as <code>model_proportions</code>. Each item in the array corresponds to the proportion of times it was sampled out of  the <code>sample_size</code> times.</td>
+<td>1. <strong>int</strong>: sample size<br>2. <strong>array</strong>: an array of proportions that should sum to 1</td>
+<td><strong>array</strong>: each item corresponds to the proportion of times that corresponding item was sampled from <strong>model_proportions</strong> in <strong>sample_size</strong> draws, should sum to 1</td>
+</tr>
+<tr>
+<td><code>minimize(function)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/15/4/Least_Squares_Regression">15.4</a></td>
+<td>Returns an array of values such that if each value in the array was passed into <code>function</code> as arguments, it would minimize the output value of <code>function</code>.</td>
+<td><strong>function</strong>: name of a function that will be minimized.</td>
+<td><strong>array</strong>: An array in which each element corresponds to an argument that minimizes the output of the function. Values in the array are listed based on the order they are passed into the function; the first element in the array is also going to be the first value passed into the function.</td>
 </tr>
 </tbody>
 </table>
