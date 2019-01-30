@@ -60,7 +60,7 @@ are hosted by Youtube. Slides as [PDF from Fall 2016](./fa16) and [Google Slides
 and Jupyter notebooks from Spring 2017](./sp17) are linked from the respective
 course calendars. To request access to the source of the slides for
 instructional purposes, please fill out our [Data 8 Instructor
-Interest](https://docs.google.com/forms/d/e/1FAIpQLSfFvhl3DOuZZB2fV2FY3qcmBGoG17BwxIhWP91G7rcVqaEguA/viewform)
+Interest](https://docs.google.com/forms/d/e/1FAIpQLSfw6iN-V58Urvg7RRfbjNQceisLULBizg0qku1_2qV8cvOtvA/viewform)
 form.
 
 Infrastructure
