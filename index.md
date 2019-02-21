@@ -69,7 +69,7 @@ Infrastructure
 All of the software components of the course are maintained as open-source
 projects. We encourage you to contact us if you want any help using them.
 We also have prepared [a guide on how to set up course
-infrastructure](https://berkeleydsep.gitbook.io/zero-to-data-8/).
+infrastructure](http://data8.org/zero-to-data-8/).
 
 **The [`datascience`](http://data8.org/datascience) module**: The course uses a module
 for table manipulation, charts, and maps that provides an interface appropriate
