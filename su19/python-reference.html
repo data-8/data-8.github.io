@@ -282,7 +282,7 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>tbl.sample(n) tbl.sample(n, with_replacement)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/10/empirical-distributions.html">10</a></td>
-<td>A new table where <code>n</code> rows are randomly sampled from the original table. Default is with replacement. For sampling without replacement, use argument <code>with_replacement=False</code>. For a non-uniform sample, provide a third argument <code>weights=distribution</code> where <code>distribution</code> is an array or list containing the probability of each row.</td>
+<td>A new table where <code>n</code> rows are randomly sampled from the original table; by default, <code>n=tbl.num_rows</code>. Default is with replacement. For sampling without replacement, use argument <code>with_replacement=False</code>. For a non-uniform sample, provide a third argument <code>weights=distribution</code> where <code>distribution</code> is an array or list containing the probability of each row.</td>
 <td>1. <strong>int</strong>: sample size<br>2. (Optional) <code>with_replacement=True</code></td>
 <td><strong>Table</strong>: a new Table with <code>n</code> rows</td>
 </tr>
