@@ -207,21 +207,21 @@ table > tbody > tr:nth-child(odd) {
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/1/sorting-rows.html">6.1</a></td>
 <td>Create a copy of a table sorted by the values in a column. Defaults to ascending order unless <code>descending = True</code> is included.</td>
 <td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column index or name<br>2. (Optional) <code>descending = True</code></td>
-<td></td>
+<td><strong>Table</strong>: a copy of the original with the column sorted</td>
 </tr>
 <tr>
 <td><code>tbl.where(column, predicate)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/2/selecting-rows.html">6.2</a></td>
 <td>Create a copy of a table with only the rows that match some <em>predicate</em> See <code>Table.where</code> predicates below.</td>
 <td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column name or index<br>2. <code>are.(...)</code> predicate</td>
-<td></td>
+<td><strong>Table</strong>: a copy of the original table with only the rows that match the predicate</td>
 </tr>
 <tr>
 <td><code>tbl.take(row_indices)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/2/selecting-rows.html">6.2</a></td>
 <td>A table with only the rows at the given indices. <code>row_indices</code> is either an array of indices or an integer corresponding to one index.</td>
 <td><strong>array</strong> of ints: the indices of the rows to be included in the Table OR <strong>int</strong>: the index of the row to be included</td>
-<td><strong>Table</strong>: a copy of the original with only the rows at the given indices</td>
+<td><strong>Table</strong>: a copy of the original table with only the rows at the given indices</td>
 </tr>
 <tr>
 <td><code>tbl.scatter(x_column, y_column)</code></td>
