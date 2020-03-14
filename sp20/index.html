@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Data 8</title>
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="./">
+          Data 8 Spring 2020
+        </a>
+
+      </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+
+            <li><a href="./faq.html">FAQ</a></li>
+            <li><a href="./office-hours.html">Office Hours</a></li>
+            <li><a href="./policies.html">Policies</a></li>
+            <li><a href="./staff.html">Staff</a></li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                  <li><a href="./materials.html">Materials</a></li>
+                  <li><a href="./python-reference.html">Python Reference</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Links <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                  <li><a href="http://data8.org/connector/">Connectors</a></li>
+                  <li><a href="http://summer.datahub.berkeley.edu/">DataHub</a></li>
+                  <li><a href="http://data8.org/datascience/">Datascience Docs</a></li>
+                  <li><a href="https://piazza.com/class/k5fwiw4wql642x">Piazza</a></li>
+                  <li><a href="http://data.berkeley.edu">Berkeley Division of Data Sciences</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </nav>
+
+  <div class="container">
+<section id="content">
+
+
+<h2>Announcements</h2>
+
+<div id="announcements">
+    <div class="announcement" id='announcement-0'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 13 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>The midterm  will be online on Gradescope.com on tonight from 7:10-9:00pm). See <a href="https://piazza.com/class/k5fwiw4wql642x?cid=866">this Piazza post</a> for more information.</li>
+<li>The Midterm Review slides and walkthrough are available in <a href="https://piazza.com/class/k5fwiw4wql642x?cid=1089">this Piazza post</a>.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+<li>Zoom into today's live lecture <a href="https://berkeley.zoom.us/my/swupnil">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-1'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 11 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Homework 7 is due Thursday 3/12.</li>
+<li>Lecture, office hours, and lab will all be online starting today. <a href="https://piazza.com/class/k5fwiw4wql642x?cid=1007">This comprehensive Piazza post</a> has all the details.</li>
+<li>The midterm  will be online on Gradescope.com on Friday, 3/13 from 7:10-9:00pm). See <a href="https://piazza.com/class/k5fwiw4wql642x?cid=866">this Piazza post</a> from Monday for more information.</li>
+<li>By now, you should have received an email with more information about midterm logistics: please contact GSI Avery Yip (averyyip@berkeley.edu) as soon as possible.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>: this will contain the link to the live stream for today's lecture.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-2'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 09 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Homework 7 is due Thursday 3/12.</li>
+<li>Midterm (Friday, 3/13 7:10-9:00pm) will be online on Gradescope.com.</li>
+<li>Lecture will be online only, starting this Wednesday.</li>
+<li>In-person labs will be cancelled starting next week.</li>
+<li>Check out all of the updated midterm &amp; course logistics <a href="https://piazza.com/class/k5fwiw4wql642x?cid=866">here</a>.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-3'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 06 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Homework 7 is out today, due Thursday 3/12.</li>
+<li>Midterm is on Friday, March 13 at 7-9PM!</li>
+<li>Midterm Review is cancelled - videos/slides will be uploaded by Wednesday.</li>
+<li>Check out the random functions guide <a href="https://piazza.com/class/k5fwiw4wql642x?cid=708">here</a>.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-4'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 04 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Ramesh's OH cancelled for today</li>
+<li>Homework 6 is due Thursday (today, March 4th for a bonus point).</li>
+<li>Midterm is on Friday, March 13!</li>
+<li>Midterm Review will be on 03/11, 6-8PM in 10 Evans &amp; 2050 VLSB!</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-5'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 02 March 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW4 regrades are due tonight, 11:59PM.</li>
+<li>Homework 6 is due Thursday (Wednesday for bonus point).</li>
+<li>Midterm is on Friday, March 13!</li>
+<li>Midterm Review will be on 03/11, 6-8PM in 10 Evans &amp; 2050 VLSB!</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-6'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 28 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Project 1  is due today!</li>
+<li>Midterm (Friday, March 13): Fill out <a href="https://piazza.com/class/k5fwiw4wql642x?cid=17">conflict form</a> by tonight!</li>
+<li>Midterm Review will be on 03/11, 6-8PM in 10 Evans &amp; 2050 VLSB!</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-7'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 26 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW5 is due this Thursday.</li>
+<li>Project 1  is due this Friday (Thursday for a bonus point).</li>
+<li>Midterm (Friday, March 13): Fill out <a href="https://piazza.com/class/k5fwiw4wql642x?cid=17">conflict form</a> by Friday!</li>
+<li>Midterm Review will be on 03/11, 6-8PM in 10 Evans &amp; 2050 VLSB!</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-8'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 24 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW3 and lab4 regrades are due tonight!</li>
+<li>Project 1: the entire project is due this Friday (Thursday for a bonus point).</li>
+<li>Project 1: if you're working with a partner, only one person should submit, and make sure that you <em>both</em> add each other as partners on okpy.</li>
+<li>HW5 is due this Thursday (Wednesday for a bonus point).</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-9'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 21 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Project 1: checkpoint is due today: to get full credit on the checkpoint, you must pass all public tests up to the checkpoint (that is, up to and including Part 1, Question 8). You can go back and change your answers before you submit next week.</li>
+<li>Project 1: the entire project is due next Friday (Thursday for a bonus point).</li>
+<li>Project 1: if you're working with a partner, only one person should submit, and make sure that you <em>both</em> add each other as partners on okpy.</li>
+<li>HW3 and lab4 grades will be released today, and regrades are due Monday.</li>
+<li>HW5 will be released today, and due next Thursday (Wednesday for a bonus point).</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-10'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 19 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Project 1: the checkpoint is due this Friday 2/21, and the entire project is due next Friday 2/28. You can turn the entire project in a day early for a bonus point, but there’s no bonus point for the checkpoint.</li>
+<li>Project 1: if you’re working with a partner, only one person should submit, and make sure that you <em>both</em> add each other as partners on okpy.</li>
+<li>HW4 is due this Thursday 2/27. Turn it in today for a bonus point.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-11'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 14 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Due to jupyterhub issues, we extended the deadline for HW3 by one day: you can turn it in by tonight (Friday 2/14) at 11:59 for full credit.</li>
+<li>HW2 and lab3 grades will be released today (Friday 2/14), and the regrade deadline is on Monday.</li>
+<li>Monday is a holiday! Lecture, office hours, and tutoring sections are all cancelled. Tutoring students in a Monday section can go to any other tutoring section for just this week.</li>
+<li>Project 1 will be released today (Friday 2/14): the checkpoint is due next Friday 2/21, and the entire project is due the following Friday 2/28 (or a day early for a bonus point).</li>
+<li>HW4 will be released today as well, and will be due next Thursday (Wednesday for an extra point).</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://data8livelecture.page.link/thread">here</a>.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-12'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 12 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW3 is due Thursday. Turn it in tonight 11:59PM for a bonus point.</li>
+<li>Project 1 is out Friday! You can get a partner in lab. Checkpoint 02/21, Due 02/28.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-13'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 10 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>Lab 1 &amp; 2 and HW 1 regrade requests are due tonight - check both okpy AND gradescope! </li>
+<li>Midterm is on Friday, 3/13 7-9PM. Fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl-baPOkiLuC4htgNhDjj1_1PJ4z_tOWraYxRzlRD4xooMNA/viewform?usp=sf_link">conflict form</a> ASAP if you have an excused conflict.</li>
+<li>HW3 is due Thursday. Turn it in on Wednesday for a bonus point.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-14'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 07 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW1 grades will be released today - check both okpy AND gradescope! Regrade requests are due Monday night.</li>
+<li>Midterm is on Friday, 3/13 7-9PM. Fill out the <a href="https://docs.google.com/forms/d/e/1FAIpQLSfl-baPOkiLuC4htgNhDjj1_1PJ4z_tOWraYxRzlRD4xooMNA/viewform?usp=sf_link">conflict form</a> ASAP if you have an excused conflict.</li>
+<li>HW3 will be released later today and due next Thursday. Turn it in on Wednesday for a bonus point.</li>
+<li>Don't forget: you can follow along with lecture demos from your own computer - you have your own copy of the notebook and you can do anything you want!</li>
+<li>Here's the <a href="https://data8livelecture.page.link/thread">live piazza thread</a> for today's lecture!</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-15'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 05 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW2 is due tomorrow, 2/6. Turn it in tonight by 11:59PM for a bonus point!</li>
+<li>New tutoring sections will open up this Friday ~11:30AM</li>
+<li>Midterm is on Friday, 3/13 7-9PM</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-16'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 03 February 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW2 is due on Thursday, 2/6. Turn it in a day early for a bonus point!</li>
+<li>Tutoring sections start today (Monday). Check your email and go to your tutoring section!</li>
+<li>We'll be adding more tutoring sections later this week (look out for a Piazza announcement soon).</li>
+<li>Swupnil's office hours are live! Visit him at Caffe Strada on Sundays 5-7PM :)</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-17'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 31 January 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW2 will be released later today (Friday 1/31), and is due on Thursday, 2/6. Turn it in a day early for a bonus point!</li>
+<li>Tutoring signups are full, but we'll be opening up a few more sections next week: keep your eyes open for a Piazza announcement about the extra sections.</li>
+<li>If you have accommodations approved by DSP, please request a letter of accommodation (LOA) be sent through the DSP SCARAB portal as soon as possible.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-18'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Wed 29 January 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW1 is due this Thursday, 1/30, at 11:59PM. Turn it in by tonight (1/29) for a bonus point!</li>
+<li>Signups for small-group tutoring will be posted today at 11:30AM: keep an eye on Piazza
+  for the announcement.</li>
+<li>All lab assignments and swaps have now been finalized: you should have received an email
+  with your lab. Make sure to attend your assigned lab this week.</li>
+<li>Check out the live Piazza thread for today's lecture <a href="https://piazza.com/class/k5fwiw4wql642x?cid=162">here</a></li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-19'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 27 January 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>HW1 is due on Thursday, January 30 at 11:59PM. You can submit it a day early for one point of extra credit.</li>
+<li>Lab 2 will be released later today. To get full credit on the lab, you must either attend lab (recommended, since you'll also get extra practice with a worksheet), or finish the lab and pass all tests by Wednesday at 9AM.</li>
+<li>Signups for small-group tutoring will be released this week: this is a great opportunity to get extra practice and more individual attention to help you do better in the course.</li>
+<li>If you filled out the lab swap form, you'll receive a new lab assignment by tonight (Monday 1/27).</li>
+<li>Starting this week, webcasts will be posted the same day, usually a few hours after lecture ends.</li>
+<li>Make sure you check Piazza regularly: we share important information that you need to know there.</li>
+<li>Instructor office hours are set! Check out the staff page (linked at the top) to see when they are.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-20'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Fri 24 January 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>The second lecture (on 11/24) will be held in Zellerbach Hall from 10am-11am: all students, including those on the waitlist, are welcome to attend.</li>
+<li>HW1 will be relased today, Friday, January 24 in the <strong>Assignment</strong> column of the table below. It will be due on Thursday, January 30, and you can submit it a day early for one point of extra credit.</li>
+<li>If you did not receive a lab assignment OR you have a schedule conflict with your lab time, please carefully read this <a href="https://piazza.com/class/k5fwiw4wql642x?cid=70">Piazza post</a> and follow the instructions there. Note that swaps will only be possible from <strong>Friday, January 24 at 11:30am until Sunday, January 26 at noon</strong>.</li>
+<li>If you have a conflict with the final exam, you must find a way to reschedule the conflict: we cannot offer alternate final exams due to the size of the course.</li>
+<li>If you have a conflict with the midterm exam due to athletics, academic obligations, religious holidays, etc., please fill out <a href="https://forms.gle/tVuVAnYSL4z2Azur8">this form</a> as soon as possible.</li>
+</ul>
+    </div>
+    <div class="announcement" id='announcement-21'>
+       <ul class="pager">
+           <li class='announcement-btn-older'>
+               <a>
+                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+                   older
+               </a>
+           </li>
+           <li>
+               <span class="announcement-date">Mon 20 January 2020</span>
+           </li>
+           <li class='announcement-btn-newer'>
+               <a>
+                   newer
+                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
+               </a>
+           </li>
+       </ul>
+       <ul>
+<li>The first two lectures on 1/22 and 1/24 will be held in Zellerbach Hall at 10am-11am, and will be webcasted. All students, including those on the waitlist, are welcome to attend. Beginning 1/27, lecture will be in 150 Wheeler 10am-11am and webcasted. The videos will be available on the course website after lecture.</li>
+<li>Welcome to the start of the semester! Please sign up for <a href="https://piazza.com/class/k5fwiw4wql642x">Piazza</a>. We'll use it to answer questions, post announcements, and more.</li>
+<li>Labs start the first week of the semester so bring a laptop and get ready to learn! Lab attendance for this first lab is mandatory.</li>
+<li><strong>REQUIRED</strong> Fill out this <a href="https://forms.gle/LtWYTnVs6RRgDnr7A">form</a> by January 20, 5 PM for Lab Assignments!!!</li>
+</ul>
+    </div>
+</div><!-- /#posts-list -->
+
+<h2>Calendar</h2>
+    <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Instructors</strong>: Ramesh Sridharan and Swupnil Sahai</p>
+<p><strong>Lecture</strong>: MWF 10am-11am in 150 Wheeler</p>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+
+<div class="output_wrapper">
+<div class="output">
+<div class="output_area">
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div class="calendar">
+<table>
+<tr>
+<td class="header">Date</td>
+<td class="header">Topic</td>
+<td class="header">Lecture</td>
+<td class="header">Reading</td>
+<td class="header">Assignment</td>
+</tr>
+<tr class="wednesday">
+<td>
+Wed 01/22
+</td><td>
+Introduction
+</td><td>
+<a href="https://docs.google.com/presentation/d/19aRFKOGltOgOeBZioH4DCMPrZpJNtIaEXNfAIXAAvLA/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec01.ipynb">Demos</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/01/1/intro.html">1.1</a>, <a href="https://www.inferentialthinking.com/chapters/01/2/why-data-science.html">1.2</a>, <a href="https://www.inferentialthinking.com/chapters/01/3/plotting-the-classics.html">1.3</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab01/lab01.ipynb">Lab 01: Expressions</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 01/24
+</td><td>
+Cause and Effect
+</td><td>
+<a href="https://docs.google.com/presentation/d/1lSwG_uGwQRL3oGQnmn7aphxYZlzX0G0KHeyNM-cNZb4/edit?usp=sharing">Slides</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/02/causality-and-experiments.html">2</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw01/hw01.ipynb">Homework 01</a> (Due Thu 01/30)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 01/27
+</td><td>
+Tables
+</td><td>
+<a href="https://docs.google.com/presentation/d/1jn2X5JtbOqOfiBa_QdV2ITw491dhRdxIvKR0bR1tWUk/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec03.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=BW9XcOG8jag">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/03/programming-in-python.html">3</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 01/29
+</td><td>
+Data Types
+</td><td>
+<a href="https://docs.google.com/presentation/d/1TjU8ismB9qSrWAivDq2HvuYy68sRTE_Q_V3gPcHP0qQ/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec04.ipynb">Demos</a>, <a href="http://youtube.com/watch?v=F3krVj7GkI0">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/04/data-types.html">4</a>, <a href="https://www.inferentialthinking.com/chapters/05/sequences.html">5</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab02/lab02.ipynb">Lab 02: Table Operations</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 01/31
+</td><td>
+Building Tables
+</td><td>
+<a href="https://docs.google.com/presentation/d/1wu7BPjxRZaSs5M7mRWgWmZp89ZMih2dZ4-TaxH0FDtY/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec05.ipynb">Demos</a>, <a href="http://youtube.com/watch?v=dGr-ZjMuu1Y">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/06/1/sorting-rows.html">6.1</a>, <a href="https://www.inferentialthinking.com/chapters/06/2/selecting-rows.html">6.2</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw02/hw02.ipynb">Homework 02</a> (Due Thu 02/06)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 02/03
+</td><td>
+Census
+</td><td>
+<a href="https://docs.google.com/presentation/d/1jJNR8TBPIxgqvlh7lOnu6Ouufa26bUD5Y-MM1EdZWMw/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec06.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=HIcEEhofsTs">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/06/3/example-trends-in-the-population-of-the-united-states.html">6.3</a>, <a href="https://www.inferentialthinking.com/chapters/06/4/example-gender-ratio-in-the-us-population.html">6.4</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 02/05
+</td><td>
+Charts
+</td><td>
+<a href="https://docs.google.com/presentation/d/1_Jcpv47nNHgKXImOaWi81nXq5qgAElKtMGQNJrEJqUE/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec07.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=ggf-APYGOmg">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/07/visualization.html">7</a>, <a href="https://www.inferentialthinking.com/chapters/07/1/visualizing-categorical-distributions.html">7.1</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab03/lab03.ipynb">Lab 03: Data Types and Creating & Extending Tables</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 02/07
+</td><td>
+Histograms
+</td><td>
+<a href="https://docs.google.com/presentation/d/1QsyYMGUEOBVRaFyLAQbY2-aJVvh1Ibd5bC4U7TbhjX4/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec08.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=FQ_pN3loHcI">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/07/2/visualizing-numerical-distributions.html">7.2</a>, <a href="https://www.inferentialthinking.com/chapters/07/3/overlaid-graphs.html">7.3</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw03/hw03.ipynb">Homework 03</a> (Due Thu 02/13)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 02/10
+</td><td>
+Functions
+</td><td>
+<a href="https://docs.google.com/presentation/d/11g85peayjPWkiFLEHMPGQW32sp4RQC50PONdzRGus_Y/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec09.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=zKpMvRmYdpE">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/08/functions-and-tables.html">8</a>, <a href="https://www.inferentialthinking.com/chapters/08/1/applying-a-function-to-a-column.html">8.1</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 02/12
+</td><td>
+Groups
+</td><td>
+<a href="https://docs.google.com/presentation/d/1IcqoYvj0EWzhJjZ6J46xqoBga_56HA6FvXKjFUFTNPQ/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec10.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=lW-hV1KK0q8">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/08/2/classifying-by-one-variable.html">8.2</a>, <a href="https://www.inferentialthinking.com/chapters/08/3/cross-classifying-by-more-than-one-variable.html">8.3</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab04/lab04.ipynb">Lab 04: Functions and Visualizations</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 02/14
+</td><td>
+Joins
+</td><td>
+<a href="https://docs.google.com/presentation/d/1iPnXqugHk3AJGfoDQsN9Pk6vJns76A-TlW6W4mYDuk4/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec11.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=howrxcfP9es">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/08/4/joining-tables-by-columns.html">8.4</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw04/hw04.ipynb">Homework 04</a> (Due Thu 02/20)</div>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/project/project1/project1.ipynb">Project 1: World Progress</a></div>
+<div>(Checkpoint Fri 02/21; Due Fri 02/28)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 02/17
+</td><td>
+Holiday: No class
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 02/19
+</td><td>
+Table Examples
+</td><td>
+<a href="https://docs.google.com/presentation/d/10SfYe1icKAQeumNmx0P_uqU87QCAXjEy52JsUIefWqk/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec12.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=NL2PwELJ3XQ">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/08/5/bike-sharing-in-the-bay-area.html">8.5</a>
+</td><td>
+<div>Lab: Project 1</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 02/21
+</td><td>
+Iteration
+</td><td>
+<a href="https://docs.google.com/presentation/d/1TCfToNm8Rac_Wywt58psuOv0-kElDcBjHop2Uf6Gjgw/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec13.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=Vux_q7ICjUw">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/09/randomness.html">9</a>, <a href="https://www.inferentialthinking.com/chapters/09/1/conditional-statements.html">9.1</a>, <a href="https://www.inferentialthinking.com/chapters/09/2/iteration.html">9.2</a>, <a href="https://www.inferentialthinking.com/chapters/09/3/simulation.html">9.3</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw05/hw05.ipynb">Homework 05</a> (Due Thu 02/27)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 02/24
+</td><td>
+Chance
+</td><td>
+<a href="https://docs.google.com/presentation/d/17WDZqCPUecv91ZQI0pNY6RTX_j9CYw0uFkSoVbr7CaA/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec14.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=da-MDYoXH0o">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/09/5/finding-probabilities.html">9.5</a>, <a href="https://www.inferentialthinking.com/chapters/18/1/more-likely-than-not-binary-classifier.html">18.1</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 02/26
+</td><td>
+Sampling
+</td><td>
+<a href="https://docs.google.com/presentation/d/1MXS8PbQwT0CLYZk2zcU7cZqjSvMPlFdQXqeACxElVdM/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec15.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=d-tVcCVjs94">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/10/sampling-and-empirical-distributions.html">10</a>, <a href="https://www.inferentialthinking.com/chapters/10/1/empirical-distributions.html">10.1</a>, <a href="https://www.inferentialthinking.com/chapters/10/2/sampling-from-a-population.html">10.2</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab05/lab05.ipynb">Lab 05: Conditional Statements, Iteration, Tables</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 02/28
+</td><td>
+Models
+</td><td>
+<a href="https://docs.google.com/presentation/d/1irgdhZm-ROH72xdgsklvrtrsecMHvHNN4LWkBc8HMxI/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec16.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=-Onz8sori10">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/10/3/empirical-distribution-of-a-statistic.html">10.3</a>, <a href="https://www.inferentialthinking.com/chapters/11/1/assessing-models.html">11.1</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw06/hw06.ipynb">Homework 06</a> (Due Thu 03/05)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 03/02
+</td><td>
+Comparing Distributions
+</td><td>
+<a href="https://docs.google.com/presentation/d/1EuJN_2M9B85r-BI1A4jDKBvz74t-bEdX-42Oe09HB6o/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec17.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=vL1mWg9d1w8">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/11/1/assessing-models.html">11.1</a>, <a href="https://www.inferentialthinking.com/chapters/11/2/multiple-categories.html">11.2</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 03/04
+</td><td>
+Decisions and Uncertainty
+</td><td>
+<a href="https://docs.google.com/presentation/d/1Nb7g44fAFvKjk_FWtu66pO1FwCa-6zBd5JNyRCoWhIw/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec18.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=VBhpgXSkJJ8">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/11/3/decisions-and-uncertainty.html">11.3</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/lab/lab06/lab06.ipynb">Lab 06: Assessing Models</a></div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 03/06
+</td><td>
+A/B Testing
+</td><td>
+<a href="https://docs.google.com/presentation/d/1boBecPTfdGWDLNtCTl1BGfibOfgVe3qUeACF4f0ftqQ/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec19.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=UWu0U5jqXg4">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/11/4/Error_Probabilities.html">11.4</a>, <a href="https://www.inferentialthinking.com/chapters/12/1/ab-testing.html">12.1</a>, <a href="https://www.inferentialthinking.com/chapters/12/2/deflategate.html">12.2</a>
+</td><td>
+<div><a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=materials/sp20/hw/hw07/hw07.ipynb">Homework 07</a> (Due Thu 03/12)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 03/09
+</td><td>
+Causality
+</td><td>
+<a href="https://docs.google.com/presentation/d/178sG2A_O8BrHvsHD4TmAgCo5xnHp6MBm-OV-znODJI8/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec20.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=tLSNtMDut9g">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/12/3/causality.html">12.3</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 03/11
+</td><td>
+Examples
+</td><td>
+<a href="https://docs.google.com/presentation/d/1x4XqprFqMfYJBwGBMHcrxe8NJnVT9a-MYnh9LG4Iv_w/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec21.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=PE8Pd23awEI">Video</a>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/12/2/deflategate.html">12.2</a>
+</td><td>
+<div>Lab: Midterm Review</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 03/13
+</td><td>
+Midterm Review
+</td><td>
+<a href="https://docs.google.com/presentation/d/1RN16xYEFT39nKTz7eN0r2EJ8qKxXDDGSs3BgJRzB4Vg/edit?usp=sharing">Slides</a>, <a href="http://datahub.berkeley.edu/hub/user-redirect/git-sync?repo=https://github.com/data-8/materials-sp20&amp;subPath=lec/lec22.ipynb">Demos</a>, <a href="https://www.youtube.com/watch?v=GGh_VPDKf7s">Video</a>
+</td><td>
+</td><td>
+<div>Midterm (7:00 PM - 9:00 PM)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 03/16
+</td><td>
+Confidence Intervals
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/13/estimation.html">13</a>, <a href="https://www.inferentialthinking.com/chapters/13/1/percentiles.html">13.1</a>, <a href="https://www.inferentialthinking.com/chapters/13/2/bootstrap.html">13.2</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 03/18
+</td><td>
+Interpreting Confidence
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/13/3/confidence-intervals.html">13.3</a>, <a href="https://www.inferentialthinking.com/chapters/13/4/using-confidence-intervals.html">13.4</a>
+</td><td>
+<div>Lab 07: Bootstrap</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 03/20
+</td><td>
+Center and Spread
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/14/why-the-mean-matters.html">14</a>, <a href="https://www.inferentialthinking.com/chapters/14/1/properties-of-the-mean.html">14.1</a>, <a href="https://www.inferentialthinking.com/chapters/14/2/variability.html">14.2</a>
+</td><td>
+<div>Homework 08 (Due Thu 04/02)</div>
+<div>Project 2: Cardiovascular Disease</div>
+<div>(Checkpoint 1 Fri 04/03; Checkpoint 2 Fri 04/10; Due Fri 04/17)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 03/23
+</td><td>
+Holiday: No class
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 03/25
+</td><td>
+Holiday: No class
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 03/27
+</td><td>
+Holiday: No class
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 03/30
+</td><td>
+The Normal Distribution
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/14/3/sd-and-the-normal-curve.html">14.3</a>, <a href="https://www.inferentialthinking.com/chapters/14/4/central-limit-theorem.html">14.4</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 04/01
+</td><td>
+Sample Means
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/14/5/variability-of-the-sample-mean.html">14.5</a>
+</td><td>
+<div>Lab: Project 2</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 04/03
+</td><td>
+Designing Experiments
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/14/6/choosing-a-sample-size.html">14.6</a>
+</td><td>
+<div>Homework 09 (Due Thu 04/09)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 04/06
+</td><td>
+Correlation
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/15/prediction.html">15</a>, <a href="https://www.inferentialthinking.com/chapters/15/1/correlation.html">15.1</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 04/08
+</td><td>
+Linear Regression
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/15/2/regression-line.html">15.2</a>
+</td><td>
+<div>Lab 08: Sample Means</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 04/10
+</td><td>
+Least Squares
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/15/3/method-of-least-squares.html">15.3</a>, <a href="https://www.inferentialthinking.com/chapters/15/4/least-squares-regression.html">15.4</a>
+</td><td>
+<div>Homework 10 (Due Thu 04/16)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 04/13
+</td><td>
+Residuals
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/15/5/visual-diagnostics.html">15.5</a>, <a href="https://www.inferentialthinking.com/chapters/15/6/numerical-diagnostics.html">15.6</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 04/15
+</td><td>
+Regression Inference
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/16/inference-for-regression.html">16</a>
+</td><td>
+<div>Lab 09: Regression</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 04/17
+</td><td>
+Privacy
+</td><td>
+</td><td>
+</td><td>
+<div>Homework 11 (Due Thu 04/23)</div>
+<div>Project 3: Classifying Movies</div>
+<div>(Checkpoint Fri 04/24; Due Fri 05/01)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 04/20
+</td><td>
+Classification
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/17/classification.html">17</a>, <a href="https://www.inferentialthinking.com/chapters/17/1/nearest-neighbors.html">17.1</a>, <a href="https://www.inferentialthinking.com/chapters/17/2/training-and-testing.html">17.2</a>, <a href="https://www.inferentialthinking.com/chapters/17/3/rows-of-tables.html">17.3</a>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 04/22
+</td><td>
+Classifiers
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/17/4/implementing-the-classifier.html">17.4</a>
+</td><td>
+<div>Lab: Project 3</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 04/24
+</td><td>
+Decisions
+</td><td>
+</td><td>
+<a href="https://www.inferentialthinking.com/chapters/18/updating-predictions.html">18</a>
+</td><td>
+<div>Homework 12 (Due Thu 04/30)</div>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 04/27
+</td><td>
+Case Study: Health
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 04/29
+</td><td>
+Case Study: Education
+</td><td>
+</td><td>
+</td><td>
+<div>Lab 10: Conditional Probability</div>
+</td></tr>
+<tr class="friday">
+<td>
+Fri 05/01
+</td><td>
+Conclusion
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="monday">
+<td>
+Mon 05/04
+</td><td>
+Leads Review 1
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="wednesday">
+<td>
+Wed 05/06
+</td><td>
+Leads Review 2
+</td><td>
+</td><td>
+</td><td>
+</td></tr>
+<tr class="tuesday">
+<td>
+Tue 05/12
+</td><td>
+Final Exam
+</td><td>
+</td><td>
+</td><td>
+<div>Final (3:00 PM - 6:00 PM)</div>
+</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: 'center'," +
+        "    displayIndent: '0em'," +
+        "    showMathMenu: true," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['$','$'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'black ! important'} }" +
+        "    } " +
+        "}); ";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+
+
+</section><!-- /#content -->
+  </div>
+  <footer id="contentinfo" class="body">
+  </footer><!-- /#contentinfo -->
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified Bootstrap JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script>
+  $(document).ready(function() {
+
+    // Announcements
+    var announcementIndex = 0;
+
+    function setAnnouncements(offset) {
+      var newIndex = announcementIndex  + offset;
+      var announcementNumber = $('.announcement').length;
+
+      if (newIndex < 0 || newIndex >= announcementNumber) {
+        return;
+      }
+
+      $('#announcement-' + announcementIndex).hide(0, function() {
+        $('#announcement-' + newIndex).show(0);
+      });
+
+      announcementIndex = newIndex;
+
+      if (announcementIndex >= announcementNumber - 1) {
+        $('#announcement-' + announcementIndex + ' .announcement-btn-older')
+          .addClass('disabled');
+      }
+      if (announcementIndex === 0) {
+        $('#announcement-' + announcementIndex + ' .announcement-btn-newer')
+          .addClass('disabled');
+      }
+    }
+    setAnnouncements(0);
+
+    $('.announcement-btn-newer > a').click(function() {
+      setAnnouncements(-1);
+    });
+    $('.announcement-btn-older > a').click(function() {
+      setAnnouncements(1);
+    });
+  });
+
+</script>
+
+</body>
+</html>
