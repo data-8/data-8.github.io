@@ -276,7 +276,7 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>tbl.pivot(col1, col2, values, collect) tbl.pivot(col1, col2)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/3/cross-classifying-by-more-than-one-variable.html">8.3</a></td>
-<td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in c<code>col2</code> has its own row. Count or aggregate values from a third column, collect with some function. Default <code>values</code> and <code>collect</code> return counts in cells.</td>
+<td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row. Count or aggregate values from a third column, collect with some function. Default <code>values</code> and <code>collect</code> return counts in cells.</td>
 <td>1. <strong>string</strong>: name of column whose unique values will make up columns of pivot table<br>2. <strong>string</strong>: name of column whose unique values will make up rows of pivot table<br>3. (Optional) <strong>string</strong>: name of column that describes the values of cell<br>4. (Optional) <strong>function</strong>: how the values are collected, e.g. <code>sum</code> or <code>np.mean</code></td>
 <td><strong>Table</strong>: a new Table</td>
 </tr>
