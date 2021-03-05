@@ -45,10 +45,14 @@ a.anchor-link {
 }
 
 .calendar tr.monday {
-  background-color: #e6e8f2;
+  background-color: #f2f4f8;
 }
 
 .calendar tr.wednesday {
+  background-color: #f2f4f8;
+}
+
+.calendar tr.friday {
   background-color: #f2f4f8;
 }
 
