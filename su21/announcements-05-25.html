@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Data 8</title>
+  
+
+
+
         <!-- Latest compiled and minified Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -58,40 +61,28 @@
   </nav>
 
   <div class="container">
-<section id="content">
-
-
-<h2>Announcements</h2>
-
-<div id="announcements">
-    <div class="announcement" id='announcement-0'>
-       <ul class="pager">
-           <li class='announcement-btn-older'>
-               <a>
-                   <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                   older
-               </a>
-           </li>
-           <li>
-               <span class="announcement-date">Tue 25 May 2021</span>
-           </li>
-           <li class='announcement-btn-newer'>
-               <a>
-                   newer
-                   <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-               </a>
-           </li>
-       </ul>
-       <ul>
+<section id="content" class="body">
+  <header>
+    <h2 class="entry-title">
+      <a href="./announcements-05-25.html" rel="bookmark"
+         title="Permalink to Announcements-05-25">Announcements-05-25</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <time class="published" datetime="2021-05-25T00:00:00-07:00">
+      Tue 25 May 2021
+    </time>
+    <address class="vcard author">
+      By           <a class="url fn" href="./author/the-course-staff.html">The Course Staff</a>
+    </address>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <ul>
 <li>Welcome to Data 8! You can find our tentative course schedule below.</li>
 <li>THIS IS A WORK IN PROGRESS</li>
 </ul>
-    </div>
-</div><!-- /#posts-list -->
-
-<h2>Calendar</h2>
-
-</section><!-- /#content -->
+  </div><!-- /.entry-content -->
+</section>
   </div>
   <footer id="contentinfo" class="body">
   </footer><!-- /#contentinfo -->
@@ -103,46 +94,6 @@
   <!-- Latest compiled and minified Bootstrap JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-<script>
-  $(document).ready(function() {
-
-    // Announcements
-    var announcementIndex = 0;
-
-    function setAnnouncements(offset) {
-      var newIndex = announcementIndex  + offset;
-      var announcementNumber = $('.announcement').length;
-
-      if (newIndex < 0 || newIndex >= announcementNumber) {
-        return;
-      }
-
-      $('#announcement-' + announcementIndex).hide(0, function() {
-        $('#announcement-' + newIndex).show(0);
-      });
-
-      announcementIndex = newIndex;
-
-      if (announcementIndex >= announcementNumber - 1) {
-        $('#announcement-' + announcementIndex + ' .announcement-btn-older')
-          .addClass('disabled');
-      }
-      if (announcementIndex === 0) {
-        $('#announcement-' + announcementIndex + ' .announcement-btn-newer')
-          .addClass('disabled');
-      }
-    }
-    setAnnouncements(0);
-
-    $('.announcement-btn-newer > a').click(function() {
-      setAnnouncements(-1);
-    });
-    $('.announcement-btn-older > a').click(function() {
-      setAnnouncements(1);
-    });
-  });
-
-</script>
 
 </body>
 </html>
