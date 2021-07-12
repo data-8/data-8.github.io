@@ -122,6 +122,7 @@ table > tbody > tr:nth-child(odd) {
 </style>
 
 <p>Created by Nishant Kheterpal and Jessica Hu</p>
+<p>Modified by Yanay Rosen</p>
 <h3>Table Functions and Methods</h3>
 <p>In the examples in the left column, <code>np</code> refers to the NumPy module, as usual. Everything else is a function, a method, an example of an argument to a function or method, or an example of an object we might call the method on. For example, <code>tbl</code> refers to a table, <code>array</code> refers to an array, and <code>num</code> refers to a number. <code>array.item(0)</code> is an example call for the method <code>item</code>, and in that example, <code>array</code> is the name previously given to some array.</p>
 <table>
@@ -164,6 +165,13 @@ table > tbody > tr:nth-child(odd) {
 <td><strong>array</strong>: the values in that column</td>
 </tr>
 <tr>
+<td><code>tbl.row(i)</code></td>
+<td align="center"><a href="https://inferentialthinking.com/chapters/17/3/Rows_of_Tables.html">17.3</a></td>
+<td>Returns a row object from the table</td>
+<td><strong>int</strong>: the index of the row to return</td>
+<td><strong>row</strong>: a row object</td>
+</tr>
+<tr>
 <td><code>tbl.num_rows</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/Tables.html">6</a></td>
 <td>Compute the number of rows in a table</td>
@@ -199,7 +207,7 @@ table > tbody > tr:nth-child(odd) {
 <td><strong>Table</strong> without the selected columns</td>
 </tr>
 <tr>
-<td><code>tbl.relabel(old_label, new_label)</code></td>
+<td><code>tbl.relabeled(old_label, new_label)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/Tables.html">6</a></td>
 <td>Modifies the existing table <em>in place</em>, changing the column heading in the first argument to the second</td>
 <td>1. <strong>string</strong>: the old column name<br>2. <strong>string</strong>: the new column name</td>
@@ -223,7 +231,7 @@ table > tbody > tr:nth-child(odd) {
 <td><code>tbl.where(column, predicate)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/2/Selecting_Rows.html">6.2</a></td>
 <td>Create a copy of a table with only the rows that match some <em>predicate</em> See <code>Table.where</code> predicates below.</td>
-<td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column name or index<br>2. <code>are.(...)</code> predicate</td>
+<td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column name or index<br>2. <code>are.(...)</code> predicate or array of boolean values corresponding to rows to include</td>
 <td><strong>Table</strong>: a copy of the original table with only the rows that match the predicate</td>
 </tr>
 <tr>
@@ -234,32 +242,39 @@ table > tbody > tr:nth-child(odd) {
 <td><strong>Table</strong>: a copy of the original table with only the rows at the given indices</td>
 </tr>
 <tr>
-<td><code>tbl.scatter(x_column, y_column)</code></td>
+<td><code>tbl.scatter(x_column, y_column, group=)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/Visualization.html">7</a></td>
 <td>Draws a scatter plot consisting of one point for each row of the table. Note that <code>x_column</code> and <code>y_column</code> must be strings specifying column names.</td>
-<td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis</td>
+<td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis<br>3. <strong>string</strong>: name of categorical column to color points by.</td>
 <td>None: draws a scatter plot</td>
 </tr>
 <tr>
 <td><code>tbl.plot(x_column, y_column)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/Visualization.html">7</a></td>
-<td>Draw a line graph consisting of one point for each row of the table.</td>
-<td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis</td>
+<td>Draw a line graph consisting of one point for each row of the table. Draws different color lines for each other numerical column if only the x axis label is specified.</td>
+<td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis.</td>
 <td>None: draws a line graph</td>
 </tr>
 <tr>
 <td><code>tbl.barh(categories) tbl.barh(categories, values)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/1/Visualizing_Categorical_Distributions.html">7.1</a></td>
-<td>Displays a bar chart with bars for each category in a column, with height proportional to the corresponding frequency. values argument unnecessary if table has only a column of categories and a column of values.</td>
+<td>Displays a bar chart with bars for each category in a column, with height proportional to the corresponding frequency. If the values argument is not specified, bars will be drawn with different colors for each other column in the table.</td>
 <td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: the name of the column with values for corresponding categories</td>
 <td>None: draws a bar chart</td>
 </tr>
 <tr>
-<td><code>tbl.hist(column, unit, bins)</code></td>
+<td><code>tbl.hist(column, unit=, bins=, group=)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">7.2</a></td>
 <td>Generates a histogram of the numerical values in a column. <code>unit</code> and <code>bins</code> are optional arguments, used to label the axes and group the values into intervals (bins), respectively. Bins have the form <code>[a, b)</code>, where <code>a</code> is included in the bin and <code>b</code> is not.</td>
-<td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: units of x-axis<br>3. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries</td>
+<td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: units of x-axis<br>3. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries<br>4. <strong>string</strong>: name of categorical column to draw separate overlaid histograms for.</td>
 <td>None: draws a histogram</td>
+</tr>
+<tr>
+<td><code>tbl.bin(column, bins=)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">7.2</a></td>
+<td>Generates a binned table for the numerical values in a column. <code>bins</code> is an optional arguments, used to group the values into intervals (bins). Bins have the form <code>[a, b)</code>, where <code>a</code> is included in the bin and <code>b</code> is not.</td>
+<td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries.</td>
+<td><strong>Table</strong>: a table with the columns <code>bin</code>, containing the left ends of each bin, and <code>column count</code>, containing the counts of rows that had <code>column</code> values fall into the corresponding bin.</td>
 </tr>
 <tr>
 <td><code>tbl.apply(function, col1, col2, ...)</code></td>
@@ -378,6 +393,11 @@ table > tbody > tr:nth-child(odd) {
 <td>Returns the mean value of an array</td>
 </tr>
 <tr>
+<td><code>np.median(array)</code></td>
+<td align="center"><a href="https://inferentialthinking.com/chapters/10/3/Empirical_Distribution_of_a_Statistic.html#parameter">10.3</a></td>
+<td>Returns the median, 'middle', value of an array</td>
+</tr>
+<tr>
 <td><code>np.std(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/14/2/Variability.html#Standard-Deviation">14.2</a></td>
 <td>Returns the standard deviation of an array</td>
@@ -386,6 +406,11 @@ table > tbody > tr:nth-child(odd) {
 <td><code>np.diff(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/1/Arrays.html">5.1</a></td>
 <td>Returns a new array of size <code>len(arr)-1</code> with elements equal to the difference between adjacent elements; val_2 - val_1, val_3 - val_2, etc.</td>
+</tr>
+<tr>
+<td><code>np.cumsum(array)</code></td>
+<td align="center"><a href="https://www.inferentialthinking.com/chapters/05/1/Arrays.html">5.1</a></td>
+<td>Returns a new array of size <code>len(arr)</code> with elements equal to the cummulative sum of previous elements; val_1, val_1 + val_2, val_1 + val_2 + val_3 etc.</td>
 </tr>
 <tr>
 <td><code>np.sqrt(array)</code></td>
