@@ -20,6 +20,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Fall 2021](./fa21)
 -  [Summer 2021](./su21)
 -  [Spring 2021](./sp21)
 -  [Fall 2020](./fa20)
