@@ -262,6 +262,13 @@ table > tbody > tr:nth-child(odd) {
 <td>None: draws a histogram</td>
 </tr>
 <tr>
+<td><code>tbl.bin(column_name_or_index) tbl.bin(column_name_or_index, bins)</code></td>
+<td align="center"><a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">7.2</a></td>
+<td>Groups values into intervals, known as bins. Results in a two-column table that contains the number of rows in each bin. The first column lists the left endpoints of the bins, except in the last row. If the <code>bins</code> argument isn't used, default is to produce 10 equally wide bins between the min and max values of the data.</td>
+<td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column name(s) or index(es)<br>2. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries or an <strong>int</strong> of the number of bins you want</td>
+<td><strong>Table</strong>: a new Table</td>
+</tr>
+<tr>
 <td><code>tbl.apply(function, col1, col2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/1/Applying_a_Function_to_a_Column.html">8.1</a></td>
 <td>Returns an array of values resulting from applying a function to each item in a column.</td>
@@ -438,6 +445,10 @@ table > tbody > tr:nth-child(odd) {
 <tr>
 <td><code>are.equal_to(Z)</code></td>
 <td>Equal to <code>Z</code></td>
+</tr>
+<tr>
+<td><code>are.not_equal_to(Z)</code></td>
+<td>Not equal to <code>Z</code></td>
 </tr>
 <tr>
 <td><code>are.above(x)</code></td>
