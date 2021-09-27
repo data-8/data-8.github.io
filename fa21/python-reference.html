@@ -303,6 +303,20 @@ table > tbody > tr:nth-child(odd) {
 <td>1. <strong>int</strong>: sample size<br>2. (Optional) <code>with_replacement=True</code></td>
 <td><strong>Table</strong>: a new Table with <code>n</code> rows</td>
 </tr>
+<tr>
+<td><code>tbl.row(row_index)</code></td>
+<td align="center"><a href="https://inferentialthinking.com/chapters/17/3/Rows_of_Tables.html">17.3</a></td>
+<td>Accesses the row of a table by taking the index of the row as its argument. Note that rows are in general not arrays, as their elements can be of different types. However, you can use <code>.item</code> to access a particular element of a row using <code>row.item(label)</code>.</td>
+<td><strong>int</strong>: row index</td>
+<td><strong>Row object</strong> with the values of the row and labels of the corresponding columns</td>
+</tr>
+<tr>
+<td><code>tbl.rows</code></td>
+<td align="center">N/A</td>
+<td>Can use to access all of the rows of a table.</td>
+<td>None</td>
+<td><strong>Rows object</strong> made up of all rows as individual row objects</td>
+</tr>
 </tbody>
 </table>
 <p><br /></p>
