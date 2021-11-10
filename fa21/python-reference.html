@@ -241,9 +241,9 @@ table > tbody > tr:nth-child(odd) {
 <td>None: draws a scatter plot</td>
 </tr>
 <tr>
-<td><code>tbl.plot(x_column, y_column)</code></td>
+<td><code>tbl.plot(x_column, y_column) tbl.plot(x_column)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/Visualization.html">7</a></td>
-<td>Draw a line graph consisting of one point for each row of the table.</td>
+<td>Draw a line graph consisting of one point for each row of the table. If you only specific one column, it will plot the rest of the columns on the y-axis as different colored lines.</td>
 <td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis</td>
 <td>None: draws a line graph</td>
 </tr>
