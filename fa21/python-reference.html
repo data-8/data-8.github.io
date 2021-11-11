@@ -150,7 +150,7 @@ table > tbody > tr:nth-child(odd) {
 <td><strong>Table</strong> with the contents of the data file</td>
 </tr>
 <tr>
-<td><code>tbl.with_columns(name, values) tbl.with_columns(n1, v1, n2, v2,...)</code></td>
+<td><code>tbl.with_columns(name, values)</code> <code>tbl.with_columns(n1, v1, n2, v2,...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/06/Tables.html">6</a></td>
 <td>A table with an additional or replaced column or columns. <code>name</code> is a string for the name of a column, <code>values</code> is an array</td>
 <td>1. <strong>string</strong>: the name of the new column;<br>2. <strong>array</strong>: the values in that column</td>
@@ -241,14 +241,14 @@ table > tbody > tr:nth-child(odd) {
 <td>None: draws a scatter plot</td>
 </tr>
 <tr>
-<td><code>tbl.plot(x_column, y_column) tbl.plot(x_column)</code></td>
+<td><code>tbl.plot(x_column, y_column)</code> <code>tbl.plot(x_column)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/Visualization.html">7</a></td>
 <td>Draw a line graph consisting of one point for each row of the table. If you only specify one column, it will plot the rest of the columns on the y-axis as different colored lines.</td>
 <td>1. <strong>string</strong>: name of the column on the x-axis<br>2. <strong>string</strong>: name of the column on the y-axis</td>
 <td>None: draws a line graph</td>
 </tr>
 <tr>
-<td><code>tbl.barh(categories) tbl.barh(categories, values)</code></td>
+<td><code>tbl.barh(categories)</code> <code>tbl.barh(categories, values)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/1/Visualizing_Categorical_Distributions.html">7.1</a></td>
 <td>Displays a bar chart with bars for each category in a column, with height proportional to the corresponding frequency. values argument unnecessary if table has only a column of categories and a column of values.</td>
 <td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: the name of the column with values for corresponding categories</td>
@@ -262,14 +262,14 @@ table > tbody > tr:nth-child(odd) {
 <td>None: draws a histogram</td>
 </tr>
 <tr>
-<td><code>tbl.bin(column_name_or_index) tbl.bin(column_name_or_index, bins)</code></td>
+<td><code>tbl.bin(column_name_or_index)</code> <code>tbl.bin(column_name_or_index, bins)</code></td>
 <td align="center"><a href="https://inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">7.2</a></td>
 <td>Groups values into intervals, known as bins. Results in a two-column table that contains the number of rows in each bin. The first column lists the left endpoints of the bins, except in the last row. If the <code>bins</code> argument isn't used, default is to produce 10 equally wide bins between the min and max values of the data.</td>
 <td>1. <strong>string</strong> <em>or</em> <strong>int</strong>: column name(s) or index(es)<br>2. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries or an <strong>int</strong> of the number of bins you want</td>
 <td><strong>Table</strong>: a new Table</td>
 </tr>
 <tr>
-<td><code>tbl.apply(function, col1, col2, ...) tbl.apply(function)</code></td>
+<td><code>tbl.apply(function)</code> <code>tbl.apply(function, col1, col2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/1/Applying_a_Function_to_a_Column.html">8.1</a></td>
 <td>Returns an array of values resulting from applying a function to each item in a column.</td>
 <td>1. <strong>function</strong>: function to apply to column<br>2. (Optional) <strong>string</strong>: name of the column to apply function to (if you have multiple columns, the respective column's values will be passed as the corresponding argument to the function), and if there is no argument, your function will be applied to every row in tbl</td>
@@ -283,21 +283,21 @@ table > tbody > tr:nth-child(odd) {
 <td><strong>Table</strong>: a new Table</td>
 </tr>
 <tr>
-<td><code>tbl.pivot(col1, col2, values, collect) tbl.pivot(col1, col2)</code></td>
+<td><code>tbl.pivot(col1, col2, values, collect)</code> <code>tbl.pivot(col1, col2)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/3/Classifying_by_More_than_One_Variable.html">8.3</a></td>
 <td>A pivot table where each unique value in <code>col1</code> has its own column and each unique value in <code>col2</code> has its own row. Count or aggregate values from a third column, collect with some function. Default <code>values</code> and <code>collect</code> return counts in cells.</td>
 <td>1. <strong>string</strong>: name of column whose unique values will make up columns of pivot table<br>2. <strong>string</strong>: name of column whose unique values will make up rows of pivot table<br>3. (Optional) <strong>string</strong>: name of column that describes the values of cell<br>4. (Optional) <strong>function</strong>: how the values are collected, e.g. <code>sum</code> or <code>np.mean</code></td>
 <td><strong>Table</strong>: a new Table</td>
 </tr>
 <tr>
-<td><code>tblA.join(colA, tblB, colB) tblA.join(colA, tblB)</code></td>
+<td><code>tblA.join(colA, tblB, colB)</code> <code>tblA.join(colA, tblB)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/4/Joining_Tables_by_Columns.html">8.4</a></td>
 <td>Generate a table with the columns of tblA and tblB, containing rows for all values of a column that appear in both tables. Default <code>colB</code> is <code>colA</code>. <code>colA</code> and <code>colB</code> must be strings specifying column names.</td>
 <td>1. <strong>string</strong>: name of column in tblA with values to join on<br>2. <strong>Table</strong>: other Table<br>3. (Optional) <strong>string</strong>: if column names are different between Tables, the name of the shared column in tblB</td>
 <td><strong>Table</strong>: a new Table</td>
 </tr>
 <tr>
-<td><code>tbl.sample(n) tbl.sample(n, with_replacement)</code></td>
+<td><code>tbl.sample(n)</code> <code>tbl.sample(n, with_replacement)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/10/Sampling_and_Empirical_Distributions.html">10</a></td>
 <td>A new table where <code>n</code> rows are randomly sampled from the original table; by default, <code>n=tbl.num_rows</code>. Default is with replacement. For sampling without replacement, use argument <code>with_replacement=False</code>. For a non-uniform sample, provide a third argument <code>weights=distribution</code> where <code>distribution</code> is an array or list containing the probability of each row.</td>
 <td>1. <strong>int</strong>: sample size<br>2. (Optional) <code>with_replacement=True</code></td>
@@ -414,7 +414,7 @@ table > tbody > tr:nth-child(odd) {
 <td>Returns an array with the square root of each element</td>
 </tr>
 <tr>
-<td><code>np.arange(start, stop, step) np.arange(start, stop) np.arange(stop)</code></td>
+<td><code>np.arange(start, stop, step)</code> <code>np.arange(start, stop)</code> <code>np.arange(stop)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/05/2/Ranges.html">5.2</a></td>
 <td>An array of numbers starting with <code>start</code>, going up in increments of <code>step</code>, and going up to but excluding <code>stop</code>. When <code>start</code> and/or <code>step</code> are left out, default values are used in their place. Default step is 1; default start is 0.</td>
 </tr>
