@@ -272,7 +272,7 @@ table > tbody > tr:nth-child(odd) {
 <td><code>tbl.apply(function)</code> <code>tbl.apply(function, col1, col2, ...)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/08/1/Applying_a_Function_to_a_Column.html">8.1</a></td>
 <td>Returns an array of values resulting from applying a function to each item in a column.</td>
-<td>1. <strong>function</strong>: function to apply to column<br>2. (Optional) <strong>string</strong>: name of the column to apply function to (if you have multiple columns, the respective column's values will be passed as the corresponding argument to the function), and if there is no argument, your function will be applied to every row in tbl</td>
+<td>1. <strong>function</strong>: function to apply to column<br>2. (Optional) <strong>string</strong>: name of the column to apply function to (if you have multiple columns, the respective column's values will be passed as the corresponding argument to the function), and if there is no argument, your function will be applied to every row object in tbl</td>
 <td><strong>array</strong>: contains an element for each value in the original column after applying the function to it</td>
 </tr>
 <tr>
@@ -424,9 +424,9 @@ table > tbody > tr:nth-child(odd) {
 <td>Returns the i-th item in an array (remember Python indices start at 0!)</td>
 </tr>
 <tr>
-<td><code>np.random.choice(array, n) np.random.choice(array) np.random.choice(array, n, replace)</code></td>
+<td><code>np.random.choice(array, n) np.random.choice(array)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/09/Randomness.html">9</a></td>
-<td>Picks one (by default) or some number 'n' of items from an array at random. Default is with replacement. For sampling without replacement, use argument <code>replace=False.</code></td>
+<td>Picks one (by default) or some number 'n' of items from an array at random with replacement.</td>
 </tr>
 <tr>
 <td><code>np.count_nonzero(array)</code></td>
