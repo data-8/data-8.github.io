@@ -22,22 +22,21 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="./">
-          Data 8 Spring 2022
+          Doggo 8 Spring 2022
         </a>
 
       </div>
       <div id="navbar" class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
 
-            <li><a href="./faq.html">FAQ</a></li>
-            <li><a href="./office-hours.html">Office Hours</a></li>
-            <li><a href="./policies.html">Policies</a></li>
-            <li><a href="./staff.html">Staff</a></li>
+            <li><a href="./dawgs.html">Dawgs</a></li>
+            <li><a href="./doghouse-hours.html">Doghouse Hours</a></li>
+            <li><a href="./house-rules.html">House Rules</a></li>
 
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
             <ul class="dropdown-menu">
-                  <li><a href="./materials.html">Materials</a></li>
+                  <li><a href="./dogeterials.html">Dogeterials</a></li>
                   <li class="active"><a href="./python-reference.html">Python Reference</a></li>
                   <li><a href="./supplemental-videos.html">Supplemental Videos</a></li>
             </ul>
@@ -48,7 +47,7 @@
             <ul class="dropdown-menu">
                   <li><a href="http://data8.org/connector/">Connectors</a></li>
                   <li><a href="http://data8.datahub.berkeley.edu/">DataHub</a></li>
-                  <li><a href="http://data8.org/datascience/">Datascience Docs</a></li>
+                  <li><a href="http://data8.org/datascience/">Datascience Dogs</a></li>
                   <li><a href="https://edstem.org/us/courses/18289/discussion/">Ed</a></li>
                   <li><a href="http://data.berkeley.edu">Berkeley Division of Data Sciences</a></li>
             </ul>
@@ -255,10 +254,10 @@ table > tbody > tr:nth-child(odd) {
 <td>None: draws a bar chart</td>
 </tr>
 <tr>
-<td><code>tbl.hist(column, unit, bins)</code></td>
+<td><code>tbl.hist(column, unit, bins, group)</code></td>
 <td align="center"><a href="https://www.inferentialthinking.com/chapters/07/2/Visualizing_Numerical_Distributions.html">7.2</a></td>
 <td>Generates a histogram of the numerical values in a column. <code>unit</code> and <code>bins</code> are optional arguments, used to label the axes and group the values into intervals (bins), respectively. Bins have the form <code>[a, b)</code>, where <code>a</code> is included in the bin and <code>b</code> is not.</td>
-<td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: units of x-axis<br>3. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries</td>
+<td>1. <strong>string</strong>: name of the column with categories<br>2. (Optional) <strong>string</strong>: units of x-axis<br>3. (Optional) <strong>array</strong> of ints/floats denoting bin boundaries<br>4. (Optional) <strong>string</strong>: name of categorical column to draw separate overlaid histograms for</td>
 <td>None: draws a histogram</td>
 </tr>
 <tr>
