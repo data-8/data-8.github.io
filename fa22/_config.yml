@@ -17,8 +17,8 @@ title: Data 8
 description: Foundations of Data Science
 author: Data 8 Staff
 email: data8@berkeley.edu
-baseurl: '/data8-website' # the subpath of your site, e.g. /blog
-url: 'https://james-weichert.github.io' # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: '/fa22' # the subpath of your site, e.g. /blog
+url: 'https://data8.org' # the base hostname & protocol for your site, e.g. http://example.com
 exclude: ["Gemfile", "Gemfile.lock", "LICENSE"]
 logo: "/assets/data8logo.png"
 
