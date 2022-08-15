@@ -1,0 +1,296 @@
+{"0": {
+    "doc": "ReadMe",
+    "title": "Foundations of Data Science",
+    "content": "UC Berkeley . Fall 2022 offering of Data 8: Foundations of Data Science at UC Berkeley. Redesigned website by James Weichert using Just the Docs. ",
+    "url": "http://localhost:4000/data8-website/README/#foundations-of-data-science",
+    "relUrl": "/README/#foundations-of-data-science"
+  },"1": {
+    "doc": "ReadMe",
+    "title": "ReadMe",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/README/",
+    "relUrl": "/README/"
+  },"2": {
+    "doc": "Announcements",
+    "title": "Announcements",
+    "content": "Announcements are stored in the _announcements directory and rendered according to the layout file, _layouts/announcement.html. ",
+    "url": "http://localhost:4000/data8-website/announcements/",
+    "relUrl": "/announcements/"
+  },"3": {
+    "doc": "Announcements",
+    "title": "This is a Different Announcement",
+    "content": "Aug 14 &middot; 0 min read Hi . ",
+    "url": "http://localhost:4000/data8-website/announcements/",
+    "relUrl": "/announcements/"
+  },"4": {
+    "doc": "FAQ",
+    "title": "Frequently Asked Questions",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/faq/#frequently-asked-questions",
+    "relUrl": "/faq/#frequently-asked-questions"
+  },"5": {
+    "doc": "FAQ",
+    "title": "FAQ",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/faq/",
+    "relUrl": "/faq/"
+  },"6": {
+    "doc": "Home",
+    "title": "Data 8: Foundations of Data Science",
+    "content": "UC Berkeley, Fall 2022 . John DeNero . he/him . denero@berkeley.edu . Office Hours: TBD . Swupnil Sahai . he/him . swupnil@berkeley.edu . Office Hours: TBD . ",
+    "url": "http://localhost:4000/data8-website/index.html#data-8-foundations-of-data-science",
+    "relUrl": "/index.html#data-8-foundations-of-data-science"
+  },"7": {
+    "doc": "Home",
+    "title": "Announcements",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/index.html#announcements",
+    "relUrl": "/index.html#announcements"
+  },"8": {
+    "doc": "Home",
+    "title": "This is a Different Announcement",
+    "content": "Aug 14 &middot; 0 min read Hi . ",
+    "url": "http://localhost:4000/data8-website/index.html",
+    "relUrl": "/index.html"
+  },"9": {
+    "doc": "Home",
+    "title": "Welcome to Data 8",
+    "content": "Aug 14 &middot; 0 min read Welcome to Data 8. Our new website is under construction, check back later! . ",
+    "url": "http://localhost:4000/data8-website/index.html",
+    "relUrl": "/index.html"
+  },"10": {
+    "doc": "Home",
+    "title": "Week 1",
+    "content": "Aug 24 1 Introduction Slides • Demos • Video Reading: 1.1, 1.2, 1.3 Lab Lab 01: Expressions (Due 8/26) Lab 01 Worksheet Aug 26 2 Cause and Effect Slides • Demos • Video Reading: 2 Homework Homework 01 (Due 9/7) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-1",
+    "relUrl": "/index.html#week-1"
+  },"11": {
+    "doc": "Home",
+    "title": "Week 2",
+    "content": "Aug 29 3 Tables Slides • Demos • Video Reading: 3 Lab Lab 02: Table Operations (Due 9/2) Lab 02 Worksheet Aug 31 4 Data Types Slides • Demos • Video Reading: 4, 5 Sep 2 5 Building Tables Slides • Demos • Video Reading: 2 Homework Homework 02 (Due 9/7) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-2",
+    "relUrl": "/index.html#week-2"
+  },"12": {
+    "doc": "Home",
+    "title": "Week 3",
+    "content": "Sep 5 Holiday: No Class Lab Lab 03: Data Types, Creating and Extending Tables (Due 9/9) Lab 03 Worksheet Sep 7 6 Census Slides • Demos • Video Reading: 6.3, 6.4 Sep 2 7 Charts Slides • Demos • Video Reading: 7, 7.1 Homework Homework 03 (Due 9/14) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-3",
+    "relUrl": "/index.html#week-3"
+  },"13": {
+    "doc": "Home",
+    "title": "Week 4",
+    "content": "Sep 12 8 Histograms Slides • Demos • Video Reading: 7.2, 7.3 Lab Lab 04: Functions and Visualization (Due 9/16) Lab 04 Worksheet Sep 14 9 Functions Slides • Demos • Video Reading: 8, 8.1 Sep 16 10 Groups Slides • Demos • Video Reading: 8.2, 8.3 Homework Homework 04 (Due 9/21) Project Project 1: World Progress (Due 9/30, Checkpoint 9/23) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-4",
+    "relUrl": "/index.html#week-4"
+  },"14": {
+    "doc": "Home",
+    "title": "Week 5",
+    "content": "Sep 19 11 Pivots and Joins Slides • Demos • Video Reading: 8.4 Lab Lab: Project 1 Project 1 Lab Worksheet Sep 21 12 Table Examples Slides • Demos • Video Reading: 8.5 Sep 23 13 Conditionals and Iteration Slides • Demos • Video Reading: 9, 9.1, 9.2 Homework Homework 05 (Due 9/28) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-5",
+    "relUrl": "/index.html#week-5"
+  },"15": {
+    "doc": "Home",
+    "title": "Week 6",
+    "content": "Sep 26 14 Chance Slides • Demos • Video Reading: 9.2, 9.3, 9.4 Lab Lab 05: Conditional Statements, Iteration, Tables (Due 9/30) Lab 05 Worksheet Sep 28 15 Sampling Slides • Demos • Video Reading: 9.5, 10 Sep 30 16 Models Slides • Demos • Video Reading: 10.2, 10.3, 10.4 Homework Homework 06 (Due 10/5) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-6",
+    "relUrl": "/index.html#week-6"
+  },"16": {
+    "doc": "Home",
+    "title": "Week 7",
+    "content": "Oct 3 17 Comparing Distributions Slides • Demos • Video Reading: 11.1, 11.2 Lab Lab 06: Assessing Models (Due 10/7) Lab 06 Worksheet Oct 5 18 Decisions and Uncertainty Slides • Demos • Video Reading: 11.3, 11.4 Oct 7 19 A/B Testing Slides • Demos • Video Reading: 11.4, 12.1 Homework Homework 07 (Due 10/12) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-7",
+    "relUrl": "/index.html#week-7"
+  },"17": {
+    "doc": "Home",
+    "title": "Week 8",
+    "content": "Oct 10 20 Causality Slides • Demos • Video Reading: 12.2 Lab Lab: Midterm Review Midterm Lab Worksheet Oct 12 21 Examples Slides • Demos • Video Reading: 12.3 Oct 14 22 Midterm Review Slides • Demos • Video Exam Midterm (7 - 9 PM) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-8",
+    "relUrl": "/index.html#week-8"
+  },"18": {
+    "doc": "Home",
+    "title": "Week 9",
+    "content": "Oct 17 23 Confidence Intervals Slides • Demos • Video Reading: 13, 13.1, 13.2 Lab Lab 07: A/B Testing (Due 10/21) Lab 07 Worksheet Oct 19 24 Interpreting Confidence Slides • Demos • Video Reading: 13.3, 13.4 Oct 21 25 Center and Spread Slides • Demos • Video Reading: 14, 14.1, 14.2 Homework Homework 08 (Due 10/26) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-9",
+    "relUrl": "/index.html#week-9"
+  },"19": {
+    "doc": "Home",
+    "title": "Week 10",
+    "content": "Oct 24 26 The Normal Distribution Slides • Demos • Video Reading: 14.3, 14.4 Lab Lab 08: Sample Mean (Due 10/28) Lab 08 Worksheet Oct 26 27 Sample Means Slides • Demos • Video Reading: 14.5 Oct 28 28 Designing Experiments Slides • Demos • Video Reading: 14.6 Homework Homework 09 (Due 11/2) Project Project 2: Climate (Due 11/11, Checkpoint 11/4) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-10",
+    "relUrl": "/index.html#week-10"
+  },"20": {
+    "doc": "Home",
+    "title": "Week 11",
+    "content": "Oct 31 29 Correlation Slides • Demos • Video Reading: 15, 15.1 Lab Lab: Project 2 Project 2 Lab Worksheet Nov 2 30 Linear Regression Slides • Demos • Video Reading: 15.2 Nov 4 31 Least Squares Slides • Demos • Video Reading: 15.3, 15.4 Homework Homework 10 (Due 11/9) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-11",
+    "relUrl": "/index.html#week-11"
+  },"21": {
+    "doc": "Home",
+    "title": "Week 12",
+    "content": "Nov 7 32 Residuals Slides • Demos • Video Reading: 15.5, 15.6 Lab Lab 09: Regression (Due 11/11) Lab 09 Worksheet Nov 9 33 Regression Inference Slides • Demos • Video Reading: 16 Nov 11 Holiday: No Class Homework Homework 11 (Due 11/16) Project Project 3: Classifying Movies (Due 12/2, Checkpoint 11/18) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-12",
+    "relUrl": "/index.html#week-12"
+  },"22": {
+    "doc": "Home",
+    "title": "Week 13",
+    "content": "Nov 14 34 Privacy Slides • Demos • Video Lab Lab: Project 3 Project 3 Lab Worksheet Nov 16 35 Classification Slides • Demos • Video Reading: 17, 17.1, 17.2, 17.3 Nov 18 36 Classifiers Slides • Demos • Video Reading: 17.4 Homework Homework 12 (Due 11/30) ",
+    "url": "http://localhost:4000/data8-website/index.html#week-13",
+    "relUrl": "/index.html#week-13"
+  },"23": {
+    "doc": "Home",
+    "title": "Week 14",
+    "content": "Nov 21 37 Updating Probabilities Slides • Demos • Video Reading: 13, 18 Nov 23 Holiday: No Class Nov 25 Holiday: No Class ",
+    "url": "http://localhost:4000/data8-website/index.html#week-14",
+    "relUrl": "/index.html#week-14"
+  },"24": {
+    "doc": "Home",
+    "title": "Week 15",
+    "content": "Nov 28 38 Case Study: Health Slides • Demos • Video Lab Lab 10: Conditional Probability (Due 12/2) Lab 10 Worksheet Nov 30 39 Case Study: Education Slides • Demos • Video Dec 2 40 Conclusion Slides • Demos • Video ",
+    "url": "http://localhost:4000/data8-website/index.html#week-15",
+    "relUrl": "/index.html#week-15"
+  },"25": {
+    "doc": "Home",
+    "title": "Final",
+    "content": "Dec 14 Exam Final Exam (TIME) ",
+    "url": "http://localhost:4000/data8-website/index.html#final",
+    "relUrl": "/index.html#final"
+  },"26": {
+    "doc": "Home",
+    "title": "Home",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/index.html",
+    "relUrl": "/index.html"
+  },"27": {
+    "doc": "Policies",
+    "title": "Policies",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/policies/",
+    "relUrl": "/policies/"
+  },"28": {
+    "doc": "Python Reference",
+    "title": "Python Reference 🐍",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/reference/#python-reference-",
+    "relUrl": "/reference/#python-reference-"
+  },"29": {
+    "doc": "Python Reference",
+    "title": "Table of contents",
+    "content": ". | Understanding the Python Reference . | The Anatomy of a Function | How to Read These Tables | . | Built-In Python Functions | NumPy Array Functions | Tables and Table Methods | Visualization Functions | Table.where Predicates | More Documentation | . ",
+    "url": "http://localhost:4000/data8-website/reference/#table-of-contents",
+    "relUrl": "/reference/#table-of-contents"
+  },"30": {
+    "doc": "Python Reference",
+    "title": "Understanding the Python Reference",
+    "content": "If you’re new to reading documentation, looking at the Data 6 Python Reference might feel a little overwhelming, but don’t worry — the point of this class is not to memorize all of these functions or their arguments. For exams and quizzes, you will be provided with a reference sheet that contains all of the functions you may need on the exam. However, we do expect you to understand how to use the Python Reference to understand new functions, and to help with debugging when things go wrong. Learning how to read and understand documentation is a key to becoming a good data scientist. In fact, even course staff continue to use the Python Reference to refresh their memory about certain functions. Of course, the Python Reference can only provide information about the basics of the functions you’ll use in Data 6. The best knowledge about functions comes from using these functions in code you write in labs or homeworks. If you get stuck when using a certain function, we encourage you to come to office hours or ask a question on Ed. The Anatomy of a Function . def my_function(num): return num ** 3 In the function above, my_function is the name of the function, which takes one argument called num. The data type of the input is an int or float, and the function returns the number raised to the power 3, which is also an int or float. How to Read These Tables . | The Function column tells you how to call the function and what arguments it accepts. Everything written in this font is code or refers to a particular argument in the function (e.g. num in np.sqrt(num)). | The Description column gives you a brief description of what the function does, including what each argument is used for | The Input column tells you what data type each argument needs to be. If you’re getting a TypeError, it might be because your inputs are of the wrong type. Data types are indicated in bold (e.g. string or Table). | The Output column tells you what the function returns and what data type it is. | . ",
+    "url": "http://localhost:4000/data8-website/reference/#understanding-the-python-reference",
+    "relUrl": "/reference/#understanding-the-python-reference"
+  },"31": {
+    "doc": "Python Reference",
+    "title": "Built-In Python Functions",
+    "content": "| Function | Description | Input | Output | . | str(val) | Converts val to a string | A value of any type (int, float, NoneType, etc.) | The value as a string | . | int(num) | Converts num to an int | A numerical value (represented as a string or float) | The value as an int | . | float(num) | Converts num to a float | A numerical value (represented as a string or int) | The value as a float | . | len(arr) | Returns the length of arr | array or list | int: the length of the array or list | . | max(arr) | Returns the maximum value in arr | array or list | The maximum value the array (usually an int) | . | min(arr) | Returns the minimum value in arr | array or list | The minimum value the array (usually an int) | . | sum(arr) | Returns the sum of the values in arr | array or list | int or float: the sum of the values in the array | . | abs(num) | Returns the absolute value of num | int or float | int or float | . ",
+    "url": "http://localhost:4000/data8-website/reference/#built-in-python-functions",
+    "relUrl": "/reference/#built-in-python-functions"
+  },"32": {
+    "doc": "Python Reference",
+    "title": "NumPy Array Functions",
+    "content": "| Function | Description | Input | Output | . | make_array(val1, val2, ...) | Makes a NumPy array with the inputted values | A sequence of values | An array with those values | . | np.mean(arr) or np.average(arr) | Calculates the average value of arr | An array of numbers | float: The average of the array | . | np.sum(arr) | Returns the sum of the values in arr | array | int or float: the sum of the values in the array | . | np.prod(arr) | Returns the product of the values in arr | array | int or float: the product of the values in the array | . | np.sqrt(num) | Calculates the square root of num | int or float | float : the square root of the number | . | np.arange(stop), np.arange(start, stop), or np.arange(start, stop, step) | Creates an array of sequential numbers starting at start, going up in increments of step, and going up to but excluding stop. Default start is 0, default step is 1 | int or float | array | . | np.count_nonzero(arr) | Returns the number of non-zero (or True) elements in an array | An array of values | int: the number of non-zero values in arr | . | np.append(arr, item) | Appends item to the end of arr. Does not modify the original array. | 1. array to append to 2. item to append (any type) | array: a new array with the appended item | . ",
+    "url": "http://localhost:4000/data8-website/reference/#numpy-array-functions",
+    "relUrl": "/reference/#numpy-array-functions"
+  },"33": {
+    "doc": "Python Reference",
+    "title": "Tables and Table Methods",
+    "content": "| Function | Description | Input | Output | . | Table() | Creates an empty table, usually to extend with data | None | An empty Table | . | tbl.with_column(name, values) or tbl.with_columns(n1, v1, n2, v2, ...) | Adds an extra column onto tbl with the label name and values as the column values | 1. string: name of the new column 2. array: values in the column | Table: a copy of the original table with the new column(s) | . | tbl.column(col) | Returns the values in a column | string or int: the column name or index | array: the values in that column | . | tbl.num_rows | Compute the number of rows in tbl | None | int: the number of rows in the table | . | tbl.num_columns | Compute the number of columns in tbl | None | int: the number of columns in the table | . | tbl.labels | Returns the labels in tbl | None | array: the names of each column as strings | . | tbl.select(col1, col2, ...) | Creates a copy of tbl only with the selected columns | string or int: the column name(s) or index(es) to be included in the table | Table with the selected columns | . | tbl.drop(col1, col2, ...) | Creates a copy of tbl without the selected columns | string or int: the column name(s) or index(es) to be dropped from the table | Table without the selected columns | . | tbl.relabeled(old_label, new_label) | Creates a new table, changing the column name specified by old_label to new_label, and leaves the original table unchanged. | 1. string: the old column name 2. string the new column name | Table: a copy of the original table with the changed column name | . | tbl.show(n) | Displays the first n rows of tbl. If no argument is specified, the function defaults to showing the entire table | (Optional) int: number of rows to be displayed | None (table is displayed) | . | tbl.sort(column_name) | Sorts the rows of tbl by the values in the column_name column. Defaults to ascending order unless the optional argument descending=True is included. | 1. string or int: name or index of the column to sort 2. (Optional) descending=True | Table: a copy of the original table with the column sorted | . | tbl.where(column, predicate) | Creates a copy of tbl containing only the rows where the value of column matches the predicate. See Table.where predicates below. | 1. string or int: column name or index 2. are.(...) predicate | Table: a copy of the original table with only the rows that match the predicate | . | tbl.take(row_indices) | Creates a table with only the rows at the given indices. row_indices is either an array of indices or an integer corresponding to one index. | int or array: indices of rows to be included in the table | Table: a copy of the original table with only the rows at the given indices | . | tbl.apply(function) or tbl.apply(function, col1, col2, ...) | Returns an array of values resulting from applying a function to each item in a column. | 1. Function: function to apply to column 2. (Optional) string or int: the column name(s) or index(es) to apply the function to | array containing an element for each value in the original column after applying the function to it | . | tbl.group(column_or_columns, function) | Groups rows in tbl by unique values or combinations of values in a column(s). Multiple columns must be entered as an array of strings. Values in the other columns are aggregated by count (by default) or the optional argument function. You can visualize the group function here. | 1. string or array of strings: column(s) on which to group 2. (Optional) Function: function to aggregate values in cells (defaults to counting rows) | Table a new groupped table | . | tbl.pivot(col1, col2) or tbl.pivot(col1, col2, values, collect) | Creates a pivot table where each unique value in col1 has its own column and each unique value in col2 has its own row. Counts or aggregates values from a third column, collected with some function. If the values and collect arguments are not included, pivot defaults to returning counts in the cells. You can visualize the pivot function here. | 1. string: name of the column in tbl whose unique values will make up the columns of the pivot table 2. string: name of column in tbl whose unique values will make up the rows of the pivot table 3. (Optional) string: name of the column in tbl that describes the values of cells in the pivot table 4. (Optional) Function: how the values are collected (e.g. sum or np.mean) | Table: a new pivot table | . | tblA.join(colA, tblB) or tblA.join(colA, tblB, colB) | Generate a table with the columns of tblA and tblB, containing rows for all values in colA and colB that appear in tblA and tblB, respectively. By default, colB is the same value as colA. colA and colB must be strings specifying column names. | 1. string: name of column in tblA with values to join on 2. Table: the other table 3. (Optional) string: the name of the shared column in tblB, if column names are different between the tables | Table: a new combined table | . ",
+    "url": "http://localhost:4000/data8-website/reference/#tables-and-table-methods",
+    "relUrl": "/reference/#tables-and-table-methods"
+  },"34": {
+    "doc": "Python Reference",
+    "title": "Visualization Functions",
+    "content": "| Function | Description | Input | Output | . | tbl.barh(categories) or tbl.barh(categories, values) | Displays a horizontal bar chart with bars for each category in the column categories. values specifies the column corresponding to the size of each bar, but is unnecessary if the table only has two columns. Optional argument overlay (default is True) specifies whether grouped bar charts should be overlaid or on separate plots. | 1. string: name of the column with categories 2. (Optional) string: name of the column with values corresponding to the categories | None: draws a bar chart | . | tbl.hist(column) | Generates a histogram of the numerical values in column. Optional arguments group (to specify categorical column to group on), bins (to specify custom bins), and overlay to specify overlaid or separate histograms. | string: name of the column | None: draws a histogram | . | tbl.plot(x_column, y_column) or tbl.plot(x_column) | Draws a line plot consisting of one point for each row in tbl. If only x_column is specified, plot will plot the rest of the columns on the y-axis with different colored lines. Optional argument overlay (default is True) specifies whether multiple lines should be overlaid or on separate plots. | 1. string: name of the column on the x-axis 2. string: name of the column on the y-axis | None: draws a line graph | . | tbl.scatter(x_column, y_column) | Draws a scatter plot consisting of one point for each row in tbl. The optional argument fit_line=True can be included to draw a line of best fit through the scatter plot. The optional arguments group (to specify categorical column to group on) and sizes (to specify a numerical column for bubble sizes) can also be used to encode additional variables. | 1. string: name of the column on the x-axis 2. string: name of the column on the y-axis 3. (Optional) fit_line=True | None: draws a scatter plot | . ",
+    "url": "http://localhost:4000/data8-website/reference/#visualization-functions",
+    "relUrl": "/reference/#visualization-functions"
+  },"35": {
+    "doc": "Python Reference",
+    "title": "Table.where Predicates",
+    "content": "These functions can be passed in as the second argument to tbl.where(..) and act as a condition by which to select rows from tbl. | Predicate | Description | . | are.equal_to(Z) | Equal to Z (can be an int, float or string) | . | are.not_equal_to(Z) | Not equal to ‘Z’ can be a number (int or float) or a string) | . | are.above(x) | Greater than x | . | are.above_or_equal_to(x) | Greater than or equal to x | . | are.below(x) | Less than x | . | are.below_or_equal_to(x) | Less than or equal to x | . | are.between(x,y) | Greater than or equal to x and less than y | . | are.between_or_equal_to(x,y) | Greater than or equal to x, and less than or equal to y | . | are.strictly_between(x,y) | Greater than x and less than y | . | are.contained_in(A) | True if it is a substring of A (if A is a **string**) or an element of A (if A` is an array) | . | are.containing(S) | Contains the string S | . ",
+    "url": "http://localhost:4000/data8-website/reference/#tablewhere-predicates",
+    "relUrl": "/reference/#tablewhere-predicates"
+  },"36": {
+    "doc": "Python Reference",
+    "title": "More Documentation",
+    "content": "The Data 6 Python reference guide is based on the Data 8 Python Reference. More detailed Python documentation is available here. ",
+    "url": "http://localhost:4000/data8-website/reference/#more-documentation",
+    "relUrl": "/reference/#more-documentation"
+  },"37": {
+    "doc": "Python Reference",
+    "title": "Python Reference",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/reference/",
+    "relUrl": "/reference/"
+  },"38": {
+    "doc": "Resources",
+    "title": "Resources\t📚",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/resources/#resources-",
+    "relUrl": "/resources/#resources-"
+  },"39": {
+    "doc": "Resources",
+    "title": "Table of contents",
+    "content": ". | Python Documentation | Supplemental Readings | Other | . ",
+    "url": "http://localhost:4000/data8-website/resources/#table-of-contents",
+    "relUrl": "/resources/#table-of-contents"
+  },"40": {
+    "doc": "Resources",
+    "title": "Python Documentation",
+    "content": "Learning a new programming language like Python is a lot like learning a new language: you have to learn vocabulary and learn how to string words together to make sentences that are gramatically and syntactically correct. Just like you might use a dictionary to learn the meaning of new words, programmers use documentation to understand what functions and data types do and how they operate. Here are documentation sources that are helpful for understanding the functions and objects we use in Data 6: . | Data 6 Python Reference Guide (D6PR) . | This has documentation for all of the functions we expect you to know in Data 6. You can use this as your “cheat sheet” while working on assignments. We will also provide a shortened version of the reference guide for the final exam. | . | Data 8 Python Reference (D8PR) . | The Data 6 Python Reference is based off of the Python Reference for Data 8, which contains many of these same functions that we use plus some that are out of scope for this class. | . | Stanford’s Python Reference (SPR) . | This website is a Python guide written for Stanford’s intro CS class, and is a great reference if you need a refresher on how something works in Python. | . | Official Python Documentation . | This may be helpul if you want to learn more about the intricate details of how Python works, but just remember that a lot of these details are out of scope for this class. | . | datascience Library Documentation . | If you come across a weird error involving the datascience library (anything to do with tables), you might be able to debug the error by looking at the datascience documentation. Again, a lot of this is way more detailed than we will be in Data 6, so don’t worry if you don’t understand everything in the documentation. | . | . ",
+    "url": "http://localhost:4000/data8-website/resources/#python-documentation",
+    "relUrl": "/resources/#python-documentation"
+  },"41": {
+    "doc": "Resources",
+    "title": "Supplemental Readings",
+    "content": "Although there is no specific textbook for this class, we will draw on concepts from a couple of textbooks from similar data science and computer science classes. For most lectures, we will post links to chapters from textbooks covering the topics we will discuss in lecture. These supplemental readings are optional, but you might find it helpful to use these resources to review or to develop a better understanding of certain concepts. All of these textbooks cover the fundamentals of Python, but in slightly different ways. Only the first link will contain any code that uses the datascience library that we use in this course, but some of the more general Python code may still be helpful/useful. We do not expect you to read these textbooks in their entirety (in fact, most of their material is out of scope for this class). | Computational and Inferential Thinking (CIT), the textbook for Data 8 at UC Berkeley, overlaps with our course significantly with Data 6, though there’s a lot in there that we won’t cover and there’s a lot that we’ll cover that won’t be in there. | Python Programming for Data Science (PPDS) is also a good references that covers the material in our class and more. | Composing Programs (CP), the textbook for CS 61A and CS 88 at UC Berkeley, covers Python from a more traditional computer science perspective rather than the data science perspective we will take; as such, only a few sub-chapters are relevant to us but you may find it useful nonetheless. | Problem Solving with Python (PSP) teaches a lot of practical Python tools, and was written specifically for beginner engineering students. | How to Think Like a Computer Scientist is also a great reference. | A Reader on Data Visualization (RDV) provides an interesting overview of and introduction to data visualization. This text focuses more on the design of visualizations instead of the technical aspects of creating them. | Fundamentals of Data Visualization (FDV) is the online version of Claus Wilke’s book that covers the basics of how to tell informative and ethical stories with data visualizations. | . ",
+    "url": "http://localhost:4000/data8-website/resources/#supplemental-readings",
+    "relUrl": "/resources/#supplemental-readings"
+  },"42": {
+    "doc": "Resources",
+    "title": "Other",
+    "content": ". | The Data 8 Table Function Visualizer is a great tool to see how .group and .pivot work. | . ",
+    "url": "http://localhost:4000/data8-website/resources/#other",
+    "relUrl": "/resources/#other"
+  },"43": {
+    "doc": "Resources",
+    "title": "Resources",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/resources/",
+    "relUrl": "/resources/"
+  },"44": {
+    "doc": "Staff",
+    "title": "Staff",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/staff/",
+    "relUrl": "/staff/"
+  },"45": {
+    "doc": "Staff",
+    "title": "Instructors",
+    "content": "John DeNero . he/him . denero@berkeley.edu . Office Hours: TBD . Swupnil Sahai . he/him . swupnil@berkeley.edu . Office Hours: TBD . ",
+    "url": "http://localhost:4000/data8-website/staff/#instructors",
+    "relUrl": "/staff/#instructors"
+  },"46": {
+    "doc": "Staff",
+    "title": "Lead GSIs",
+    "content": "Ciara Acosta . she/her . jweichert@berkeley.edu . Office Hours: TBD . Hi y’all! I’m a senior from Virginia studying computer science and data science. James Weichert . he/him . jweichert@berkeley.edu . Office Hours: TBD . Hi y’all! I’m a senior from Virginia studying computer science and data science. Will Furtado . he/him . willfurtado@berkeley.edu . Office Hours: TBD . Hey! I’m a rising senior from Cape Cod, MA studying Applied Mathematics and Computer Science. ",
+    "url": "http://localhost:4000/data8-website/staff/#lead-gsis",
+    "relUrl": "/staff/#lead-gsis"
+  },"47": {
+    "doc": "Staff",
+    "title": "Teaching Assistants (GSIs)",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/staff/#teaching-assistants-gsis",
+    "relUrl": "/staff/#teaching-assistants-gsis"
+  },"48": {
+    "doc": "Staff",
+    "title": "Tutors",
+    "content": " ",
+    "url": "http://localhost:4000/data8-website/staff/#tutors",
+    "relUrl": "/staff/#tutors"
+  }
+}
