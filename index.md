@@ -21,6 +21,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Spring 2023](./sp23)
 -  [Fall 2022](./fa22)
 -  [Summer 2022](./su22)
 -  [Spring 2022](./sp22)
