@@ -95,6 +95,7 @@ transition to more standard tools such as Pandas.
 
 **The [otter-grader](https://otter-grader.readthedocs.io/en/latest/) automatic grading software**: All notebooks are created using the otter-grader notebook creation format. This software generates two notebooks from a parent notebook. The first contains only "public" tests that are used to help students evaluate whether or not solutions to questions are correct -- a type of client-side validation for the student. The second notebook contains solutions as well as "private" tests that students are not able to see. These tests are usually used to evaluate correctness and edge cases as well as assign points.  This system is used in conjuction with [GradeScope](http://gradescope.com) at Berkeley to grade and assign points to student work but an instructor is also able grade notebooks on their own machines, see the documentation at [otter-grader](https://otter-grader.readthedocs.io/en/latest/), as well as use a free service that we deployed called [otter-service-standalone](http://grader.datahub.berkeley.edu/). 
 
+
 **Hosted Computing Environment**:
 We provide a hosted environment for our students to edit and execute their
 Notebooks. It includes two components, a [Kubernetes-based deployment of
