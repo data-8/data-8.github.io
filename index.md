@@ -57,21 +57,16 @@ The textbook source is maintained as an [open source
 project](https://github.com/data-8/textbook).
 
 **Assignments**:
-[All assignments from the Spring 2017 course
-offering](https://github.com/data-8/data8assets/tree/gh-pages/materials/sp17),
-as well as [assignments from the Fall 2016
-offering](https://github.com/data-8/data8assets/tree/gh-pages/materials/fa16)
-are available as Jupyter notebooks. The notebooks assume a Python 3 installation
+All assignments from Fall 2015 to current iterations of the course are available in this repository
+as Jupyter notebooks. The notebooks assume a Python 3 installation
 with the standard modules from [an Anaconda
 installation](https://www.continuum.io/downloads) such as Numpy and Matplotlib,
-as well as the [datascience](https://pypi.python.org/pypi/datascience/) and
-[okpy](https://pypi.python.org/pypi/okpy/) modules.
+as well as the [datascience](https://pypi.python.org/pypi/datascience/) and, depending on the year,
+[okpy](https://pypi.python.org/pypi/okpy/) or [otter-grader](https://otter-grader.readthedocs.io/en/latest/) modules.
 
-**Lecture Materials**: All [lecture videos from Fall
-2016](https://www.youtube.com/playlist?list=PLFeJ2hV8Fyt7mjvwrDQ2QNYEYdtKSNA0y)
-are hosted by Youtube. Slides as [PDF from Fall 2016](./fa16) and [Google Slides
-and Jupyter notebooks from Spring 2017](./sp17) are linked from the respective
-course calendars. To request access to the source of the slides for
+**Lecture Materials**: All lecture videos, slides and demonstration notebooks from [Fall
+2016](https://www.youtube.com/playlist?list=PLFeJ2hV8Fyt7mjvwrDQ2QNYEYdtKSNA0y) to current iterations of the course are available via links on the respective course calendars.
+To request access to the source of the slides for
 instructional purposes, please fill out our [Data 8 Instructor
 Interest](https://docs.google.com/forms/d/e/1FAIpQLSfw6iN-V58Urvg7RRfbjNQceisLULBizg0qku1_2qV8cvOtvA/viewform)
 form.
@@ -98,12 +93,7 @@ certainly be used outside the context of the course, it was specifically
 designed to support the Data 8 curriculum, while setting up students to
 transition to more standard tools such as Pandas.
 
-**The [OK](http://okpy.org) autograder and submission system**: The
-assignments depend on a Python-based autograder that includes client-side tests
-available to students at any time and server-side tests intended for
-correctness-based grading. Assignments are distributed with a folder of named
-`tests`, which include test cases. These test cases are invoked from within
-a notebook.
+**The [otter-grader](https://otter-grader.readthedocs.io/en/latest/) automatic grading system**: All notebooks are created using the otter-grader notebook creation format. This software generates two notebooks from a parent notebook. The first contains only "public" tests that are used to help students evaluate whether or not solutions to questions are correct -- a type of client-side validation for the student. The second notebook contains solutions as well as "private" tests that students are not able to see. These tests are usually used to evaluate correctness and edge cases as well as assign points.  This system is used in conjuction with [GradeScope](http://gradescope.com) at Berkeley to grade and assign points to student work but an instructor is also able grade notebooks on their own machines, see the documentation at [otter-grader](https://otter-grader.readthedocs.io/en/latest/), as well as use a free service that we deployed called [otter-service-standalone](http://grader.datahub.berkeley.edu/). 
 
 **Hosted Computing Environment**:
 We provide a hosted environment for our students to edit and execute their
