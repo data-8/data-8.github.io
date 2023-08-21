@@ -13,14 +13,13 @@ hands-on analysis of real-world datasets, including economic data, document
 collections, geographical data, and social networks. It delves into social
 issues surrounding data analysis such as privacy and design.
 
-The course is offered in partnership with the [UC Berkeley Division of Computing, Data Science, and Society](http://data.berkeley.edu).
-
 Offerings
 ----
 
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Fall 2023](./fa23)
 -  [Summer 2023](./su23)
 -  [Spring 2023](./sp23)
 -  [Fall 2022](./fa22)
