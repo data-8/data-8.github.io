@@ -71,7 +71,7 @@ as well as the [datascience](https://pypi.python.org/pypi/datascience/) and, dep
 2016](https://www.youtube.com/playlist?list=PLFeJ2hV8Fyt7mjvwrDQ2QNYEYdtKSNA0y) to current iterations of the course are available via links on the respective course calendars.
 To request access to the source of the slides for
 instructional purposes, please fill out our [Data 8 Instructor
-Interest](https://docs.google.com/forms/d/e/1FAIpQLSfw6iN-V58Urvg7RRfbjNQceisLULBizg0qku1_2qV8cvOtvA/viewform)
+Interest](https://forms.gle/iKLcryjZXit5913k7)
 form.
 
 Infrastructure
@@ -109,5 +109,5 @@ students' environment.
 
 If you want more information about any of these tools, please fill out our [Data
 8 Instructor
-Interest](https://forms.gle/maRqsceCvTNnqQ3w9)
+Interest](https://forms.gle/iKLcryjZXit5913k7)
 form or email `ds-help@berkeley.edu`.
