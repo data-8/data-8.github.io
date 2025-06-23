@@ -19,6 +19,7 @@ Offerings
 Each offering site includes links to assignments, slides, and readings.
 You are welcome to use any of the materials you find.
 
+-  [Summer 2025](./su25)
 -  [Spring 2025](./sp25)
 -  [Fall 2024](./fa24)
 -  [Summer 2024](./su24)
