@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="{{ jekyll.locale | default: "en-US" }}">
+  {%- include head.html -%}
+  <body>
+    {%- include header.html -%}
+    <div class="main-content-wrap d-flex flex-column">
+      <main class="page-content bg-gray" aria-label="Content">
+        <div class="justify-content-center">
+          <div class="main-content-body-wrap">
+            <div class="main-content-body" itemprop="text">
+              {{ content }}
+            </div>
+          </div>
+        </div>
+      </main>
+
+    </div>
+  </body>
+</html>
