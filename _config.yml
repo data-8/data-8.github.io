@@ -5,7 +5,9 @@ baseurl: ~ # the subpath of your site, e.g. /blog
 url: 'https://data8.org' # the base hostname & protocol for your site, e.g. http://example.com
 
 # Theme settings
-theme: just-the-docs
+remote_theme: "just-the-docs/just-the-docs@v0.10.1"
+plugins:
+  - jekyll-remote-theme
 color_scheme: light
 search_enabled: true
 permalink: pretty
