@@ -1,0 +1,17 @@
+title: Data 8
+description: Foundations of Data Science
+author: UC Berkeley
+baseurl: ~ # the subpath of your site, e.g. /blog
+url: 'https://data8.org' # the base hostname & protocol for your site, e.g. http://example.com
+
+# Theme settings
+theme: just-the-docs
+color_scheme: light
+search_enabled: true
+permalink: pretty
+footer: >-
+  Powered by <a href="https://github.com/kevinlin1/just-the-class">Just the Class</a>
+search_enabled: false
+
+# Collections for website data
+collections:
