@@ -1,8 +1,13 @@
+---
+title: Data 8
+nav_exclude: true
+layout: no-sidebar
+---
+
 <link rel="stylesheet" href="sp17/theme/css/main.css" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-Data 8: The Foundations of Data Science
-====
+# Data 8: The Foundations of Data Science
 
 The UC Berkeley Foundations of Data Science course combines three perspectives:
 inferential thinking, computational thinking, and real-world relevance. Given
@@ -13,11 +18,8 @@ hands-on analysis of real-world datasets, including economic data, document
 collections, geographical data, and social networks. It delves into social
 issues surrounding data analysis such as privacy and design.
 
-Offerings
-----
 
-Each offering site includes links to assignments, slides, and readings.
-You are welcome to use any of the materials you find.
+## Offerings
 
 -  [Summer 2025](./su25)
 -  [Spring 2025](./sp25)
@@ -49,22 +51,18 @@ You are welcome to use any of the materials you find.
 -  [Spring 2016](https://data-8.appspot.com/sp16/course)
 -  [Fall 2015](./fa15)
 
-Materials
----
+## Materials
 
-All materials for the course, including the textbook and assignments, are
-available for free online under a Creative Commons license.
+It has been our vision since the beginning of Data 8 that these materials are publicly licensed as open educational resources. Most repositories are licensed with [MIT](https://opensource.org/license/mit), [BSD](https://opensource.org/license/bsd-3-clause), or [CC](https://opensource.creativecommons.org/) licenses which makes them free to use and adapt. However, the textbook is licensed with [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.en) which allows free sharing of the material, but does not allow for the distribution of derived material.
 
 **Textbook**: [Computational and Inferential Thinking: The Foundations of Data
 Science](http://inferentialthinking.com) is a free online textbook that
 includes interactive Jupyter notebooks and public data sets for all examples.
-The textbook source is maintained as an [open source
-project](https://github.com/data-8/textbook).
+The textbook source is maintained on [this GitHub](https://github.com/data-8/textbook).
 
 **Assignments**:
-All assignments from Fall 2015 to current iterations of the course are available in this repository
-as Jupyter notebooks. The notebooks assume a Python 3 installation
-with the standard modules from [an Anaconda
+All assignments for all offerings are available in the [Data 8 GitHub Organization](https://github.com/data-8), typically in `materials-semYY` repositories as Jupyter Notebooks.
+The notebooks assume a Python 3 installation with the standard modules from [an Anaconda
 installation](https://www.continuum.io/downloads) such as Numpy and Matplotlib,
 as well as the [datascience](https://pypi.python.org/pypi/datascience/) and, depending on the year,
 [okpy](https://pypi.python.org/pypi/okpy/) or [otter-grader](https://otter-grader.readthedocs.io/en/latest/) modules.
@@ -76,8 +74,7 @@ instructional purposes, please fill out our [Data 8 Instructor
 Interest](https://forms.gle/iKLcryjZXit5913k7)
 form.
 
-Infrastructure
----
+## Infrastructure
 
 All of the software components of the course are maintained as open-source
 projects. We encourage you to contact us if you want any help using them.
@@ -98,18 +95,21 @@ certainly be used outside the context of the course, it was specifically
 designed to support the Data 8 curriculum, while setting up students to
 transition to more standard tools such as Pandas.
 
-**The [otter-grader](https://otter-grader.readthedocs.io/en/latest/) automatic grading software**: All notebooks are created using the otter-grader notebook creation format. This software generates two notebooks from a parent notebook. The first contains only "public" tests that are used to help students evaluate whether or not solutions to questions are correct -- a type of client-side validation for the student. The second notebook contains solutions as well as "private" tests that students are not able to see. These tests are usually used to evaluate correctness and edge cases as well as assign points.  This system is used in conjuction with [GradeScope](http://gradescope.com) at Berkeley to grade and assign points to student work but an instructor is also able grade notebooks on their own machines, see the documentation at [otter-grader](https://otter-grader.readthedocs.io/en/latest/), as well as use a free service that we deployed called [otter-service-standalone](http://grader.datahub.berkeley.edu/). 
+**The [otter-grader](https://otter-grader.readthedocs.io/en/latest/) automatic grading software**: All notebooks are created using the otter-grader notebook creation format. This software generates two notebooks from a parent notebook. The first contains only "public" tests that are used to help students evaluate whether or not solutions to questions are correct -- a type of client-side validation for the student. The second notebook contains solutions as well as "private" tests that students are not able to see. These tests are usually used to evaluate correctness and edge cases as well as assign points.  This system is used in conjuction with [Gradescope](http://gradescope.com) at Berkeley to grade and assign points to student work but an instructor is also able grade notebooks on their own machines, see the documentation at [otter-grader](https://otter-grader.readthedocs.io/en/latest/), as well as use a free service that we deployed called [otter-service-standalone](http://grader.datahub.berkeley.edu/). 
 
 
 **Hosted Computing Environment**:
 We provide a hosted environment for our students to edit and execute their
-Notebooks. It includes two components, a [Kubernetes-based deployment of
+Notebooks: DataHub. DataHub is a tool that utilizes cloud computing infrastructure to deploy scalable resources that enable users to interact remotely with a standardized, common computing environment.
+All students have access to the exact same computing environment and resources. As of Summer 2025, the [Data 8 Specific Datahub](https://data8.datahub.berkeley.edu/) has restricted access for only students enrolled in the current or previous semester's offering of Data 8. The [general purpose DataHub](https://datahub.berkeley.edu/) is still available to all UC Berkeley students, staff, and faculty.
+
+<!-- It includes two components, a [Kubernetes-based deployment of
 JupyterHub](https://github.com/data-8/jupyterhub-k8s/blob/master/README.md) that
 we have specifically designed for courses, and an [assignment
 server](https://github.com/data-8/nbinteract) that loads assignments into the
-students' environment.
+students' environment. -->
 
 If you want more information about any of these tools, please fill out our [Data
 8 Instructor
 Interest](https://forms.gle/iKLcryjZXit5913k7)
-form or email `ds-help@berkeley.edu`.
+form or email `ds-courses@berkeley.edu`.
