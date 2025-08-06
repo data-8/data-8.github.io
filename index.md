@@ -110,6 +110,6 @@ server](https://github.com/data-8/nbinteract) that loads assignments into the
 students' environment. -->
 
 If you want more information about any of these tools, please fill out our [Data
-8 Instructor
+8
 Interest](https://forms.gle/iKLcryjZXit5913k7)
 form or email `ds-courses@berkeley.edu`.
