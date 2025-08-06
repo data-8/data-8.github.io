@@ -1,0 +1,17 @@
+<footer class="site-footer bg-gray">
+  <div class="container-lg">
+    {%- if site.footer_content and site.footer_content != true -%}
+      <p class="text-small text-grey-dk-100 m-0">{{ site.footer_content }}</p>
+    {%- endif -%}
+
+    <p class="text-small text-grey-dk-100 my-1">
+      <a rel="nofollow noopener" href="https://dap.berkeley.edu/get-help/report-web-accessibility-issue" target="_blank" class="pr-2">Accessibility</a>
+      <a rel="nofollow noopener" href="https://ophd.berkeley.edu/policies-and-procedures/nondiscrimination-policy-statement" target="_blank" class="px-2">Nondiscrimination</a>
+    </p>
+
+    <!-- Use this to add additional content. -->
+    <p class="text-small text-lighter m-0">
+      Copyright ©{{ "now" | date: "%Y" }}, Regents of the University of California and respective authors.
+    </p>
+    </div>
+</footer>

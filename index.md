@@ -4,10 +4,13 @@ nav_exclude: true
 layout: no-sidebar
 ---
 
-<link rel="stylesheet" href="sp17/theme/css/main.css" />
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
 # Data 8: The Foundations of Data Science
+
+<img src="data8.png" alt="Data 8 Logo" class="centered-icon" />
+
+## Course Description
 
 The UC Berkeley Foundations of Data Science course combines three perspectives:
 inferential thinking, computational thinking, and real-world relevance. Given
@@ -15,8 +18,7 @@ data arising from some real-world phenomenon, how does one analyze that data so
 as to understand that phenomenon? The course teaches critical concepts and
 skills in computer programming and statistical inference, in conjunction with
 hands-on analysis of real-world datasets, including economic data, document
-collections, geographical data, and social networks. It delves into social
-issues surrounding data analysis such as privacy and design.
+collections, geographical data, and social networks. It delves into social and legal issues surrounding data analysis, including issues of privacy and data ownership.
 
 
 ## Offerings
@@ -103,13 +105,8 @@ We provide a hosted environment for our students to edit and execute their
 Notebooks: DataHub. DataHub is a tool that utilizes cloud computing infrastructure to deploy scalable resources that enable users to interact remotely with a standardized, common computing environment.
 All students have access to the exact same computing environment and resources. As of Summer 2025, the [Data 8 Specific Datahub](https://data8.datahub.berkeley.edu/) has restricted access for only students enrolled in the current or previous semester's offering of Data 8. The [general purpose DataHub](https://datahub.berkeley.edu/) is still available to all UC Berkeley students, staff, and faculty.
 
-<!-- It includes two components, a [Kubernetes-based deployment of
-JupyterHub](https://github.com/data-8/jupyterhub-k8s/blob/master/README.md) that
-we have specifically designed for courses, and an [assignment
-server](https://github.com/data-8/nbinteract) that loads assignments into the
-students' environment. -->
 
-If you want more information about any of these tools, please fill out our [Data
+If you want more information about any of these materials or tools, please fill out our [Data
 8
 Interest](https://forms.gle/iKLcryjZXit5913k7)
 form or email `ds-courses@berkeley.edu`.

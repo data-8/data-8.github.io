@@ -1,0 +1,28 @@
+.site-wrapper {
+  min-height: 100vh; /* Make sure the wrapper fills at least the viewport height */
+  display: flex;     /* Use flexbox to organize children */
+  flex-direction: column; /* Stack children vertically */
+  align-items: center;
+}
+
+main.page-content {
+  width: 100%;
+  flex-grow: 1;
+  padding-top: 2rem !important;
+}
+
+.container-lg {
+  max-width: 1200px;
+  margin: 0 auto;   
+  padding: 0 15px;   
+}
+
+.site-footer {
+  width: 100%;
+}
+
+.centered-icon {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+}
