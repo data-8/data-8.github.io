@@ -1,0 +1,26 @@
+// You may want to add CSS in additional files.
+// It's best to not edit this file too much.
+// "course_overrides.scss" is designed for each course's customizations.
+// You can make additional files as necessary.
+// You would then add `@import "file"; to this file.
+
+// Just the Class customizations are all loaded in one file.
+@import '../just-the-class/just-the-class';
+@import '../berkeley/berkeley';
+
+@import '../color_schemes/dark_overrides';
+
+@if $color-scheme == dark {
+  @include dark-mode-overrides;
+}
+
+div.highlighter-rouge {
+  overflow-x: auto;
+}
+
+div.highlighter-rouge div.highlight {
+  overflow-x: unset;
+}
+
+// Place all of your course-specific CSS here.
+@import './course_overrides';
