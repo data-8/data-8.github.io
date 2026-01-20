@@ -23,7 +23,7 @@ collections, geographical data, and social networks. It delves into social and l
 
 ## Offerings
 
--  [Spring 2025](./sp26)
+-  [Spring 2026](./sp26)
 -  [Fall 2025](./fa25)
 -  [Summer 2025](./su25)
 -  [Spring 2025](./sp25)
