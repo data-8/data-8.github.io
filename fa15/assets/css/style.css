@@ -344,3 +344,35 @@ table.lined td {
     }
 }
 
+
+.archive-banner {
+    background-color: #d32f2f; /* Deep Red */
+    color: white;
+    text-align: center;
+    padding: 12px 10px;
+    font-family: sans-serif;
+    font-weight: bold;
+    position: relative;
+    /* position: fixed;
+    top: 0; 
+    left: 0; */
+    z-index: 9999;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 2px solid #b71c1c;
+}
+.archive-banner a {
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+    font-weight: 700;
+}
+
+.archive-banner a:hover, 
+.archive-banner a:focus {
+    text-decoration: none;
+    background-color: #ffffff;
+    color: #b30000;
+    outline: 3px solid #ffcc00; /* High visibility focus ring */
+}
