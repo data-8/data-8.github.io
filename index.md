@@ -52,7 +52,7 @@ collections, geographical data, and social networks. It delves into social and l
 -  [Summer 2017](./su17)
 -  [Spring 2017](./sp17)
 -  [Fall 2016](./fa16)
--  [Spring 2016](https://data-8.appspot.com/sp16/course)
+-  Spring 2016
 -  [Fall 2015](./fa15)
 
 ## Materials
