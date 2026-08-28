@@ -1,4 +1,7 @@
-# CS61A.org
+---
+---
 
 User-agent: *
-Disallow: /hw/solutions/
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
